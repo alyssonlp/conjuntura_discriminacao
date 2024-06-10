@@ -1,4 +1,4 @@
-# conjuntura_discriminacao
+# Análise de Conjuntura: Discriminação no Mercado de Trabalho Brasileiro
 Repositório para análise conjuntural da discriminação racial no mercado de trabalho brasileiro
 
 
@@ -32,17 +32,12 @@ $N\bar{y_0} = \bar{y_0}[p_0M_0 + [\bar{p}_0 + \Delta Z \phi + \delta] M_1 ]$.
 Rearranjando: $\bar{y}_0 p_0 M + \bar{y_0} [\Delta Z \phi + \delta] M_1 $
 
 Somando tudo, temos:
-$\bar{y_0} [\Delta Z \phi + \delta] M_1 + [\bar{p}_0 + \Delta Z \phi + \delta] M_1 \times [\Delta X\beta + \gamma ] $
+$\bar{y_0} [\Delta Z \phi + \delta] M_1 + [\bar{p}_0 + \Delta Z \phi + \delta] \times [\Delta X\beta + \gamma ] M_1 $
 
-$\delta M_1 [ \bar{y_0} ] + M_1 \Delta Z \phi \bar{y_0} + \delta M_1 [\Delta X\beta + \gamma ] +  M_1 [\bar{p}_0 + \Delta Z \phi] [\Delta X\beta + \gamma ] $
+$[\bar{y_0} + \Delta X\beta + \gamma ] [\Delta Z \phi + \delta] M_1 + [\Delta X\beta + \gamma ] \bar{p}_0 M_1 $
 
-$\delta M_1 [ \bar{y_0} + \Delta X\beta + \gamma ] +  M_1 \Delta Z \phi \bar{y_0} +  M_1 [\bar{p}_0 + \Delta Z \phi] [\Delta X\beta + \gamma ] $
+$\bar{y_1} [\Delta Z \phi + \delta] M_1 + [\Delta X\beta + \gamma ] \bar{p}_0 M_1 $
 
-$\delta M_1 [ \bar{y_0} + \Delta X\beta + \gamma ] +  M_1 \Delta Z \phi [\bar{y_0} + \Delta X\beta + \gamma ] +  M_1 [\bar{p}_0 ] $
+O primeiro termo é o salário perdido devido a uma chance menor de conseguir emprego. O segundo termo é a massa salarial perdida devo ao fato de mesmo terem taxas de empregabilidade igual a de brancos, ainda há uma perda salarial devido a discrminação no mercado de trabalho.
 
-$M_1 [\delta [ \bar{y_0} + \Delta X\beta + \gamma ] +  \Delta Z \phi [\bar{y_0} + \Delta X\beta + \gamma ] +  [\bar{p}_0 ] ] $
-
-
-
-
-
+Separando os termos $\Delta Z \phi$ e $\Delta X \beta$ de $\delta$ e $\gamma$, podemos ainda dividir essas perdas naquelas devidas as diferenças nas **características dos trabalhadores** e nas perdas devidas **puramente à discriminação**, tanto em termos de empregabilidade como em termos salariais.
