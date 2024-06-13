@@ -1,9 +1,9 @@
 
 df <- read_pnadc("PNADC_012024.txt", "input_PNADC_trimestral.txt", 
                  vars = c( "UF", "RM_RIDE", "UPA", "Estrato", "V1008", "V1014",
-                           "V1016","V1022", "V1027","V1028", "V2005", "V2007",
-                           "V2009", "V2010", "V4032","VD3004", "VD4001", "VD4002", 
-                           "VD4009", "VD4010", "VD4016"))
+                           "V1016","V1022", "V1027","V1028",  "V2005",
+                           "V2007",  "V2009", "V2010", "V4032","VD3004", "VD4001",
+                           "VD4002", "VD4009", "VD4010", "VD4016"))
 
 is.data.table(df) == TRUE
 df <-as.data.table(df)
