@@ -3,6 +3,7 @@ library(PNADcIBGE)
 library(survey)
 library(dplyr)
 library(data.table)
+library(questionr)
 
 
 # Definindo usuário
@@ -10,8 +11,8 @@ user <- "Rodrigo"
 
 if (user == "Rodrigo") {
   # working folders
-  datawork_folder <- file.path("C:/Users/Rodrigo Carvalho/Documents/R/NERI_INSPER/conjuntura")
-  github_folder <- file.path("C:/Users/Rodrigo Carvalho/Documents/GitHub/Convergencia")
+  datawork_folder <- file.path("C:/Users/Rodrigo/Documents/R/NERI_INSPER/conjuntura")
+  github_folder <- file.path("C:/Users/Rodrigo/Documents/GitHub/Convergencia")
   
 }
 
