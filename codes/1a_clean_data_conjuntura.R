@@ -1,3 +1,6 @@
+# FAZ APENAS UM ARQUIVO QUE LIMPA OS DADOS E USA ELE PARA A REGRESSÃO E CARTA DE CONJUNTURA
+
+
 ano = c(2024)
 trimestre = c(1)
 
@@ -12,7 +15,7 @@ dt <- read_pnadc(pnad_txt, "input_PNADC_trimestral.txt",
                            "VD4019", "VD4020"))
 dt <- pnadc_deflator(dt, "deflator_PNADC_2024_trimestral_010203.xls")
 
-is.data.table(dt) == TRUE
+is.data.table(dt) == TRUE # SOBRANDO
 dt <-as.data.table(dt)
 
 # Numero de filhos - do responsavel e/ou do conjuge
