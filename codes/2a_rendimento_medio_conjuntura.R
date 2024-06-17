@@ -1,7 +1,7 @@
 # Script para gerar os resultados de rendimentos e massa salarial
 
 # Arquivo com as funcoes a serem usadas
-source("C:/Users/Rodrigo/Documents/R/NERI_INSPER/conjuntura/codes/1c_create_functions.R")
+source("C:/Users/Rodrigo/Documents/R/NERI_INSPER/conjuntura/codes/1b_create_functions.R")
 
 # criando vetores para automatizar os arquivos conforme o ano e o trimestre
 ano <- c(2024)
