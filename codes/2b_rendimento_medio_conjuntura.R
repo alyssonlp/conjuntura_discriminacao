@@ -20,12 +20,10 @@ for(aa in ano) {
     resultado_nacional[, Brasil := 1]
     
     # Massa salarial
-    massa <- massa_salarial_fun(dt, resultado_nacional)
+    massa <- massa_salarial_fun(dt, resultado_nacional$avg_wage)
     setDT(massa)
     massa[, massa_salarial := 1]
-    
-    # Rendimento médio efetivo - por tipo de vinculo
-    vinculo_efe <- med_conj_desag_fun(dt,"r_efe_all", "V1028", "vinculo")
+  
     
     # Como os outros resultados são a partir do rendimento habitual, tem-se:
     # Criacao do vetor de dados desagregados
@@ -34,7 +32,7 @@ for(aa in ano) {
     desagregados <- c("male", "mother", "white", "nonwhite", "married_woman",
                       "rural", "private_formal", "private_informal",
                       "domestic_informal", "public_service", "employer",
-                      "sel_employed", "aux_familiar")
+                      "self_employed", "aux_familiar")
     
     rendimento_medio_hab_desagregado <- list()
     
@@ -66,7 +64,7 @@ for(aa in ano) {
     # salvar os resultados do rendimento habitual medio em csv
     
     for (rr in resultado_tables) {
-      file_name <- sprintf("%conjuntura_%s_%d_%d.csv", rr, aa, tri)
+      file_name <- sprintf("conjuntura_%s_%d_%d.csv", rr, aa, tri)
       write.csv(get(rr),
                 file.path(csv_files, file_name), row.names = FALSE)
     }
