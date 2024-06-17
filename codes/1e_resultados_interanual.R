@@ -132,9 +132,9 @@ inter_escolaridade <- delta_interanual_fun(pair_dt_resultado_escolaridade,
 inter_male <- delta_interanual_fun(pair_dt_resultado_male, 
                                    pair_dt_resultado_male$male)
 
-
+setnames(pair_dt_resultado_massa_salarial_real, "soma_peso", "avg_wage")
 inter_massa <- delta_interanual_fun(pair_dt_resultado_massa_salarial_real, 
-                                    pair_dt_resultado_massa_salarial_real$soma_peso)
+                                    pair_dt_resultado_massa_salarial_real$massa_salarial)
 
 
 inter_metropolitan <- delta_interanual_fun(pair_dt_resultado_metropolitan, 

@@ -37,6 +37,7 @@ dt[, age_group :=
   ]
 
 # Chefe de familia
+dt[, V2005 := as.numeric(V2005)]
 dt[, chefe_familia := as.numeric(V2005 == 1)]
 
 # Grau de escolaridade
@@ -101,3 +102,6 @@ saveRDS(dt, file.path(intermediary_data, rds_file))
 
   }
 }
+
+
+summary(dt$chefe_familia)
