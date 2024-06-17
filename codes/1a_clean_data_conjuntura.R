@@ -109,7 +109,7 @@ dt[, r_hab_all := VD4019 * Habitual]
 dt[, r_efe_all := VD4020 * Efetivo]
 
 rds_file <- sprintf("pnadc%d_%d.rds", aa, tri)
-saveRDS(dt, file.path(intermediary_data, "pnadc2024_1.rds"))
+saveRDS(dt, file.path(intermediary_data, rds_file))
 
   }
 }
