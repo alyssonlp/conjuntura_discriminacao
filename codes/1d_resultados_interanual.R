@@ -1,5 +1,5 @@
 # Arquivo com as funcoes a serem usadas
-source("C:/Users/Rodrigo/Documents/R/NERI_INSPER/conjuntura/codes/1b_create_functions.R")
+source("C:/Users/Rodrigo/Documents/R/NERI_INSPER/conjuntura/codes/1b_create_functions.R") # NAO ESTA USANDO OS CAMINHOS DEFINIDOS NO MAIN
 
 # Importando resultados de 1d_resultados_carta.R 
 ano_0 <- c(2023)
@@ -13,7 +13,7 @@ lista_ano_0 <- list()
 lista_ano_1 <- list()
 
 for(a0 in ano_0) {
-  for(a1 in ano_1) {
+  for(a1 in ano_1) { # ESSE LOOP NAO VAI SER GENERALIZAVEL PARA TODOS OS PERIODOS. NELHOR DEFINIR ANO ANO_0 COMO FUNÇÃ9 DE ANO_1
     for (tri in trimestre) {
       for (nome in resultados_media) {
         nome_csv_0 <- sprintf("resultado_%s_%d_%d.csv", nome, a0, tri)
