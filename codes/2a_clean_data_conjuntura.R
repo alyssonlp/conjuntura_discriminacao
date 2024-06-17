@@ -12,7 +12,6 @@ dt <- read_pnadc(pnad_txt, "input_PNADC_trimestral.txt",
                            "VD4019", "VD4020"))
 dt <- pnadc_deflator(dt, "deflator_PNADC_2024_trimestral_010203.xls")
 
-is.data.table(dt) == TRUE
 dt <-as.data.table(dt)
 
 # Numero de filhos - do responsavel e/ou do conjuge

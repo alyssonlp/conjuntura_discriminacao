@@ -42,3 +42,6 @@ if (part_02 == TRUE ){
   source(file.path(codes, "2b_rendimento_medio_conjuntura.R"))
   source(file.path(codes, "2c_modelos.R"))
 }
+
+# Funções
+source(file.path(codes, "1b_create_functions.R"))

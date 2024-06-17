@@ -6,9 +6,6 @@
  # grupo - genero, raca, idade, ocupacao
  
  med_conj_desag_fun <- function(data_base, renda, peso, grupo) {
-  library(data.table) 
-  library(questionr)
-   
    {{data_base}}[, list(avg_wage = wtd.mean(get(renda), weights = get(peso))),
       by = c({{grupo}})]
   
@@ -16,15 +13,12 @@
 
 # Criando a função para calcular o rendimento medio nacional
  med_conj_fun <- function(data_base, renda, peso) {
-   library(data.table)
-   library(questionr)
    {{data_base}}[, list(avg_wage = wtd.mean(get(renda), weights = get(peso)))]
  }
 
 # criando a função para calcular a massa salarial
  
 massa_salarial_fun <- function(data_base, salario_medio){
-  library(data.table)
   trabalhadores <- data_base[VD4002 == 1, .(soma_peso = sum(V1028))]
   trabalhadores[, soma_peso := soma_peso * salario_medio]
    

@@ -1,6 +1,3 @@
-# Arquivo com as funcoes a serem usadas
-source("C:/Users/Rodrigo/Documents/R/NERI_INSPER/conjuntura/codes/1b_create_functions.R")
-
 # Importando resultados de 1d_resultados_carta.R 
 ano_0 <- c(2023)
 ano_1 <- c(2024)
