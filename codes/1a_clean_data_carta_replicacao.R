@@ -1,4 +1,6 @@
 # Replicando a Carta de Conjuntura IPEA
+
+# ALYSSON: TEM QUE MUDAR NOME DO ARQUIVO OU DESSE OU DO OUTRO 1a
 ano <- c(2024)
 trimestre <- c(1)
 
@@ -14,7 +16,7 @@ for(aa in ano) {
     
     dt <- pnadc_deflator(dt, "deflator_PNADC_2024_trimestral_010203.xls")
 
-is.data.table(dt) == TRUE
+is.data.table(dt) == TRUE # Desnecessario
 dt <-as.data.table(dt)
 
 # Na carta a amostra consiste em individuos com idade igual ou superior a 14 anos
@@ -78,7 +80,7 @@ dt[, setor_atividade :=
 dt[, VD4009 := as.numeric(VD4009)]
 dt[, vinculo :=
      case_when(
-       VD4009 == 1 ~ " Privado com carteira", 
+       VD4009 == 1 ~ " Privado com carteira", #CUIDADO COM OS ESPAÇOS
        VD4009 == 2 ~ " Privado sem carteira", 
        VD4009 == 5 | VD4009 == 6 ~ "Setor Publico", 
        VD4009 == 9 ~ "Conta-propria"
@@ -97,7 +99,7 @@ dt[, r_hab_all := VD4019 * Habitual]
 # renda efetiva real - todos os trabalhos
 dt[, r_efe_all := VD4020 * Efetivo]
 
-rds_file <- sprintf("pnadc%d_1_carta.rds", aa)
+rds_file <- sprintf("pnadc%d_1_carta.rds", aa) # E O TRIMESTRE?
 saveRDS(dt, file.path(intermediary_data, rds_file))
 
   }
