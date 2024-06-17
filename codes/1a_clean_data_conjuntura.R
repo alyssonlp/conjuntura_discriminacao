@@ -8,7 +8,8 @@ dt <- read_pnadc(pnad_txt, "input_PNADC_trimestral.txt",
                  vars = c( "UF", "RM_RIDE", "UPA", "Estrato", "V1008", "V1014",
                            "V1016","V1022", "V1027","V1028",  "V2005",
                            "V2007",  "V2009", "V2010", "V4032","VD3004", "VD4001",
-                           "VD4002", "VD4009", "VD4010", "VD4016"))
+                           "VD4002", "VD4009", "VD4010", "VD4016", "VD4017",
+                           "VD4019", "VD4020"))
 dt <- pnadc_deflator(dt, "deflator_PNADC_2024_trimestral_010203.xls")
 
 is.data.table(dt) == TRUE
@@ -94,6 +95,18 @@ dt[, aux_familiar := as.numeric(VD4009 == 10)]
 
 # Dummy contrato de trabalho - formal ou informal
 dt[, formal := as.numeric(V4032 == 1)]
+
+# renda habitual real - trabalho principal
+dt[, r_hab := VD4016 * Habitual]
+
+# renda efetiva real - trabalho principal
+dt[, r_efe := VD4017 * Efetivo]
+
+# renda habitual real - todos os trabalhos
+dt[, r_hab_all := VD4019 * Habitual]
+
+# renda efetiva real - todos os trabalhos
+dt[, r_efe_all := VD4020 * Efetivo]
 
 rds_file <- sprintf("pnadc%d_%d.rds", aa, tri)
 saveRDS(dt, file.path(intermediary_data, "pnadc2024_1.rds"))
