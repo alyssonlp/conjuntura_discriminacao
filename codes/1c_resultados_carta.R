@@ -4,7 +4,7 @@
 source("C:/Users/Rodrigo/Documents/R/NERI_INSPER/conjuntura/codes/1c_create_functions.R")
 
 # criando vetores para automatizar os arquivos conforme o ano e o trimestre
-ano <- c(2023)
+ano <- c(2024)
 trimestre <- c(1)
 
 # no sprintf %d sao para valores inteiros e %s para nomes(string)

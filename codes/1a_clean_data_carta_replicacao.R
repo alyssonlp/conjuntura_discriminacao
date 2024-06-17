@@ -4,7 +4,7 @@ trimestre <- c(1)
 
 for(aa in ano) {
   for (tri in trimestre) {
-    pnad_txt <- sprintf("PNADC_0%d%d.txt", tri, ano)
+    pnad_txt <- sprintf("PNADC_0%d%d.txt", tri, aa)
     dt <- read_pnadc(pnad_txt, "input_PNADC_trimestral.txt", 
                  vars = c( "UF", "RM_RIDE", "UPA", "Estrato", "V1008", "V1014",
                            "V1016","V1022", "V1023", "V1027","V1028", "V2005", 
@@ -97,7 +97,7 @@ dt[, r_hab_all := VD4019 * Habitual]
 # renda efetiva real - todos os trabalhos
 dt[, r_efe_all := VD4020 * Efetivo]
 
-rds_file <- sprintf("pnadc%d_1_carta.rds", ano)
+rds_file <- sprintf("pnadc%d_1_carta.rds", aa)
 saveRDS(dt, file.path(intermediary_data, rds_file))
 
   }
