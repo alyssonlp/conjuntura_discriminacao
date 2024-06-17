@@ -6,7 +6,7 @@ for(aa in ano) {
     pnad_txt <- sprintf("PNADC_0%d%d.txt", tri, ano)
 dt <- read_pnadc(pnad_txt, "input_PNADC_trimestral.txt", 
                  vars = c( "UF", "RM_RIDE", "UPA", "Estrato", "V1008", "V1014",
-                           "V1016","V1022", "V1027","V1028",  "V2005",
+                           "V1016","V1022", "V1023", "V1027","V1028",  "V2005",
                            "V2007",  "V2009", "V2010", "V4032","VD3004", "VD4001",
                            "VD4002", "VD4009", "VD4010", "VD4016", "VD4017",
                            "VD4019", "VD4020"))
@@ -80,10 +80,14 @@ for (estado in names(estados)) {
 # Dummy rural
 dt[, rural := as.numeric(V1022 == 2)]
 
+# Dummy metropolitana
+dt[, metropolitan := as.numeric(V1023 == 1 | V1023 == 2)]
+
 # Dummy ocupacao
 dt[, unemp := as.numeric(VD4002 == 2)]
 
 # Dummy setor economico
+dt[, VD4009 := as.numeric(VD4009)]
 dt[, private_formal := as.numeric(VD4009 == 1)]
 dt[, private_informal := as.numeric(VD4009 == 2)]
 dt[, domestic_formal := as.numeric(VD4009 == 3)]
@@ -96,6 +100,19 @@ dt[, aux_familiar := as.numeric(VD4009 == 10)]
 # Dummy contrato de trabalho - formal ou informal
 dt[, formal := as.numeric(V4032 == 1)]
 
+# Setor de atividade
+dt[,VD4010 := as.numeric(VD4010)]
+dt[, agricultura := as.numeric(VD4010 == 1)]
+dt[, industria := as.numeric(VD4010 == 2)]
+dt[, construcao := as.numeric(VD4010 == 3)]
+dt[, comercio := as.numeric(VD4010 == 4)]
+dt[, servios_profissionais := as.numeric(VD4010 == 7)]
+dt[, transporte := as.numeric(VD4010 == 5)]
+dt[, servicos_pessoais_coletivos := as.numeric(VD4010 == 10 | VD4010 == 11)]
+dt[, adm_publica := as.numeric(VD4010 == 8)]   
+dt[, educ_saude := as.numeric(VD4010 == 9)]
+dt[, alojamento_alimentacao := as.numeric (VD4010 == 6)]
+
 # renda habitual real - trabalho principal
 dt[, r_hab := VD4016 * Habitual]
 
@@ -107,6 +124,13 @@ dt[, r_hab_all := VD4019 * Habitual]
 
 # renda efetiva real - todos os trabalhos
 dt[, r_efe_all := VD4020 * Efetivo]
+
+# ln da renda
+dt[, ln_r_hab := log(r_hab)]
+dt[, ln_r_efe := log(r_efe)]
+dt[, ln_r_hab_all := log(r_hab_all)]
+dt[, ln_r_efe_all := log(r_efe_all)]
+
 
 rds_file <- sprintf("pnadc%d_%d.rds", aa, tri)
 saveRDS(dt, file.path(intermediary_data, rds_file))
