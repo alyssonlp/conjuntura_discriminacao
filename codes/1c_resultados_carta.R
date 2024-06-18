@@ -1,7 +1,7 @@
 # Script para gerar os resultados de rendimentos e massa salarial
 
 # criando vetores para automatizar os arquivos conforme o ano e o trimestre
-ano <- c(2024)
+ano <- c(2023)
 trimestre <- c(1)
 
 # no sprintf %d sao para valores inteiros e %s para nomes(string)
@@ -60,7 +60,7 @@ for (rr in resultado_tables) {
 # salvar os resultados do rendimento habitual medio em csv
 
 for (rr in resultado_tables) {
-  file_name <- sprintf("%s_%d_%d.csv", rr, aa, tri)
+  file_name <- sprintf("%s_%d_%d_habitual.csv", rr, aa, tri)
    write.csv(get(rr),
    file.path(csv_files, file_name), row.names = FALSE)
 }

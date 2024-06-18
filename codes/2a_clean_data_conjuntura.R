@@ -7,8 +7,8 @@ for(aa in ano) {
 dt <- read_pnadc(pnad_txt, "input_PNADC_trimestral.txt", 
                  vars = c( "UF", "RM_RIDE", "UPA", "Estrato", "V1008", "V1014",
                            "V1016","V1022", "V1023", "V1027","V1028",  "V2005",
-                           "V2007",  "V2009", "V2010", "V4032","VD3004", "VD4001",
-                           "VD4002", "VD4009", "VD4010", "VD4016", "VD4017",
+                           "V2007",  "V2009", "V2010", "V4032","VD3004", "VD3005" ,
+                           "VD4001","VD4002", "VD4009", "VD4010", "VD4016", "VD4017",
                            "VD4019", "VD4020"))
 dt <- pnadc_deflator(dt, "deflator_PNADC_2024_trimestral_010203.xls")
 
@@ -46,7 +46,7 @@ dt[, nonwhite := as.numeric(V2010 == 2 | V2010 == 4)]
   # Dummies: UF, zona rural, metropolitana, ocupacao, setor economico, contrato de trabalho
 
 # Anos de estudo
-setnames(dt, "VD3004", "educ")
+setnames(dt, "VD3005", "educ")
 dt[, educ := as.numeric(educ)]
 dt[, educ_sq := educ^2]
 dt[, educ_cubic := educ^3]
@@ -83,7 +83,7 @@ dt[, rural := as.numeric(V1022 == 2)]
 dt[, metropolitan := as.numeric(V1023 == 1 | V1023 == 2)]
 
 # Dummy ocupacao
-dt[, unemp := as.numeric(VD4002 == 2)]
+dt[, emp := as.numeric(VD4002 == 1)]
 
 # Dummy setor economico
 dt[, VD4009 := as.numeric(VD4009)]
@@ -136,4 +136,5 @@ saveRDS(dt, file.path(intermediary_data, rds_file))
 
   }
 }
+
 

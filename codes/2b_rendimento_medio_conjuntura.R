@@ -24,12 +24,14 @@ for(aa in ano) {
     
     # Como os outros resultados são a partir do rendimento habitual, tem-se:
     # Criacao do vetor de dados desagregados
-    # Obs: "" refere-se aos dados nao desagregados
     
     desagregados <- c("male", "mother", "white", "nonwhite", "married_woman",
-                      "rural", "private_formal", "private_informal",
+                      "rural", "metropolitan" ,"private_formal", "private_informal",
                       "domestic_informal", "public_service", "employer",
-                      "self_employed", "aux_familiar")
+                      "self_employed", "aux_familiar",  "agricultura", "industria",
+                       "construcao", "comercio", "servios_profissionais", "transporte",
+                        "servicos_pessoais_coletivos", "adm_publica", "educ_saude",
+                      "alojamento_alimentacao")
     
     rendimento_medio_hab_desagregado <- list()
     
@@ -58,10 +60,10 @@ for(aa in ano) {
     }
     
     
-    # salvar os resultados do rendimento habitual medio em csv
+    # salvar os resultados do rendimento habitual medio em todos os trabalhos em csv
     
     for (rr in resultado_tables) {
-      file_name <- sprintf("conjuntura_%s_%d_%d.csv", rr, aa, tri)
+      file_name <- sprintf("conjuntura_%s_%d_%d_habitual.csv", rr, aa, tri)
       write.csv(get(rr),
                 file.path(csv_files, file_name), row.names = FALSE)
     }

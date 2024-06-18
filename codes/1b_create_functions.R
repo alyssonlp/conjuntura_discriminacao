@@ -32,3 +32,10 @@ delta_interanual_fun <- function(data_base, categoria) {
   delta_interanual <- aggregate(avg_wage ~ categoria, data = as.data.frame(data_base), 
                                      FUN = function(x) (((x[2] - x[1]) / x[1]) * 100)) 
 }
+
+
+# calculando a media das variaveis
+med_var_fun <- function(data_base, variavel, peso) {
+  med_var <- data_base[, list(media_var = wtd.mean(get(variavel), weights = get(peso)))]
+}
+
