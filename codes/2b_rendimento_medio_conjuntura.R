@@ -57,13 +57,14 @@ for(aa in ano) {
     # Loop sobre cada data.table encontrado
     for (rr in resultado_tables) {
       assign(rr, `[.data.table`(get(rr), , ano := aa))
+      assign(rr, `[.data.table`(get(rr), , trimestre := tri))
     }
     
     
     # salvar os resultados do rendimento habitual medio em todos os trabalhos em csv
     
     for (rr in resultado_tables) {
-      file_name <- sprintf("conjuntura_%s_%d_%d_habitual.csv", rr, aa, tri)
+      file_name <- sprintf("conjuntura_%s_%d_%d.csv", rr, aa, tri)
       write.csv(get(rr),
                 file.path(csv_files, file_name), row.names = FALSE)
     }
@@ -72,6 +73,7 @@ for(aa in ano) {
     # salvar o resultado da massa salarial
     file_massa <- sprintf("conjuntura_massa_salarial_real_%d_%d.csv", aa, tri)
     massa[, ano := aa]
+    massa[, trimestre := tri]
     write.csv(massa, file.path(csv_files, file_massa), row.names = FALSE)
     
   }

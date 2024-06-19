@@ -1,5 +1,5 @@
-ano = c(2024)
-trimestre = c(1)
+ano = c(2022)
+trimestre = c( 2)
 
 for(aa in ano) {
   for (tri in trimestre) {
