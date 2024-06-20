@@ -39,27 +39,3 @@ med_var_fun <- function(data_base, variavel, peso) {
   med_var <- data_base[, list(media_var = wtd.mean(get(variavel), weights = get(peso)))]
 }
 
-# Criando a funcao para ler e agregar dados por grupo
-
-agreg_fun <- function(grupo, anos, trimestres, ano_24, tri_24) {
-  lista <- list()
-  for (aa in anos) {
-    for (tri in trimestres) {
-      nome_csv <- sprintf("conjuntura_%s_%d_%d.csv", grupo, aa, tri)
-      caminho_arquivo <- file.path(csv_files, nome_csv)
-      if (file.exists(caminho_arquivo)) {
-        dados <- read.csv(caminho_arquivo)
-        lista[[nome_csv]] <- dados
-      }
-    }
-  }
-  for (tr in tri_24) {
-    nome_csv_24 <- sprintf("conjuntura_%s_%d_%d.csv", grupo, ano_24, tr)
-    caminho_arquivo <- file.path(csv_files, nome_csv_24)
-    if (file.exists(caminho_arquivo)) {
-      dados <- read.csv(caminho_arquivo)
-      lista[[nome_csv_24]] <- dados
-    }
-  }
-  return(do.call(rbind, lista))
-}

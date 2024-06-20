@@ -1,14 +1,21 @@
 # Script para gerar os resultados de rendimentos e massa salarial
 
 # criando vetores para automatizar os arquivos conforme o ano e o trimestre
-ano <- c(2024)
-trimestre <- c(1)
+ano <- c(2022, 2023, 2024)
+trimestre <- c(1:4)
+
+
+resultados_finais <- list()
 
 # no sprintf %d sao para valores inteiros e %s para nomes(string)
 # isso é similar ao `' do stata no looping
 
 for(aa in ano) {
   for (tri in trimestre) {
+    
+    if(aa == 2024 & tri >=2){
+      next  
+    }
     rds_file <- sprintf("pnadc%d_%d.rds", aa, tri)
     dt <- readRDS((file.path(intermediary_data, rds_file)))
     
@@ -17,9 +24,9 @@ for(aa in ano) {
     resultado_nacional[, Brasil := 1]
     
     # Massa salarial
-    massa <- massa_salarial_fun(dt, resultado_nacional$avg_wage)
-    setDT(massa)
-    massa[, massa_salarial := 1]
+    resultado_massa <- massa_salarial_fun(dt, resultado_nacional$avg_wage)
+    setDT(resultado_massa)
+    resultado_massa[, massa_salarial := 1]
   
     
     # Como os outros resultados são a partir do rendimento habitual, tem-se:
@@ -41,40 +48,29 @@ for(aa in ano) {
     }
     
     
-    # Transformando os resultados de list em diversos data.table
-    
+    # Resultados por desagregacao
     for (dd in names(rendimento_medio_hab_desagregado)) {
-      assign(paste0("resultado_", dd),
-             as.data.table(rendimento_medio_hab_desagregado[[dd]]))
+      resultado <- as.data.table(rendimento_medio_hab_desagregado[[dd]])
+      resultado[, ano := aa]  
+      resultado[, trimestre := tri]  
+      
+    
+      if (is.null(resultados_finais[[dd]])) {
+        resultados_finais[[dd]] <- resultado
+      } else {
+        resultados_finais[[dd]] <- rbindlist(list(resultados_finais[[dd]], resultado), fill = TRUE)
+      }
     }
-    
-    # Adicionar a variavel ano - importante para o calculo do crescimento interanual
-    # Encontrar os data.frame que começa com "resultado_"
-    resultado_tables <- ls(pattern = "^resultado_")
-    resultado_tables
-    
-    
-    # Loop sobre cada data.table encontrado
-    for (rr in resultado_tables) {
-      assign(rr, `[.data.table`(get(rr), , ano := aa))
-      assign(rr, `[.data.table`(get(rr), , trimestre := tri))
-    }
-    
-    
-    # salvar os resultados do rendimento habitual medio em todos os trabalhos em csv
-    
-    for (rr in resultado_tables) {
-      file_name <- sprintf("conjuntura_%s_%d_%d.csv", rr, aa, tri)
-      write.csv(get(rr),
-                file.path(csv_files, file_name), row.names = FALSE)
-    }
-    
-    
-    # salvar o resultado da massa salarial
-    file_massa <- sprintf("conjuntura_massa_salarial_real_%d_%d.csv", aa, tri)
-    massa[, ano := aa]
-    massa[, trimestre := tri]
-    write.csv(massa, file.path(csv_files, file_massa), row.names = FALSE)
     
   }
 }
+
+# Salvar resultados finais em arquivos CSV
+
+  for (dd in names(resultados_finais)) {
+  # Nome do arquivo de saída
+  nome_arquivo_saida <- sprintf("%s.csv", dd)
+  
+  # Escrever o arquivo CSV
+  write.csv(resultados_finais[[dd]], file.path(csv_files, nome_arquivo_saida), row.names = FALSE)
+  }
