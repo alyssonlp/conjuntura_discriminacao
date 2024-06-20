@@ -20,6 +20,6 @@ grupos <- c("massa_salarial_real", "resultado_male", "resultado_mother",
 # Juntando em um só csv
 for (grupo in grupos) {
   dados_grupo <- agreg_fun(grupo, anos, trimestre, a_24, tri_24)
-  nome_arquivo_saida <- sprintf("resultado_%s.csv", grupo)
+  nome_arquivo_saida <- sprintf("%s.csv", grupo)
   write.csv(dados_grupo, file.path(csv_files, file = nome_arquivo_saida), row.names = FALSE)
 }
