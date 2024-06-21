@@ -4,6 +4,8 @@ library(survey)
 library(dplyr)
 library(data.table)
 library(questionr)
+library(ggplot2)
+library(fixest)
 
 part_01 <- FALSE
 part_02 <- FALSE
