@@ -1,6 +1,6 @@
 # Replicando a Carta de Conjuntura IPEA
-ano <- c(2024)
-trimestre <- c(1)
+ano <- c(2016)
+trimestre <- c(1:4)
 
 for(aa in ano) {
   for (tri in trimestre) {
@@ -24,6 +24,21 @@ dt[, region := floor(as.numeric(UF)/10)]
 
 # Gênero
 dt[, male := as.numeric(V2007 == 1)]
+
+# Dummy raca
+# mantendo apenas brancos, pardos e pretos
+dt[, V2010 := as.numeric (V2010)]
+dt <- dt[V2010 %in% c(1, 2, 4),]
+dt[, nonwhite := as.numeric(V2010 == 2 | V2010 == 4)]
+
+# interseccao genero e raca
+dt[, gender_race := 
+     case_when(
+       male == 1 & nonwhite == 0 ~ "homem_branco",
+       male == 1 & nonwhite == 1 ~ "homem_negro",
+       male == 0 & nonwhite == 0 ~ "mulher_branca",
+       male == 0 & nonwhite == 1 ~ "mulher_negra"
+     )]
 
 # Faixa etaria
 dt[, age_group := 
@@ -96,11 +111,12 @@ dt[, r_hab_all := VD4019 * Habitual]
 # renda efetiva real - todos os trabalhos
 dt[, r_efe_all := VD4020 * Efetivo]
 
+# desempregados
+dt[, VD4002 := as.numeric(VD4002)]
+dt[, unemp :=  as.numeric(VD4002 == 2)]
+
 rds_file <- sprintf("pnadc%d_%d_carta.rds", aa, tri)
 saveRDS(dt, file.path(intermediary_data, rds_file))
 
   }
 }
-
-
-summary(dt$chefe_familia)

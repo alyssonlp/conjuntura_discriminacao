@@ -6,6 +6,7 @@ library(data.table)
 library(questionr)
 library(ggplot2)
 library(fixest)
+library(dineq)
 
 part_01 <- FALSE
 part_02 <- FALSE
@@ -46,4 +47,4 @@ if (part_02 == TRUE ){
 }
 
 # Funções
-source(file.path(codes, "1b_create_functions.R"))
+source(file.path(codes, "1b_function_carta_conjuntura.R"))
