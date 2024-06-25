@@ -111,7 +111,7 @@ gen_raca <- gen_raca[, massa_hab_inter := (((massa_hab /lag(massa_hab, 4)) - 1) 
 gen_raca <- gen_raca[, massa_efe_inter := (((massa_efe /lag(massa_efe, 4)) - 1) * 100), by = gender_race]
 gen_raca_inter <- gen_raca[!is.na(massa_hab_inter)]
 
-pdf(file.path(figures_output, "massa_habitual_efetivo_interanual_raca.pdf"),  width = 12, height = 8.5)
+pdf(file.path(figures_output, "massa_habitual_efetivo_interanual_gen_raca.pdf"),  width = 12, height = 8.5)
 gen_raca_massa_hab_efe_inter <- gen_raca_inter %>% 
   ggplot(aes(x = Ano_trimestre, color = gender_race, group = gender_race)) + 
   geom_line(aes(y = massa_hab_inter, linetype = "Variação (%) Massa Salarial Habitual"), size = 1) +
