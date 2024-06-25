@@ -1,5 +1,5 @@
 # Replicando a Carta de Conjuntura IPEA
-ano <- c(2016)
+ano <- c(2012)
 trimestre <- c(1:4)
 
 for(aa in ano) {
@@ -116,7 +116,7 @@ dt[, VD4002 := as.numeric(VD4002)]
 dt[, unemp :=  as.numeric(VD4002 == 2)]
 
 rds_file <- sprintf("pnadc%d_%d_carta.rds", aa, tri)
-saveRDS(dt, file.path(intermediary_data, rds_file))
+saveRDS(dt, file.path(original_data, rds_file))
 
   }
 }

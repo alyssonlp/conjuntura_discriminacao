@@ -10,6 +10,7 @@ library(dineq)
 
 part_01 <- FALSE
 part_02 <- FALSE
+part_03 <- FALSE 
 
 # Definindo usuário
 user <- "Rodrigo"
@@ -34,16 +35,22 @@ list_objects_to_keep <- c("datawork_folder", "github_folder", "codes",
 
 if (part_01 == TRUE ){
    source(file.path(codes, "1a_clean_data_carta_replicacao.R"))
-   source(file.path(codes, "1b_create_functions.R"))
-   source(file.path(codes, "1c_resultados_carta.R"))
-   source(file.path(codes, "1d_resultados_interanual.R"))
+   source(file.path(codes, "1b_function_carta_conjuntura.R"))
+   source(file.path(codes, "1c_resultados_carta_conjuntura.R"))
+   source(file.path(codes, "1d_graficos_carta_conjuntura.R"))
+   source(file.path(codes, "1e_graficos_carta_conjuntura_raca.R"))
+   source(file.path(codes, "1f_graficos_carta_conjuntura_genero_raca.R"))
 }
 
 if (part_02 == TRUE ){
-  source(file.path(codes, "1b_create_functions.R"))
+  # amostra 25-54 anos
   source(file.path(codes, "2a_clean_data_conjuntura.R"))
   source(file.path(codes, "2b_rendimento_medio_conjuntura.R"))
   source(file.path(codes, "2c_modelos.R"))
+}
+
+if (part_03 == TRUE ){
+source(file.path(codes, "3a_modelos.R"))
 }
 
 # Funções
