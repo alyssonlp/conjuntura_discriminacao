@@ -2,7 +2,7 @@ brasil <- fread(file.path(csv_files, "resultados_brasil_carta.csv"))
 
 # gph 1 - rendimento habitual médio
 
-pdf(file.path(figures_output, "rendimento_habitual.pdf"),  width = 11, height = 8.5)
+pdf(file.path(figures_output, "rendimento_habitual.pdf"),  width = 12, height = 8.5)
 brasil_r_hab_all <- brasil %>% 
   ggplot(aes(x = Ano_trimestre, y = renda_media_hab, group = 1)) + 
   geom_line(color = "blue", size = 1) +
@@ -28,11 +28,13 @@ dev.off()
 # gph 2 - rendimento habitual e efetivo medio mensal (dessazonalizado)
 # baixar os dados mensais e dessazonalizar
 
-pdf(file.path(figures_output, "rendimento_habitual_efetivo.pdf"),  width = 11, height = 8.5)
+pdf(file.path(figures_output, "rendimento_habitual_efetivo.pdf"),  width = 12, height = 8.5)
 brasil_r_hab_efe_all <- brasil %>% 
   ggplot(aes(x = Ano_trimestre)) + 
-  geom_line(aes(y = renda_media_hab), group = 1,  color = "blue", size = 1) +
-  geom_line(aes(y = renda_media_efe), group = 1,  color = "orange", size = 1) +
+  geom_line(aes(y = renda_media_hab, color = "Renda Média Habitual"), group = 1, size = 1) +
+  geom_line(aes(y = renda_media_efe, color = "Renda Média Efetiva"), group = 1, size = 1) +
+  scale_color_manual(name = "", values = c("Renda Média Habitual" = "blue",
+                                           "Renda Média Efetiva" = "orange")) +
   scale_x_discrete(breaks = c("2012T1", "2012T3", "2013T1", "2013T3",
                               "2014T1", "2014T3", "2015T1", "2015T3", 
                               "2016T1", "2016T3", "2017T1", "2017T3",  
@@ -56,16 +58,14 @@ dev.off()
 brasil <- brasil[, massa_hab := massa_hab/1000000]
 brasil <- brasil[, massa_efe := massa_efe/1000000]
 
-pdf(file.path(figures_output, "massa_habitual_efetivo.pdf"),  width = 11, height = 8.5)
+pdf(file.path(figures_output, "massa_habitual_efetivo.pdf"),  width = 12, height = 8.5)
 brasil_massa_hab_efe <- brasil %>% 
   ggplot(aes(x = Ano_trimestre)) + 
-  geom_line(aes(y = massa_hab), group = 1,  color = "blue", size = 1) +
-  geom_line(aes(y = massa_efe), group = 1,  color = "orange", size = 1) +
-  scale_linetype_manual(name = "",
-                        values = c("Massa Salarial Habitual" ="solid", 
-                                   "Massa Salarial Efetiva" = "dashed")) +
-  scale_linetype_manual(name = "", values = c("Massa Salarial Habitual" ="solid", 
-                                              "Massa Salarial Efetiva" = "dashed")) 
+  geom_line(aes(y = massa_hab, color = "Massa Salarial Habitual"), group = 1 , size = 1) +
+  geom_line(aes(y = massa_efe, color = "Massa Salarial Efetiva"), group = 1 , size = 1) +
+  scale_color_manual(name = "",
+                    values = c("Massa Salarial Habitual" ="blue", 
+                                   "Massa Salarial Efetiva" = "orange")) +
   scale_x_discrete(breaks = c("2012T1", "2012T3", "2013T1", "2013T3",
                               "2014T1", "2014T3", "2015T1", "2015T3", 
                               "2016T1", "2016T3", "2017T1", "2017T3",  
@@ -93,13 +93,13 @@ bra_inter <- brasil[!is.na(massa_hab_inter)]
 pdf(file.path(figures_output, "massa_habitual_efetivo_interanual.pdf"),  width = 12, height = 8.5)
 brasil_massa_hab_efe_inter <- bra_inter %>% 
   ggplot(aes(x = Ano_trimestre)) + 
-  geom_line(aes(y = massa_hab_inter), group = 1,  color = "blue", 
-            linetype = "Variação (%) Massa Salarial Habitual ", size = 1) +
-  geom_line(aes(y = massa_efe_inter), group = 1,  color = "orange", 
-            linetype = "Variação (%) Massa Salarial Efetiva", size = 1) +
-  scale_linetype_manual(name = "",
-                        values = c("Variação (%) Massa Salarial Habitual" ="solid", 
-                                   "Variação (%) Massa Salarial Efetiva" = "dashed")) +
+  geom_line(aes(y = massa_hab_inter,  color = "Variação (%) Massa Salarial Habitual"), 
+            group = 1, size = 1) +
+  geom_line(aes(y = massa_efe_inter,  color = "Variação (%) Massa Salarial Efetiva"), 
+            group = 1, size = 1) +
+  scale_color_manual(name = "",
+                      values = c("Variação (%) Massa Salarial Habitual" ="blue", 
+                                  "Variação (%) Massa Salarial Efetiva" = "orange")) +
   scale_x_discrete(breaks = c("2013T1", "2013T3",
                               "2014T1", "2014T3", "2015T1", "2015T3", 
                               "2016T1", "2016T3", "2017T1", "2017T3",  
