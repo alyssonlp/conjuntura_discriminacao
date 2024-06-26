@@ -144,3 +144,52 @@ gini_bra <- brasil %>%
 
 print(gini_bra)
 dev.off()
+
+
+# Gph - taxa de desemprego
+pdf(file.path(figures_output, "unemp_brasil.pdf"),  width = 12, height = 8.5)
+unemp_bra <- brasil %>% 
+  ggplot(aes(x = Ano_trimestre)) + 
+  geom_line(aes (y = tx_desocup*100), group = 1,  color = "blue", size = 1) +
+  scale_x_discrete(breaks = c("2012T1", "2012T3", "2013T1", "2013T3",
+                              "2014T1", "2014T3", "2015T1", "2015T3", 
+                              "2016T1", "2016T3", "2017T1", "2017T3",  
+                              "2018T1", "2018T3", "2019T1", "2019T3",
+                              "2020T1", "2020T3", "2021T1", "2021T3",
+                              "2022T1", "2022T3", "2023T1", "2023T3", 
+                              "2024T1")) +
+  theme_classic() + 
+  theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
+        text = element_text(size = 22),
+        legend.position = "bottom",
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
+        plot.title = element_text(hjust = 0.5))  +
+  labs(x = "", y = "(%)",
+       title = "Taxa de Desocupação Brasileira")
+
+print(unemp_bra)
+dev.off()
+
+# gph PEA
+pdf(file.path(figures_output, "pea_brasil.pdf"),  width = 12, height = 8.5)
+pea_bra <- brasil %>% 
+  ggplot(aes(x = Ano_trimestre)) + 
+  geom_line(aes (y = pea_fac*100), group = 1,  color = "blue", size = 1) +
+  scale_x_discrete(breaks = c("2012T1", "2012T3", "2013T1", "2013T3",
+                              "2014T1", "2014T3", "2015T1", "2015T3", 
+                              "2016T1", "2016T3", "2017T1", "2017T3",  
+                              "2018T1", "2018T3", "2019T1", "2019T3",
+                              "2020T1", "2020T3", "2021T1", "2021T3",
+                              "2022T1", "2022T3", "2023T1", "2023T3", 
+                              "2024T1")) +
+  theme_classic() + 
+  theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
+        text = element_text(size = 22),
+        legend.position = "bottom",
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
+        plot.title = element_text(hjust = 0.5))  +
+  labs(x = "", y = "(%)",
+       title = "População Economicamente Ativa")
+
+print(pea_bra)
+dev.off()

@@ -158,3 +158,55 @@ gini_raca <- raca %>%
 
 print(gini_raca)
 dev.off()
+
+# gph unemp
+pdf(file.path(figures_output, "unemp_raca.pdf"),  width = 12, height = 8.5)
+unemp_raca <- raca %>% 
+  ggplot(aes(x = Ano_trimestre, y = tx_desocup*100, color = Raca, group = Raca)) + 
+  geom_line(size = 1) +
+  scale_color_manual(name = "", values = c("Brancos" = "orange",
+                                           "Negros" = "blue")) +
+  scale_x_discrete(breaks = c("2012T1", "2012T3", "2013T1", "2013T3",
+                              "2014T1", "2014T3", "2015T1", "2015T3", 
+                              "2016T1", "2016T3", "2017T1", "2017T3",  
+                              "2018T1", "2018T3", "2019T1", "2019T3",
+                              "2020T1", "2020T3", "2021T1", "2021T3",
+                              "2022T1", "2022T3", "2023T1", "2023T3", 
+                              "2024T1")) +
+  theme_classic() + 
+  theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
+        text = element_text(size = 18),
+        legend.position = "bottom",
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
+        plot.title = element_text(hjust = 0.5))  +
+  labs(x = "", y =  "(%)",
+       title = "Taxa de Desocupação por Raça")
+
+print(unemp_raca)
+dev.off()
+
+# gph PEA
+pdf(file.path(figures_output, "pea_raca.pdf"),  width = 12, height = 8.5)
+pea_raca <- raca %>% 
+  ggplot(aes(x = Ano_trimestre, y = pea_fac*100, color = Raca, group = Raca)) + 
+  geom_line(size = 1) +
+  scale_color_manual(name = "", values = c("Brancos" = "orange",
+                                           "Negros" = "blue")) +
+  scale_x_discrete(breaks = c("2012T1", "2012T3", "2013T1", "2013T3",
+                              "2014T1", "2014T3", "2015T1", "2015T3", 
+                              "2016T1", "2016T3", "2017T1", "2017T3",  
+                              "2018T1", "2018T3", "2019T1", "2019T3",
+                              "2020T1", "2020T3", "2021T1", "2021T3",
+                              "2022T1", "2022T3", "2023T1", "2023T3", 
+                              "2024T1")) +
+  theme_classic() + 
+  theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
+        text = element_text(size = 18),
+        legend.position = "bottom",
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
+        plot.title = element_text(hjust = 0.5))  +
+  labs(x = "", y =  "(%)",
+       title = "População Economicamente Ativa por Raça")
+
+print(pea_raca)
+dev.off()

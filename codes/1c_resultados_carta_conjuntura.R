@@ -1,18 +1,18 @@
-ano <- c(2012)
-trimestre <- c(1:4)
+ano <- c(2024)
+trimestre <- c(1)
  
 for (aa in ano) {
   for (tri in trimestre) {
     carta <- ano_tri_fun(aa, tri) 
     
     resultados_brasil <- sprintf("resultados_brasil_%d_%d.csv", ano, tri)
-    carta_brasil <- write.csv(carta$resultados_br, file.path(csv_files, resultados_brasil))
+    carta_brasil <- write.csv(carta$resultados_br, file.path(temp_file, resultados_brasil))
     
     resultados_raca <- sprintf("resultados_raca_%d_%d.csv", ano, tri)
-    carta_raca <- write.csv(carta$resultados_raca, file.path(csv_files, resultados_raca))
+    carta_raca <- write.csv(carta$resultados_raca, file.path(temp_file, resultados_raca))
     
     resultados_gen_raca <- sprintf("resultados_genero_raca_%d_%d.csv", ano, tri)
-    carta_gen_raca <- write.csv(carta$resultados_gen_raca, file.path(csv_files, resultados_gen_raca))
+    carta_gen_raca <- write.csv(carta$resultados_gen_raca, file.path(temp_file, resultados_gen_raca))
   }
 }
 
@@ -20,7 +20,7 @@ for (aa in ano) {
 # O computador nao suportou rodar o looping anterior para mais de um ano.
 
 # Alterando o diretório de trabalho
-setwd(file.path(csv_files)) 
+setwd(file.path(temp_file)) 
 
 arquivos <- list.files(pattern = "*.csv")
 
@@ -72,6 +72,7 @@ dados_raca <- combinar_arquivos_fun(arquivos_raca)
 dados_genero_raca <- combinar_arquivos_fun(arquivos_genero_raca)
 
 # Salvando em csv
+setwd(file.path(csv_files)) 
 write.csv(dados_brasil, "resultados_brasil_carta.csv", row.names = FALSE)
 write.csv(dados_raca, "resultados_raca_carta.csv", row.names = FALSE)
 write.csv(dados_genero_raca, "resultados_genero_raca_carta.csv", row.names = FALSE)
