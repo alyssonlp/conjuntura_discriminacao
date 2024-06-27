@@ -87,7 +87,7 @@ raca_massa_hab_efe <- raca %>%
                               "2024T1")) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 22),
+        text = element_text(size = 18),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5))  +
@@ -121,7 +121,7 @@ raca_massa_hab_efe_inter <- raca_inter %>%
                               "2024T1")) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 20),
+        text = element_text(size = 16),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5))  +
