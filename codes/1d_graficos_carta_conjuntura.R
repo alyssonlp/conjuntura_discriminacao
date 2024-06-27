@@ -1,5 +1,4 @@
 brasil <- fread(file.path(csv_files, "resultados_brasil_carta.csv"))
-
 # gph 1 - rendimento habitual médio
 
 pdf(file.path(figures_output, "rendimento_habitual.pdf"),  width = 12, height = 8.5)

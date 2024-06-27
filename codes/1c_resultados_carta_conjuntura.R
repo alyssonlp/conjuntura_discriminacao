@@ -68,6 +68,7 @@ combinar_arquivos_fun <- function(lista_arquivos) {
 
 # Utilizando a funcao combinar_arquivos_fun para juntá-los por tipo de resultados
 dados_brasil <- combinar_arquivos_fun(arquivos_brasil)
+dados_brasil$gender_race <- c("Brasil")
 dados_raca <- combinar_arquivos_fun(arquivos_raca)
 dados_genero_raca <- combinar_arquivos_fun(arquivos_genero_raca)
 
