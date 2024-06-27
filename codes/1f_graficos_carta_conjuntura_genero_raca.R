@@ -105,19 +105,17 @@ gen_raca_massa_hab_efe <- gen_raca %>%
 print(gen_raca_massa_hab_efe)
 dev.off()
 
-# gph 5 - taxa de variacao interanual da massa salarial real habitual e efetiva
+# gph 5a - taxa de variacao interanual da massa salarial real habitual e efetiva
 gen_raca <- setorder(gen_raca, gender_race)
 gen_raca <- gen_raca[, massa_hab_inter := (((massa_hab /lag(massa_hab, 4)) - 1) * 100), by = gender_race]
 gen_raca <- gen_raca[, massa_efe_inter := (((massa_efe /lag(massa_efe, 4)) - 1) * 100), by = gender_race]
 gen_raca_inter <- gen_raca[!is.na(massa_hab_inter)]
 
-pdf(file.path(figures_output, "massa_habitual_efetivo_interanual_gen_raca.pdf"),  width = 12, height = 8.5)
-gen_raca_massa_hab_efe_inter <- gen_raca_inter %>% 
+pdf(file.path(figures_output, "massa_habitual_interanual_gen_raca.pdf"),  width = 12, height = 8.5)
+gen_raca_massa_hab_inter <- gen_raca_inter %>% 
   ggplot(aes(x = Ano_trimestre, color = gender_race, group = gender_race)) + 
   geom_line(aes(y = massa_hab_inter, linetype = "Variação (%) Massa Salarial Habitual"), size = 1) +
-  geom_line(aes(y = massa_efe_inter, linetype = "Variação (%) Massa Salarial Efetiva"), size = 1) +
-  scale_linetype_manual(name = "", values = c("Variação (%) Massa Salarial Habitual" = "solid", 
-                                              "Variação (%) Massa Salarial Efetiva" = "dashed")) +
+  scale_linetype_manual(name = "", values = c("Variação (%) Massa Salarial Habitual" = "solid")) +
   scale_color_manual(name = "", values = c("Homem Branco" = "darkslategray",
                                            "Mulher Branca" = "darkorange1",
                                            "Homem Negro" = "blue3",
@@ -131,14 +129,44 @@ gen_raca_massa_hab_efe_inter <- gen_raca_inter %>%
                               "2024T1")) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 20),
+        text = element_text(size = 18),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5))  +
   labs(x = "", y = "(%)",
-       title = " Taxa de Variação Interanual da Massa Salarial Real Habitual e Efetiva por Gênero e Raça")
+       title = " Taxa de Variação Interanual da Massa Salarial Real Habitual por Gênero e Raça")
 
-print(gen_raca_massa_hab_efe_inter)
+print(gen_raca_massa_hab_inter)
+dev.off()
+
+# gph 5b - taxa de variacao interanual da massa salarial real efetiva
+
+pdf(file.path(figures_output, "massa_efetivo_interanual_gen_raca.pdf"),  width = 12, height = 8.5)
+gen_raca_massa_efe_inter <- gen_raca_inter %>% 
+  ggplot(aes(x = Ano_trimestre, color = gender_race, group = gender_race)) + 
+  geom_line(aes(y = massa_efe_inter, linetype = "Variação (%) Massa Salarial Efetiva"), size = 1) +
+  scale_linetype_manual(name = "", values = c("Variação (%) Massa Salarial Efetiva" = "dashed")) +
+  scale_color_manual(name = "", values = c("Homem Branco" = "darkslategray",
+                                           "Mulher Branca" = "darkorange1",
+                                           "Homem Negro" = "blue3",
+                                           "Mulher Negra" = "brown2")) +
+  scale_x_discrete(breaks = c("2013T1", "2013T3",
+                              "2014T1", "2014T3", "2015T1", "2015T3", 
+                              "2016T1", "2016T3", "2017T1", "2017T3",  
+                              "2018T1", "2018T3", "2019T1", "2019T3",
+                              "2020T1", "2020T3", "2021T1", "2021T3",
+                              "2022T1", "2022T3", "2023T1", "2023T3", 
+                              "2024T1")) +
+  theme_classic() + 
+  theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
+        text = element_text(size = 18),
+        legend.position = "bottom",
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
+        plot.title = element_text(hjust = 0.5))  +
+  labs(x = "", y = "(%)",
+       title = " Taxa de Variação Interanual da Massa Salarial Real Efetiva por Gênero e Raça")
+
+print(gen_raca_massa_efe_inter)
 dev.off()
 
 
