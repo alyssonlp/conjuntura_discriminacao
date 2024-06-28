@@ -82,7 +82,7 @@ br_gen_raca_r_efe_all <- br_gen_raca %>%
 print(br_gen_raca_r_efe_all)
 dev.off()
 
-# gph 4a - massa salarial real habitual 
+# gph 3a - massa salarial real habitual 
 br_gen_raca <- br_gen_raca[, massa_hab := massa_hab/1000000000]
 br_gen_raca <- br_gen_raca[, massa_efe := massa_efe/1000000000]
 
@@ -121,7 +121,7 @@ br_gen_raca_massa_hab <- br_gen_raca %>%
 print(br_gen_raca_massa_hab)
 dev.off()
 
-# gph 4b - massa salarial real efetiva
+# gph 3b - massa salarial real efetiva
 pdf(file.path(figures_output, "massa_efetivo_br_gen_raca.pdf"),  width = 12, height = 8.5)
 br_gen_raca_massa_efe <- br_gen_raca %>% 
   ggplot(aes(x = Ano_trimestre, y= massa_efe, color = gender_race, group = gender_race)) + 
@@ -157,7 +157,7 @@ br_gen_raca_massa_efe <- br_gen_raca %>%
 print(br_gen_raca_massa_efe)
 dev.off()
 
-# gph 5a - taxa de variacao interanual da massa salarial real habitual 
+# gph 4a - taxa de variacao interanual da massa salarial real habitual 
 br_gen_raca <- setorder(br_gen_raca, gender_race)
 br_gen_raca <- br_gen_raca[, massa_hab_inter := (((massa_hab /lag(massa_hab, 4)) - 1) * 100), by = gender_race]
 br_gen_raca <- br_gen_raca[, massa_efe_inter := (((massa_efe /lag(massa_efe, 4)) - 1) * 100), by = gender_race]
@@ -197,7 +197,7 @@ br_gen_raca_massa_hab_inter <- br_gen_raca_inter %>%
 print(br_gen_raca_massa_hab_inter)
 dev.off()
 
-# gph 5b - taxa de variacao interanual da massa salarial real efetiva
+# gph 4b - taxa de variacao interanual da massa salarial real efetiva
 
 pdf(file.path(figures_output, "massa_efetivo_interanual_br_gen_raca.pdf"),  width = 12, height = 8.5)
 br_gen_raca_massa_efe_inter <- br_gen_raca_inter %>% 
@@ -234,7 +234,7 @@ print(br_gen_raca_massa_efe_inter)
 dev.off()
 
 
-# gph 6 - índice de gini - rendimento habitual de todos os trabalhos - renda individual e domicilIar
+# gph 5 - índice de gini - rendimento habitual de todos os trabalhos - renda individual e domicilIar
 pdf(file.path(figures_output, "gini_br_gen_raca.pdf"),  width = 12, height = 8.5)
 gini_br_gen_raca <- br_gen_raca %>% 
   ggplot(aes(x = Ano_trimestre, y = gini_hab, color = gender_race, group = gender_race)) + 
@@ -270,7 +270,7 @@ gini_br_gen_raca <- br_gen_raca %>%
 print(gini_br_gen_raca)
 dev.off()
 
-# gph unemp
+# gph 6 - unemp
 pdf(file.path(figures_output, "unemp_br_gen_raca.pdf"),  width = 12, height = 8.5)
 unemp_br_gen_raca <- br_gen_raca %>% 
   ggplot(aes(x = Ano_trimestre, y = tx_desocup*100, color = gender_race, group = gender_race)) + 
@@ -305,7 +305,7 @@ unemp_br_gen_raca <- br_gen_raca %>%
 print(unemp_br_gen_raca)
 dev.off()
 
-# gph PEA
+# gph 7 - PEA
 pdf(file.path(figures_output, "pea_br_gen_raca.pdf"),  width = 12, height = 8.5)
 pea_br_gen_raca <- br_gen_raca %>% 
   ggplot(aes(x = Ano_trimestre, y = pea_fac*100, color = gender_race, group = gender_race)) + 

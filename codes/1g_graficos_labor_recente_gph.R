@@ -254,3 +254,4 @@ gini_hab <- dt %>%
 
 print(gini_hab)
 dev.off()
+
