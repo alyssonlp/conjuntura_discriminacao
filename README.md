@@ -19,12 +19,12 @@ e $\bar{p}_1 = \theta + E(Z_i| R = 1) \phi + \delta $, que é igual a $\bar{p}_0
 
 Então, $N_1 = [\bar{p}_0 + \Delta Z \phi + \delta] M_1  = [\bar{p}_0 M_1 ] + [\Delta Z \phi + \delta] M_1 $.
 
-**Massa salarial perdida**: $N \bar{y_0} +  \bar{p}_0 M_1 [\Delta X\beta + \gamma ]  + M_1 [\Delta Z \phi + \delta]  [\Delta X\beta + \gamma ]$ 
+**Massa salarial**: $N \bar{y_0} +  \bar{p}_0 M_1 [\Delta X\beta + \gamma ]  + M_1 [\Delta Z \phi + \delta]  [\Delta X\beta + \gamma ]$ 
 
 
 e a massa salarial perdida em função da discriminação será:
 
-$[\bar{p}_0 + \Delta Z \phi + \delta] M_1 \times [\Delta X\beta + \gamma ] $. Sem diferenças em covariadas: $M_1\times[\delta + \gamma(\delta+p_0)]$
+$[\bar{p}_0 + \Delta Z \phi + \delta] \times M_1 \times [\Delta X\beta + \gamma ] $. Sem diferenças em covariadas: $M_1\times[\delta + \gamma(\delta+p_0)]$
 
 Vale notar que $N = N_0 + N_1$, logo $N\bar{y_0}$ também é afetado por discriminação:
 $N\bar{y_0} = \bar{y_0}[p_0M_0 + [\bar{p}_0 + \Delta Z \phi + \delta] M_1 ]$. 
@@ -32,11 +32,11 @@ $N\bar{y_0} = \bar{y_0}[p_0M_0 + [\bar{p}_0 + \Delta Z \phi + \delta] M_1 ]$.
 Rearranjando: $\bar{y}_0 p_0 M + \bar{y_0} [\Delta Z \phi + \delta] M_1 $
 
 Somando tudo, temos:
-$\bar{y_0} [\Delta Z \phi + \delta] M_1 + [\bar{p}_0 + \Delta Z \phi + \delta] \times [\Delta X\beta + \gamma ] M_1 $
+$\bar{y_0} [\Delta Z \phi + \delta] M_1 + [\bar{p}_0 + \Delta Z \phi + \delta] \times M_1 \times [\Delta X\beta + \gamma ] $
 
-$[\bar{y_0} + \Delta X\beta + \gamma ] [\Delta Z \phi + \delta] M_1 + [\Delta X\beta + \gamma ] \bar{p}_0 M_1 $
+ = $[\bar{y_0} + \Delta X\beta + \gamma ] [\Delta Z \phi + \delta] M_1 + [\Delta X\beta + \gamma ] \bar{p}_0 M_1 $
 
-$\bar{y_1} [\Delta Z \phi + \delta] M_1 + [\Delta X\beta + \gamma ] \bar{p}_0 M_1 $
+ = $\bar{y_1} [\Delta Z \phi + \delta] M_1 + [\Delta X\beta + \gamma ] \bar{p}_0 M_1 $
 
 O primeiro termo é o salário perdido devido a uma chance menor de conseguir emprego. O segundo termo é a massa salarial perdida devo ao fato de mesmo terem taxas de empregabilidade igual a de brancos, ainda há uma perda salarial devido a discrminação no mercado de trabalho.
 
