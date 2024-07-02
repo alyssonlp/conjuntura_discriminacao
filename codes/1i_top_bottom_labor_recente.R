@@ -58,6 +58,7 @@ dt1 <- rbind(dt1, tb, fill = TRUE)
   }
 }
 
+
 fwrite(dt1, file.path(csv_files, "top_bottom.csv"))
 
 dt1 <- dt1[, gender_race := gsub("_", " ", gender_race)]
@@ -106,7 +107,7 @@ pdf(file.path(figures_output, "top_bottom.pdf"),  width = 12, height = 8.5)
 tb <- ggplot(dt1_long, aes(x = Ano_trimestre_category, y = value, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7,) +
   geom_col(position = position_stack(reverse = FALSE)) +
-  geom_text(aes(label = round(value, 2)), 
+  geom_text(aes(label = round(value)), 
             position = position_stack(vjust = 0.5), 
             size = 3) +
   scale_fill_manual(name = "",
@@ -132,10 +133,8 @@ tb <- ggplot(dt1_long, aes(x = Ano_trimestre_category, y = value, fill = gender_
         legend.position = "bottom",
         legend.title = element_text(size = 12),
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "(%)",
-       title = "Proporção de Trabalhadores no Topo e na Base da Distribuição da
-       Renda Haitual de Todos os Trabalhos")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "%", title = "")
 
 print(tb)
 dev.off()

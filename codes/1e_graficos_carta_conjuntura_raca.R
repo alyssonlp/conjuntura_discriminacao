@@ -26,9 +26,8 @@ raca_r_hab_all <- raca %>%
         text = element_text(size = 18),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5))  +
-  labs(x = "", y = "(R$)",
-       title = "Rendimento Habitual Médio por Raça - Todos os Trabalhos")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22))  +
+  labs(x = "", y = "R$",title = "")
 
 print(raca_r_hab_all)
 dev.off()
@@ -57,10 +56,9 @@ raca_r_hab_efe_all <- ggplot(raca, aes(x = Ano_trimestre, color = Raca, group = 
         text = element_text(size = 12),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "(R$)", 
-       title = "Rendimento Habitual e Efetivo Médio por Raça",
-       linetype = "Variável", color = "Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "R$", 
+       title = "")
 
 print(raca_r_hab_efe_all)
 dev.off()
@@ -90,9 +88,8 @@ raca_massa_hab_efe <- raca %>%
         text = element_text(size = 18),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5))  +
-  labs(x = "", y = "(Em R$ milhões)",
-       title = "Massa Salarial Habitual e Efetiva por Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22))  +
+  labs(x = "", y = "Em R$ milhões", title = "")
 
 print(raca_massa_hab_efe)
 dev.off()
@@ -124,9 +121,8 @@ raca_massa_hab_efe_inter <- raca_inter %>%
         text = element_text(size = 16),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5))  +
-  labs(x = "", y = "(%)",
-       title = " Taxa de Variação Interanual da Massa Salarial Real Habitual e Efetiva por Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=16))  +
+  labs(x = "", y = "%",  title = "")
 
 print(raca_massa_hab_efe_inter)
 dev.off()
@@ -151,10 +147,8 @@ gini_raca <- raca %>%
         text = element_text(size = 22),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5))  +
-  labs(x = "", y = "Índice de Gini",
-       title = "Índice de Gini: indicador de desigualdade do rendimento habitual
-       individual de todos os trabalhos por raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22))  +
+  labs(x = "", y = "Índice de Gini",title = "")
 
 print(gini_raca)
 dev.off()
@@ -180,7 +174,7 @@ unemp_raca <- raca %>%
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5))  +
   labs(x = "", y =  "(%)",
-       title = "Taxa de Desocupação por Raça")
+       title = "")
 
 print(unemp_raca)
 dev.off()
@@ -204,9 +198,8 @@ pea_raca <- raca %>%
         text = element_text(size = 18),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5))  +
-  labs(x = "", y =  "(%)",
-       title = "População Economicamente Ativa por Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22))  +
+  labs(x = "", y =  "%",title = "")
 
 print(pea_raca)
 dev.off()

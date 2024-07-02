@@ -39,9 +39,8 @@ br_gen_raca_r_hab_all <- br_gen_raca %>%
         text = element_text(size = 18),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5))  +
-  labs(x = "", y = "(R$)",
-       title = "Rendimento Habitual Médio por Gênero e Raça - Todos os Trabalhos")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 22))  +
+  labs(x = "", y = "R$",title = "")
 
 print(br_gen_raca_r_hab_all)
 dev.off()
@@ -75,9 +74,8 @@ br_gen_raca_r_efe_all <- br_gen_raca %>%
         text = element_text(size = 12),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "(R$)", 
-       title = "Rendimento Efetivo Médio por Gênero e Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 22)) +
+  labs(x = "", y = "R$", title = "")
 
 print(br_gen_raca_r_efe_all)
 dev.off()
@@ -114,9 +112,8 @@ br_gen_raca_massa_hab <- br_gen_raca %>%
         text = element_text(size = 16),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5))  +
-  labs(x = "", y = "(Em R$ bilhões)",
-       title = "Massa Salarial Habitual por Gênero e Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22))  +
+  labs(x = "", y = "Em R$ bilhões", title = "")
 
 print(br_gen_raca_massa_hab)
 dev.off()
@@ -150,34 +147,32 @@ br_gen_raca_massa_efe <- br_gen_raca %>%
         text = element_text(size = 16),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5))  +
-  labs(x = "", y = "(Em R$ bilhões)",
-       title = "Massa Salarial Efetiva por Gênero e Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22))  +
+  labs(x = "", y = "Em R$ bilhões", title = "")
 
 print(br_gen_raca_massa_efe)
 dev.off()
 
 # gph 4a - taxa de variacao interanual da massa salarial real habitual 
-br_gen_raca <- setorder(br_gen_raca, gender_race)
-br_gen_raca <- br_gen_raca[, massa_hab_inter := (((massa_hab /lag(massa_hab, 4)) - 1) * 100), by = gender_race]
-br_gen_raca <- br_gen_raca[, massa_efe_inter := (((massa_efe /lag(massa_efe, 4)) - 1) * 100), by = gender_race]
-br_gen_raca_inter <- br_gen_raca[!is.na(massa_hab_inter)]
+gen_raca <- setorder(gen_raca, gender_race)
+gen_raca <- gen_raca[, massa_hab_inter := (((massa_hab /lag(massa_hab, 4)) - 1) * 100), by = gender_race]
+gen_raca <- gen_raca[, massa_efe_inter := (((massa_efe /lag(massa_efe, 4)) - 1) * 100), by = gender_race]
+gen_raca_inter <- gen_raca[!is.na(massa_hab_inter)]
+
 
 pdf(file.path(figures_output, "massa_habitual_interanual_br_gen_raca.pdf"),  width = 12, height = 8.5)
-br_gen_raca_massa_hab_inter <- br_gen_raca_inter %>% 
+gen_raca_massa_hab_inter <- gen_raca_inter %>% 
   ggplot(aes(x = Ano_trimestre, y = massa_hab_inter, color = gender_race, group = gender_race)) + 
   geom_line(size = 1.4, aes(linetype = gender_race)) +
   scale_color_manual(name = "", 
                      values = c("Homem Branco" = "darkorange1",
                                 "Mulher Branca" = "darkorange1",
                                 "Homem Negro" = "blue3",
-                                "Mulher Negra" = "blue3",
-                                "Brasil" = "black"))+
+                                "Mulher Negra" = "blue3"))+
   scale_linetype_manual(name = "",values = c("Homem Branco" ="solid",
                                              "Mulher Branca" =  "twodash", 
                                              "Homem Negro" = "solid", 
-                                             "Mulher Negra" ="twodash",
-                                             "Brasil" = "solid")) +
+                                             "Mulher Negra" ="twodash")) +
   scale_x_discrete(breaks = c("2013T1", "2013T3",
                               "2014T1", "2014T3", "2015T1", "2015T3", 
                               "2016T1", "2016T3", "2017T1", "2017T3",  
@@ -190,30 +185,27 @@ br_gen_raca_massa_hab_inter <- br_gen_raca_inter %>%
         text = element_text(size = 18),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5))  +
-  labs(x = "", y = "(%)",
-       title = " Taxa de Variação Interanual da Massa Salarial Real Habitual por Gênero e Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22))  +
+  labs(x = "", y = "%", title = "")
 
-print(br_gen_raca_massa_hab_inter)
+print(gen_raca_massa_hab_inter)
 dev.off()
 
 # gph 4b - taxa de variacao interanual da massa salarial real efetiva
 
-pdf(file.path(figures_output, "massa_efetivo_interanual_br_gen_raca.pdf"),  width = 12, height = 8.5)
-br_gen_raca_massa_efe_inter <- br_gen_raca_inter %>% 
+pdf(file.path(figures_output, "massa_efetivo_interanual_gen_raca.pdf"),  width = 12, height = 8.5)
+gen_raca_massa_efe_inter <- gen_raca_inter %>% 
   ggplot(aes(x = Ano_trimestre, y = massa_efe_inter, color = gender_race, group = gender_race)) + 
   geom_line(size = 1.4, aes(linetype = gender_race)) +
   scale_color_manual(name = "", 
                      values = c("Homem Branco" = "darkorange1",
                                 "Mulher Branca" = "darkorange1",
                                 "Homem Negro" = "blue3",
-                                "Mulher Negra" = "blue3",
-                                "Brasil" = "black"))+
+                                "Mulher Negra" = "blue3"))+
   scale_linetype_manual(name = "",values = c("Homem Branco" ="solid",
                                              "Mulher Branca" =  "twodash", 
                                              "Homem Negro" = "solid", 
-                                             "Mulher Negra" ="twodash",
-                                             "Brasil" = "solid")) +
+                                             "Mulher Negra" ="twodash")) +
   scale_x_discrete(breaks = c("2013T1", "2013T3",
                               "2014T1", "2014T3", "2015T1", "2015T3", 
                               "2016T1", "2016T3", "2017T1", "2017T3",  
@@ -226,11 +218,11 @@ br_gen_raca_massa_efe_inter <- br_gen_raca_inter %>%
         text = element_text(size = 18),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5))  +
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22))  +
   labs(x = "", y = "(%)",
-       title = " Taxa de Variação Interanual da Massa Salarial Real Efetiva por Gênero e Raça")
+       title = "")
 
-print(br_gen_raca_massa_efe_inter)
+print(gen_raca_massa_efe_inter)
 dev.off()
 
 
@@ -262,10 +254,8 @@ gini_br_gen_raca <- br_gen_raca %>%
         text = element_text(size = 22),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5))  +
-  labs(x = "", y = "Índice de Gini",
-       title = "Índice de Gini: indicador de desigualdade do rendimento habitual
-       individual de todos os trabalhos por gênero raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22))  +
+  labs(x = "", y = "Índice de Gini", title = "")
 
 print(gini_br_gen_raca)
 dev.off()
@@ -298,9 +288,9 @@ unemp_br_gen_raca <- br_gen_raca %>%
         text = element_text(size = 18),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5))  +
-  labs(x = "", y =  "(%)",
-       title = "Taxa de Desocupação por Gênero e Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22))  +
+  labs(x = "", y =  "%",
+       title = "")
 
 print(unemp_br_gen_raca)
 dev.off()
@@ -333,9 +323,8 @@ pea_br_gen_raca <- br_gen_raca %>%
         text = element_text(size = 18),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5))  +
-  labs(x = "", y =  "(%)",
-       title = "População Economicamente Ativa por Gênero e Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22))  +
+  labs(x = "", y =  "%", title = "")
 
 print(pea_br_gen_raca)
 dev.off()

@@ -7,7 +7,7 @@ r_efe_all <- dt %>%
   filter(Ano_trimestre %in% c("2023T1", "2024T1")) %>%
   ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = renda_media_efe, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(renda_media_efe,2)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
+  geom_text(aes(label = round(renda_media_efe)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
   scale_fill_manual(name = "Gênero e Raça",
                     values = c("Homem Branco" = "aquamarine4",
                                "Mulher Branca" = "darkorange1",
@@ -30,9 +30,8 @@ r_efe_all <- dt %>%
         legend.position = "bottom",
         legend.title = element_text(size = 12),
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "(R$)",
-       title = "Rendimento Efetivo Médio por Gênero e Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "R$", title = "")
 
 print(r_efe_all)
 dev.off()
@@ -43,7 +42,7 @@ r_hab_all <- dt %>%
   filter(Ano_trimestre %in% c("2023T1", "2024T1")) %>%
   ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = renda_media_hab, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(renda_media_hab,2)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
+  geom_text(aes(label = round(renda_media_hab)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
   scale_fill_manual(name = "Gênero e Raça",
                     values = c("Homem Branco" = "aquamarine4",
                                "Mulher Branca" = "darkorange1",
@@ -66,9 +65,8 @@ r_hab_all <- dt %>%
         legend.position = "bottom",
         legend.title = element_text(size = 12),
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "(R$)",
-       title = "Rendimento Habitual Médio por Gênero e Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "R$", title = "")
 
 print(r_hab_all)
 dev.off()
@@ -80,7 +78,7 @@ unemp <- dt %>%
   filter(Ano_trimestre %in% c("2023T1", "2024T1")) %>%
   ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = 100*tx_desocup, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(100*tx_desocup,2)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
+  geom_text(aes(label = round(100*tx_desocup)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
   scale_fill_manual(name = "Gênero e Raça",
                     values = c("Homem Branco" = "aquamarine4",
                                "Mulher Branca" = "darkorange1",
@@ -103,9 +101,8 @@ unemp <- dt %>%
         legend.position = "bottom",
         legend.title = element_text(size = 12),
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "(%)",
-       title = "Taxa de Desocupação por Gênero e Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "%",title = "")
 
 print(unemp)
 dev.off()
@@ -116,7 +113,7 @@ pea <- dt %>%
   filter(Ano_trimestre %in% c("2023T1", "2024T1")) %>%
   ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = 100*pea_fac, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(100*pea_fac,2)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
+  geom_text(aes(label = round(100*pea_fac)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
   scale_fill_manual(name = "Gênero e Raça",
                     values = c("Homem Branco" = "aquamarine4",
                                "Mulher Branca" = "darkorange1",
@@ -139,9 +136,8 @@ pea <- dt %>%
         legend.position = "bottom",
         legend.title = element_text(size = 12),
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "(%)",
-       title = "População Economicamente Ativa por Gênero e Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "%", title = "")
 
 print(pea)
 dev.off()
@@ -152,7 +148,7 @@ massa_hab <- dt %>%
   filter(Ano_trimestre %in% c("2023T1", "2024T1")) %>%
   ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = massa_hab, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(massa_hab,2)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
+  geom_text(aes(label = round(massa_hab)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
   scale_fill_manual(name = "Gênero e Raça",
                     values = c("Homem Branco" = "aquamarine4",
                                "Mulher Branca" = "darkorange1",
@@ -175,9 +171,8 @@ massa_hab <- dt %>%
         legend.position = "bottom",
         legend.title = element_text(size = 12),
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "(R$ em bilhões)",
-       title = "Massa Salarial Habitual por Gênero e Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "R$ em bilhões", title = "")
 
 print(massa_hab)
 dev.off()
@@ -188,7 +183,7 @@ massa_efe <- dt %>%
   filter(Ano_trimestre %in% c("2023T1", "2024T1")) %>%
   ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = massa_efe, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(massa_efe,2)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
+  geom_text(aes(label = round(massa_efe)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
   scale_fill_manual(name = "Gênero e Raça",
                     values = c("Homem Branco" = "aquamarine4",
                                "Mulher Branca" = "darkorange1",
@@ -211,9 +206,8 @@ massa_efe <- dt %>%
         legend.position = "bottom",
         legend.title = element_text(size = 12),
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "(R$ em bilhões)",
-       title = "Massa Salarial Efetiva por Gênero e Raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "R$ em bilhões", title = "")
 
 print(massa_efe)
 dev.off()
@@ -224,7 +218,7 @@ gini_hab <- dt %>%
   filter(Ano_trimestre %in% c("2023T1", "2024T1")) %>%
   ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = gini_hab, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(gini_hab,2)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
+  geom_text(aes(label = round(gini_hab)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
   scale_fill_manual(name = "Gênero e Raça",
                     values = c("Homem Branco" = "aquamarine4",
                                "Mulher Branca" = "darkorange1",
@@ -247,10 +241,8 @@ gini_hab <- dt %>%
         legend.position = "bottom",
         legend.title = element_text(size = 12),
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "Índice de Gini",
-       title = "Indicador de desigualdade do rendimento habitual
-       individual de todos os trabalhos por gênero raça")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "Índice de Gini", title = "")
 
 print(gini_hab)
 dev.off()

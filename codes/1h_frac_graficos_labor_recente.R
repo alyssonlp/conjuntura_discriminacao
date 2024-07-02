@@ -1,5 +1,7 @@
 dt <- fread(file.path(csv_files, "descriptive_br_gender_race_carta.csv"))
 
+homem_branco_results <- dt[gender_race=="Homem Branco"]
+
 homem_branco_results <- setnames(homem_branco_results,
                                  c("gender_race", "renda_media_hab",
                                    "renda_media_efe", "massa_hab",
@@ -33,7 +35,7 @@ frac_r_efe_all <- join_dt %>%
   filter(gender_race %in% c("Mulher Branca", "Homem Negro", "Mulher Negra" )) %>%
   ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = frac_renda_media_efe, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(frac_renda_media_efe,2)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
+  geom_text(aes(label = round(frac_renda_media_efe)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
   scale_fill_manual(name = "",
                     values = c("Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
@@ -50,9 +52,8 @@ frac_r_efe_all <- join_dt %>%
         legend.position = "bottom",
         legend.title = element_text(size = 12),
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "(%)",
-       title = "Razão do Rendimento Efetivo Médio por Gênero e Raça em Relação aos Homens Brancos")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "%",title = "")
 
 print(frac_r_efe_all)
 dev.off()
@@ -64,7 +65,7 @@ frac_r_hab_all <- join_dt %>%
   filter(gender_race %in% c("Mulher Branca", "Homem Negro", "Mulher Negra" )) %>%
   ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = frac_renda_media_hab, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(frac_renda_media_hab,2)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
+  geom_text(aes(label = round(frac_renda_media_hab)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
   scale_fill_manual(name = "",
                     values = c("Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
@@ -81,9 +82,8 @@ frac_r_hab_all <- join_dt %>%
         legend.position = "bottom",
         legend.title = element_text(size = 12),
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "(%)",
-       title = "Razão do Rendimento Habitual Médio por Gênero e Raça em Relação aos Homens Brancos")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "%", title = "")
 
 print(frac_r_hab_all)
 dev.off()
@@ -95,7 +95,7 @@ frac_unemp <- join_dt %>%
   filter(gender_race %in% c("Mulher Branca", "Homem Negro", "Mulher Negra" )) %>%
   ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = frac_unemp, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(frac_unemp,2)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
+  geom_text(aes(label = round(frac_unemp)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
   scale_fill_manual(name = "",
                     values = c("Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
@@ -112,9 +112,8 @@ frac_unemp <- join_dt %>%
         legend.position = "bottom",
         legend.title = element_text(size = 12),
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "Razão de chances",
-       title = " Razão de Chances em estar Desempregado por Gênero e Raça em Relação aos Homens Brancos")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "Razão de chances",title = "")
 
 print(frac_unemp)
 dev.off()
@@ -127,7 +126,7 @@ frac_pea <- join_dt %>%
   filter(gender_race %in% c("Mulher Branca", "Homem Negro", "Mulher Negra" )) %>%
   ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = frac_pea, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(frac_pea,2)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
+  geom_text(aes(label = round(frac_pea)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
   scale_fill_manual(name = "",
                     values = c( "Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
@@ -144,9 +143,8 @@ frac_pea <- join_dt %>%
         legend.position = "bottom",
         legend.title = element_text(size = 12),
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "(%)",
-       title = "Proporção da População Economicamente Ativa por Gênero e Raça em Relação aos Homens Brancos")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "%", title = "")
 
 print(frac_pea)
 dev.off()
@@ -158,7 +156,7 @@ frac_massa_hab <- join_dt %>%
   filter(gender_race %in% c("Mulher Branca", "Homem Negro", "Mulher Negra" )) %>%
   ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = frac_massa_hab, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(frac_massa_hab,2)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
+  geom_text(aes(label = round(frac_massa_hab)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
   scale_fill_manual(name = "",
                     values = c("Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
@@ -175,9 +173,8 @@ frac_massa_hab <- join_dt %>%
         legend.position = "bottom",
         legend.title = element_text(size = 12),
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "(%)",
-       title = "Proporção da Massa Salarial Habitual por Gênero e Raça em Relação aos Homens Brancos")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "%",title = "")
 
 print(frac_massa_hab)
 dev.off()
@@ -189,7 +186,7 @@ frac_massa_efe <- join_dt %>%
   filter(gender_race %in% c("Mulher Branca", "Homem Negro", "Mulher Negra" )) %>%
   ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = frac_massa_efe, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(frac_massa_efe,2)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
+  geom_text(aes(label = round(frac_massa_efe)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
   scale_fill_manual(name = "",
                     values = c("Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
@@ -206,9 +203,8 @@ frac_massa_efe <- join_dt %>%
         legend.position = "bottom",
         legend.title = element_text(size = 12),
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "(%)",
-       title = "Proporção da Massa Salarial Efetiva por Gênero e Raça em Relação aos Homens Brancos")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "%",title = "")
 
 print(frac_massa_efe)
 dev.off()
@@ -221,7 +217,7 @@ frac_gini_hab <- join_dt %>%
   filter(gender_race %in% c("Mulher Branca", "Homem Negro", "Mulher Negra" )) %>%
   ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = frac_gini_hab, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(frac_gini_hab,2)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
+  geom_text(aes(label = round(frac_gini_hab)), vjust = -0.5, position = position_dodge(width = 0.8), size = 3) +
   scale_fill_manual(name = "",
                     values = c("Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
@@ -238,9 +234,8 @@ frac_gini_hab <- join_dt %>%
         legend.position = "bottom",
         legend.title = element_text(size = 12),
         axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)) +
-  labs(x = "", y = "Razão de Chances",
-       title = "Razão de Chances de Desigualdade por Gini por Raça e Gênero em Relação aos Homens Brancos")
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
+  labs(x = "", y = "Razão de Chances", title = "")
 
 print(frac_gini_hab)
 dev.off()
