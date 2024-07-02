@@ -81,12 +81,12 @@ dt1_long <- dt1 %>%
 
 
 dt1_long <- mutate(dt1_long, category_labels = case_when(
-  category == "b1" ~ "bottom 1%",
-  category == "b5" ~ "bottom 5%",
-  category == "b10" ~ "bottom 10%",
-  category == "t10" ~ "top 10%",
-  category == "t5" ~ "top 5%",
-  category == "t1" ~ "top 1%",
+  category == "b1" ~ "base 1%",
+  category == "b5" ~ "base 5%",
+  category == "b10" ~ "base 10%",
+  category == "t10" ~ "topo 10%",
+  category == "t5" ~ "topo 5%",
+  category == "t1" ~ "topo 1%",
   TRUE ~ category ))
 
 dt1_long <- dt1_long %>%
@@ -95,12 +95,12 @@ dt1_long <- dt1_long %>%
 dt1_long$Ano_trimestre_category<- as.factor(dt1_long$Ano_trimestre_category)
 
 dt1_long$Ano_trimestre_category <- forcats::fct_relevel(dt1_long$Ano_trimestre_category,
-                                                        c("2023T1-bottom 1%", "2024T1-bottom 1%",
-                                                          "2023T1-bottom 5%", "2024T1-bottom 5%",
-                                                          "2023T1-bottom 10%", "2024T1-bottom 10%", 
-                                                          "2023T1-top 10%", "2024T1-top 10%",
-                                                          "2023T1-top 5%", "2024T1-top 5%",
-                                                          "2023T1-top 1%", "2024T1-top 1%"))
+                                                        c("2023T1-base 1%", "2024T1-base 1%",
+                                                          "2023T1-base 5%", "2024T1-base 5%",
+                                                          "2023T1-base 10%", "2024T1-base 10%", 
+                                                          "2023T1-topo 10%", "2024T1-topo 10%",
+                                                          "2023T1-topo 5%", "2024T1-topo 5%",
+                                                          "2023T1-topo 1%", "2024T1-topo 1%"))
 
 
 pdf(file.path(figures_output, "top_bottom.pdf"),  width = 12, height = 8.5)
@@ -115,18 +115,18 @@ tb <- ggplot(dt1_long, aes(x = Ano_trimestre_category, y = value, fill = gender_
                                "Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
                                "Mulher Negra" = "brown4")) +
-  scale_x_discrete(labels = c("2023T1.b1" = "2023T1 - bottom 1%", 
-                              "2023T1.b5" = "2023T1 - bottom 5%",
-                              "2023T1.b10" = "2023T1 - bottom 10%",
-                              "2023T1.t10" = "2023T1 - top 10%", 
-                              "2023T1.t5" = "2023T1 - top 5%",
-                              "2023T1.t1" = "2023T1 - top 1%",
-                              "2024T1.b1" = "2024T1 - bottom 1%", 
-                              "2024T1.b5" = "2024T1 - bottom 5%",
-                              "2024T1.b10" = "2024T1 - bottom 10%",
-                              "2024T1.t10" = "2024T1 - top 10%", 
-                              "2024T1.t5" = "2024T1 - top 5%",
-                              "2024T1.t1" = "2024T1 - top 1%")) +
+  scale_x_discrete(labels = c("2023T1.b1" = "2023T1 - base 1%", 
+                              "2023T1.b5" = "2023T1 - base 5%",
+                              "2023T1.b10" = "2023T1 - base 10%",
+                              "2023T1.t10" = "2023T1 - topo 10%", 
+                              "2023T1.t5" = "2023T1 - topo 5%",
+                              "2023T1.t1" = "2023T1 - topo 1%",
+                              "2024T1.b1" = "2024T1 - base 1%", 
+                              "2024T1.b5" = "2024T1 - base 5%",
+                              "2024T1.b10" = "2024T1 - base 10%",
+                              "2024T1.t10" = "2024T1 - topo 10%", 
+                              "2024T1.t5" = "2024T1 - topo 5%",
+                              "2024T1.t1" = "2024T1 - topo 1%")) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 14),
