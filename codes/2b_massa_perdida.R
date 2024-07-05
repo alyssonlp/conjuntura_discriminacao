@@ -164,7 +164,15 @@ for(aa in ano) {
                       probabilidade_emprego_medio_mulher_branca = p_emp_mb,
                       probabilidade_emprego_mulher_negra = p_emp_mn,
                       massa_salarial_perdida_homem_negro = massa_perdida_hn,
-                      massa_salarial_perdida_mulher_negra = massa_perdida_mn)
+                      massa_salarial_perdida_mulher_negra = massa_perdida_mn,
+                      diff_caracteristica_wg_homem_negro = delta_x_beta_homem,
+                      diff_caracteristica_wg_mulher_negra = delta_x_beta_mulher,
+                      diff_caracteristica_emp_homem_negro = delta_z_phi_homem,
+                      diff_caracteristica_emp_mulher_negra = delta_z_phi_mulher,
+                      perda_wg_discr_homem_negro = gama_homem,
+                      perda_wg_discr_mulher_negra = gama_mulher,
+                      perda_emp_discr_homem_negro = lower_delta_homem,
+                      perda_emp_discr_mulher_negra = lower_delta_mulher)
     
     dt1 <- rbind(dt1, dt2, fill = TRUE)
     }
