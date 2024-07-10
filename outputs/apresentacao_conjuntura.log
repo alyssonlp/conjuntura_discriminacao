@@ -1,0 +1,1351 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.8)  10 JUL 2024 10:48
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./apresentacao_conjuntura.tex
+(apresentacao_conjuntura.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamer.cls
+Document Class: beamer 2024/01/06 v3.71 A class for typesetting presentations
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasemodes.sty
+(C:\Program Files\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count187
+)
+\beamer@tempbox=\box51
+\beamer@tempcount=\count188
+\c@beamerpauses=\count189
+
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasedecode.sty
+\beamer@slideinframe=\count190
+\beamer@minimum=\count191
+\beamer@decode@box=\box52
+)
+\beamer@commentbox=\box53
+\beamer@modecount=\count192
+)
+(C:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+\headdp=\dimen140
+\footheight=\dimen141
+\sidebarheight=\dimen142
+\beamer@tempdim=\dimen143
+\beamer@finalheight=\dimen144
+\beamer@animht=\dimen145
+\beamer@animdp=\dimen146
+\beamer@animwd=\dimen147
+\beamer@leftmargin=\dimen148
+\beamer@rightmargin=\dimen149
+\beamer@leftsidebar=\dimen150
+\beamer@rightsidebar=\dimen151
+\beamer@boxsize=\dimen152
+\beamer@vboxoffset=\dimen153
+\beamer@descdefault=\dimen154
+\beamer@descriptionwidth=\dimen155
+\beamer@lastskip=\skip48
+\beamer@areabox=\box54
+\beamer@animcurrent=\box55
+\beamer@animshowbox=\box56
+\beamer@sectionbox=\box57
+\beamer@logobox=\box58
+\beamer@linebox=\box59
+\beamer@sectioncount=\count193
+\beamer@subsubsectionmax=\count194
+\beamer@subsectionmax=\count195
+\beamer@sectionmax=\count196
+\beamer@totalheads=\count197
+\beamer@headcounter=\count198
+\beamer@partstartpage=\count199
+\beamer@sectionstartpage=\count266
+\beamer@subsectionstartpage=\count267
+\beamer@animationtempa=\count268
+\beamer@animationtempb=\count269
+\beamer@xpos=\count270
+\beamer@ypos=\count271
+\beamer@ypos@offset=\count272
+\beamer@showpartnumber=\count273
+\beamer@currentsubsection=\count274
+\beamer@coveringdepth=\count275
+\beamer@sectionadjust=\count276
+\beamer@toclastsection=\count277
+\beamer@tocsectionnumber=\count278
+
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbaseoptions.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+))
+\beamer@paperwidth=\skip49
+\beamer@paperheight=\skip50
+
+(C:\Program Files\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Program Files\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count279
+\Gm@cntv=\count280
+\c@Gm@tempcnt=\count281
+\Gm@bindingoffset=\dimen156
+\Gm@wd@mp=\dimen157
+\Gm@odd@mp=\dimen158
+\Gm@even@mp=\dimen159
+\Gm@layoutwidth=\dimen160
+\Gm@layoutheight=\dimen161
+\Gm@layouthoffset=\dimen162
+\Gm@layoutvoffset=\dimen163
+\Gm@dimlist=\toks18
+
+(C:\Program Files\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Program Files\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Program Files\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks19
+\pgfutil@tempdima=\dimen164
+\pgfutil@tempdimb=\dimen165
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
+\pgfutil@abb=\box60
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex
+(C:\Program Files\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Program Files\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.
+tex
+\pgfkeys@tmptoks=\toks22
+))) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex
+\pgf@x=\dimen166
+\pgf@xa=\dimen167
+\pgf@xb=\dimen168
+\pgf@xc=\dimen169
+\pgf@y=\dimen170
+\pgf@ya=\dimen171
+\pgf@yb=\dimen172
+\pgf@yc=\dimen173
+\c@pgf@counta=\count282
+\c@pgf@countb=\count283
+\c@pgf@countc=\count284
+\c@pgf@countd=\count285
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
+\pgfmath@dimen=\dimen174
+\pgfmath@count=\count286
+\pgfmath@box=\box61
+\pgfmath@toks=\toks23
+\pgfmath@stack@operand=\toks24
+\pgfmath@stack@operation=\toks25
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.co
+de.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex)
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.
+tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmeti
+cs.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex
+) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count287
+)))
+(C:\Program Files\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+(C:\Program Files\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Program Files\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen175
+\Gin@req@width=\dimen176
+)
+(C:\Program Files\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+\pgf@x=\dimen177
+\pgf@y=\dimen178
+\pgf@xa=\dimen179
+\pgf@ya=\dimen180
+\pgf@xb=\dimen181
+\pgf@yb=\dimen182
+\pgf@xc=\dimen183
+\pgf@yc=\dimen184
+\pgf@xd=\dimen185
+\pgf@yd=\dimen186
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count288
+\c@pgf@countb=\count289
+\c@pgf@countc=\count290
+\c@pgf@countd=\count291
+\t@pgf@toka=\toks26
+\t@pgf@tokb=\toks27
+\t@pgf@tokc=\toks28
+\pgf@sys@id@count=\count292
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count293
+\pgfsyssoftpath@bigbuffer@items=\count294
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Program Files\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(C:\Program Files\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)
+(C:\Program Files\MiKTeX\tex/latex/xcolor\x11nam.def
+File: x11nam.def 2023/11/15 v3.01 Predefined colors according to Unix/X11 (UK)
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfint.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen187
+\pgf@picmaxx=\dimen188
+\pgf@picminy=\dimen189
+\pgf@picmaxy=\dimen190
+\pgf@pathminx=\dimen191
+\pgf@pathmaxx=\dimen192
+\pgf@pathminy=\dimen193
+\pgf@pathmaxy=\dimen194
+\pgf@xx=\dimen195
+\pgf@xy=\dimen196
+\pgf@yx=\dimen197
+\pgf@yy=\dimen198
+\pgf@zx=\dimen199
+\pgf@zy=\dimen256
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.t
+ex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen257
+\pgf@path@lasty=\dimen258
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen259
+\pgf@shorten@start@additional=\dimen260
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box62
+\pgf@hbox=\box63
+\pgf@layerbox@main=\box64
+\pgf@picture@serial@count=\count295
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.te
+x
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen261
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code
+.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen262
+\pgf@pt@y=\dimen263
+\pgf@pt@temp=\dimen264
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.
+tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen265
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen266
+\pgf@sys@shading@range@num=\count296
+\pgf@shadingcount=\count297
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box65
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.te
+x
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Program Files\MiKTeX\tex/latex/pgf/utilities\xxcolor.sty
+Package: xxcolor 2003/10/24 ver 0.1
+\XC@nummixins=\count298
+\XC@countmixins=\count299
+)
+(C:\Program Files\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+(C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2023-11-26 v7.01g Hypertext links for LaTeX
+
+(C:\Program Files\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(C:\Program Files\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(C:\Program Files\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Program Files\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(C:\Program Files\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Program Files\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(C:\Program Files\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Program Files\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(C:\Program Files\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(C:\Program Files\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Program Files\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count300
+)
+\@linkdim=\dimen267
+\Hy@linkcounter=\count301
+\Hy@pagecounter=\count302
+
+(C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2023-11-26 v7.01g Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(C:\Program Files\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count303
+
+(C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2023-11-26 v7.01g Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 4064.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4064.
+Package hyperref Info: Option `implicit' set `false' on input line 4064.
+Package hyperref Info: Hyper figures OFF on input line 4181.
+Package hyperref Info: Link nesting OFF on input line 4186.
+Package hyperref Info: Hyper index ON on input line 4189.
+Package hyperref Info: Plain pages OFF on input line 4196.
+Package hyperref Info: Backreferencing OFF on input line 4201.
+Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
+Package hyperref Info: Bookmarks ON on input line 4448.
+\c@Hy@tempcnt=\count304
+
+(C:\Program Files\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4786.
+\XeTeXLinkMargin=\dimen268
+
+(C:\Program Files\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Program Files\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count305
+\Field@Width=\dimen269
+\Fld@charsize=\dimen270
+Package hyperref Info: Hyper figures OFF on input line 6065.
+Package hyperref Info: Link nesting OFF on input line 6070.
+Package hyperref Info: Hyper index ON on input line 6073.
+Package hyperref Info: backreferencing OFF on input line 6080.
+Package hyperref Info: Link coloring OFF on input line 6085.
+Package hyperref Info: Link coloring with OCG OFF on input line 6090.
+Package hyperref Info: PDF/A mode OFF on input line 6095.
+\Hy@abspage=\count306
+
+
+Package hyperref Message: Stopped early.
+
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (C:\Program Files\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2023-11-26 v7.01g Hyperref driver for pdfTeX
+
+(C:\Program Files\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count307
+\c@bookmark@seq@number=\count308
+
+(C:\Program Files\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(C:\Program Files\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+))
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbaserequires.sty
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasecompatibility.sty)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasefont.sty
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks29
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(C:\Program Files\MiKTeX\tex/latex/sansmathaccent\sansmathaccent.sty
+Package: sansmathaccent 2020/01/31
+
+(C:\Program Files\MiKTeX\tex/latex/koma-script\scrlfile.sty
+Package: scrlfile 2023/07/07 v3.41 KOMA-Script package (file load hooks)
+
+(C:\Program Files\MiKTeX\tex/latex/koma-script\scrlfile-hook.sty
+Package: scrlfile-hook 2023/07/07 v3.41 KOMA-Script package (using LaTeX hooks)
+
+
+(C:\Program Files\MiKTeX\tex/latex/koma-script\scrlogo.sty
+Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
+)))))
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasetranslator.sty
+(C:\Program Files\MiKTeX\tex/latex/translator\translator.sty
+Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
+))
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasemisc.sty)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasetwoscreens.sty)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbaseoverlay.sty
+\beamer@argscount=\count309
+\beamer@lastskipcover=\skip51
+\beamer@trivlistdepth=\count310
+)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasetitle.sty)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasesection.sty
+\c@lecture=\count311
+\c@part=\count312
+\c@section=\count313
+\c@subsection=\count314
+\c@subsubsection=\count315
+)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbaseframe.sty
+\beamer@framebox=\box66
+\beamer@frametitlebox=\box67
+\beamer@zoombox=\box68
+\beamer@zoomcount=\count316
+\beamer@zoomframecount=\count317
+\beamer@frametextheight=\dimen271
+\c@subsectionslide=\count318
+\beamer@frametopskip=\skip52
+\beamer@framebottomskip=\skip53
+\beamer@frametopskipautobreak=\skip54
+\beamer@framebottomskipautobreak=\skip55
+\beamer@envbody=\toks30
+\framewidth=\dimen272
+\c@framenumber=\count319
+)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbaseverbatim.sty
+\beamer@verbatimfileout=\write4
+)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbaseframesize.sty
+\beamer@splitbox=\box69
+\beamer@autobreakcount=\count320
+\beamer@autobreaklastheight=\dimen273
+\beamer@frametitletoks=\toks31
+\beamer@framesubtitletoks=\toks32
+)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbaseframecomponents.sty
+\beamer@footins=\box70
+)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasecolor.sty)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasenotes.sty
+\beamer@frameboxcopy=\box71
+)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasetoc.sty)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasetemplates.sty
+\beamer@sbttoks=\toks33
+
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbaseauxtemplates.sty
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbaseboxes.sty
+\bmb@box=\box72
+\bmb@colorbox=\box73
+\bmb@boxwidth=\dimen274
+\bmb@boxheight=\dimen275
+\bmb@prevheight=\dimen276
+\bmb@temp=\dimen277
+\bmb@dima=\dimen278
+\bmb@dimb=\dimen279
+\bmb@prevheight=\dimen280
+)
+\beamer@blockheadheight=\dimen281
+))
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbaselocalstructure.sty
+(C:\Program Files\MiKTeX\tex/latex/tools\enumerate.sty
+Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
+\@enLab=\toks34
+)
+\beamer@bibiconwidth=\skip56
+\c@figure=\count321
+\c@table=\count322
+\abovecaptionskip=\skip57
+\belowcaptionskip=\skip58
+)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasenavigation.sty
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasenavigationsymbols.tex)
+\beamer@section@min@dim=\dimen282
+)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasetheorems.sty
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip59
+
+For additional information on amsmath, use the `?' option.
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks35
+\ex@=\dimen283
+))
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen284
+)
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count323
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count324
+\leftroot@=\count325
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count326
+\DOTSCASE@=\count327
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box74
+\strutbox@=\box75
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen285
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count328
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count329
+\dotsspace@=\muskip17
+\c@parentequation=\count330
+\dspbrk@lvl=\count331
+\tag@help=\toks36
+\row@=\count332
+\column@=\count333
+\maxfields@=\count334
+\andhelp@=\toks37
+\eqnshift@=\dimen286
+\alignsep@=\dimen287
+\tagshift@=\dimen288
+\tagwidth@=\dimen289
+\totwidth@=\dimen290
+\lineht@=\dimen291
+\@envbody=\toks38
+\multlinegap=\skip60
+\multlinetaggap=\skip61
+\mathdisplay@stack=\toks39
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(C:\Program Files\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks40
+\thm@bodyfont=\toks41
+\thm@headfont=\toks42
+\thm@notefont=\toks43
+\thm@headpunct=\toks44
+\thm@preskip=\skip62
+\thm@postskip=\skip63
+\thm@headsep=\skip64
+\dth@everypar=\toks45
+)
+\c@theorem=\count335
+)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasethemes.sty))
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerthemedefault.sty
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerfontthemedefault.sty)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamercolorthemedefault.sty)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerinnerthemedefault.sty
+\beamer@dima=\dimen292
+\beamer@dimb=\dimen293
+)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerouterthemedefault.sty)))
+(C:\Program Files\MiKTeX\tex/latex/tabulary\tabulary.sty
+Package: tabulary 2024/06/04 v0.11 tabulary package (DPC)
+
+(C:\Program Files\MiKTeX\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen294
+\ar@mcellbox=\box76
+\extrarowheight=\dimen295
+\NC@list=\toks46
+\extratabsurround=\skip65
+\backup@length=\skip66
+\ar@cellbox=\box77
+)
+
+LaTeX Warning: You have requested, on input line 20, version
+               `2024/05/23' of package array,
+               but only version
+               `2023/10/16 v2.5g Tabular extension package (FMi)'
+               is available.
+
+\TY@count=\count336
+\TY@linewidth=\dimen296
+\tymin=\dimen297
+\tymax=\dimen298
+\TY@tablewidth=\dimen299
+) (C:\Program Files\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen300
+\lightrulewidth=\dimen301
+\cmidrulewidth=\dimen302
+\belowrulesep=\dimen303
+\belowbottomsep=\dimen304
+\aboverulesep=\dimen305
+\abovetopsep=\dimen306
+\cmidrulesep=\dimen307
+\cmidrulekern=\dimen308
+\defaultaddspace=\dimen309
+\@cmidla=\count337
+\@cmidlb=\count338
+\@aboverulesep=\dimen310
+\@belowrulesep=\dimen311
+\@thisruleclass=\count339
+\@lastruleclass=\count340
+\@thisrulewidth=\dimen312
+)
+(C:\Program Files\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count341
+\float@exts=\toks47
+\float@box=\box78
+\@float@everytoks=\toks48
+\@floatcapt=\box79
+)
+(C:\Program Files\MiKTeX\tex/latex/mwe\mwe.sty
+Package: mwe 2018/03/30 v0.5 Package to support minimal working examples (MWE)
+
+(C:\Program Files\MiKTeX\tex/latex/lipsum\lipsum.sty
+(C:\Program Files\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty
+(C:\Program Files\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-01-04 L3 programming layer (loader) 
+
+(C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count342
+\l__pdf_internal_box=\box80
+))
+Package: l3keys2e 2023-10-10 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count343
+\l__lipsum_a_int=\count344
+\l__lipsum_b_int=\count345
+
+(C:\Program Files\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
+(C:\Program Files\MiKTeX\tex/latex/blindtext\blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+(C:\Program Files\MiKTeX\tex/latex/tools\xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count346
+\c@Blindtext=\count347
+\c@blind@countparstart=\count348
+\blind@countxx=\count349
+\blindtext@numBlindtext=\count350
+\blind@countyy=\count351
+\c@blindlist=\count352
+\c@blindlistlevel=\count353
+\c@blindlist@level=\count354
+\blind@listitem=\count355
+\c@blind@listcount=\count356
+\c@blind@levelcount=\count357
+\blind@mathformula=\count358
+\blind@Mathformula=\count359
+\c@blind@randomcount=\count360
+\c@blind@randommax=\count361
+\c@blind@pangramcount=\count362
+\c@blind@pangrammax=\count363
+))
+(C:\Program Files\MiKTeX\tex/latex/siunitx\siunitx.sty
+Package: siunitx 2024-06-24 v3.3.19 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count364
+\l__siunitx_number_exponent_fixed_int=\count365
+\l__siunitx_number_min_decimal_int=\count366
+\l__siunitx_number_min_integer_int=\count367
+\l__siunitx_number_round_precision_int=\count368
+\l__siunitx_number_lower_threshold_int=\count369
+\l__siunitx_number_upper_threshold_int=\count370
+\l__siunitx_number_group_first_int=\count371
+\l__siunitx_number_group_size_int=\count372
+\l__siunitx_number_group_minimum_int=\count373
+\l__siunitx_angle_tmp_dim=\dimen313
+\l__siunitx_angle_marker_box=\box81
+\l__siunitx_angle_unit_box=\box82
+\l__siunitx_compound_count_int=\count374
+
+(C:\Program Files\MiKTeX\tex/latex/translations\translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+)
+\l__siunitx_table_tmp_box=\box83
+\l__siunitx_table_tmp_dim=\dimen314
+\l__siunitx_table_column_width_dim=\dimen315
+\l__siunitx_table_integer_box=\box84
+\l__siunitx_table_decimal_box=\box85
+\l__siunitx_table_uncert_box=\box86
+\l__siunitx_table_before_box=\box87
+\l__siunitx_table_after_box=\box88
+\l__siunitx_table_before_dim=\dimen316
+\l__siunitx_table_carry_dim=\dimen317
+\l__siunitx_unit_tmp_int=\count375
+\l__siunitx_unit_position_int=\count376
+\l__siunitx_unit_total_int=\count377
+)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamercolorthemestructure.sty)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerouterthemeinfolines.sty)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerfontthemeserif.sty)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerouterthememiniframes.sty)
+(C:\Program Files\MiKTeX\tex/latex/tools\multicol.sty
+Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
+\c@tracingmulticols=\count378
+\mult@box=\box89
+\multicol@leftmargin=\dimen318
+\c@unbalance=\count379
+\c@collectmore=\count380
+\doublecol@number=\count381
+\multicoltolerance=\count382
+\multicolpretolerance=\count383
+\full@width=\dimen319
+\page@free=\dimen320
+\premulticols=\dimen321
+\postmulticols=\dimen322
+\multicolsep=\skip67
+\multicolbaselineskip=\skip68
+\partial@page=\box90
+\last@line=\box91
+\mc@boxedresult=\box92
+\maxbalancingoverflow=\dimen323
+\mult@rightbox=\box93
+\mult@grightbox=\box94
+\mult@firstbox=\box95
+\mult@gfirstbox=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\@tempa=\box120
+\@tempa=\box121
+\@tempa=\box122
+\@tempa=\box123
+\@tempa=\box124
+\@tempa=\box125
+\@tempa=\box126
+\@tempa=\box127
+\@tempa=\box128
+\@tempa=\box129
+\@tempa=\box130
+\@tempa=\box131
+\@tempa=\box132
+\c@minrows=\count384
+\c@columnbadness=\count385
+\c@finalcolumnbadness=\count386
+\last@try=\dimen324
+\multicolovershoot=\dimen325
+\multicolundershoot=\dimen326
+\mult@nat@firstbox=\box133
+\colbreak@box=\box134
+\mc@col@check@num=\count387
+)
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 46.
+
+(apresentacao_conjuntura.aux)
+\openout1 = `apresentacao_conjuntura.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(10.00002pt, 344.19533pt, 10.00002pt)
+* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
+* \paperwidth=364.19536pt
+* \paperheight=273.14662pt
+* \textwidth=344.19533pt
+* \textheight=244.6939pt
+* \oddsidemargin=-62.26997pt
+* \evensidemargin=-62.26997pt
+* \topmargin=-72.26999pt
+* \headheight=14.22636pt
+* \headsep=0.0pt
+* \topskip=10.0pt
+* \footskip=14.22636pt
+* \marginparwidth=3.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count388
+\scratchdimen=\dimen327
+\scratchbox=\box135
+\nofMPsegments=\count389
+\nofMParguments=\count390
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count391
+\MPscratchDim=\dimen328
+\MPnumerator=\count392
+\makeMPintoPDFobject=\count393
+\everyMPtoPDFconversion=\toks50
+) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package hyperref Info: Link coloring OFF on input line 46.
+
+(apresentacao_conjuntura.out) (apresentacao_conjuntura.out)
+\@outlinefile=\write5
+\openout5 = `apresentacao_conjuntura.out'.
+
+
+(C:\Program Files\MiKTeX\tex/latex/translator\translator-basic-dictionary-Engli
+sh.dict
+Dictionary: translator-basic-dictionary, Language: English 
+)
+(C:\Program Files\MiKTeX\tex/latex/translator\translator-bibliography-dictionar
+y-English.dict
+Dictionary: translator-bibliography-dictionary, Language: English 
+)
+(C:\Program Files\MiKTeX\tex/latex/translator\translator-environment-dictionary
+-English.dict
+Dictionary: translator-environment-dictionary, Language: English 
+)
+(C:\Program Files\MiKTeX\tex/latex/translator\translator-months-dictionary-Engl
+ish.dict
+Dictionary: translator-months-dictionary, Language: English 
+)
+(C:\Program Files\MiKTeX\tex/latex/translator\translator-numbers-dictionary-Eng
+lish.dict
+Dictionary: translator-numbers-dictionary, Language: English 
+)
+(C:\Program Files\MiKTeX\tex/latex/translator\translator-theorem-dictionary-Eng
+lish.dict
+Dictionary: translator-theorem-dictionary, Language: English 
+)
+(C:\Program Files\MiKTeX\tex/latex/translations/dicts\translations-basic-dictio
+nary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 46.
+ (apresentacao_conjuntura.nav)
+Overfull \hbox (91.088pt too wide) detected at line 46
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+
+Overfull \hbox (91.088pt too wide) detected at line 49
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[1{C:/Users/Rodrigo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+
+]
+Overfull \hbox (91.088pt too wide) detected at line 58
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+<../figures_output/pea_br_gen_raca.pdf, id=133, 1011.78pt x 614.295pt>
+File: ../figures_output/pea_br_gen_raca.pdf Graphic file (type pdf)
+<use ../figures_output/pea_br_gen_raca.pdf>
+Package pdftex.def Info: ../figures_output/pea_br_gen_raca.pdf  used on input l
+ine 58.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[2
+
+ <../figures_output/pea_br_gen_raca.pdf>]
+Overfull \hbox (91.088pt too wide) detected at line 66
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+<../figures_output/unemp_br_gen_raca.pdf, id=183, 1011.78pt x 614.295pt>
+File: ../figures_output/unemp_br_gen_raca.pdf Graphic file (type pdf)
+<use ../figures_output/unemp_br_gen_raca.pdf>
+Package pdftex.def Info: ../figures_output/unemp_br_gen_raca.pdf  used on input
+ line 66.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[3
+
+ <../figures_output/unemp_br_gen_raca.pdf>]
+Overfull \hbox (91.088pt too wide) detected at line 74
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+<../figures_output/rendimento_habitual_br_gen_raca.pdf, id=233, 1011.78pt x 614
+.295pt>
+File: ../figures_output/rendimento_habitual_br_gen_raca.pdf Graphic file (type 
+pdf)
+<use ../figures_output/rendimento_habitual_br_gen_raca.pdf>
+Package pdftex.def Info: ../figures_output/rendimento_habitual_br_gen_raca.pdf 
+ used on input line 74.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[4
+
+ <../figures_output/rendimento_habitual_br_gen_raca.pdf>]
+Overfull \hbox (91.088pt too wide) detected at line 82
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+<../figures_output/massa_habitual_br_gen_raca.pdf, id=283, 1011.78pt x 614.295p
+t>
+File: ../figures_output/massa_habitual_br_gen_raca.pdf Graphic file (type pdf)
+<use ../figures_output/massa_habitual_br_gen_raca.pdf>
+Package pdftex.def Info: ../figures_output/massa_habitual_br_gen_raca.pdf  used
+ on input line 82.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[5
+
+ <../figures_output/massa_habitual_br_gen_raca.pdf>]
+Overfull \hbox (91.088pt too wide) detected at line 89
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+<../figures_output/massa_habitual_interanual_br_gen_raca.pdf, id=333, 1011.78pt
+ x 614.295pt>
+File: ../figures_output/massa_habitual_interanual_br_gen_raca.pdf Graphic file 
+(type pdf)
+<use ../figures_output/massa_habitual_interanual_br_gen_raca.pdf>
+Package pdftex.def Info: ../figures_output/massa_habitual_interanual_br_gen_rac
+a.pdf  used on input line 89.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[6
+
+ <../figures_output/massa_habitual_interanual_br_gen_raca.pdf>]
+Overfull \hbox (91.088pt too wide) detected at line 98
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+<../figures_output/gini_br_gen_raca.pdf, id=383, 1011.78pt x 614.295pt>
+File: ../figures_output/gini_br_gen_raca.pdf Graphic file (type pdf)
+<use ../figures_output/gini_br_gen_raca.pdf>
+Package pdftex.def Info: ../figures_output/gini_br_gen_raca.pdf  used on input 
+line 98.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[7
+
+ <../figures_output/gini_br_gen_raca.pdf>]
+Overfull \hbox (91.088pt too wide) detected at line 106
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+<../figures_output/pea.pdf, id=434, 1011.78pt x 614.295pt>
+File: ../figures_output/pea.pdf Graphic file (type pdf)
+<use ../figures_output/pea.pdf>
+Package pdftex.def Info: ../figures_output/pea.pdf  used on input line 106.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[8
+
+ <../figures_output/pea.pdf>]
+Overfull \hbox (91.088pt too wide) detected at line 113
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+<../figures_output/unemp.pdf, id=484, 1011.78pt x 614.295pt>
+File: ../figures_output/unemp.pdf Graphic file (type pdf)
+<use ../figures_output/unemp.pdf>
+Package pdftex.def Info: ../figures_output/unemp.pdf  used on input line 113.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[9
+
+ <../figures_output/unemp.pdf>]
+Overfull \hbox (91.088pt too wide) detected at line 120
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+<../figures_output/massa_habitual.pdf, id=534, 1011.78pt x 614.295pt>
+File: ../figures_output/massa_habitual.pdf Graphic file (type pdf)
+<use ../figures_output/massa_habitual.pdf>
+Package pdftex.def Info: ../figures_output/massa_habitual.pdf  used on input li
+ne 120.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[10
+
+ <../figures_output/massa_habitual.pdf>]
+Overfull \hbox (91.088pt too wide) detected at line 129
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+<../figures_output/frac_pea.pdf, id=584, 1011.78pt x 614.295pt>
+File: ../figures_output/frac_pea.pdf Graphic file (type pdf)
+<use ../figures_output/frac_pea.pdf>
+Package pdftex.def Info: ../figures_output/frac_pea.pdf  used on input line 129
+.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[11
+
+ <../figures_output/frac_pea.pdf>]
+Overfull \hbox (91.088pt too wide) detected at line 136
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+<../figures_output/frac_unemp.pdf, id=634, 1011.78pt x 614.295pt>
+File: ../figures_output/frac_unemp.pdf Graphic file (type pdf)
+<use ../figures_output/frac_unemp.pdf>
+Package pdftex.def Info: ../figures_output/frac_unemp.pdf  used on input line 1
+36.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[12
+
+ <../figures_output/frac_unemp.pdf>]
+Overfull \hbox (91.088pt too wide) detected at line 143
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+<../figures_output/frac_rendimento_habitual.pdf, id=684, 1011.78pt x 614.295pt>
+
+File: ../figures_output/frac_rendimento_habitual.pdf Graphic file (type pdf)
+<use ../figures_output/frac_rendimento_habitual.pdf>
+Package pdftex.def Info: ../figures_output/frac_rendimento_habitual.pdf  used o
+n input line 143.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[13
+
+ <../figures_output/frac_rendimento_habitual.pdf>]
+Overfull \hbox (91.088pt too wide) detected at line 150
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+File: ../figures_output/frac_rendimento_habitual.pdf Graphic file (type pdf)
+<use ../figures_output/frac_rendimento_habitual.pdf>
+Package pdftex.def Info: ../figures_output/frac_rendimento_habitual.pdf  used o
+n input line 150.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[14
+
+]
+Overfull \hbox (91.088pt too wide) detected at line 157
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+<../figures_output/frac_massa_habitual.pdf, id=779, 1011.78pt x 614.295pt>
+File: ../figures_output/frac_massa_habitual.pdf Graphic file (type pdf)
+<use ../figures_output/frac_massa_habitual.pdf>
+Package pdftex.def Info: ../figures_output/frac_massa_habitual.pdf  used on inp
+ut line 157.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[15
+
+ <../figures_output/frac_massa_habitual.pdf>]
+Overfull \hbox (91.088pt too wide) detected at line 165
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+<../figures_output/frac_gini.pdf, id=829, 1011.78pt x 614.295pt>
+File: ../figures_output/frac_gini.pdf Graphic file (type pdf)
+<use ../figures_output/frac_gini.pdf>
+Package pdftex.def Info: ../figures_output/frac_gini.pdf  used on input line 16
+5.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[16
+
+ <../figures_output/frac_gini.pdf>]
+Overfull \hbox (91.088pt too wide) detected at line 173
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+<../figures_output/top_bottom.pdf, id=879, 1011.78pt x 614.295pt>
+File: ../figures_output/top_bottom.pdf Graphic file (type pdf)
+<use ../figures_output/top_bottom.pdf>
+Package pdftex.def Info: ../figures_output/top_bottom.pdf  used on input line 1
+73.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+
+Overfull \hbox (91.088pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+ []
+
+[17
+
+ <../figures_output/top_bottom.pdf>]
+\tf@nav=\write6
+\openout6 = `apresentacao_conjuntura.nav'.
+
+\tf@toc=\write7
+\openout7 = `apresentacao_conjuntura.toc'.
+
+\tf@snm=\write8
+\openout8 = `apresentacao_conjuntura.snm'.
+
+ (apresentacao_conjuntura.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+ ***********
+Package rerunfilecheck Info: File `apresentacao_conjuntura.out' has not changed
+.
+(rerunfilecheck)             Checksum: 81AC1B7CA314D8B9DA96E741BC73C9DF;1142.
+ ) 
+Here is how much of TeX's memory you used:
+ 26703 strings out of 474485
+ 561841 string characters out of 5753544
+ 1943542 words of memory out of 5000000
+ 48466 multiletter control sequences out of 15000+600000
+ 559581 words of font info for 41 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 128i,19n,123p,526b,903s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmss8.pfb>
+Output written on apresentacao_conjuntura.pdf (17 pages, 216268 bytes).
+PDF statistics:
+ 935 PDF objects out of 1000 (max. 8388607)
+ 39 named destinations out of 1000 (max. 500000)
+ 150 words of extra memory for PDF output out of 10000 (max. 10000000)
+

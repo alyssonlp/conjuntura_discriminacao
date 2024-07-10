@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Estatística Descritiva}{2}{0}{1}
+\beamer@sectionintoc {2}{O Mercado de Trabalho Recente}{8}{0}{2}
+\beamer@sectionintoc {3}{Os Grupos Minoritários em Relação ao Homem Branco}{11}{0}{3}
+\beamer@sectionintoc {4}{Composição da Base e do Topo dos Rendimentos Habituais de Todos os Trabalhos}{17}{0}{4}
