@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.8)  10 JUL 2024 10:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.8)  10 JUL 2024 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1006,64 +1006,64 @@ nslations-basic-dictionary')
 Package translations Info: loading dictionary `translations-basic-dictionary' f
 or `english'. on input line 46.
  (apresentacao_conjuntura.nav)
-Overfull \hbox (91.088pt too wide) detected at line 46
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 46
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 
-Overfull \hbox (91.088pt too wide) detected at line 49
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 49
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [1{C:/Users/Rodrigo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 ]
-Overfull \hbox (91.088pt too wide) detected at line 58
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 58
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
-<../figures_output/pea_br_gen_raca.pdf, id=133, 1011.78pt x 614.295pt>
+<../figures_output/pea_br_gen_raca.pdf, id=151, 1011.78pt x 614.295pt>
 File: ../figures_output/pea_br_gen_raca.pdf Graphic file (type pdf)
 <use ../figures_output/pea_br_gen_raca.pdf>
 Package pdftex.def Info: ../figures_output/pea_br_gen_raca.pdf  used on input l
 ine 58.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [2
 
  <../figures_output/pea_br_gen_raca.pdf>]
-Overfull \hbox (91.088pt too wide) detected at line 66
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 66
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
-<../figures_output/unemp_br_gen_raca.pdf, id=183, 1011.78pt x 614.295pt>
+<../figures_output/unemp_br_gen_raca.pdf, id=207, 1011.78pt x 614.295pt>
 File: ../figures_output/unemp_br_gen_raca.pdf Graphic file (type pdf)
 <use ../figures_output/unemp_br_gen_raca.pdf>
 Package pdftex.def Info: ../figures_output/unemp_br_gen_raca.pdf  used on input
  line 66.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [3
 
  <../figures_output/unemp_br_gen_raca.pdf>]
-Overfull \hbox (91.088pt too wide) detected at line 74
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 74
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
-<../figures_output/rendimento_habitual_br_gen_raca.pdf, id=233, 1011.78pt x 614
+<../figures_output/rendimento_habitual_br_gen_raca.pdf, id=263, 1011.78pt x 614
 .295pt>
 File: ../figures_output/rendimento_habitual_br_gen_raca.pdf Graphic file (type 
 pdf)
@@ -1072,18 +1072,18 @@ Package pdftex.def Info: ../figures_output/rendimento_habitual_br_gen_raca.pdf
  used on input line 74.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [4
 
  <../figures_output/rendimento_habitual_br_gen_raca.pdf>]
-Overfull \hbox (91.088pt too wide) detected at line 82
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 82
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
-<../figures_output/massa_habitual_br_gen_raca.pdf, id=283, 1011.78pt x 614.295p
+<../figures_output/massa_habitual_br_gen_raca.pdf, id=319, 1011.78pt x 614.295p
 t>
 File: ../figures_output/massa_habitual_br_gen_raca.pdf Graphic file (type pdf)
 <use ../figures_output/massa_habitual_br_gen_raca.pdf>
@@ -1091,18 +1091,18 @@ Package pdftex.def Info: ../figures_output/massa_habitual_br_gen_raca.pdf  used
  on input line 82.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [5
 
  <../figures_output/massa_habitual_br_gen_raca.pdf>]
-Overfull \hbox (91.088pt too wide) detected at line 89
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 89
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
-<../figures_output/massa_habitual_interanual_br_gen_raca.pdf, id=333, 1011.78pt
+<../figures_output/massa_habitual_interanual_br_gen_raca.pdf, id=375, 1011.78pt
  x 614.295pt>
 File: ../figures_output/massa_habitual_interanual_br_gen_raca.pdf Graphic file 
 (type pdf)
@@ -1111,124 +1111,124 @@ Package pdftex.def Info: ../figures_output/massa_habitual_interanual_br_gen_rac
 a.pdf  used on input line 89.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [6
 
  <../figures_output/massa_habitual_interanual_br_gen_raca.pdf>]
-Overfull \hbox (91.088pt too wide) detected at line 98
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 98
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
-<../figures_output/gini_br_gen_raca.pdf, id=383, 1011.78pt x 614.295pt>
+<../figures_output/gini_br_gen_raca.pdf, id=431, 1011.78pt x 614.295pt>
 File: ../figures_output/gini_br_gen_raca.pdf Graphic file (type pdf)
 <use ../figures_output/gini_br_gen_raca.pdf>
 Package pdftex.def Info: ../figures_output/gini_br_gen_raca.pdf  used on input 
 line 98.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [7
 
  <../figures_output/gini_br_gen_raca.pdf>]
-Overfull \hbox (91.088pt too wide) detected at line 106
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 106
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
-<../figures_output/pea.pdf, id=434, 1011.78pt x 614.295pt>
+<../figures_output/pea.pdf, id=488, 1011.78pt x 614.295pt>
 File: ../figures_output/pea.pdf Graphic file (type pdf)
 <use ../figures_output/pea.pdf>
 Package pdftex.def Info: ../figures_output/pea.pdf  used on input line 106.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [8
 
  <../figures_output/pea.pdf>]
-Overfull \hbox (91.088pt too wide) detected at line 113
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 113
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
-<../figures_output/unemp.pdf, id=484, 1011.78pt x 614.295pt>
+<../figures_output/unemp.pdf, id=544, 1011.78pt x 614.295pt>
 File: ../figures_output/unemp.pdf Graphic file (type pdf)
 <use ../figures_output/unemp.pdf>
 Package pdftex.def Info: ../figures_output/unemp.pdf  used on input line 113.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [9
 
  <../figures_output/unemp.pdf>]
-Overfull \hbox (91.088pt too wide) detected at line 120
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 120
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
-<../figures_output/massa_habitual.pdf, id=534, 1011.78pt x 614.295pt>
+<../figures_output/massa_habitual.pdf, id=600, 1011.78pt x 614.295pt>
 File: ../figures_output/massa_habitual.pdf Graphic file (type pdf)
 <use ../figures_output/massa_habitual.pdf>
 Package pdftex.def Info: ../figures_output/massa_habitual.pdf  used on input li
 ne 120.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [10
 
  <../figures_output/massa_habitual.pdf>]
-Overfull \hbox (91.088pt too wide) detected at line 129
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 129
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
-<../figures_output/frac_pea.pdf, id=584, 1011.78pt x 614.295pt>
+<../figures_output/frac_pea.pdf, id=656, 1011.78pt x 614.295pt>
 File: ../figures_output/frac_pea.pdf Graphic file (type pdf)
 <use ../figures_output/frac_pea.pdf>
 Package pdftex.def Info: ../figures_output/frac_pea.pdf  used on input line 129
 .
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [11
 
  <../figures_output/frac_pea.pdf>]
-Overfull \hbox (91.088pt too wide) detected at line 136
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 136
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
-<../figures_output/frac_unemp.pdf, id=634, 1011.78pt x 614.295pt>
+<../figures_output/frac_unemp.pdf, id=712, 1011.78pt x 614.295pt>
 File: ../figures_output/frac_unemp.pdf Graphic file (type pdf)
 <use ../figures_output/frac_unemp.pdf>
 Package pdftex.def Info: ../figures_output/frac_unemp.pdf  used on input line 1
 36.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [12
 
  <../figures_output/frac_unemp.pdf>]
-Overfull \hbox (91.088pt too wide) detected at line 143
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 143
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
-<../figures_output/frac_rendimento_habitual.pdf, id=684, 1011.78pt x 614.295pt>
+<../figures_output/frac_rendimento_habitual.pdf, id=768, 1011.78pt x 614.295pt>
 
 File: ../figures_output/frac_rendimento_habitual.pdf Graphic file (type pdf)
 <use ../figures_output/frac_rendimento_habitual.pdf>
@@ -1236,15 +1236,15 @@ Package pdftex.def Info: ../figures_output/frac_rendimento_habitual.pdf  used o
 n input line 143.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [13
 
  <../figures_output/frac_rendimento_habitual.pdf>]
-Overfull \hbox (91.088pt too wide) detected at line 150
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 150
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 File: ../figures_output/frac_rendimento_habitual.pdf Graphic file (type pdf)
@@ -1253,67 +1253,125 @@ Package pdftex.def Info: ../figures_output/frac_rendimento_habitual.pdf  used o
 n input line 150.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [14
 
 ]
-Overfull \hbox (91.088pt too wide) detected at line 157
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 157
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
-<../figures_output/frac_massa_habitual.pdf, id=779, 1011.78pt x 614.295pt>
+<../figures_output/frac_massa_habitual.pdf, id=875, 1011.78pt x 614.295pt>
 File: ../figures_output/frac_massa_habitual.pdf Graphic file (type pdf)
 <use ../figures_output/frac_massa_habitual.pdf>
 Package pdftex.def Info: ../figures_output/frac_massa_habitual.pdf  used on inp
 ut line 157.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [15
 
  <../figures_output/frac_massa_habitual.pdf>]
-Overfull \hbox (91.088pt too wide) detected at line 165
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 165
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
-<../figures_output/frac_gini.pdf, id=829, 1011.78pt x 614.295pt>
+<../figures_output/frac_gini.pdf, id=931, 1011.78pt x 614.295pt>
 File: ../figures_output/frac_gini.pdf Graphic file (type pdf)
 <use ../figures_output/frac_gini.pdf>
 Package pdftex.def Info: ../figures_output/frac_gini.pdf  used on input line 16
 5.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [16
 
  <../figures_output/frac_gini.pdf>]
-Overfull \hbox (91.088pt too wide) detected at line 173
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) detected at line 173
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
-<../figures_output/top_bottom.pdf, id=879, 1011.78pt x 614.295pt>
+<../figures_output/top_bottom.pdf, id=987, 1011.78pt x 614.295pt>
 File: ../figures_output/top_bottom.pdf Graphic file (type pdf)
 <use ../figures_output/top_bottom.pdf>
 Package pdftex.def Info: ../figures_output/top_bottom.pdf  used on input line 1
 73.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
 
-Overfull \hbox (91.088pt too wide) has occurred while \output is active
-  [] [][][][][][][] [][][][] [][][][][][][] [][]  
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
  []
 
 [17
 
  <../figures_output/top_bottom.pdf>]
+Overfull \hbox (187.7262pt too wide) detected at line 192
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
+ []
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 192
+.
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 192
+.
+
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
+ []
+
+[18
+
+]
+Overfull \hbox (187.7262pt too wide) detected at line 212
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
+ []
+
+
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
+ []
+
+[19
+
+]
+Overfull \hbox (187.7262pt too wide) detected at line 224
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
+ []
+
+
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
+ []
+
+[20
+
+]
+Overfull \hbox (187.7262pt too wide) detected at line 246
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
+ []
+
+
+Overfull \hbox (187.7262pt too wide) has occurred while \output is active
+  [] [][][][][][][] [][][][] [][][][][][][] [][] [][][]  
+ []
+
+[21
+
+]
 \tf@nav=\write6
 \openout6 = `apresentacao_conjuntura.nav'.
 
@@ -1330,22 +1388,27 @@ L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `apresentacao_conjuntura.out' has not changed
 .
-(rerunfilecheck)             Checksum: 81AC1B7CA314D8B9DA96E741BC73C9DF;1142.
+(rerunfilecheck)             Checksum: 5EE9D79E3C7972552775466F5DFC4798;1396.
  ) 
 Here is how much of TeX's memory you used:
- 26703 strings out of 474485
- 561841 string characters out of 5753544
- 1943542 words of memory out of 5000000
- 48466 multiletter control sequences out of 15000+600000
- 559581 words of font info for 41 fonts, out of 8000000 for 9000
+ 26769 strings out of 474485
+ 562973 string characters out of 5753544
+ 1944542 words of memory out of 5000000
+ 48510 multiletter control sequences out of 15000+600000
+ 561280 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,123p,526b,903s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Progra
-m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmss8.pfb>
-Output written on apresentacao_conjuntura.pdf (17 pages, 216268 bytes).
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10
+.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Pro
+gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on apresentacao_conjuntura.pdf (21 pages, 320731 bytes).
 PDF statistics:
- 935 PDF objects out of 1000 (max. 8388607)
- 39 named destinations out of 1000 (max. 500000)
- 150 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1280 PDF objects out of 1440 (max. 8388607)
+ 48 named destinations out of 1000 (max. 500000)
+ 158 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -172,7 +172,77 @@
 		\end{figure}
 	\end{frame}
 	
+\section{A Discriminação no Mercado de Trabalho}
+
+\begin{frame}{Salário}
+	Função salarial:
+	\begin{equation}
+		\log(y_{iR}) = \alpha + X_{i}\beta + \gamma R_{i} + \epsilon_{i}
+	\end{equation}
 	
+	Salário esperado para brancos:
+	\begin{equation}
+		E(y_{i}|R=0) = \alpha + E(X|R=0)\beta
+	\end{equation}
 	
+	Salário esperado para negros:
+	\begin{equation}
+		E(y_{i}|R=1) = \alpha + E(X|R=1)\beta + \gamma = E(y_{i}|R=0) + \Delta X\beta + \gamma
+	\end{equation}
+\end{frame}
+
+\begin{frame}{Massa Salarial}
+	Massa Salarial:
+	\begin{equation}
+		\sum y_{i} = N \sum y_{i}/N = N \bar{y}
+	\end{equation}
 	
+	Massa entre brancos e negros:
+	\begin{equation}
+		\sum y_{i} = N_{0} \bar{y}_{0} + N_{1} \bar{y}_{1}
+	\end{equation}
+	
+	Reescrevendo:
+	
+	\begin{equation}
+		\sum y_{i} = N_{0} E(y_{i}|R=0)  + N_{1} E(y_{i}|R=0)  + \Delta X\beta + \gamma =
+		N \bar{y}_{0} + N_{1}[\Delta X\beta + \gamma]
+	\end{equation}
+	
+\end{frame}
+
+\begin{frame}{Empregabilidade}
+	Probabilidade do indivíduo branco trabalhar:
+	\begin{equation}
+		\bar{p}_{0}= \Theta + E(Z_{i}|R=0) \Phi
+	\end{equation}
+	
+		Probabilidade do indivíduo negro trabalhar:
+	\begin{equation}
+		\bar{p}_{1}= \bar{p}_{0} + \Delta Z \Phi + \delta
+	\end{equation}
+\end{frame}
+	
+\begin{frame}
+	Massa salarial: 
+	\begin{equation}
+	N\bar{y}_{0} + \bar{p}_{0}M_{1[\Delta X\beta + \gamma ]} + M_{1}[\Delta Z\Phi + \delta][\Delta X\beta + \gamma]
+	\end{equation}
+	
+	Massa salarial perdida em função da discriminação:
+	\begin{equation}
+		[\bar{p}_{0} + \Delta Z \Phi + \delta] M_{1}[\Delta X\beta + \gamma]
+	\end{equation}
+	
+		N $\bar{y}_{0}$: também é afetado pela discriminação, então
+		\begin{equation}
+		N\bar{y}_{0} = \bar{y}_{0}[p_{0}M_{0} + [\bar{p}_{0} + \Delta Z\Phi + \delta]M_{1}] = \bar{y}p_{0}M + \bar{y}_{0}[\Delta Z\Phi + \delta]M_1
+		\end{equation}
+		
+	Somando tudo, temos:
+	\begin{equation}
+	\bar{y}_{0}[\Delta Z\Phi + \delta]M_1 + [\bar{p}_{0} + \Delta Z\Phi + \delta]M_{1}[\Delta X\beta + \gamma] = \bar{y}_{0}[\Delta Z\Phi + \delta]M_1 + \bar{p}_{1}M_{1}[\Delta X\beta + \gamma]
+	\end{equation}	
+    \end{frame}
+
 \end{document}
