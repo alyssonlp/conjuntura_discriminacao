@@ -18,7 +18,8 @@ user <- "Rodrigo"
 if (user == "Rodrigo") {
   # working folders
   datawork_folder <- file.path("C:/Users/Rodrigo/Documents/R/NERI_INSPER/conjuntura")
-  github_folder <- file.path("C:/Users/Rodrigo/Documents/GitHub/Convergencia")
+  github_folder <- file.path("C:/Users/Rodrigo/Documents/GitHub/conjuntura_discriminacao")
+  one_drive_folder <- file.path("C:/Users/Rodrigo/Insper/Alysson Lorenzon Portella - conjuntura_pnadc")
   
 }
 
@@ -31,8 +32,8 @@ csv_files <- file.path(datawork_folder, "csv_files")
 final_data <- file.path(datawork_folder, "final_data")
 temp_file <- file.path(datawork_folder, "temp_file")
 
-list_objects_to_keep <- c("datawork_folder", "github_folder", "codes",
-                          "tables_output", "figures_output",
+list_objects_to_keep <- c("datawork_folder", "github_folder", "one_drive_folder",
+                          "codes","tables_output", "figures_output",
                           "csv_files", "final_data")
 
 if (part_01 == TRUE ){
@@ -51,14 +52,11 @@ if (part_01 == TRUE ){
 if (part_02 == TRUE ){
   # modelo econometrico
   source(file.path(codes, "2a_hiatos.R"))
-  source(file.path(codes, "2b_massa_perdida.R"))
+  source(file.path(codes, "2b_mensuracao_massa_salarial.R"))
   source(file.path(codes, "2c_massa_perdida_gph.R"))
   source(file.path(codes, "2d_penalidade_gph.R"))
 }
 
-if (part_03 == TRUE ){
-source(file.path(codes, "3a_modelos.R"))
-}
 
 # Funções
 source(file.path(codes, "1b_function_carta_conjuntura.R"))
