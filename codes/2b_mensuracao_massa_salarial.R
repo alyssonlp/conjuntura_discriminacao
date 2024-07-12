@@ -68,7 +68,7 @@ for(aa in ano) {
 # Homens negros empregados
     p1_negro <- dt[gender_race == "Homem Negro",wtd.mean(pea_emp, weights = V1028)]
     
-# Massa Salarial Total perdida dos Homens Negros
+# Massa Salarial  perdida dos Homens Negros
     massa_salarial_perdida_hn <- P1_negro*penalidade_salarial_homem*p1_negro
     
 # Massa salarial perdida devido ao efeito composicao
@@ -122,7 +122,7 @@ for(aa in ano) {
     P0_branco <- dt[gender_race == "Homem Branco", sum(V1028)]
     
 # Massa contrafactual
-    M_c_homem <- (P0_branco - P1_negro)*p_brancos_emp*media_wg_brancos
+    M_c_homem <- (P0_branco + P1_negro)*p_brancos_emp*media_wg_brancos
     
 # Massa Salarial Total Perdida dos homens negros levando em conta a empregabilidade
     massa_total_perdida_hn <- M_c_homem + P1_negro*penalidade_salarial_homem + 
@@ -180,7 +180,7 @@ for(aa in ano) {
     # mulheres negras empregados
     p1_negra <- dt[gender_race == "Mulher Negra", wtd.mean(pea_emp, weights = V1028)]
     
-    # Massa Salarial Total perdida dos mulheres negras
+    # Massa Salarial perdida das mulheres negras
     massa_salarial_perdida_mn <- P1_negra*penalidade_salarial_mulher*p1_negra
     
     # Massa salarial perdida devido ao efeito composicao
@@ -234,7 +234,7 @@ for(aa in ano) {
     P0_branca <- dt[gender_race == "Mulher Branca", sum(V1028)]
     
     # Massa contrafactual
-    M_c_mulher <- (P0_branca - P1_negra)*p_brancas_emp*media_wg_brancas
+    M_c_mulher <- (P0_branca + P1_negra)*p_brancas_emp*media_wg_brancas
     
     # Massa Salarial Total Perdida dos mulheres negras levando em conta a empregabilidade
     massa_total_perdida_mn <- M_c_mulher + P1_negra*penalidade_salarial_mulher + 
@@ -242,14 +242,14 @@ for(aa in ano) {
     
     anotri <- sprintf("%dT%d", aa, tri)
     dt2 <- data.table(Ano_trimestre = anotri, 
-                      massa_salarial_perdida_hn = massa_salarial_perdida_hn,
-                      massa_perda_composicao_hn = massa_perda_composicao_hn,
-                      massa_perda_discr_hn = massa_perda_discr_hn,
-                      massa_total_perdida_hn = massa_total_perdida_hn,
-                      massa_salarial_perdida_mn = massa_salarial_perdida_mn,
-                      massa_perda_composicao_mn = massa_perda_composicao_mn,
-                      massa_perda_discr_mn = massa_perda_discr_mn,
-                      massa_total_perdida_mn = massa_total_perdida_mn)
+                      massa_salarial_perdida_hn = round(massa_salarial_perdida_hn/1000000000, 2),
+                      massa_perda_composicao_hn = round(massa_perda_composicao_hn/1000000000, 2),
+                      massa_perda_discr_hn = round(massa_perda_discr_hn/1000000000, 2),
+                      massa_total_perdida_hn = round(massa_total_perdida_hn/1000000000, 2),
+                      massa_salarial_perdida_mn = round(massa_salarial_perdida_mn/1000000000, 2),
+                      massa_perda_composicao_mn = round(massa_perda_composicao_mn/1000000000, 2),
+                      massa_perda_discr_mn = round(massa_perda_discr_mn/1000000000, 2),
+                      massa_total_perdida_mn = round(massa_total_perdida_mn/1000000000, 2))
     
   }
 }

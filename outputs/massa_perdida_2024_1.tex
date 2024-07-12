@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage[a4paper,landscape]{geometry}
+\usepackage{csvsimple}
+
+\title{Perda da Massa Salarial - 2024T1}
+\begin{document}
+	\maketitle
+	
+	\csvreader[
+	tabular=|c|c|c|c|c|c|c|c|c|,
+	table head=\hline Trimestre & Massa Total HN & Comp. HN & Discr. HN & Massa Total Perdida HN. & M. Perdida MN & Comp. MN & Discr. MN & M. Total Perdida MN \\ \hline,
+	late after line=\\\hline,
+	head to column names
+	]{C:/Users/Rodrigo/Documents/GitHub/conjuntura_discriminacao/outputs/csv_output/resultados_massa_perdida_2024_1.csv}{}%
+	{\csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii & \csvcolviii & \csvcolix}
+	
+\end{document}
