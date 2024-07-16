@@ -1,0 +1,143 @@
+\documentclass{article}
+
+\title{Metodologia Carta de Conjuntura Mercado de Trabalho Neri/Insper}
+
+\begin{document}
+	\maketitle
+	
+\section{Objetivo}
+\begin{itemize}
+	\item O objetivo é mensurar o quanto da massa salarial dos negros poderia ser ganha caso as características observáveis, como educação, experiência, etc, fossem iguais as dos brancos e caso não houvesse discriminação racial.
+	\item Para isso, será necessário o uso de algumas informações demográficas, tais como a quantidade de negros e brancos na economia e a proporção de indivíduos empregados para ambos os grupos.
+	\item Para facilitar, considere $P_{0}$ e $P_{1}$ como a população, respectivamente, de brancos e negros. Enquanto, $p_{0}$ e $p_{1}$, a proporção de empregados nesses grupos.
+\end{itemize}	
+	
+\section{Equação Salarial}	
+\begin{itemize}
+	\item Para cumprir nosso objetivo é necessário estimar o rendimento médio de cada grupo demográfico.
+	\item Para indivíduos negros:
+	\end{itemize}
+	
+	\begin{equation}
+		\bar{Y}_{1} = \sum exp(\alpha + X_{i}\beta + \gamma + \epsilon_{i})/P_{1} 
+	\end{equation}
+	
+\begin{itemize}
+	\item Para indivíduos brancos:
+\end{itemize}
+	
+	\begin{equation}
+		\bar{Y}_{0} = \sum exp(\alpha + X_{i}\beta + \epsilon_{i})/P_{0} 
+	\end{equation}
+	
+\begin{itemize}
+	\item Onde, $\gamma$ é o componente que mensura a discriminação racial.
+\end{itemize}
+
+	\section{Rendimento contrafactual}
+\begin{itemize}
+	\item Agora considere a seguinte hipótese: imagine que negros e brancos possuem características observadas entre-grupos heterogêneas e que a discriminação racial foi abolida no mercado de trabalho. Nesse caso, quanto em média os negros receberiam? Ora, se o conjunto de observações continuam distintas entre brancos e negros como a escolaridade média, a proporção de moradores em zonas urbanas e rurais, a experiência no mercado de trabalho, etc, então a igualdade salarial não foi alcançada. No entanto, podemos retirar o componente discriminatório, $\gamma$, que mede o quanto cada trabalhador negro perde mensalmente, em média, apenas por ser negro. Assim:
+\end{itemize}	
+
+\begin{equation}
+	\bar{Y}_{c} = \sum exp(\alpha + X_{i}\beta +  \epsilon_{i})/P_{1} 
+\end{equation}
+
+\begin{itemize}
+	\item Ainda nesse cenário hipotético em que a discriminação foi abolida, a diferença salarial média remanescente decorre do conjunto das características observadas, ou seja, $(\bar{X}_{1} - \bar{X}_{0})\beta$ = $\Delta X\beta$. É por isso, que mesmo $\gamma$ for igual a zero, a disparidade salarial média permanece.
+\end{itemize}
+
+
+\section{Mensurando a Probabilidade Média da Empregabilidade}
+\begin{itemize}
+	\item Para o indivíduo estar empregado são necessários alguns fatores, tais como estar inserido na População Economicamente Ativa (PEA), ter habilidades cognitvas, técnicas e sociais, experiência no mercado de trabalho, localidade da moradia, entre outros. Logo, cada indivíduo possui um conjunto dessas características observadas, $Z_{i}$, além disso, devido a incidência da discriminação racial, os negros tendem a ser o grupo demográfico com a maior taxa de desemprego na economia. Essa penalidade racial em não estar empregado é captado por $\delta$ no modelo a seguir:
+\end{itemize}
+
+	\begin{equation}
+		\bar{P}_{1} = \theta + E[Z_{i}|R_{i} = 1]\phi + \delta
+	\end{equation}
+
+\begin{itemize}
+	\item Enquanto para os brancos, temos a seguinte função de probabilidade de empregabilidade média:
+\end{itemize}
+
+	\begin{equation}
+	\bar{P}_{0} = \theta + E[Z_{i}|R_{i} = 0]\phi 
+\end{equation}
+
+\begin{itemize}
+	\item Agora considere, novamente, a hipótese da abolição da discriminação racial. Teremos negros e brancos com a mesma probabilidade de estarem empregados? A resposta depende do conjunto de características observadas. Se permanecerem diferentes, o novo resultado, chamado de contrafactual, retirará apenas o componente discriminatório $\delta$. Ou seja:
+\end{itemize}
+
+	\begin{equation}
+	\bar{P}_{c} = \theta + E[Z_{i}|R_{i} = 1]\phi 
+\end{equation}
+
+\begin{itemize}
+	\item Então, para sabermos quanto da diferença entre as probabilidades de estar empregado dada a raça decorre das características observadas (efeito composição), podemos fazer a seguinte conta: $(\bar{Z}_{1} - \bar{Z}_{0})\phi$ = $\Delta Z\phi$
+\end{itemize}
+
+\section{Fitted Values}
+\begin{itemize}
+	\item É preciso frisar que tanto na equação salarial quanto na de empregabilidade são usados o ajustamento dos valores (fitted values). Tal uso é necessário para evitar sub-representação ou sobrerrepresentação no montante da massa salarial perdida.
+	\item Um ótimo ajuste do modelo é aquele no qual o valor predito é igual ao valor real. Desse modo, o resíduo é igual a zero. Assim, o objetivo é encontrar as estimações mais próximas do cenário real.
+\end{itemize}
+
+
+\section{Massa Salarial}
+\begin{itemize}
+	\item A massa salarial é o montante total dos rendimentos do trabalho de todos os indivíduos empregados ($P\bar{p}$) de uma economia. Assim, temos:
+\end{itemize}
+
+	\begin{equation}
+	M = P_{0}\bar{p}_{0} \bar{Y}_{0} + P_{1}\bar{p}_{1} \bar{Y}_{1} 
+	\end{equation}
+
+\begin{itemize}
+	\item E se os negros tivessem a mesma probabilidade média de estarem empregados em conjunto com o mesmo rendimento médio dos trabalhadores brancos? Nesse caso, queremos um cenário contrafactual, no qual a massa salarial da economia não seria afetada por diferenças observáveis entre negros e brancos, tampouco por algum grau de discriminação na economia. Essa massa salarial contrafactual pode ser medida do seguinte modo:
+\end{itemize}
+
+	\begin{equation}
+	M_{c} = P_{0}\bar{p}_{0} \bar{Y}_{0} + P_{1}\bar{p}_{0} \bar{Y}_{0} = (P_{0} + P_{1})\bar{p}_{0}\bar{Y}_{0}
+	\end{equation}
+
+\begin{itemize}
+	\item Caso queiramos mensurar a perda da massa salarial em um cenário no qual negros tem a probabilidade média de empregabilidade igual dos indivíduos brancos e mantendo a diferença salarial, temos que $\bar{p}_{0} = \bar{p}_{1}$, então:
+\end{itemize}
+
+	\begin{equation}
+	(P_{0}\bar{p}_{0} \bar{Y}_{0} + P_{1}\bar{p}_{1} \bar{Y}_{1}) - (P_{0}\bar{p}_{0} \bar{Y}_{0} + P_{1}\bar{p}_{0} \bar{Y}_{1}) = P_{1}\bar{p}_{1} \bar{Y}_{1} - P_{1}\bar{p}_{0} \bar{Y}_{1} = P_{1}\bar{Y}_{1}(\bar{p}_{1} - \bar{p}_{0})
+	\end{equation}
+
+\begin{itemize}
+	\item No cenário contrafactual em que o salário médio dos negros é igualado aos dos brancos, $\bar{Y}_{1} = \bar{Y}_{0}$, porém com diferença na probabilidade do acesso ao emprego, temos:
+	\end{itemize}
+
+	\begin{equation}
+	(P_{0}\bar{p}_{0} \bar{Y}_{0} + P_{1}\bar{p}_{1} \bar{Y}_{1}) - (P_{0}\bar{p}_{0} \bar{Y}_{0} + P_{1}\bar{p}_{1} \bar{Y}_{0}) = P_{1}\bar{p}_{1} \bar{Y}_{1} - P_{1}\bar{p}_{1} \bar{Y}_{0} = P_{1}\bar{p}_{1}(\bar{Y}_{1} - \bar{Y}_{0})
+	\end{equation}
+	
+\begin{itemize}
+	\item Onde, a equação (9) representa a massa salarial perdida devido a penalidade na empregabilidade para os trabalhadores negros.
+	\item E a equação (10) representa a massa salarial perdida devido a penalidade salarial para os indivíduos negros.
+	\item  Lembre-se que há um terceiro contrafactual, cujo cenário iguala a esperança salarial e a probabilidade média da empregabilidade entre negros e brancos, representado por $M_{c}$. Ou seja, é preciso considerar os três cenários. Logo:
+\end{itemize}
+
+	\begin{equation}
+	Massa\ Total\ Perdida = (P_{0} + P_{1})\bar{p}_{0}\bar{Y}_{0} + P_{1}\bar{Y}_{1}(\bar{p}_{1} - \bar{p}_{0}) + P_{1}\bar{p}_{1}(\bar{Y}_{1} - \bar{Y}_{0})
+	\end{equation}
+	
+\begin{itemize}
+	\item Simplificando, temos que a Massa Total Perdida dos Negros (MTPN) é igual à:
+\end{itemize}
+	
+	\begin{equation}
+		 MTPN = M_{c} + P_{1}*penalidade\ na\ empregabilidade + P_{1}*penalidade\ salarial
+	\end{equation}
+	
+\begin{itemize}
+	\item Desse modo, temos o resultado da massa salarial total perdida, que leva em conta alguns contrafactuais. Com isso, podemos decompor a massa salarial total tanto em termos de empregabilidade quanto em termo de salários.
+\end{itemize}
+
+	
+\end{document}

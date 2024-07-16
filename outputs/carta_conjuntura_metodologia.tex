@@ -1,0 +1,107 @@
+\documentclass{article}
+
+\title{Metodologia Carta de Conjuntura Mercado de Trabalho Neri/Insper}
+
+\begin{document}
+	\maketitle
+	
+	Um dos objetivos da Carta de Conjuntura consiste em apresentar o montante da massa salarial perdida devido às desigualdades no acesso ao mercado de trabalho e nos salários. Afinal, o que é a massa salarial de uma economia? Ela representa o total de salários pagos a todos os trabalhadores em determinado período. De forma sintética, podemos representá-la por:
+ \newline
+	
+	\begin{equation}
+		M = \sum_{i =1}^{E} y_{i} = E \frac{\sum_{i =1}^{E} y_{i}}{E} = E \bar{Y}
+	\end{equation}
+	
+	Onde: $E$ representa o total de trabalhadores, ou seja, $E = eP$; \newline
+	No qual, $e$ representa a proporção de pessoas que estão trabalhando e $P$ é o tamanho da população; \newline
+	$y_{i}$ representa o salário de cada trabalhador e $\bar{Y}$ representa a média salarial. \newline
+	
+	Podemos analisar a massa salarial a partir de grupos demográficos. Para simplificar, considere apenas que negros e brancos. Assim, a massa salarial é a soma da massa dos trabalhadores negros e a dos trabalhadores brancos, logo:
+	
+	\begin{equation}
+		M =  P_{0}\bar{e}_{0} \bar{Y}_{0} + P_{1}\bar{e}_{1} \bar{Y}_{1} 
+	\end{equation}
+	Onde o subscrito 0 representa os indivíduos brancos e o 1 representa os negros. \newline
+	
+	Devido a diversos fatores, como nível de escolaridade, anos de experiência, paternidade ou maternidade, tipo de ocupação, setor de atividade e discriminação racial, negros e brancos possuem, em média, tanto nível de empregabilidade quanto rendimento desiguais. \newline
+	
+	Dito isso, imagine uma realidade na qual haja igualdade salarial e chances iguais de brancos e negros estarem empregados. Nesse cenário, a massa salarial da economia seria diferente daquela encontrada na equação (2).Assim, teríamos a seguinte massa, chamada de contrafactual.
+
+	\begin{equation}
+	M^{c} = P_{0}e_{0}\bar{Y}_{0} + P_{1}e_{0}\bar{Y}_{0}
+	\end{equation}
+	
+	De que forma podemos mensurar a massa salarial perdida devido à desigualdade racial no mercado de trabalho? Para isso, precisamos acrescentar e subtrair o segundo termo da equação (3), que representa um cenário de igualdade em $e$ e $\bar{Y}$, na equação da massa salarial factual (2).
+	
+	\begin{equation}
+	 P_{0}e_{0}\bar{Y}_{0} + P_{1}e_{1}\bar{Y}_{1} \pm P_{1}e_{0}\bar{Y}_{0} =  P_{0}e_{0}\bar{Y}_{0} + P_{1}e_{1}\bar{Y}_{1} + P_{1}e_{0}\bar{Y}_{0} - P_{1}e_{0}\bar{Y}_{0} = (P_{0} +  P_{1})e_{0}\bar{Y}_{0}  + P_{1}(e_{1}\bar{Y}_{1} - e_{0}\bar{Y}_{0})
+	\end{equation} 
+	
+	Nesse caso, a massa contrafactual seria igual à massa factual apenas se houvesse conjuntamente igualdade salarial e em termos de empregabilidade. No entanto, a equação (4) não permite decompor a perda da massa salarial em termos salariais e em termos de empregabilidade. Para isso, é necessário adicionar e subtrair o termo $\bar{e}_{1}\bar{Y}_{0}$, cenário onde o salário médio são equivalentes, mas a empregabilidade apresenta diferença entre os grupos raciais. \newline
+	
+	\begin{equation}
+		M^{c} + P_{1}(\bar{e}_{1}\bar{Y}_{1} - \bar{e}_{0}\bar{Y}_{0} + \bar{e}_{1}\bar{Y}_{0} - \bar{e}_{1}\bar{Y}_{0}) = M^{c} + P_{1}(\bar{e}_{1}\bar{Y}_{1} - \bar{e}_{1}\bar{Y}_{0} + \bar{e}_{1}\bar{Y}_{0} - \bar{e}\bar{Y}_{0})
+	\end{equation}
+	
+	\begin{equation}
+		M^{c} + P_{1}[e_{1}(\bar{Y}_{1} - \bar{Y}_{0}) + \bar{Y}_{0}(\bar{e}_{1} - \bar{e} )] =  M^{c} + P_{1}[e_{1}\Delta \bar{Y}_{(1,0)} + \bar{Y}_{0}\Delta \bar{e}_{(1,0)}]
+	\end{equation}
+
+
+	
+	Onde: $e_{1}\Delta \bar{Y}_{(1,0)}$ é a penalidade salarial e, \newline
+	$\bar{Y}_{0}\Delta \bar{e}_{(1,0)}$ é a penalidade na empregabilidade. \newline
+	
+	Portanto, a massa salarial total perdida é aquela mensurada em (6). \newline
+	
+	Relembrando, um dos objetivos da Carta é mensurar o quanto da massa salarial dos negros poderia ser ganha caso as características observáveis, como educação, experiência, etc, fossem iguais às dos brancos e caso não houvesse discriminação racial. Para isso, o uso de algumas informações demográficas é necessário, tais como a quantidade de brancos e negros na economia $P_{0}$ e $P_{1}$ e a proporção de indivíduos empregados $e_{0}$ e $e_{1}$ para ambos os grupos. Dado que a massa salarial é a soma de todos os salários, precisamos encontrar uma função que estime o salário médio para cada grupo, que é chamada de função salarial.
+	
+	\begin{equation}
+		\bar{Y}_{0} = \sum exp(\alpha + X_{i}\beta + \epsilon_{i})/P_{0} 
+	\end{equation}
+	
+	\begin{equation}
+		\bar{Y}_{1} = \sum exp(\alpha + X_{i}\beta + \gamma + \epsilon_{i})/P_{1}  
+	\end{equation}
+	
+	A equação (7) estima o salário médio dos trabalhadores brancos, $\bar{Y}_{0}$. Onde $X$ são as variáveis independentes do modelo, ou seja, são elementos que podem afetar o resultado do salário médio, como os anos de escolaridade, os anos de experiência no mercado de trabalho, se o trabalhador reside em região metropolitana, a ocupação e o tipo de vínculo, etc. Logo, cada indivíduo tem um conjunto próprio de elementos, que matematicamente toma forma de uma Matriz, X. Enquanto $\beta$ representa quanto o salário médio esperado mudaria se alterássemos uma unidade de uma variável, mantendo as outras constantes. \newline
+	
+	O termo $\alpha$ nos informa o valor do salário médio se todas as variáveis independentes fossem iguais a zero, e $\epsilon_{i}$ representa o termo de erro, ou seja, o quanto do que estimamos não corresponde com o valor observado. \newline
+	
+	A respeito da equação (8), ela estima o salário médio dos trabalhadores negros. Nela, temos o termo $\gamma$, que indica a presença de negros na economia. Ou seja,  seu valor informa o quanto um trabalhador negro perde de salário somente por ser negro.Se considerarmos um cenário no qual a discriminação racial foi abolida, a função salarial dos negros seria a seguinte: \newline
+	
+	\begin{equation}
+		\bar{Y}_{c} = \sum exp(\alpha + X_{i}\beta +  \epsilon_{i})/P_{1} 
+	\end{equation}
+	
+	Mesmo nesse cenário hipotético, no qual a discriminação foi abolida, pode ocorrer diferença salarial média entre brancos e negros, pois o conjunto das características observadas não são iguais. Assim, $(\bar{X}_{1} - \bar{X}_{0})\beta$ = $\Delta X\beta$ representa a diferença nas características observadas entre brancos e negros. Tais diferenças decorrem do acesso desigual à educação de qualidade, redes de contatos profissionais que implicam em diferenças no tempo de experiência, entre outros. Com isso, mesmo que $\gamma$ fosse igual a zero, a disparidade salarial média permaneceria. Do mesmo modo, $\gamma$ indica a perda salarial devido à discriminação racial, pois se o resultado medido na equação (8) fosse o mesmo daquele medido em (9), $\gamma$ seria igual a zero, o que indicaria a inexistência de uma penalidade salarial devido à discriminação.	\newline
+	
+	A partir dessas informações, podemos entender que a penalidade salarial para os trabalhadores negros em comparação aos brancos decorre tanto da discriminação no mercado de trabalho quanto dos resultados desiguais na formação de capital humano, social, riqueza intergeracional, etc. Logo, o termo $\Delta X\beta + \gamma$ expressa essa penalidade. \newline
+	
+	Até agora vimos o aspecto salarial no mercado de trabalho. No entanto, compreender a dinâmica da discriminação racial no mercado de trabalho envolve em entender como isso afeta a empregabilidade. Os negros tendem a ser o grupo demográfico com a maior taxa de desemprego na economia. No modelo a seguir, $\delta$ capta a dimensão discriminatória na probabilidade de uma pessoa negra estar empregada.
+	
+	\begin{equation}
+		\bar{e}_{1} = \sum (\theta + Z_{i}\phi + \delta + \mu_{i})/ P_{1}
+	\end{equation}
+	
+	Logo, se não houvesse discriminação racial, a probabilidade média de uma pessoa negra estar trabalhando seria expressa por:
+	
+	\begin{equation}
+		\bar{e}^{c} = \sum (\theta + Z_{i}\phi + \mu_{i})/ P_{1}
+	\end{equation}
+	
+	Onde  $ Z_{i}$ representa o conjunto de características observadas do trabalhador. \newline
+	
+	Para os trabalhadores brancos, temos a seguinte função de probabilidade média de estar trabalhando:
+	
+	\begin{equation}
+		\bar{e}_{0} = \sum (\theta + Z_{i}\phi + \mu_{i})/ P_{0}
+	\end{equation}
+	
+	Mais uma vez, podemos medir como as diferenças nas características observadas afetam a diferença na probabilidade de estar trabalhando entre negros e brancos, matematicamente isso é expresso por $(\bar{Z}_{1} - \bar{Z}_{0})\phi$ = $\Delta Z\phi$. Tal diferença decorre de um processo histórico e socioeconômico que criou uma segmentação no mercado de trabalho, na qual os brancos, em média, são mais facilmente encontrados em ocupações de menor rotatividade do que os negros. \newline
+	
+	Além das diferenças no capital social, que se referem às redes de contatos tanto pessoais quanto profissionais estabelecidas, é importante considerar que uma boa rede facilita a empregabilidade, especialmente em cenários de desaquecimento econômico. Essas redes são fundamentais para acessar vagas que frequentemente exigem indicações profissionais. \newline
+	
+	Assim como no modelo salarial, podemos estimar a penalidade na empregabilidade dos trabalhadores negros em relação aos brancos como o total da perda devido aos fatores observados e à discriminação, o que pode ser expresso matematicamente como $\Delta Z\phi + \delta$. 
+	
+\end{document}
