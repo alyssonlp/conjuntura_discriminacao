@@ -7,10 +7,10 @@ library(questionr)
 library(ggplot2)
 library(fixest)
 library(dineq)
+library(tidyr)
 
 part_01 <- FALSE
 part_02 <- FALSE
-part_03 <- FALSE 
 
 # Definindo usuário
 user <- "Rodrigo"
