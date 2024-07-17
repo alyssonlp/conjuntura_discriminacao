@@ -1,157 +1,144 @@
 # Criando gph da massa salarial perdida 
 
-a <- fread(file.path(csv_files, "massa_salarial_perdida_genero_raca.csv"))
+a <- fread(file.path(csv_files, "resultados_massa_salarial.csv"))
 
-pdf(file.path(figures_output, "massa_salarial_perdida_genero_raca.pdf"),  width = 12, height = 8.5)
+pdf(file.path(figures_output, "massa_salarial_total_genero_raca.pdf"),  width = 14, height = 8.5)
 
 m <- a %>% 
   ggplot(aes(x = Ano_trimestre)) + 
-  geom_line(aes(y = massa_salarial_perdida_homem_negro.V1/1000000000, 
-                color = "Massa salarial perdida \n dos homens negros"), group = 1, size = 1.2) +
-  geom_line(aes(y = massa_salarial_perdida_mulher_negra.V1/1000000000, 
-                color = "Massa salarial perdida \n das mulheres negras"), group = 1, size = 1.2) +
-  scale_color_manual(name = "", values = c("Massa salarial perdida \n dos homens negros" = "darkgoldenrod1",
-                                           "Massa salarial perdida \n das mulheres negras" = "brown4")) +
-  scale_x_discrete(breaks = c("2012T1", "2012T3", "2013T1", "2013T3",
-                              "2014T1", "2014T3", "2015T1", "2015T3", 
-                              "2016T1", "2016T3", "2017T1", "2017T3",  
-                              "2018T1", "2018T3", "2019T1", "2019T3",
-                              "2020T1", "2020T3", "2021T1", "2021T3",
-                              "2022T1", "2022T3", "2023T1", "2023T3", 
-                              "2024T1")) +
+  geom_line(aes(y = massa_salarial_total_perdida_hn, 
+                color = "Homens Negros"), group = 1, size = 1.8) +
+  geom_line(aes(y = massa_salarial_total_perdida_mn, 
+                color = "Mulheres Negras"), group = 1, size = 1.8) +
+  scale_color_manual(name = "", values = c("Homens Negros" = "darkgoldenrod1",
+                                           "Mulheres Negras" = "brown4")) +
+  scale_x_discrete(breaks = c("2012T1", "2014T1", "2016T1", "2018T1", 
+                              "2020T1",  "2022T1", "2024T1")) +
+  scale_y_continuous(limits = c(0, 150), breaks = seq(0, 150, by = 25)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 18),
+        text = element_text(size = 22),
         legend.position = "bottom",
-        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22))  +
-  labs(x = "", y = "Em R$ bilhões",title = "")
+        axis.text.x = element_text( vjust = 0.5, hjust = 0.5),
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22),
+        plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
+  labs(x = "", y = "R$ bilhões",title = "")
 
 print(m)
 dev.off()
 
 # Gph perda salarial devido a caracteristicas dos trabalhadores
-pdf(file.path(figures_output, "perda_salarial_genero_raca.pdf"),  width = 12, height = 8.5)
+pdf(file.path(figures_output, "perda_massa_salarial_composicao.pdf"),  width = 14, height = 8.5)
 
 perda_wg <- a %>% 
   ggplot(aes(x = Ano_trimestre)) + 
-  geom_line(aes(y = diff_caracteristica_wg_homem_negro.V1, 
-                color = "Perda salarial devido às características \n dos trabalhadores negros"),
-            group = 1, size = 1.2) +
-  geom_line(aes(y = diff_caracteristica_wg_mulher_negra.V1, 
-                color = "Perda salarial devido  às características \n das trabalhadoras negras"),
-            group = 1, size = 1.2) +
-  scale_color_manual(name = "", values = c("Perda salarial devido às características \n dos trabalhadores negros"
+  geom_line(aes(y = massa_salarial_composicao_hn*(-1), 
+                color = "Homens Negros"),
+            group = 1, size = 1.8) +
+  geom_line(aes(y = massa_salarial_composicao_mn*(-1), 
+                color = "Mulheres Negras"),
+            group = 1, size = 1.8) +
+  scale_color_manual(name = "", values = c("Homens Negros"
                                            = "darkgoldenrod1",
-                                           "Perda salarial devido  às características \n das trabalhadoras negras"
+                                           "Mulheres Negras"
                                            = "brown4")) +
-  scale_x_discrete(breaks = c("2012T1", "2012T3", "2013T1", "2013T3",
-                              "2014T1", "2014T3", "2015T1", "2015T3", 
-                              "2016T1", "2016T3", "2017T1", "2017T3",  
-                              "2018T1", "2018T3", "2019T1", "2019T3",
-                              "2020T1", "2020T3", "2021T1", "2021T3",
-                              "2022T1", "2022T3", "2023T1", "2023T3", 
-                              "2024T1")) +
+  scale_x_discrete(breaks = c("2012T1", "2014T1", "2016T1", "2018T1", 
+                              "2020T1",  "2022T1", "2024T1")) +
+  scale_y_continuous(limits = c(0, 60), breaks = seq(0, 60, by = 20)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 18),
+        text = element_text(size = 22),
         legend.position = "bottom",
-        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=18))  +
-  labs(x = "", y = "Escala logarítmica",title = "")
+        axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22),
+        plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
+  labs(x = "", y = "R$ Bilhões",title = "")
 
 print(perda_wg)
 dev.off()
 
-# Gph perda na empregabilidade devido a caracteristicas dos trabalhadores
-pdf(file.path(figures_output, "perda_emp_genero_raca.pdf"),  width = 12, height = 8.5)
-
-perda_emp <- a %>% 
-  ggplot(aes(x = Ano_trimestre)) + 
-  geom_line(aes(y = diff_caracteristica_emp_homem_negro.V1, 
-                color = "Perda da empregabilidade devido às \n características dos trabalhadores negros"),
-            group = 1, size = 1.2) +
-  geom_line(aes(y = diff_caracteristica_emp_mulher_negra.V1, 
-                color = "Perda da empregabilidade devido às \n características das trabalhadoras negras"),
-            group = 1, size = 1.2) +
-  scale_color_manual(name = "", values = c("Perda da empregabilidade devido às \n características dos trabalhadores negros" = "darkgoldenrod1",
-                                           "Perda da empregabilidade devido às \n características das trabalhadoras negras"  = "brown4")) +
-  scale_x_discrete(breaks = c("2012T1", "2012T3", "2013T1", "2013T3",
-                              "2014T1", "2014T3", "2015T1", "2015T3", 
-                              "2016T1", "2016T3", "2017T1", "2017T3",  
-                              "2018T1", "2018T3", "2019T1", "2019T3",
-                              "2020T1", "2020T3", "2021T1", "2021T3",
-                              "2022T1", "2022T3", "2023T1", "2023T3", 
-                              "2024T1")) +
-  theme_classic() + 
-  theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 18),
-        legend.position = "bottom",
-        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=18))  +
-  labs(x = "", y = "Escala logarítmica",title = "")
-
-print(perda_emp)
-dev.off()
-
 # Gph perda salarial devido ao componente discriminatorio
-pdf(file.path(figures_output, "perda_salarial_discr_genero_raca.pdf"),  width = 12, height = 8.5)
+pdf(file.path(figures_output, "perda_massa_salario_discriminacao.pdf"),  width = 14, height = 8.5)
 
 perda_disr_wg <- a %>% 
   ggplot(aes(x = Ano_trimestre)) + 
-  geom_line(aes(y = perda_wg_discr_homem_negro.V1, 
-                color = "Perda salarial dos trabalhadores negros \n devido à discriminação racial"),
-            group = 1, size = 1.2) +
-  geom_line(aes(y = perda_wg_discr_mulher_negra.V1, 
-                color = "Perda salarial das trabalhadoras negras \n devido à discriminação racial"),
-            group = 1, size = 1.2) +
-  scale_color_manual(name = "", values = c("Perda salarial dos trabalhadores negros \n devido à discriminação racial" = "darkgoldenrod1",
-                                           "Perda salarial das trabalhadoras negras \n devido à discriminação racial" = "brown4")) +
-  scale_x_discrete(breaks = c("2012T1", "2012T3", "2013T1", "2013T3",
-                              "2014T1", "2014T3", "2015T1", "2015T3", 
-                              "2016T1", "2016T3", "2017T1", "2017T3",  
-                              "2018T1", "2018T3", "2019T1", "2019T3",
-                              "2020T1", "2020T3", "2021T1", "2021T3",
-                              "2022T1", "2022T3", "2023T1", "2023T3", 
-                              "2024T1")) +
+  geom_line(aes(y = massa_salarial_discriminacao_hn*(-1), 
+                color = "Homens Negros"),
+            group = 1, size = 1.8) +
+  geom_line(aes(y = massa_salarial_discriminacao_mn*(-1), 
+                color = "Mulheres Negras"),
+            group = 1, size = 1.8) +
+  scale_color_manual(name = "", values = c("Homens Negros" = "darkgoldenrod1",
+                                           "Mulheres Negras" = "brown4")) +
+  scale_x_discrete(breaks = c("2012T1", "2014T1", "2016T1", "2018T1", 
+                              "2020T1",  "2022T1", "2024T1")) +
+  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 2)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 18),
+        text = element_text(size = 22),
         legend.position = "bottom",
-        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=18))  +
-  labs(x = "", y = "Escala logarítmica",title = "")
+        axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22),
+        plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
+  labs(x = "", y = "R$ Bilhões",title = "")
 
 print(perda_disr_wg)
 dev.off()
 
+# Gph perda na empregabilidade devido a caracteristicas dos trabalhadores
+pdf(file.path(figures_output, "perda_massa_emp_composicao.pdf"),  width = 14, height = 8.5)
+
+perda_emp <- a %>% 
+  ggplot(aes(x = Ano_trimestre)) + 
+  geom_line(aes(y = massa_salarial_composicao_emp_hn*(-1), 
+                color = "Homens Negros"),
+            group = 1, size = 1.8) +
+  geom_line(aes(y = massa_salarial_composicao_emp_mn*(-1), 
+                color = "Mulheres Negras"),
+            group = 1, size = 1.8) +
+  scale_color_manual(name = "", values = c("Homens Negros" = "darkgoldenrod1",
+                                           "Mulheres Negras"  = "brown4")) +
+  scale_x_discrete(breaks = c("2012T1", "2014T1", "2016T1", "2018T1", 
+                              "2020T1",  "2022T1", "2024T1")) +
+  scale_y_continuous(limits = c(0, 15), breaks = seq(0, 15, by = 3)) +
+  theme_classic() + 
+  theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
+        text = element_text(size = 22),
+        legend.position = "bottom",
+        axis.text.x = element_text( vjust = 0.5, hjust = 0.5),
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22),
+        plot.margin = margin(t = 5, r = 22, b = 5, l = 5))  +
+  labs(x = "", y = "",title = "")
+
+print(perda_emp)
+dev.off()
+
+
+
 # Gph perda na empregabilidade devido ao componente discriminatorio
-pdf(file.path(figures_output, "perda_emp_discr_genero_raca.pdf"),  width = 12, height = 8.5)
+pdf(file.path(figures_output, "perda_massa_emp_discriminacao.pdf"),  width = 14, height = 8.5)
 
 perda_disr_emp <- a %>% 
   ggplot(aes(x = Ano_trimestre)) + 
-  geom_line(aes(y = perda_emp_discr_homem_negro.V1, 
-                color = "Perda da empregabilidade dos trabalhadores \n negros devido à discriminação racial"),
-            group = 1, size = 1.2) +
-  geom_line(aes(y = perda_emp_discr_mulher_negra.V1, 
-                color = "Perda da empregabilidade das trabalhadoras \n negras devido à discriminação racial"),
-            group = 1, size = 1.2) +
-  scale_color_manual(name = "", values = c("Perda da empregabilidade dos trabalhadores \n negros devido à discriminação racial" = "darkgoldenrod1",
-                                           "Perda da empregabilidade das trabalhadoras \n negras devido à discriminação racial" = "brown4")) +
-  scale_x_discrete(breaks = c("2012T1", "2012T3", "2013T1", "2013T3",
-                              "2014T1", "2014T3", "2015T1", "2015T3", 
-                              "2016T1", "2016T3", "2017T1", "2017T3",  
-                              "2018T1", "2018T3", "2019T1", "2019T3",
-                              "2020T1", "2020T3", "2021T1", "2021T3",
-                              "2022T1", "2022T3", "2023T1", "2023T3", 
-                              "2024T1")) +
+  geom_line(aes(y = massa_salarial_discriminacao_emp_hn, 
+                color = "Homens Negros"),
+            group = 1, size = 1.8) +
+  geom_line(aes(y = massa_salarial_discriminacao_emp_mn, 
+                color = "Mulheres Negras"),
+            group = 1, size = 1.8) +
+  scale_color_manual(name = "", values = c("Homens Negros" = "darkgoldenrod1",
+                                           "Mulheres Negras" = "brown4")) +
+  scale_x_discrete(breaks = c("2012T1", "2014T1", "2016T1", "2018T1", 
+                              "2020T1",  "2022T1", "2024T1")) +
+  scale_y_continuous(limits = c(0, 6), breaks = seq(0, 6, by = 2)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 18),
+        text = element_text(size = 22),
         legend.position = "bottom",
-        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=18))  +
-  labs(x = "", y = "Escala logarítmica",title = "")
+        axis.text.x = element_text( vjust = 0.5, hjust = 0.5),
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22),
+        plot.margin = margin(t = 5, r = 22, b = 5, l = 5))  +
+  labs(x = "", y = "",title = "")
 
 print(perda_disr_emp)
 dev.off()
