@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage[a4paper,landscape]{geometry}
+
+\usepackage{datatool}
+\usepackage{booktabs} % For \toprule, \midrule and \bottomrule
+% start every dtl table with \toprule from booktabs
+\renewcommand{\dtldisplaystarttab}{\toprule}
+
+% likewise for \midrule and \bottomrule from booktabs 
+\renewcommand{\dtldisplayafterhead}{\midrule}
+\renewcommand{\dtldisplayendtab}{\\\bottomrule}
+
+\DTLloadrawdb[keys={Resultados , Homem 2023T1, Mulher 2023T1, Total 2023T1, Homem 2024T1, Mulher 2024T1, Total 2024T1}]{massa}{csv_output/resultados_recentes_massa.csv}
+
+\begin{document}
+	
+	\title{Resultados da Decomposição da Massa Salarial - 2023T1 e 2024T1}
+	\maketitle
+	
+	\begin{flushleft} % Start the table flush left
+		\DTLdisplaydb{massa}
+	\end{flushleft} % End the flush left environment
+	
+	
+\end{document}
+
