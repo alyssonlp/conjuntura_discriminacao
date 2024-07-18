@@ -1,7 +1,7 @@
-variaveis,Homem_2023T1,Mulher_2023T1,Total_2023T1,Homem_2024T1,Mulher_2024T1,Total_2024T1
-penalidade_salarial,-1568.66,-1139.31,-2707.97,-1716.79,-1260.48,-2977.27
-composicao_wg,-1346.44,-927.62,-2274.06,-1472.08,-1015.84,-2487.92
-discriminacao_wg,-222.22,-211.69,-433.91,-244.71,-244.64,-489.35
-penalidade_emp,-0.03,-0.06,-0.09,-0.03,-0.06,-0.09
-composicao_emp,-0.05,-0.07,-0.12,-0.05,-0.08,-0.13
-discriminacao_emp,0.02,0.02,0.04,0.02,0.02,0.04
+Resultados,Homem 2023T1,Mulher 2023T1,Total 2023T1,Homem 2024T1,Mulher 2024T1,Total 2024T1
+Penalidade Salarial  ,-1568.66,-1139.31,-2707.97,-1716.79,-1260.48,-2977.27
+E. Composição Salários  ,-1346.44,-927.62,-2274.06,-1472.08,-1015.84,-2487.92
+E. Discriminação Salários  ,-222.22,-211.69,-433.91,-244.71,-244.64,-489.35
+Penalidade na Empregabilidade  ,-0.03,-0.06,-0.09,-0.03,-0.06,-0.09
+E. Composição Emprego  ,-0.05,-0.07,-0.12,-0.05,-0.08,-0.13
+E. Discriminação Emprego  ,0.02,0.02,0.04,0.02,0.02,0.04
