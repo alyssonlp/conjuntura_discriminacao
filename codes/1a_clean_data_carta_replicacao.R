@@ -1,3 +1,6 @@
+rm(list = ls()[which(!ls() %in% list_objects_to_keep)])
+gc()
+
 # Replicando a Carta de Conjuntura IPEA
 ano <- c(2012)
 trimestre <- c(1:4)

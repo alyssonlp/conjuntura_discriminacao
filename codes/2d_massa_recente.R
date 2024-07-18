@@ -43,6 +43,7 @@ homens_t <- setnames(dt_homem_m[, data.table(t(.SD), keep.rownames=TRUE), .SDcol
                 dt_homem_m[, c('variaveis', Ano_trimestre)])[]
 setnames(homens_t, c("2023T1", "2024T1"), c("Homem_2023T1", "Homem_2024T1"))
 homens_t$variaveis <- gsub("HN", "", homens_t$variaveis)
+
 # Para mulheres
 mulheres_t <- setnames(dt_mulher_m[, data.table(t(.SD), keep.rownames=TRUE), .SDcols=-"Ano_trimestre"], 
                      dt_mulher_m[, c('m', Ano_trimestre)])[]

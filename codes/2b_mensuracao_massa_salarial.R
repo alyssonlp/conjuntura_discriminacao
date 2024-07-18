@@ -17,6 +17,11 @@ for(aa in ano) {
     
     #aa = 2024
     #tri = 1
+    
+    # Incluir avisos:
+    print(paste0("Computing statistics for year ", aa, 
+                 " and quarter ", tri))
+    
     rds_file <- sprintf("pnadc%d_%d_carta.rds", aa, tri)
     dt <- readRDS((file.path(original_data, rds_file)))
     

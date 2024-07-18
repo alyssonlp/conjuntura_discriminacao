@@ -30,7 +30,6 @@ print(m)
 dev.off()
 
 # Gph perda salarial devido a caracteristicas dos trabalhadores e a discriminacao
-pdf(file.path(figures_output, "perda_massa_salarial.pdf"),  width = 14, height = 8.5)
 perda <- a %>% 
   ggplot(aes(x = Ano_trimestre)) + 
   geom_line(aes(y = massa_salarial_perdida_hn*(-1), 
@@ -51,6 +50,8 @@ perda <- a %>%
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
   labs(x = "", y = "R$ bilhões",title = "")
 
+
+pdf(file.path(figures_output, "perda_massa_salarial.pdf"),  width = 14, height = 8.5)
 print(perda)
 dev.off()
 
