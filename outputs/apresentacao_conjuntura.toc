@@ -1,5 +1,2 @@
-\beamer@sectionintoc {1}{Estatística Descritiva}{2}{0}{1}
-\beamer@sectionintoc {2}{O Mercado de Trabalho Recente}{7}{0}{2}
-\beamer@sectionintoc {3}{Os Grupos Minoritários em Relação ao Homem Branco}{11}{0}{3}
-\beamer@sectionintoc {4}{Composição da Base e do Topo}{16}{0}{4}
-\beamer@sectionintoc {5}{A Discriminação no Mercado de Trabalho}{17}{0}{5}
+\beamer@sectionintoc {1}{Contexto}{2}{0}{1}
+\beamer@sectionintoc {2}{Estimando a Massa Salarial Perdida para Desigualdade}{16}{0}{2}
