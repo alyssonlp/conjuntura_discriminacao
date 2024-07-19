@@ -259,7 +259,7 @@ for(aa in ano) {
                       massa_wg_composicao_mn = round(massa_perda_composicao_mn/bi, 2),
                       massa_wg_discriminacao_mn = round(massa_perda_discr_mn/bi, 2),
                       massa_emp_perdida_mn = round(emp_perdida_mn/bi, 2),
-                      massa_emp_composicao_emp_mn = round(emp_perdida_mn_composicao/bi, 2),
+                      massa_emp_composicao_mn = round(emp_perdida_mn_composicao/bi, 2),
                       massa_emp_discriminacao_mn = round(emp_perdida_mn_discr/bi, 2),
                       total_perdido_mn = massa_wg_perdida_mn + massa_emp_perdida_mn,
                       composicao_hn_wg = round(delta_x_beta_h, 2),
