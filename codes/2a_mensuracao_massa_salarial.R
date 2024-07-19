@@ -1,6 +1,5 @@
 dt1 <- data.table()
 
-
 # criando vetores para automatizar os arquivos conforme o ano e o trimestre
 ano <- c(2012:2024)
 trimestre <- c(1:4)
@@ -23,9 +22,7 @@ for(aa in ano) {
                  " and quarter ", tri))
     
     rds_file <- sprintf("pnadc%d_%d_carta.rds", aa, tri)
-    dt <- readRDS((file.path(original_data, rds_file)))
-    
-    dt[, pea_emp := as.numeric(pea == 1 & emp == 1)]
+    dt <- readRDS((file.path(intermediary_data, rds_file)))
     
 # HOMENS 
 # SALARIOS
@@ -251,36 +248,36 @@ for(aa in ano) {
     anotri <- sprintf("%dT%d", aa, tri)
     bi <- 1000000000
     dt2 <- data.table(Ano_trimestre = anotri, 
-                      massa_salarial_total_perdida_hn = round(massa_total_perdida_hn/bi, 2),
-                      massa_salarial_perdida_hn = round(massa_salarial_perdida_hn/bi, 2),
-                      massa_salarial_composicao_hn = round(massa_perda_composicao_hn/bi, 2),
-                      massa_salarial_discriminacao_hn = round(massa_perda_discr_hn/bi, 2),
-                      massa_salarial_perdida_emp_hn = round(emp_perdida_hn/bi, 2),
-                      massa_salarial_composicao_emp_hn = round(emp_perdida_hn_composicao/bi, 2),
-                      massa_salarial_discriminacao_emp_hn = round(emp_perdida_hn_discr/bi, 2),
-                      massa_salarial_total_perdida_mn = round(massa_total_perdida_mn/bi, 2),
-                      massa_salarial_perdida_mn = round(massa_salarial_perdida_mn/bi, 2),
-                      massa_salarial_composicao_mn = round(massa_perda_composicao_mn/bi, 2),
-                      massa_salarial_discriminacao_mn = round(massa_perda_discr_mn/bi, 2),
-                      massa_salarial_perdida_emp_mn = round(emp_perdida_mn/bi, 2),
-                      massa_salarial_composicao_emp_mn = round(emp_perdida_mn_composicao/bi, 2),
-                      massa_salarial_discriminacao_emp_mn = round(emp_perdida_mn_discr/bi, 2),
+                      massa_wg_perdida_hn = round(massa_salarial_perdida_hn/bi, 2),
+                      massa_wg_composicao_hn = round(massa_perda_composicao_hn/bi, 2),
+                      massa_wg_discriminacao_hn = round(massa_perda_discr_hn/bi, 2),
+                      massa_emp_perdida_hn = round(emp_perdida_hn/bi, 2),
+                      massa_emp_composicao_hn = round(emp_perdida_hn_composicao/bi, 2),
+                      massa_emp_discriminacao_hn = round(emp_perdida_hn_discr/bi, 2),
+                      total_perdido_hn = massa_wg_perdida_hn + massa_emp_perdida_hn,
+                      massa_wg_perdida_mn = round(massa_salarial_perdida_mn/bi, 2),
+                      massa_wg_composicao_mn = round(massa_perda_composicao_mn/bi, 2),
+                      massa_wg_discriminacao_mn = round(massa_perda_discr_mn/bi, 2),
+                      massa_emp_perdida_mn = round(emp_perdida_mn/bi, 2),
+                      massa_emp_composicao_emp_mn = round(emp_perdida_mn_composicao/bi, 2),
+                      massa_emp_discriminacao_mn = round(emp_perdida_mn_discr/bi, 2),
+                      total_perdido_mn = massa_wg_perdida_mn + massa_emp_perdida_mn,
                       composicao_hn_wg = round(delta_x_beta_h, 2),
                       discriminacao_hn_wg = round(gama_homem, 2) ,
                       penalidade_salarial_hn = round(penalidade_salarial_homem, 2),
-                      composicao_hn_emp = round(delta_z_phi_h, 2),
-                      discriminacao_hn_emp = round(lower_delta_hn, 2),
-                      penalidade_emp_hn = round(penalidade_emp_hn, 2),
+                      composicao_hn_emp = round(100*delta_z_phi_h, 2),
+                      discriminacao_hn_emp = round(100*lower_delta_hn, 2),
+                      penalidade_emp_hn = round(100*penalidade_emp_hn, 2),
                       composicao_mn_wg = round(delta_x_beta_m, 2),
                       discriminacao_mn_wg = round(gama_mulher, 2) ,
                       penalidade_salarial_mn = round(penalidade_salarial_mulher, 2),
-                      composicao_mn_emp = round(delta_z_phi_m, 2),
-                      discriminacao_mn_emp = round(lower_delta_mn, 2),
-                      penalidade_emp_mn = round(penalidade_emp_mn, 2))
+                      composicao_mn_emp = round(100*delta_z_phi_m, 2),
+                      discriminacao_mn_emp = round(100*lower_delta_mn, 2),
+                      penalidade_emp_mn = round(100*penalidade_emp_mn, 2))
                       
     dt1 <- rbind(dt1, dt2, fill = TRUE)
     
   }
 }
 
-fwrite(dt1, file.path(csv_files, "resultados_massa_salarial.csv"))
+fwrite(dt1, file.path(csv_output, "resultados_massa_salarial.csv"))

@@ -2,7 +2,7 @@ rm(list = ls()[which(!ls() %in% list_objects_to_keep)])
 gc()
 
 # Replicando a Carta de Conjuntura IPEA
-ano <- c(2012)
+ano <- c(2012:2024)
 trimestre <- c(1:4)
 
 for(aa in ano) {
@@ -47,8 +47,8 @@ dt[, child := as.numeric(V2005 == 4| V2005 == 5)]
 dt[, match_child := max(child), by =.(UPA, Estrato, V1014, V1008, V1016)]
 dt[, have_child := as.numeric(match_child == 1 & V2005 == 1 | V2005==2 | V2005 == 3)]
 
-# maes
-dt[, mother := as.numeric(male == 0 & have_child == 1)]
+# parents
+dt[, parents := as.numeric(have_child == 1)]
 
 # Grau de escolaridade
 dt[, VD3005 := as.numeric(VD3005)]
@@ -176,6 +176,9 @@ dt[, unemp :=  as.numeric(VD4002 == 2)]
 dt[, VD4001 := as.numeric(VD4001)]
 dt[, pea := as.numeric(VD4001 == 1)]
 
+# Pessoas na PEA que estão empregadas
+dt[, pea_emp := as.numeric(pea == 1 & emp == 1)]
+
 # Na carta a amostra consiste em individuos com idade igual ou superior a 14 anos
 dt <- dt[V2009 >= 14]
 
@@ -191,7 +194,7 @@ dt[, age_group :=
 
 
 rds_file <- sprintf("pnadc%d_%d_carta.rds", aa, tri)
-saveRDS(dt, file.path(original_data, rds_file))
+saveRDS(dt, file.path(intermediary_data, rds_file))
 
   }
 }

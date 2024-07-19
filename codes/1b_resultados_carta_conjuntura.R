@@ -1,8 +1,19 @@
-ano <- c(2024)
-trimestre <- c(1)
- 
-for (aa in ano) {
+
+# Esse script gera e salva os resultados descritivos para a geração de graficos
+# de acordo com 3 categorias: Brasil, raça, raça e genero
+# Para gerar os resultados, utiliza-se a função criada em 0a
+
+ano <- c(2012:2024)
+trimestre <- c(1:4)
+
+for(aa in ano) {
   for (tri in trimestre) {
+    
+    if(aa == 2024 & tri >=2){
+      next  
+    }
+    
+    # A função criada em 0a é utilizada nesse momento
     carta <- ano_tri_fun(aa, tri) 
     
     resultados_brasil <- sprintf("resultados_brasil_%d_%d.csv", ano, tri)
@@ -31,7 +42,7 @@ arquivos_genero_raca <- grep("resultados_genero_raca_", arquivos, value = TRUE)
 
 
 
-# Criando a funcao para juntar csv conforme o resultado
+# Criando a funcao "combinar_arquivos" para juntar csv conforme a categoria do resultado
 combinar_arquivos_fun <- function(lista_arquivos) {
   lista_dados <- lapply(lista_arquivos, function(arquivo) {
     info <- unlist(strsplit(arquivo, "_"))
@@ -73,7 +84,7 @@ dados_raca <- combinar_arquivos_fun(arquivos_raca)
 dados_genero_raca <- combinar_arquivos_fun(arquivos_genero_raca)
 
 # Salvando em csv
-setwd(file.path(csv_files)) 
+setwd(file.path(csv_output)) 
 write.csv(dados_brasil, "resultados_brasil_carta.csv", row.names = FALSE)
 write.csv(dados_raca, "resultados_raca_carta.csv", row.names = FALSE)
 write.csv(dados_genero_raca, "resultados_genero_raca_carta.csv", row.names = FALSE)

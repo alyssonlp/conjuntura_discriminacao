@@ -1,14 +1,11 @@
-raca <- fread(file.path(csv_files, "resultados_raca_carta.csv"))
+raca <- fread(file.path(csv_output, "resultados_raca_carta.csv"))
 
-raca <- raca[nonwhite == 1, Raca :=  "Negros"]
+raca <- raca[nonwhite == 1, Raca := "Negros"]
 raca <- raca[nonwhite == 0, Raca := "Brancos"]
 raca <- raca[, nonwhite := NULL]
 
 
 # gph 1 - rendimento habitual médio
-
-
-pdf(file.path(figures_output, "rendimento_habitual_raca.pdf"),  width = 11, height = 8.5)
 raca_r_hab_all <- raca %>% 
   ggplot(aes(x = Ano_trimestre, y = renda_media_hab, color = Raca, group = Raca)) + 
   geom_line(size = 1) +
@@ -29,13 +26,11 @@ raca_r_hab_all <- raca %>%
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22))  +
   labs(x = "", y = "R$",title = "")
 
+pdf(file.path(figures_output, "rendimento_habitual_raca.pdf"),  width = 11, height = 8.5)
 print(raca_r_hab_all)
 dev.off()
 
-# gph 2 - rendimento habitual e efetivo medio mensal (dessazonalizado)
-# baixar os dados mensais e dessazonalizar
-
-pdf(file.path(figures_output, "rendimento_habitual_efetivo_raca.pdf"),  width = 12, height = 8.5)
+# gph 2 - rendimento habitual e efetivo medio mensal 
 raca_r_hab_efe_all <- ggplot(raca, aes(x = Ano_trimestre, color = Raca, group = Raca)) + 
   geom_line(aes(y = renda_media_hab, linetype = "Renda Habitual Média"), size = 1) +
   geom_line(aes(y = renda_media_efe, linetype = "Renda Efetiva Média"), size = 1) +
@@ -59,7 +54,7 @@ raca_r_hab_efe_all <- ggplot(raca, aes(x = Ano_trimestre, color = Raca, group = 
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22)) +
   labs(x = "", y = "R$", 
        title = "")
-
+pdf(file.path(figures_output, "rendimento_habitual_efetivo_raca.pdf"),  width = 12, height = 8.5)
 print(raca_r_hab_efe_all)
 dev.off()
 

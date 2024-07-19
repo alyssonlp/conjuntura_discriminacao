@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.8)  18 JUL 2024 16:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.8)  19 JUL 2024 14:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./apresentacao_conjuntura.tex
-(apresentacao_conjuntura.tex
+**./apresentacao.tex
+(apresentacao.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (C:\Program Files\MiKTeX\tex/latex/beamer\beamer.cls
@@ -889,9 +889,8 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 )
 Package translations Info: No language package found. I am going to use `englis
 h' as default language. on input line 46.
-
-(apresentacao_conjuntura.aux)
-\openout1 = `apresentacao_conjuntura.aux'.
+ (apresentacao.aux)
+\openout1 = `apresentacao.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
 LaTeX Font Info:    ... okay on input line 46.
@@ -969,9 +968,9 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring OFF on input line 46.
 
-(apresentacao_conjuntura.out) (apresentacao_conjuntura.out)
+(apresentacao.out) (apresentacao.out)
 \@outlinefile=\write5
-\openout5 = `apresentacao_conjuntura.out'.
+\openout5 = `apresentacao.out'.
 
 
 (C:\Program Files\MiKTeX\tex/latex/translator\translator-basic-dictionary-Engli
@@ -1005,11 +1004,12 @@ nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
 or `english'. on input line 46.
- (apresentacao_conjuntura.nav) [1{C:/Users/Rodrigo/AppData/Local/MiKTeX/fonts/m
-ap/pdftex/pdftex.map}
 
-]
-<figures_output/rendimento_habitual.pdf, id=132, 1011.78pt x 614.295pt>
+No file apresentacao.nav.
+[1
+
+{C:/Users/Rodrigo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+<figures_output/rendimento_habitual.pdf, id=25, 1011.78pt x 614.295pt>
 File: figures_output/rendimento_habitual.pdf Graphic file (type pdf)
 <use figures_output/rendimento_habitual.pdf>
 Package pdftex.def Info: figures_output/rendimento_habitual.pdf  used on input 
@@ -1018,7 +1018,7 @@ line 58.
  [2
 
  <./figures_output/rendimento_habitual.pdf>]
-<figures_output/frac_rendimento_habitual.pdf, id=184, 1011.78pt x 614.295pt>
+<figures_output/frac_rendimento_habitual.pdf, id=36, 1011.78pt x 614.295pt>
 File: figures_output/frac_rendimento_habitual.pdf Graphic file (type pdf)
 <use figures_output/frac_rendimento_habitual.pdf>
 Package pdftex.def Info: figures_output/frac_rendimento_habitual.pdf  used on i
@@ -1027,8 +1027,8 @@ nput line 65.
  [3
 
  <./figures_output/frac_rendimento_habitual.pdf>]
-<figures_output/rendimento_habitual_br_gen_raca.pdf, id=236, 1011.78pt x 614.29
-5pt>
+<figures_output/rendimento_habitual_br_gen_raca.pdf, id=47, 1011.78pt x 614.295
+pt>
 File: figures_output/rendimento_habitual_br_gen_raca.pdf Graphic file (type pdf
 )
 <use figures_output/rendimento_habitual_br_gen_raca.pdf>
@@ -1038,7 +1038,7 @@ ed on input line 72.
  [4
 
  <./figures_output/rendimento_habitual_br_gen_raca.pdf>]
-<figures_output/unemp.pdf, id=288, 1011.78pt x 614.295pt>
+<figures_output/unemp.pdf, id=58, 1011.78pt x 614.295pt>
 File: figures_output/unemp.pdf Graphic file (type pdf)
 <use figures_output/unemp.pdf>
 Package pdftex.def Info: figures_output/unemp.pdf  used on input line 79.
@@ -1046,16 +1046,15 @@ Package pdftex.def Info: figures_output/unemp.pdf  used on input line 79.
  [5
 
  <./figures_output/unemp.pdf>]
-<figures_output/frac_unemp.pdf, id=340, 1011.78pt x 614.295pt>
+<figures_output/frac_unemp.pdf, id=69, 1011.78pt x 614.295pt>
 File: figures_output/frac_unemp.pdf Graphic file (type pdf)
 <use figures_output/frac_unemp.pdf>
 Package pdftex.def Info: figures_output/frac_unemp.pdf  used on input line 86.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
-
-[6
+ [6
 
  <./figures_output/frac_unemp.pdf>]
-<figures_output/unemp_br_gen_raca.pdf, id=392, 1011.78pt x 614.295pt>
+<figures_output/unemp_br_gen_raca.pdf, id=80, 1011.78pt x 614.295pt>
 File: figures_output/unemp_br_gen_raca.pdf Graphic file (type pdf)
 <use figures_output/unemp_br_gen_raca.pdf>
 Package pdftex.def Info: figures_output/unemp_br_gen_raca.pdf  used on input li
@@ -1064,7 +1063,7 @@ ne 93.
  [7
 
  <./figures_output/unemp_br_gen_raca.pdf>]
-<figures_output/frac_pea.pdf, id=445, 1011.78pt x 614.295pt>
+<figures_output/frac_pea.pdf, id=92, 1011.78pt x 614.295pt>
 File: figures_output/frac_pea.pdf Graphic file (type pdf)
 <use figures_output/frac_pea.pdf>
 Package pdftex.def Info: figures_output/frac_pea.pdf  used on input line 100.
@@ -1072,7 +1071,7 @@ Package pdftex.def Info: figures_output/frac_pea.pdf  used on input line 100.
  [8
 
  <./figures_output/frac_pea.pdf>]
-<figures_output/pea.pdf, id=497, 1011.78pt x 614.295pt>
+<figures_output/pea.pdf, id=103, 1011.78pt x 614.295pt>
 File: figures_output/pea.pdf Graphic file (type pdf)
 <use figures_output/pea.pdf>
 Package pdftex.def Info: figures_output/pea.pdf  used on input line 107.
@@ -1080,153 +1079,99 @@ Package pdftex.def Info: figures_output/pea.pdf  used on input line 107.
  [9
 
  <./figures_output/pea.pdf>]
-<figures_output/pea_br_gen_raca.pdf, id=549, 1011.78pt x 614.295pt>
-File: figures_output/pea_br_gen_raca.pdf Graphic file (type pdf)
-<use figures_output/pea_br_gen_raca.pdf>
-Package pdftex.def Info: figures_output/pea_br_gen_raca.pdf  used on input line
- 114.
+<figures_output/pea_adult.pdf, id=114, 1011.78pt x 614.295pt>
+File: figures_output/pea_adult.pdf Graphic file (type pdf)
+<use figures_output/pea_adult.pdf>
+Package pdftex.def Info: figures_output/pea_adult.pdf  used on input line 114.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [10
 
- <./figures_output/pea_br_gen_raca.pdf>]
-<figures_output/gini_br_gen_raca.pdf, id=601, 1011.78pt x 614.295pt>
-File: figures_output/gini_br_gen_raca.pdf Graphic file (type pdf)
-<use figures_output/gini_br_gen_raca.pdf>
-Package pdftex.def Info: figures_output/gini_br_gen_raca.pdf  used on input lin
-e 122.
+ <./figures_output/pea_adult.pdf>]
+<figures_output/pea_br_gen_raca.pdf, id=125, 1011.78pt x 614.295pt>
+File: figures_output/pea_br_gen_raca.pdf Graphic file (type pdf)
+<use figures_output/pea_br_gen_raca.pdf>
+Package pdftex.def Info: figures_output/pea_br_gen_raca.pdf  used on input line
+ 121.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [11
 
- <./figures_output/gini_br_gen_raca.pdf>]
-<figures_output/top_bottom.pdf, id=653, 1011.78pt x 614.295pt>
-File: figures_output/top_bottom.pdf Graphic file (type pdf)
-<use figures_output/top_bottom.pdf>
-Package pdftex.def Info: figures_output/top_bottom.pdf  used on input line 129.
-
+ <./figures_output/pea_br_gen_raca.pdf>]
+<figures_output/gini_br_gen_raca.pdf, id=136, 1011.78pt x 614.295pt>
+File: figures_output/gini_br_gen_raca.pdf Graphic file (type pdf)
+<use figures_output/gini_br_gen_raca.pdf>
+Package pdftex.def Info: figures_output/gini_br_gen_raca.pdf  used on input lin
+e 129.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [12
 
- <./figures_output/top_bottom.pdf>]
-<figures_output/massa_habitual.pdf, id=705, 1011.78pt x 614.295pt>
-File: figures_output/massa_habitual.pdf Graphic file (type pdf)
-<use figures_output/massa_habitual.pdf>
-Package pdftex.def Info: figures_output/massa_habitual.pdf  used on input line 
-136.
+ <./figures_output/gini_br_gen_raca.pdf>]
+<figures_output/top_bottom.pdf, id=147, 1011.78pt x 614.295pt>
+File: figures_output/top_bottom.pdf Graphic file (type pdf)
+<use figures_output/top_bottom.pdf>
+Package pdftex.def Info: figures_output/top_bottom.pdf  used on input line 136.
+
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [13
 
- <./figures_output/massa_habitual.pdf>]
-<figures_output/massa_habitual_br_gen_raca.pdf, id=758, 1011.78pt x 614.295pt>
-File: figures_output/massa_habitual_br_gen_raca.pdf Graphic file (type pdf)
-<use figures_output/massa_habitual_br_gen_raca.pdf>
-Package pdftex.def Info: figures_output/massa_habitual_br_gen_raca.pdf  used on
- input line 143.
+ <./figures_output/top_bottom.pdf>]
+<figures_output/massa_habitual.pdf, id=159, 1011.78pt x 614.295pt>
+File: figures_output/massa_habitual.pdf Graphic file (type pdf)
+<use figures_output/massa_habitual.pdf>
+Package pdftex.def Info: figures_output/massa_habitual.pdf  used on input line 
+143.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [14
 
- <./figures_output/massa_habitual_br_gen_raca.pdf>]
-<figures_output/frac_massa_habitual.pdf, id=810, 1011.78pt x 614.295pt>
-File: figures_output/frac_massa_habitual.pdf Graphic file (type pdf)
-<use figures_output/frac_massa_habitual.pdf>
-Package pdftex.def Info: figures_output/frac_massa_habitual.pdf  used on input 
-line 150.
+ <./figures_output/massa_habitual.pdf>]
+<figures_output/massa_habitual_gen_raca.pdf, id=170, 1011.78pt x 614.295pt>
+File: figures_output/massa_habitual_gen_raca.pdf Graphic file (type pdf)
+<use figures_output/massa_habitual_gen_raca.pdf>
+Package pdftex.def Info: figures_output/massa_habitual_gen_raca.pdf  used on in
+put line 150.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [15
 
- <./figures_output/frac_massa_habitual.pdf>]
-<figures_output/perda_massa_salarial.pdf, id=862, 1011.78pt x 614.295pt>
-File: figures_output/perda_massa_salarial.pdf Graphic file (type pdf)
-<use figures_output/perda_massa_salarial.pdf>
-Package pdftex.def Info: figures_output/perda_massa_salarial.pdf  used on input
- line 158.
+ <./figures_output/massa_habitual_gen_raca.pdf>]
+<figures_output/frac_massa_habitual.pdf, id=181, 1011.78pt x 614.295pt>
+File: figures_output/frac_massa_habitual.pdf Graphic file (type pdf)
+<use figures_output/frac_massa_habitual.pdf>
+Package pdftex.def Info: figures_output/frac_massa_habitual.pdf  used on input 
+line 157.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [16
 
- <./figures_output/perda_massa_salarial.pdf>]
-<figures_output/perda_massa_salarial_composicao.pdf, id=914, 1011.78pt x 614.29
-5pt>
-File: figures_output/perda_massa_salarial_composicao.pdf Graphic file (type pdf
-)
-<use figures_output/perda_massa_salarial_composicao.pdf>
-Package pdftex.def Info: figures_output/perda_massa_salarial_composicao.pdf  us
-ed on input line 165.
-(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
-
-[17
-
- <./figures_output/perda_massa_salarial_composicao.pdf>]
-<figures_output/perda_massa_salario_discriminacao.pdf, id=966, 1011.78pt x 614.
-295pt>
-File: figures_output/perda_massa_salario_discriminacao.pdf Graphic file (type p
-df)
-<use figures_output/perda_massa_salario_discriminacao.pdf>
-Package pdftex.def Info: figures_output/perda_massa_salario_discriminacao.pdf  
-used on input line 172.
-(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
- [18
-
- <./figures_output/perda_massa_salario_discriminacao.pdf>]
-<figures_output/perda_massa_emp_total.pdf, id=1018, 1011.78pt x 614.295pt>
-File: figures_output/perda_massa_emp_total.pdf Graphic file (type pdf)
-<use figures_output/perda_massa_emp_total.pdf>
-Package pdftex.def Info: figures_output/perda_massa_emp_total.pdf  used on inpu
-t line 179.
-(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
- [19
-
- <./figures_output/perda_massa_emp_total.pdf>]
-<figures_output/perda_massa_emp_composicao.pdf, id=1071, 1011.78pt x 614.295pt>
-
-File: figures_output/perda_massa_emp_composicao.pdf Graphic file (type pdf)
-<use figures_output/perda_massa_emp_composicao.pdf>
-Package pdftex.def Info: figures_output/perda_massa_emp_composicao.pdf  used on
- input line 186.
-(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
- [20
-
- <./figures_output/perda_massa_emp_composicao.pdf>]
-<figures_output/perda_massa_emp_discriminacao.pdf, id=1123, 1011.78pt x 614.295
-pt>
-File: figures_output/perda_massa_emp_discriminacao.pdf Graphic file (type pdf)
-<use figures_output/perda_massa_emp_discriminacao.pdf>
-Package pdftex.def Info: figures_output/perda_massa_emp_discriminacao.pdf  used
- on input line 193.
-(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
- [21
-
- <./figures_output/perda_massa_emp_discriminacao.pdf>]
+ <./figures_output/frac_massa_habitual.pdf>]
 \tf@nav=\write6
-\openout6 = `apresentacao_conjuntura.nav'.
+\openout6 = `apresentacao.nav'.
 
 \tf@toc=\write7
-\openout7 = `apresentacao_conjuntura.toc'.
+\openout7 = `apresentacao.toc'.
 
 \tf@snm=\write8
-\openout8 = `apresentacao_conjuntura.snm'.
+\openout8 = `apresentacao.snm'.
 
- (apresentacao_conjuntura.aux)
+ (apresentacao.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-Package rerunfilecheck Info: File `apresentacao_conjuntura.out' has not changed
-.
-(rerunfilecheck)             Checksum: 21E689C48A3FED29A008B334887ACA52;404.
+Package rerunfilecheck Info: File `apresentacao.out' has not changed.
+(rerunfilecheck)             Checksum: 852D2D0BE9C3D437220D3E7BF22EA270;83.
  ) 
 Here is how much of TeX's memory you used:
- 26741 strings out of 474485
- 563506 string characters out of 5753544
- 1944542 words of memory out of 5000000
- 48498 multiletter control sequences out of 15000+600000
+ 26609 strings out of 474485
+ 559603 string characters out of 5753544
+ 1932542 words of memory out of 5000000
+ 48379 multiletter control sequences out of 15000+600000
  559581 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,19n,123p,421b,903s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,16n,123p,410b,903s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmss8.pfb>
-Output written on apresentacao_conjuntura.pdf (21 pages, 262527 bytes).
+Output written on apresentacao.pdf (16 pages, 132058 bytes).
 PDF statistics:
- 1182 PDF objects out of 1200 (max. 8388607)
- 45 named destinations out of 1000 (max. 500000)
- 159 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 215 PDF objects out of 1000 (max. 8388607)
+ 34 named destinations out of 1000 (max. 500000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
 
