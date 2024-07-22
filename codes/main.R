@@ -1,6 +1,5 @@
-rm(list = ls()[which(!ls()%in%list_objects_to_keep)])
+rm(list = ls())
 gc()
-
 
 # Carregando pacotes
 library(PNADcIBGE)
@@ -18,8 +17,10 @@ part_01 <- FALSE
 part_02 <- FALSE
 
 # Definindo usuário
-user <- "Rodrigo"
+#user <- "Rodrigo"
 #user <- "Alysson"
+user <- "Alysson_cpp"
+
 
 if (user == "Rodrigo") {
   # working folders
@@ -35,6 +36,12 @@ if (user == "Alysson") {
   
 }
 
+if (user == "Alysson_cpp") {
+  # working folders
+  github_folder <- file.path("C:/Users/alyssonlp1/Documents/@github/conjuntura_discriminacao")
+  one_drive_folder <- file.path("C:/Users/alyssonlp1/OneDrive - Insper/@support_papers/@NERI/conjuntura_pnadc/conjuntura_discriminacao")
+  
+}
 
 codes <- file.path(github_folder, "codes")
 original_data <- file.path(one_drive_folder, "original_data")
@@ -55,7 +62,8 @@ temp_file <- file.path(one_drive_folder, "temp_file")
 list_objects_to_keep <- c("datawork_folder", "github_folder", "one_drive_folder",
                           "codes", "outputs" ,"tables_output", "figures_output",
                           "csv_output", "intermediary_data", "final_data", 
-                          "ano_tri_fun", "part_01", "part_02")
+                          "ano_tri_fun", "part_01", "part_02", "dist_fun",
+                          "list_objects_to_keep")
 
 # Codes --------------------
 # Funções utilizadas em outros scripts:

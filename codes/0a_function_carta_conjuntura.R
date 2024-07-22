@@ -7,6 +7,20 @@
 
 # calcular para todos, depois por recorte 1: raca, recorte 2: raca e genero
 
+
+dist_fun <- function(ano, trimestre) {
+  
+  distribuicao <- 
+    dt[, list(top10 = wtd.mean(100*top10, weights =  V1028, na.rm = TRUE),
+              top5 = wtd.mean(100*top5, weights = V1028, na.rm = TRUE),
+              top1 = wtd.mean(100*top1, weights = V1028, na.rm = TRUE),
+              bottom10 = wtd.mean(100*bottom10, weights = V1028, na.rm = TRUE),
+              bottom5 = wtd.mean(100*bottom5, weights = V1028, na.rm = TRUE),
+              bottom1 = wtd.mean(100*bottom1, weights = V1028, na.rm = TRUE)),
+       by = c("gender_race")]
+  
+}
+
 ano_tri_fun <- function(ano, trimestre) {
   
   rds_name <- paste0("pnadc", ano, "_", trimestre, "_carta.rds")
@@ -43,20 +57,6 @@ ano_tri_fun <- function(ano, trimestre) {
                     gini_hab = gini.wtd(r_hab_all, weights = V1028),
                     gini_efe = gini.wtd(r_efe_all, weights = V1028)), 
              by = c("gender_race")]
-  
-  dist_fun <- function(ano, trimestre) {
-    
-    distribuicao <- 
-      dt[, list(top10 = wtd.mean(100*top10, weights =  V1028, na.rm = TRUE),
-                top5 = wtd.mean(100*top5, weights = V1028, na.rm = TRUE),
-                top1 = wtd.mean(100*top1, weights = V1028, na.rm = TRUE),
-                bottom10 = wtd.mean(100*bottom10, weights = V1028, na.rm = TRUE),
-                bottom5 = wtd.mean(100*bottom5, weights = V1028, na.rm = TRUE),
-                bottom1 = wtd.mean(100*bottom1, weights = V1028, na.rm = TRUE)),
-         by = c("gender_race")]
-    
-  }
-  
   
   
   return(list(resultados_br = resultados_br,
