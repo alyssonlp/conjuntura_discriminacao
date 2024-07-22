@@ -53,7 +53,7 @@ m_long <- melt(mulher, id.vars = "Ano_trimestre",
                value.name = "Perda")
 
 
-pdf(file.path(figures_output, "muhler_negra_massa_perdida_gph.pdf"),  width = 14, height = 8.5)
+pdf(file.path(figures_output, "mulher_negra_massa_perdida_gph.pdf"),  width = 14, height = 8.5)
 mn_results <- m_long %>%  ggplot() + 
   geom_area(aes(x = Ano_trimestre, y = Perda*(-1), group = Decomposição, fill = Decomposição)) +
   geom_hline(yintercept = 0, color = "black", linetype = "solid") +
