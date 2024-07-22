@@ -66,7 +66,8 @@ dt1 <- dt1[, gender_race := gsub("negra", "Negra", gender_race)]
 dt1 <- dt1[, gender_race := gsub("branco", "Branco", gender_race)]
 dt1 <- dt1[, gender_race := gsub("branca", "Branca", gender_race)]
 
-fwrite(dt1, file.path(csv_files, "top_bottom.csv"))
+fwrite(dt1, file.path(csv_output, "top_bottom.csv"))
+
 
 
 # criando o grafico
@@ -88,6 +89,8 @@ dt1_long <- mutate(dt1_long, category_labels = case_when(
   category == "t1" ~ "topo 1%",
   TRUE ~ category ))
 
+
+
 dt1_long <- dt1_long %>%
   mutate(Ano_trimestre_category = paste(Ano_trimestre, category_labels, sep = "-"))
 
@@ -101,10 +104,11 @@ dt1_long$Ano_trimestre_category <- forcats::fct_relevel(dt1_long$Ano_trimestre_c
                                                           "2023T1-topo 5%", "2024T1-topo 5%",
                                                           "2023T1-topo 1%", "2024T1-topo 1%"))
 
-
-
 dt1_long <- dt1_long %>%
   mutate(base_topo = ifelse(grepl("b", Ano_trimestre_category), "Base", "Topo"))
+
+dt1_long$Ano_trimestre_category <- gsub("T1-base", " -", dt1_long$Ano_trimestre_category)
+dt1_long$Ano_trimestre_category <- gsub("T1-topo", " -", dt1_long$Ano_trimestre_category)
 
 pdf(file.path(figures_output, "top_bottom.pdf"),  width = 14, height = 8.5)
 tb <- ggplot(dt1_long, aes(x = Ano_trimestre_category, y = value, fill = gender_race)) +
@@ -118,19 +122,18 @@ tb <- ggplot(dt1_long, aes(x = Ano_trimestre_category, y = value, fill = gender_
                                "Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
                                "Mulher Negra" = "brown4")) +
-  scale_x_discrete(labels = c("2023T1.b1" = "23T1-1%", 
-                              "2023T1.b5" = "23T1-5%",
-                              "2023T1.b10" = "23T-10%",
-                              "2023T1.t10" = "23T1-10%", 
-                              "2023T1.t5" = "23T15%",
-                              "2023T1.t1" = "23T1-1%",
-                              "2024T1.b1" = "24T1-1%", 
-                              "2024T1.b5" = "24T1-5%",
-                              "2024T1.b10" = "24T1-10%",
-                              "2024T1.t10" = "24T1-10%", 
-                              "2024T1.t5" = "24T1-5%",
-                              "2024T1.t1" = "24T1-1%")) +
-  coord_flip() + 
+  scale_x_discrete(labels = c("2023T1.b1" = "1%", 
+                              "2023T1.b5" = "5%",
+                              "2023T1.b10" = "10%",
+                              "2023T1.t10" = "10%", 
+                              "2023T1.t5" = "5%",
+                              "2023T1.t1" = "1%",
+                              "2024T1.b1" = "1%", 
+                              "2024T1.b5" = "5%",
+                              "2024T1.b10" = "10%",
+                              "2024T1.t10" = "10%", 
+                              "2024T1.t5" = "5%",
+                              "2024T1.t1" = "1%")) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
@@ -139,7 +142,8 @@ tb <- ggplot(dt1_long, aes(x = Ano_trimestre_category, y = value, fill = gender_
         axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 1, lineheight = 0.9),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5))  +
-  labs(x = "", y = "%", title = "") 
+  labs(x = "", y = "%", title = "") +
+  facet_grid(~ base_topo)
 
 
 print(tb)
