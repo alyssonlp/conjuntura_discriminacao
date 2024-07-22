@@ -1,7 +1,3 @@
-rm(list = ls()[which(!ls()%in%list_objects_to_keep)])
-gc()
-
-
 # Carregando pacotes
 library(PNADcIBGE)
 library(survey)

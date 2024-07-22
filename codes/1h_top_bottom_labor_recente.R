@@ -15,7 +15,7 @@ for(aa in ano) {
     }
     
     rds_file <- sprintf("pnadc%d_%d_carta.rds", aa, tri)
-    dt <- readRDS((file.path(original_data, rds_file)))
+    dt <- readRDS((file.path(intermediary_data, rds_file)))
     
     
 # Calculando o top 10%
