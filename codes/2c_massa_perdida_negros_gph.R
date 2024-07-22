@@ -1,18 +1,17 @@
 massa <- fread(file.path(csv_output, "resultados_massa_salarial.csv"))
 
 # Criando totais
-massa <- massa[, total_perdido := total_perdido_hn + total_perdido_mn] 
 massa <- massa[, wg_composicao := massa_wg_composicao_hn + massa_wg_composicao_mn]
 massa <- massa[, wg_discriminacao := massa_wg_discriminacao_hn + massa_wg_discriminacao_mn]
 massa <- massa[, emp_composicao := massa_emp_composicao_hn + massa_emp_composicao_mn]
 massa <- massa[, emp_discriminacao := massa_emp_discriminacao_hn + massa_emp_discriminacao_mn]
 
-massa <- massa[, .(Ano_trimestre, total_perdido, wg_composicao, wg_discriminacao,
+massa <- massa[, .(Ano_trimestre, wg_composicao, wg_discriminacao,
                    emp_composicao, emp_discriminacao)]
 
-massa <- setnames(massa, c("total_perdido", "wg_composicao", "wg_discriminacao",
+massa <- setnames(massa, c( "wg_composicao", "wg_discriminacao",
                            "emp_composicao", "emp_discriminacao"),
-                  c("Massa Total Perdida", "Efeito Composição - Salários",
+                  c( "Efeito Composição - Salários",
                     "Efeito Discriminação - Salários", "Efeito Composição - Empregabilidade",
                     "Efeito Discriminação - Empregabilidade"))
 

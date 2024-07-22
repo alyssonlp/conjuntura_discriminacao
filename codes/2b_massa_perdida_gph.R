@@ -5,12 +5,12 @@ mass <- fread(file.path(csv_output, "resultados_massa_salarial.csv"))
 # Gph para homens negros
 # total, composicao wg, discriminacao wg, composicao emp, discriminacao emp
 # Transformar os dados para o formato longo
-homem <- mass[, .(Ano_trimestre, total_perdido_hn, massa_wg_composicao_hn, massa_wg_discriminacao_hn,
+homem <- mass[, .(Ano_trimestre, massa_wg_composicao_hn, massa_wg_discriminacao_hn,
                   massa_emp_composicao_hn, massa_emp_discriminacao_hn)]
 
-homem <- setnames(homem, c("total_perdido_hn", "massa_wg_composicao_hn", "massa_wg_discriminacao_hn",
+homem <- setnames(homem, c( "massa_wg_composicao_hn", "massa_wg_discriminacao_hn",
                            "massa_emp_composicao_hn", "massa_emp_discriminacao_hn"),
-                  c("Massa Total Perdida", "Efeito Composição - Salários",
+                  c("Efeito Composição - Salários",
                     "Efeito Discriminação - Salários", "Efeito Composição - Empregabilidade",
                     "Efeito Discriminação - Empregabilidade"))
 
@@ -39,12 +39,12 @@ dev.off()
 
 
 # Para mulheres negras
-mulher <- mass[, .(Ano_trimestre, total_perdido_mn, massa_wg_composicao_mn, massa_wg_discriminacao_mn,
+mulher <- mass[, .(Ano_trimestre, massa_wg_composicao_mn, massa_wg_discriminacao_mn,
                   massa_emp_composicao_mn, massa_emp_discriminacao_mn)]
 
-mulher <- setnames(mulher, c("total_perdido_mn", "massa_wg_composicao_mn", "massa_wg_discriminacao_mn",
+mulher <- setnames(mulher, c( "massa_wg_composicao_mn", "massa_wg_discriminacao_mn",
                            "massa_emp_composicao_mn", "massa_emp_discriminacao_mn"),
-                  c("Massa Total Perdida", "Efeito Composição - Salários",
+                  c( "Efeito Composição - Salários",
                     "Efeito Discriminação - Salários", "Efeito Composição - Empregabilidade",
                     "Efeito Discriminação - Empregabilidade"))
 
