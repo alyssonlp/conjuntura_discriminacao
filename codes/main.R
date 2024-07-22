@@ -51,7 +51,7 @@ temp_file <- file.path(one_drive_folder, "temp_file")
 list_objects_to_keep <- c("datawork_folder", "github_folder", "one_drive_folder",
                           "codes", "outputs" ,"tables_output", "figures_output",
                           "csv_output", "intermediary_data", "final_data", 
-                          "ano_tri_fun", "part_01", "part_02")
+                          "ano_tri_fun", "part_01", "part_02", "list_objects_to_keep")
 
 # Codes --------------------
 # Funções utilizadas em outros scripts:
