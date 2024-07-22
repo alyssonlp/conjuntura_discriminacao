@@ -22,11 +22,11 @@ um_porcento <- one %>%
                                 "Homem Negro" = "darkgoldenrod1",
                                 "Mulher Negra" = "brown4"),
                      aesthetics = c("color", "fill"))+
-  scale_x_discrete(breaks = c("2012T1",  "2016T1",
-                              "2020T1", "2024T1")) +
+  scale_x_discrete(breaks = c("2012",  "2016",
+                              "2020", "2024")) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 18),
+        text = element_text(size = 22),
         legend.position = "bottom",
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22),
@@ -62,11 +62,11 @@ cinco <- five %>%
                                 "Homem Negro" = "darkgoldenrod1",
                                 "Mulher Negra" = "brown4"),
                      aesthetics = c("color", "fill"))+
-  scale_x_discrete(breaks = c("2012T1",  "2016T1",
-                              "2020T1", "2024T1")) +
+  scale_x_discrete(breaks = c("2012",  "2016",
+                              "2020", "2024")) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 18),
+        text = element_text(size = 22),
         legend.position = "bottom",
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22),
@@ -102,11 +102,11 @@ dez <- ten %>%
                                 "Homem Negro" = "darkgoldenrod1",
                                 "Mulher Negra" = "brown4"),
                      aesthetics = c("color", "fill"))+
-  scale_x_discrete(breaks = c("2012T1",  "2016T1",
-                              "2020T1", "2024T1")) +
+  scale_x_discrete(breaks = c("2012",  "2016",
+                              "2020", "2024")) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 18),
+        text = element_text(size = 22),
         legend.position = "bottom",
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22),
