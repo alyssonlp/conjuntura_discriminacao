@@ -12,6 +12,7 @@ library(ggplot2)
 library(fixest)
 library(dineq)
 library(tidyr)
+library(gt)
 
 part_01 <- FALSE
 part_02 <- FALSE

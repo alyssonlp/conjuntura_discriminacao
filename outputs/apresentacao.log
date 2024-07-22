@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.8)  22 JUL 2024 10:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.8)  22 JUL 2024 14:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1008,7 +1008,7 @@ or `english'. on input line 46.
 dftex.map}
 
 ]
-<figures_output/rendimento_habitual.pdf, id=104, 1011.78pt x 614.295pt>
+<figures_output/rendimento_habitual.pdf, id=137, 1011.78pt x 614.295pt>
 File: figures_output/rendimento_habitual.pdf Graphic file (type pdf)
 <use figures_output/rendimento_habitual.pdf>
 Package pdftex.def Info: figures_output/rendimento_habitual.pdf  used on input 
@@ -1017,7 +1017,7 @@ line 58.
  [2
 
  <./figures_output/rendimento_habitual.pdf>]
-<figures_output/frac_rendimento_habitual.pdf, id=146, 1011.78pt x 614.295pt>
+<figures_output/frac_rendimento_habitual.pdf, id=191, 1011.78pt x 614.295pt>
 File: figures_output/frac_rendimento_habitual.pdf Graphic file (type pdf)
 <use figures_output/frac_rendimento_habitual.pdf>
 Package pdftex.def Info: figures_output/frac_rendimento_habitual.pdf  used on i
@@ -1027,7 +1027,7 @@ nput line 65.
 [3
 
  <./figures_output/frac_rendimento_habitual.pdf>]
-<figures_output/rendimento_habitual_br_gen_raca.pdf, id=188, 1011.78pt x 614.29
+<figures_output/rendimento_habitual_br_gen_raca.pdf, id=245, 1011.78pt x 614.29
 5pt>
 File: figures_output/rendimento_habitual_br_gen_raca.pdf Graphic file (type pdf
 )
@@ -1038,7 +1038,7 @@ ed on input line 72.
  [4
 
  <./figures_output/rendimento_habitual_br_gen_raca.pdf>]
-<figures_output/unemp.pdf, id=230, 1011.78pt x 614.295pt>
+<figures_output/unemp.pdf, id=299, 1011.78pt x 614.295pt>
 File: figures_output/unemp.pdf Graphic file (type pdf)
 <use figures_output/unemp.pdf>
 Package pdftex.def Info: figures_output/unemp.pdf  used on input line 79.
@@ -1046,7 +1046,7 @@ Package pdftex.def Info: figures_output/unemp.pdf  used on input line 79.
  [5
 
  <./figures_output/unemp.pdf>]
-<figures_output/frac_unemp.pdf, id=272, 1011.78pt x 614.295pt>
+<figures_output/frac_unemp.pdf, id=353, 1011.78pt x 614.295pt>
 File: figures_output/frac_unemp.pdf Graphic file (type pdf)
 <use figures_output/frac_unemp.pdf>
 Package pdftex.def Info: figures_output/frac_unemp.pdf  used on input line 86.
@@ -1054,7 +1054,7 @@ Package pdftex.def Info: figures_output/frac_unemp.pdf  used on input line 86.
  [6
 
  <./figures_output/frac_unemp.pdf>]
-<figures_output/unemp_br_gen_raca.pdf, id=314, 1011.78pt x 614.295pt>
+<figures_output/unemp_br_gen_raca.pdf, id=407, 1011.78pt x 614.295pt>
 File: figures_output/unemp_br_gen_raca.pdf Graphic file (type pdf)
 <use figures_output/unemp_br_gen_raca.pdf>
 Package pdftex.def Info: figures_output/unemp_br_gen_raca.pdf  used on input li
@@ -1063,7 +1063,7 @@ ne 93.
  [7
 
  <./figures_output/unemp_br_gen_raca.pdf>]
-<figures_output/frac_pea.pdf, id=357, 1011.78pt x 614.295pt>
+<figures_output/frac_pea.pdf, id=462, 1011.78pt x 614.295pt>
 File: figures_output/frac_pea.pdf Graphic file (type pdf)
 <use figures_output/frac_pea.pdf>
 Package pdftex.def Info: figures_output/frac_pea.pdf  used on input line 100.
@@ -1071,7 +1071,7 @@ Package pdftex.def Info: figures_output/frac_pea.pdf  used on input line 100.
  [8
 
  <./figures_output/frac_pea.pdf>]
-<figures_output/pea.pdf, id=399, 1011.78pt x 614.295pt>
+<figures_output/pea.pdf, id=516, 1011.78pt x 614.295pt>
 File: figures_output/pea.pdf Graphic file (type pdf)
 <use figures_output/pea.pdf>
 Package pdftex.def Info: figures_output/pea.pdf  used on input line 107.
@@ -1079,7 +1079,7 @@ Package pdftex.def Info: figures_output/pea.pdf  used on input line 107.
  [9
 
  <./figures_output/pea.pdf>]
-<figures_output/pea_adult.pdf, id=441, 1011.78pt x 614.295pt>
+<figures_output/pea_adult.pdf, id=570, 1011.78pt x 614.295pt>
 File: figures_output/pea_adult.pdf Graphic file (type pdf)
 <use figures_output/pea_adult.pdf>
 Package pdftex.def Info: figures_output/pea_adult.pdf  used on input line 114.
@@ -1087,7 +1087,7 @@ Package pdftex.def Info: figures_output/pea_adult.pdf  used on input line 114.
  [10
 
  <./figures_output/pea_adult.pdf>]
-<figures_output/pea_br_gen_raca.pdf, id=483, 1011.78pt x 614.295pt>
+<figures_output/pea_br_gen_raca.pdf, id=624, 1011.78pt x 614.295pt>
 File: figures_output/pea_br_gen_raca.pdf Graphic file (type pdf)
 <use figures_output/pea_br_gen_raca.pdf>
 Package pdftex.def Info: figures_output/pea_br_gen_raca.pdf  used on input line
@@ -1096,7 +1096,7 @@ Package pdftex.def Info: figures_output/pea_br_gen_raca.pdf  used on input line
  [11
 
  <./figures_output/pea_br_gen_raca.pdf>]
-<figures_output/gini_br_gen_raca.pdf, id=525, 1011.78pt x 614.295pt>
+<figures_output/gini_br_gen_raca.pdf, id=678, 1011.78pt x 614.295pt>
 File: figures_output/gini_br_gen_raca.pdf Graphic file (type pdf)
 <use figures_output/gini_br_gen_raca.pdf>
 Package pdftex.def Info: figures_output/gini_br_gen_raca.pdf  used on input lin
@@ -1105,7 +1105,7 @@ e 129.
  [12
 
  <./figures_output/gini_br_gen_raca.pdf>]
-<figures_output/base_topo_1.pdf, id=567, 1011.78pt x 614.295pt>
+<figures_output/base_topo_1.pdf, id=732, 1011.78pt x 614.295pt>
 File: figures_output/base_topo_1.pdf Graphic file (type pdf)
 <use figures_output/base_topo_1.pdf>
 Package pdftex.def Info: figures_output/base_topo_1.pdf  used on input line 136
@@ -1114,7 +1114,7 @@ Package pdftex.def Info: figures_output/base_topo_1.pdf  used on input line 136
  [13
 
  <./figures_output/base_topo_1.pdf>]
-<figures_output/base_topo_5.pdf, id=610, 1011.78pt x 614.295pt>
+<figures_output/base_topo_5.pdf, id=787, 1011.78pt x 614.295pt>
 File: figures_output/base_topo_5.pdf Graphic file (type pdf)
 <use figures_output/base_topo_5.pdf>
 Package pdftex.def Info: figures_output/base_topo_5.pdf  used on input line 143
@@ -1123,7 +1123,7 @@ Package pdftex.def Info: figures_output/base_topo_5.pdf  used on input line 143
  [14
 
  <./figures_output/base_topo_5.pdf>]
-<figures_output/base_topo_10.pdf, id=652, 1011.78pt x 614.295pt>
+<figures_output/base_topo_10.pdf, id=841, 1011.78pt x 614.295pt>
 File: figures_output/base_topo_10.pdf Graphic file (type pdf)
 <use figures_output/base_topo_10.pdf>
 Package pdftex.def Info: figures_output/base_topo_10.pdf  used on input line 15
@@ -1132,7 +1132,7 @@ Package pdftex.def Info: figures_output/base_topo_10.pdf  used on input line 15
  [15
 
  <./figures_output/base_topo_10.pdf>]
-<figures_output/massa_habitual.pdf, id=694, 1011.78pt x 614.295pt>
+<figures_output/massa_habitual.pdf, id=895, 1011.78pt x 614.295pt>
 File: figures_output/massa_habitual.pdf Graphic file (type pdf)
 <use figures_output/massa_habitual.pdf>
 Package pdftex.def Info: figures_output/massa_habitual.pdf  used on input line 
@@ -1141,7 +1141,7 @@ Package pdftex.def Info: figures_output/massa_habitual.pdf  used on input line
  [16
 
  <./figures_output/massa_habitual.pdf>]
-<figures_output/massa_habitual_gen_raca.pdf, id=736, 1011.78pt x 614.295pt>
+<figures_output/massa_habitual_gen_raca.pdf, id=949, 1011.78pt x 614.295pt>
 File: figures_output/massa_habitual_gen_raca.pdf Graphic file (type pdf)
 <use figures_output/massa_habitual_gen_raca.pdf>
 Package pdftex.def Info: figures_output/massa_habitual_gen_raca.pdf  used on in
@@ -1150,7 +1150,7 @@ put line 164.
  [17
 
  <./figures_output/massa_habitual_gen_raca.pdf>]
-<figures_output/frac_massa_habitual.pdf, id=779, 1011.78pt x 614.295pt>
+<figures_output/frac_massa_habitual.pdf, id=1003, 1011.78pt x 614.295pt>
 File: figures_output/frac_massa_habitual.pdf Graphic file (type pdf)
 <use figures_output/frac_massa_habitual.pdf>
 Package pdftex.def Info: figures_output/frac_massa_habitual.pdf  used on input 
@@ -1159,8 +1159,8 @@ line 171.
  [18
 
  <./figures_output/frac_massa_habitual.pdf>]
-<figures_output/homem_negro_massa_perdida_gph.pdf, id=822, 1011.78pt x 614.295p
-t>
+<figures_output/homem_negro_massa_perdida_gph.pdf, id=1057, 1011.78pt x 614.295
+pt>
 File: figures_output/homem_negro_massa_perdida_gph.pdf Graphic file (type pdf)
 <use figures_output/homem_negro_massa_perdida_gph.pdf>
 Package pdftex.def Info: figures_output/homem_negro_massa_perdida_gph.pdf  used
@@ -1169,8 +1169,8 @@ Package pdftex.def Info: figures_output/homem_negro_massa_perdida_gph.pdf  used
  [19
 
  <./figures_output/homem_negro_massa_perdida_gph.pdf>]
-<figures_output/mulher_negra_massa_perdida_gph.pdf, id=867, 1011.78pt x 614.295
-pt>
+<figures_output/mulher_negra_massa_perdida_gph.pdf, id=1112, 1011.78pt x 614.29
+5pt>
 File: figures_output/mulher_negra_massa_perdida_gph.pdf Graphic file (type pdf)
 
 <use figures_output/mulher_negra_massa_perdida_gph.pdf>
@@ -1180,7 +1180,7 @@ d on input line 186.
  [20
 
  <./figures_output/mulher_negra_massa_perdida_gph.pdf>]
-<figures_output/massa_perdida_gph.pdf, id=910, 1011.78pt x 614.295pt>
+<figures_output/massa_perdida_gph.pdf, id=1166, 1011.78pt x 614.295pt>
 File: figures_output/massa_perdida_gph.pdf Graphic file (type pdf)
 <use figures_output/massa_perdida_gph.pdf>
 Package pdftex.def Info: figures_output/massa_perdida_gph.pdf  used on input li
@@ -1203,30 +1203,23 @@ ne 193.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-
-
-Package rerunfilecheck Warning: File `apresentacao.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `apresentacao.out':
-(rerunfilecheck)             Before: 852D2D0BE9C3D437220D3E7BF22EA270;83
-(rerunfilecheck)             After:  21E689C48A3FED29A008B334887ACA52;404.
+Package rerunfilecheck Info: File `apresentacao.out' has not changed.
+(rerunfilecheck)             Checksum: 21E689C48A3FED29A008B334887ACA52;404.
  ) 
 Here is how much of TeX's memory you used:
- 26728 strings out of 474485
- 562744 string characters out of 5753544
- 1941542 words of memory out of 5000000
- 48485 multiletter control sequences out of 15000+600000
+ 26742 strings out of 474485
+ 562860 string characters out of 5753544
+ 1944542 words of memory out of 5000000
+ 48499 multiletter control sequences out of 15000+600000
  559581 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,123p,410b,903s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmss8.pfb>
-Output written on apresentacao.pdf (21 pages, 275175 bytes).
+Output written on apresentacao.pdf (21 pages, 301900 bytes).
 PDF statistics:
- 964 PDF objects out of 1000 (max. 8388607)
+ 1225 PDF objects out of 1440 (max. 8388607)
  45 named destinations out of 1000 (max. 500000)
- 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 159 words of extra memory for PDF output out of 10000 (max. 10000000)
 
