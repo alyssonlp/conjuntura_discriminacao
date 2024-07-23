@@ -1,6 +1,3 @@
-rm(list = ls())
-gc()
-
 # Carregando pacotes
 library(PNADcIBGE)
 library(survey)
@@ -11,15 +8,19 @@ library(ggplot2)
 library(fixest)
 library(dineq)
 library(tidyr)
+library(knitr)
 library(gt)
+library(webshot2)
+
+
 
 part_01 <- FALSE
 part_02 <- FALSE
 
 # Definindo usuário
-#user <- "Rodrigo"
+user <- "Rodrigo"
 #user <- "Alysson"
-user <- "Alysson_cpp"
+#user <- "Alysson_cpp"
 
 
 if (user == "Rodrigo") {
