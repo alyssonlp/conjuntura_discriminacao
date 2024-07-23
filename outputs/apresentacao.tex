@@ -171,6 +171,181 @@
 	\end{frame}		
 	
 	\section{Estimando a Massa Salarial Perdida para Desigualdade}
+	\begin{frame}{A Massa Salarial}
+	\begin{itemize}
+		\item A massa salarial pode ser definida como o total de salários pagos a todos os trabalhadores em determinado período.
+	\end{itemize}
+	\begin{equation}
+		M = \sum_{i =1}^{E} y_{i} = E \frac{\sum_{i =1}^{E} y_{i}}{E} = E \bar{Y}
+	\end{equation}
+	\begin{itemize}
+		\item 	Onde: $E$ representa o total de trabalhadores, ou seja, $E = eP$; 
+		\item	No qual, $e$ representa a proporção de pessoas que estão trabalhando e $P$ é o tamanho da população
+		\item	$y_{i}$ representa o salário de cada trabalhador e $\bar{Y}$ representa a média salarial. 
+	 \end{itemize}	
+	\end{frame}	
+	
+	\begin{frame}{A Massa Salarial}
+	\begin{itemize}
+		\item Considere que há apenas dois grupos na economia: negros e brancos.
+		\item Assim, a massa salarial é a soma da massa dos trabalhadores negros e com a massa dos trabalhadores brancos, logo:
+	\end{itemize}
+	\begin{equation}
+	M =  P_{0}\bar{e}_{0} \bar{Y}_{0} + P_{1}\bar{e}_{1} \bar{Y}_{1} 
+	\end{equation}
+	\begin{itemize}
+		\item 	Onde o subscrito 0 representa os indivíduos brancos e o 1 representa os negros. 
+		\item	No qual, $e$ representa a proporção de pessoas que estão trabalhando e $P$ é o tamanho da população
+		\item	$y_{i}$ representa o salário de cada trabalhador e $\bar{Y}$ representa a média salarial. 
+	\end{itemize}	
+\end{frame}	
+
+	\begin{frame}{A Massa Salarial}
+	\begin{itemize}
+		\item 	Devido a diversos fatores, como nível de escolaridade, anos de experiência, paternidade ou maternidade, tipo de ocupação, setor de atividade e discriminação racial, negros e brancos possuem, em média, tanto nível de empregabilidade quanto rendimento desiguais.
+		\item 	Dito isso, imagine uma realidade na qual haja igualdade salarial e chances iguais de brancos e negros estarem empregados. Nesse cenário, a massa salarial da economia seria diferente daquela encontrada na equação (2).Teríamos a massa contrafactual, no qual tanto a renda média quanto a empregabilidade dos negros são iguais dos indivíduos brancos.
+	\end{itemize}
+	\begin{equation}
+		M^{c} = P_{0}e_{0}\bar{Y}_{0} + P_{1}e_{0}\bar{Y}_{0}
+	\end{equation}	
+\end{frame}	
+
+	\begin{frame}{A Massa Salarial}
+	\begin{itemize}
+		\item 	De que forma podemos mensurar a massa salarial perdida devido à desigualdade racial no mercado de trabalho? Para isso, precisamos acrescentar e subtrair o segundo termo da equação (3), que representa um cenário de igualdade em salário médio e empregabilidade, na equação da massa salarial factual (3)
+		\end{itemize}
+	\begin{align}
+	P_{0}e_{0}\bar{Y}_{0} + P_{1}e_{1}\bar{Y}_{1} \pm P_{1}e_{0}\bar{Y}_{0} &= P_{0}e_{0}\bar{Y}_{0} + P_{1}e_{1}\bar{Y}_{1} + P_{1}e_{0}\bar{Y}_{0} - P_{1}e_{0}\bar{Y}_{0} \\
+	&= (P_{0} +  P_{1})e_{0}\bar{Y}_{0} + P_{1}(e_{1}\bar{Y}_{1} - e_{0}\bar{Y}_{0})
+	\end{align}
+		\begin{itemize}
+		\item	Nesse caso, a massa contrafactual seria igual à massa factual apenas se houvesse conjuntamente igualdade salarial e em termos de empregabilidade. No entanto, a equação (5) não permite decompor a perda da massa salarial em termos salariais e em termos de empregabilidade.
+		\end{itemize}
+	\end{frame}	
+
+	\begin{frame}{A Massa Salarial}
+	\begin{itemize}
+		\item 	Para isso, torna-se necessária a seguinte manipulação algébrica: 
+	\end{itemize}
+		\begin{equation}
+		M^{c} + P_{1}(\bar{e}_{1}\bar{Y}_{1} - \bar{e}_{0}\bar{Y}_{0} + \bar{e}_{1}\bar{Y}_{0} - \bar{e}_{1}\bar{Y}_{0}) = M^{c} + P_{1}(\bar{e}_{1}\bar{Y}_{1} - \bar{e}_{1}\bar{Y}_{0} + \bar{e}_{1}\bar{Y}_{0} - \bar{e}\bar{Y}_{0})
+	\end{equation}
+	
+	\begin{equation}
+		M^{c} + P_{1}[e_{1}(\bar{Y}_{1} - \bar{Y}_{0}) + \bar{Y}_{0}(\bar{e}_{1} - \bar{e} )] =  M^{c} + P_{1}[e_{1}\Delta \bar{Y}_{(1,0)} + \bar{Y}_{0}\Delta \bar{e}_{(1,0)}]
+	\end{equation}
+	\begin{itemize}
+		\item Onde: $e_{1}\Delta \bar{Y}_{(1,0)}$ é a penalidade salarial e,
+		\item 	$\bar{Y}_{0}\Delta \bar{e}_{(1,0)}$ é a penalidade na empregabilidade.
+		\end{itemize}
+	\end{frame}	
+		
+	\begin{frame}{A Equação Salarial}
+		\begin{itemize}
+			\item A equação salarial pode ser estimada do seguinte modo:
+		\end{itemize}
+			\begin{equation}
+			\hat{Y} = \alpha + X\beta +  \gamma \lambda + \epsilon
+		\end{equation}	
+		\begin{itemize}
+			\item Onde $X_{i}$ representa o conjunto de características observadas dos trabalhadores $i$ como escolaridade, experiência, vínculo empregatício, setor da economia.
+			\item Enquanto $\beta$ representa quanto o salário médio esperado mudaria se alterássemos uma unidade de uma variável, mantendo as outras constantes.
+			\item Os trabalhadores negros possuem em sua função salarial a dummy $\gamma$ igual a um e tal dummy estima a quantia perdida devido à discriminação no mercado de trabalho. Assim, para trabalhadores brancos, temos $\gamma = 0$
+		\end{itemize}
+		\end{frame}
+		
+			\begin{frame}{A Equação Salarial}
+			\begin{itemize}
+				\item O salário médio pode ser estimado da seguinte forma:
+			\end{itemize}
+			\begin{equation}
+				\bar{Y} =  \frac{\sum_{i=1}^{E} \hat{Y}}{E}
+			\end{equation}	
+			\begin{itemize}
+				\item Como a função salarial é calculada de acordo com a raça do trabalhador, temos o salário médio dos branco, $\bar{Y}_{0}$, e o salário médio dos negros, $\bar{Y}_{1}$. Logo,
+			\begin{equation}
+			\bar{Y}_{0} =  \frac{\sum_{i=1}^{P_{0}} \hat{Y}_{0}}{P_{0}}
+			\end{equation}	
+			\begin{itemize}
+				\item E,	
+			\end{itemize}
+			\begin{equation}
+			\bar{Y}_{1} =  \frac{\sum_{i=1}^{P_{1}} \hat{Y}_{1}}{P_{1}}
+			\end{equation}	
+			\end{itemize}
+			\end{frame}		
+			
+	\begin{frame}{A Equação Salarial}
+	\begin{itemize}
+		\item Considere agora que a discriminação racial foi abolida. Nesse contrafactual, o salário estimado dos trabalhadores negros seria:
+	\end{itemize}
+	\begin{equation}
+		\hat{Y}_{c} = \alpha + X\beta + \epsilon
+	\end{equation}	
+	\begin{itemize}
+		\item No qual é diferente do salário estimado inicialmente, $\hat{Y}_{1} = \alpha + X\beta +  \gamma \lambda + \epsilon$
+		\item No entanto, o salário médio dos negros continuaria sendo diferente do montante médio recebido pelos brancos. Isso decorre das diferenças nas características observadas, conhecida como efeito composição.
+	\end{itemize}
+	\end{frame}		
+		
+		
+		\begin{frame}{A Equação Salarial}
+		\begin{itemize}
+			\item Assim temos que a diferença entre o salário médio dos negros no cenário com discriminação em relação ao resultado médio contrafactual mensura a perda salarial média devido à discriminação no mercado de trabalho. Ou seja, 
+		\end{itemize}
+			\begin{equation}
+			\bar{Y}_{1}  - \bar{Y}_{0}  =  \gamma
+			\end{equation}	
+		\begin{itemize}
+			\item Enquanto a diferença salarial entre negros e brancos é mensurada como a diferença das variáveis observadas, que é chamada de efeito composição. 	
+		\end{itemize}
+			\begin{equation}
+			(\bar{X}_{1} - \bar{X}_{0})\beta = \Delta X\beta
+			\end{equation}	
+		\begin{itemize}
+			\item Temos que a penalidade salarial média para o trabalhador negro é a soma dos resultados mensurados anteriormente. Matematicamente: $\Delta X\beta + \gamma$
+		\end{itemize}
+		\end{frame}
+	
+	\begin{frame}{A Equação da Empregabilidade}
+		\begin{itemize}
+			\item Até agora vimos o aspecto salarial no mercado de trabalho. No entanto, compreender a dinâmica da discriminação racial no mercado de trabalho envolve em entender como isso afeta a empregabilidade.
+			\item Para isso, temos a seguinte função que mensura a probabilidade do indivíduo estar empregado
+		\end{itemize}
+		\begin{equation}
+			\hat{e} = \theta + Z\phi + \delta\zeta + \mu
+		\end{equation}
+		\begin{itemize}
+			\item Onde, $Z$ representa o conjunto de características observáveis e $\delta$ é a dummy que indica se o trabalhador é negro.
+			\item Assim, temos que a probabilidade média do individuo branco estar empregado:
+		\end{itemize}
+		\begin{equation}
+			\bar{e}_{0} = \frac{\sum_{i=1}^{P_{0}} \hat{e}_{0}}{P_{0}}
+		\end{equation}
+			\begin{itemize}
+			\item Enquanto para o indivíduo negro, temos:
+		\end{itemize}
+		\begin{equation}
+			\bar{e}_{1} = \frac{\sum_{i=1}^{P_{1}} \hat{e}_{1}}{P_{1}}
+		\end{equation}
+	\end{frame}
+	
+	\begin{frame}{A Equação da Empregabilidade}
+		\begin{itemize}
+			\item Tal como na equação salarial, iremos considerar um cenário contrafactual no qual a discriminação foi extinta. Nesse caso, temos que a probabilidade de uma pessoa negra estar empregada é estimada da seguinte forma:
+		\end{itemize}
+		\begin{equation}
+				\hat{e_{c}} = \theta + Z\phi + \mu
+		\end{equation}
+		\begin{itemize}
+			\item A probabilidade média do negro estar empregado baseado na diferença do resultado em um mercado de trabalho com discriminação em relação a um mercado sem discriminação é o nosso $\delta$.
+			\item $ \frac{\sum_{i=1}^{P_{1}} \hat{e}_{1}}{P_{1}} - \frac{\sum_{i=1}^{P_{1}} \hat{e}_{c}}{P_{1}} = \delta$
+			\item Ainda no cenário contrafactual, temos que, $\bar{e_{c}} \neq \bar{e_{0}}$, devido às diferenças nas características observadas. Isso pode ser entendido como o efeito composição, ou seja, $(\bar{Z}_{1} - \bar{Z}_{0})\phi = \Delta Z\phi$
+			\item Portanto, a penalidade na empregabilidade do trabalhador negro decorre do efeito discriminação, no qual o fenótipo é um fator decisivo na contratação, em conjunto com o efeito composição, devido às diferenças que negros e brancos possuem como, por exemplo, o capital social.
+		\end{itemize}
+	\end{frame}
+	
+		\section{Resultados}
 	\begin{frame}{A Massa Salarial Perdida - Homens Negros}
 	\begin{figure}
 		\centering
@@ -192,5 +367,18 @@
 	\end{figure}
 	\end{frame}		
 
+	\begin{frame}{ Resultados da Perda da Massa Salarial}
+	\begin{figure}
+		\centering
+		\includegraphics[width = 0.75\textwidth]{tables_output/table_massa.pdf}
+	\end{figure}
+	\end{frame}		
 	
+	\begin{frame}{ Perda Salarial Média e Probabilidade em estar Empregado}
+	\begin{figure}
+		\centering
+		\includegraphics[width = 0.75\textwidth]{tables_output/table_individual.pdf}
+	\end{figure}
+		\end{frame}	
+		
 \end{document}
