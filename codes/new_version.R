@@ -1,7 +1,4 @@
 
-+
-  facet_wrap(~cyl)
-
 dt1_long <- as.data.table(dt1_long)
 
 dt1_long[, topo_base := as.numeric(category %in% c("b10", "b5", "b1"))]
@@ -14,6 +11,7 @@ table(dt1_long$category, dt1_long$order)
 
 dt1_long[Ano_trimestre == "2023T1", teste := order]
 dt1_long[Ano_trimestre == "2024T1", teste := order + 1]
+
 
 ggplot(dt1_long, 
        aes(x = teste, y = value, fill = gender_race)) +
@@ -29,7 +27,6 @@ ggplot(dt1_long,
                                "Homem Negro" = "darkgoldenrod1",
                                "Mulher Negra" = "brown4")) +
   facet_wrap(~ base_topo)
-
 
 ggplot(dt1_long, 
        aes(x = Ano_trimestre_category, y = value, fill = gender_race)) +
