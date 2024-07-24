@@ -11,6 +11,7 @@ library(tidyr)
 library(knitr)
 library(gt)
 library(webshot2)
+library(kableExtra)
 
 
 
