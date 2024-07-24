@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.8)  23 JUL 2024 17:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.8)  24 JUL 2024 15:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1132,60 +1132,81 @@ Package pdftex.def Info: figures_output/base_topo_10.pdf  used on input line 15
  [15
 
  <./figures_output/base_topo_10.pdf>]
-<figures_output/massa_habitual.pdf, id=1360, 1011.78pt x 614.295pt>
-File: figures_output/massa_habitual.pdf Graphic file (type pdf)
-<use figures_output/massa_habitual.pdf>
-Package pdftex.def Info: figures_output/massa_habitual.pdf  used on input line 
-157.
+<figures_output/base_topo_1_linha.pdf, id=1360, 1011.78pt x 614.295pt>
+File: figures_output/base_topo_1_linha.pdf Graphic file (type pdf)
+<use figures_output/base_topo_1_linha.pdf>
+Package pdftex.def Info: figures_output/base_topo_1_linha.pdf  used on input li
+ne 157.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [16
 
- <./figures_output/massa_habitual.pdf>]
-<figures_output/massa_habitual_gen_raca.pdf, id=1442, 1011.78pt x 614.295pt>
-File: figures_output/massa_habitual_gen_raca.pdf Graphic file (type pdf)
-<use figures_output/massa_habitual_gen_raca.pdf>
-Package pdftex.def Info: figures_output/massa_habitual_gen_raca.pdf  used on in
-put line 164.
+ <./figures_output/base_topo_1_linha.pdf>]
+<figures_output/base_topo_5_linha.pdf, id=1442, 1011.78pt x 614.295pt>
+File: figures_output/base_topo_5_linha.pdf Graphic file (type pdf)
+<use figures_output/base_topo_5_linha.pdf>
+Package pdftex.def Info: figures_output/base_topo_5_linha.pdf  used on input li
+ne 164.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [17
 
- <./figures_output/massa_habitual_gen_raca.pdf>]
-<figures_output/frac_massa_habitual.pdf, id=1524, 1011.78pt x 614.295pt>
-File: figures_output/frac_massa_habitual.pdf Graphic file (type pdf)
-<use figures_output/frac_massa_habitual.pdf>
-Package pdftex.def Info: figures_output/frac_massa_habitual.pdf  used on input 
-line 171.
+ <./figures_output/base_topo_5_linha.pdf>]
+<figures_output/base_topo_10_linha.pdf, id=1524, 1011.78pt x 614.295pt>
+File: figures_output/base_topo_10_linha.pdf Graphic file (type pdf)
+<use figures_output/base_topo_10_linha.pdf>
+Package pdftex.def Info: figures_output/base_topo_10_linha.pdf  used on input l
+ine 171.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [18
 
+ <./figures_output/base_topo_10_linha.pdf>]
+<figures_output/massa_habitual.pdf, id=1606, 1011.78pt x 614.295pt>
+File: figures_output/massa_habitual.pdf Graphic file (type pdf)
+<use figures_output/massa_habitual.pdf>
+Package pdftex.def Info: figures_output/massa_habitual.pdf  used on input line 
+178.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+ [19
+
+ <./figures_output/massa_habitual.pdf>]
+<figures_output/massa_habitual_gen_raca.pdf, id=1689, 1011.78pt x 614.295pt>
+File: figures_output/massa_habitual_gen_raca.pdf Graphic file (type pdf)
+<use figures_output/massa_habitual_gen_raca.pdf>
+Package pdftex.def Info: figures_output/massa_habitual_gen_raca.pdf  used on in
+put line 185.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+ [20
+
+ <./figures_output/massa_habitual_gen_raca.pdf>]
+<figures_output/frac_massa_habitual.pdf, id=1771, 1011.78pt x 614.295pt>
+File: figures_output/frac_massa_habitual.pdf Graphic file (type pdf)
+<use figures_output/frac_massa_habitual.pdf>
+Package pdftex.def Info: figures_output/frac_massa_habitual.pdf  used on input 
+line 192.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+ [21
+
  <./figures_output/frac_massa_habitual.pdf>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 186
+LaTeX Font Info:    Trying to load font information for U+msa on input line 207
 .
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 186
+LaTeX Font Info:    Trying to load font information for U+msb on input line 207
 .
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [19
+) [22
 
-] [20
-
-] [21
-
-] [22
-
-]
-[23
+] [23
 
 ] [24
 
 ] [25
 
-] [26
+]
+[26
 
 ] [27
 
@@ -1194,63 +1215,62 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ] [29
 
 ]
-<figures_output/homem_negro_massa_perdida_gph.pdf, id=2455, 1011.78pt x 614.295
+<tables_output/table_massa.pdf, id=2469, 614.295pt x 794.97pt>
+File: tables_output/table_massa.pdf Graphic file (type pdf)
+<use tables_output/table_massa.pdf>
+Package pdftex.def Info: tables_output/table_massa.pdf  used on input line 330.
+
+(pdftex.def)             Requested size: 258.14648pt x 334.06708pt.
+
+Overfull \vbox (118.90036pt too high) detected at line 330
+ []
+
+[30
+
+ <./tables_output/table_massa.pdf>]
+<tables_output/table_individual.pdf, id=2558, 614.295pt x 794.97pt>
+File: tables_output/table_individual.pdf Graphic file (type pdf)
+<use tables_output/table_individual.pdf>
+Package pdftex.def Info: tables_output/table_individual.pdf  used on input line
+ 337.
+(pdftex.def)             Requested size: 258.14648pt x 334.06708pt.
+
+Overfull \vbox (118.90036pt too high) detected at line 337
+ []
+
+[31
+
+ <./tables_output/table_individual.pdf>]
+<figures_output/homem_negro_massa_perdida_gph.pdf, id=2648, 1011.78pt x 614.295
 pt>
 File: figures_output/homem_negro_massa_perdida_gph.pdf Graphic file (type pdf)
 <use figures_output/homem_negro_massa_perdida_gph.pdf>
 Package pdftex.def Info: figures_output/homem_negro_massa_perdida_gph.pdf  used
- on input line 354.
+ on input line 344.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
- [30
+ [32
 
  <./figures_output/homem_negro_massa_perdida_gph.pdf>]
-<figures_output/mulher_negra_massa_perdida_gph.pdf, id=2537, 1011.78pt x 614.29
+<figures_output/mulher_negra_massa_perdida_gph.pdf, id=2730, 1011.78pt x 614.29
 5pt>
 File: figures_output/mulher_negra_massa_perdida_gph.pdf Graphic file (type pdf)
 
 <use figures_output/mulher_negra_massa_perdida_gph.pdf>
 Package pdftex.def Info: figures_output/mulher_negra_massa_perdida_gph.pdf  use
-d on input line 361.
+d on input line 351.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
- [31
+ [33
 
  <./figures_output/mulher_negra_massa_perdida_gph.pdf>]
-<figures_output/massa_perdida_gph.pdf, id=2620, 1011.78pt x 614.295pt>
+<figures_output/massa_perdida_gph.pdf, id=2812, 1011.78pt x 614.295pt>
 File: figures_output/massa_perdida_gph.pdf Graphic file (type pdf)
 <use figures_output/massa_perdida_gph.pdf>
 Package pdftex.def Info: figures_output/massa_perdida_gph.pdf  used on input li
-ne 368.
+ne 358.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
-
-[32
+ [34
 
  <./figures_output/massa_perdida_gph.pdf>]
-<tables_output/table_massa.pdf, id=2702, 614.295pt x 794.97pt>
-File: tables_output/table_massa.pdf Graphic file (type pdf)
-<use tables_output/table_massa.pdf>
-Package pdftex.def Info: tables_output/table_massa.pdf  used on input line 375.
-
-(pdftex.def)             Requested size: 258.14648pt x 334.06708pt.
-
-Overfull \vbox (118.90036pt too high) detected at line 375
- []
-
-[33
-
- <./tables_output/table_massa.pdf>]
-<tables_output/table_individual.pdf, id=2791, 614.295pt x 794.97pt>
-File: tables_output/table_individual.pdf Graphic file (type pdf)
-<use tables_output/table_individual.pdf>
-Package pdftex.def Info: tables_output/table_individual.pdf  used on input line
- 382.
-(pdftex.def)             Requested size: 258.14648pt x 334.06708pt.
-
-Overfull \vbox (118.90036pt too high) detected at line 382
- []
-
-[34
-
- <./tables_output/table_individual.pdf>]
 \tf@nav=\write6
 \openout6 = `apresentacao.nav'.
 
@@ -1269,28 +1289,25 @@ Package rerunfilecheck Info: File `apresentacao.out' has not changed.
 (rerunfilecheck)             Checksum: 350C436E8EF76BA576EF31D364ED08C2;497.
  ) 
 Here is how much of TeX's memory you used:
- 26948 strings out of 474485
- 566948 string characters out of 5753544
+ 26921 strings out of 474485
+ 566900 string characters out of 5753544
  1955542 words of memory out of 5000000
- 48657 multiletter control sequences out of 15000+600000
- 564688 words of font info for 62 fonts, out of 8000000 for 9000
+ 48638 multiletter control sequences out of 15000+600000
+ 561280 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,123p,410b,903s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Progra
-m Files/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Program Files/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/
-Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmss9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on apresentacao.pdf (34 pages, 633110 bytes).
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10
+.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Pro
+gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/t
+ype1/public/amsfonts/symbols/msam10.pfb>
+Output written on apresentacao.pdf (34 pages, 614551 bytes).
 PDF statistics:
- 2919 PDF objects out of 2984 (max. 8388607)
+ 2917 PDF objects out of 2984 (max. 8388607)
  72 named destinations out of 1000 (max. 500000)
- 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 192 words of extra memory for PDF output out of 10000 (max. 10000000)
 
