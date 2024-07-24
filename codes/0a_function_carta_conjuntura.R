@@ -11,7 +11,7 @@
 dist_fun <- function(ano, trimestre) {
   
   distribuicao <- 
-    dt[, list(top10 = wtd.mean(100*top10, weights =  V1028, na.rm = TRUE),
+    dt[, list(top10 = wtd.mean(100*top10, weights = V1028, na.rm = TRUE),
               top5 = wtd.mean(100*top5, weights = V1028, na.rm = TRUE),
               top1 = wtd.mean(100*top1, weights = V1028, na.rm = TRUE),
               bottom10 = wtd.mean(100*bottom10, weights = V1028, na.rm = TRUE),
