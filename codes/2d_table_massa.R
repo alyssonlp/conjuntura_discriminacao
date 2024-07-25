@@ -32,9 +32,9 @@ dt_homem_m <- setnames(dt_homem_m,
                          "massa_wg_composicao_hn", "massa_wg_discriminacao_hn", 
                          "massa_emp_perdida_hn",
                          "massa_emp_composicao_hn", "massa_emp_discriminacao_hn"), 
-                       c("Massa Salarial Total Perdida HN","Gap Salarial",
+                       c("Massa Salarial Total Perdida HN","Penalidade Salarial",
                          "Efeito Composição Salário HN","Efeito Discriminação Salário HN", 
-                         " Gap Empregabilidade",
+                         " Penalidade Empregabilidade",
                          "Efeito Composição da Empregabilidade HN",
                          "Efeito Discriminação da Empregabilidade HN"))
 
@@ -43,9 +43,9 @@ dt_mulher_m <- setnames(dt_mulher_m,
                         "massa_wg_composicao_mn", "massa_wg_discriminacao_mn", 
                         "massa_emp_perdida_mn",
                         "massa_emp_composicao_mn", "massa_emp_discriminacao_mn"), 
-                        c("Massa Salarial Total Perdida MN","Gap Salarial",
+                        c("Massa Salarial Total Perdida MN","Penalidade Salarial",
                           "Efeito Composição Salário MN","Efeito Discriminação Salário MN", 
-                          "Gap Empregabilidade",
+                          "Penalidade Empregabilidade",
                           "Efeito Composição da Empregabilidade MN",
                           "Efeito Discriminação da Empregabilidade MN"))
 
