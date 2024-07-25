@@ -84,6 +84,9 @@ if (compute_stats) {
 }
 
 # criando o grafico
+results$gender_race <- factor(results$gender_race, levels = c("Homem Branco", "Mulher Branca", 
+                                                    "Homem Negro", "Mulher Negra"))
+
 
 dt1_long <- results %>%
   filter(Ano_trimestre %in% c("2023T1", "2024T1")) %>%
@@ -126,27 +129,24 @@ dt1_long <- as.data.table(dt1_long)
 dt1_long[, topo_base := as.numeric(category %in% c("b10", "b5", "b1"))]
 
 dt1_long[, order := fcase(category %in% c("b1", "t10"), 1L,
-                          category %in% c("b5", "t5"), 3L,
-                          category %in% c("b10", "t1"), 5L)]
+                          category %in% c("b5", "t5"), 2L,
+                          category %in% c("b10", "t1"), 3L)]
 
 table(dt1_long$category, dt1_long$order)
 
 dt1_long[Ano_trimestre == "2023T1", teste := order]
 dt1_long[Ano_trimestre == "2024T1", teste := order + 1]
 
-x_labels <- c("1" = "1%",
-              "2" = "1%",
-              "3" = "5%",
-              "4" = "5%",
-              "5" = "10%",
-              "6" = "10%")
+
 
 pdf(file.path(figures_output, "top_bottom.pdf"),  width = 14, height = 8.5)
 
-
-tb <- ggplot(dt1_long, aes(x = teste, y = value, fill = gender_race)) +
+#rever
+tb <- dt1_long %>% filter(Ano_trimestre == "2024T1") %>% 
+  ggplot( aes(x = teste, y = value, fill = gender_race)) +
   geom_bar(stat = 'identity', 
-           position = position_dodge(width = 0.8), width = 0.7) +
+           position = position_dodge(width = 0.8), width = 0.7,) +
+  geom_col(position = position_stack(reverse = FALSE)) +
   geom_text(aes(label = round(value)), 
             position = position_stack(vjust = 0.5), 
             size = 4.5) +
@@ -155,7 +155,8 @@ tb <- ggplot(dt1_long, aes(x = teste, y = value, fill = gender_race)) +
                                "Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
                                "Mulher Negra" = "brown4")) +
-  scale_x_discrete(labels = x_labels) +
+scale_x_continuous(breaks = c(2, 4, 6, 2, 4, 6 ),
+    labels = c ("1%", "5%", "10%", "10%", "5%", "1%")) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
@@ -165,7 +166,8 @@ tb <- ggplot(dt1_long, aes(x = teste, y = value, fill = gender_race)) +
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
   labs(x = "", y = "%", title = "") +
-  facet_grid
+  facet_wrap(~ base_topo)
+
 
 print(tb)
 dev.off()
