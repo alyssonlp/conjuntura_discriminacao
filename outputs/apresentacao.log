@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.8)  25 JUL 2024 15:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.8)  25 JUL 2024 15:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1008,7 +1008,7 @@ or `english'. on input line 46.
 dftex.map}
 
 ]
-<figures_output/rendimento_habitual.pdf, id=210, 1011.78pt x 614.295pt>
+<figures_output/rendimento_habitual.pdf, id=240, 1011.78pt x 614.295pt>
 File: figures_output/rendimento_habitual.pdf Graphic file (type pdf)
 <use figures_output/rendimento_habitual.pdf>
 Package pdftex.def Info: figures_output/rendimento_habitual.pdf  used on input 
@@ -1017,7 +1017,7 @@ line 58.
  [2
 
  <./figures_output/rendimento_habitual.pdf>]
-<figures_output/frac_rendimento_habitual.pdf, id=292, 1011.78pt x 614.295pt>
+<figures_output/frac_rendimento_habitual.pdf, id=334, 1011.78pt x 614.295pt>
 File: figures_output/frac_rendimento_habitual.pdf Graphic file (type pdf)
 <use figures_output/frac_rendimento_habitual.pdf>
 Package pdftex.def Info: figures_output/frac_rendimento_habitual.pdf  used on i
@@ -1027,7 +1027,7 @@ nput line 65.
 [3
 
  <./figures_output/frac_rendimento_habitual.pdf>]
-<figures_output/rendimento_habitual_br_gen_raca.pdf, id=374, 1011.78pt x 614.29
+<figures_output/rendimento_habitual_br_gen_raca.pdf, id=428, 1011.78pt x 614.29
 5pt>
 File: figures_output/rendimento_habitual_br_gen_raca.pdf Graphic file (type pdf
 )
@@ -1038,7 +1038,7 @@ ed on input line 72.
  [4
 
  <./figures_output/rendimento_habitual_br_gen_raca.pdf>]
-<figures_output/unemp.pdf, id=456, 1011.78pt x 614.295pt>
+<figures_output/unemp.pdf, id=522, 1011.78pt x 614.295pt>
 File: figures_output/unemp.pdf Graphic file (type pdf)
 <use figures_output/unemp.pdf>
 Package pdftex.def Info: figures_output/unemp.pdf  used on input line 79.
@@ -1046,7 +1046,7 @@ Package pdftex.def Info: figures_output/unemp.pdf  used on input line 79.
  [5
 
  <./figures_output/unemp.pdf>]
-<figures_output/frac_unemp.pdf, id=538, 1011.78pt x 614.295pt>
+<figures_output/frac_unemp.pdf, id=616, 1011.78pt x 614.295pt>
 File: figures_output/frac_unemp.pdf Graphic file (type pdf)
 <use figures_output/frac_unemp.pdf>
 Package pdftex.def Info: figures_output/frac_unemp.pdf  used on input line 86.
@@ -1054,7 +1054,7 @@ Package pdftex.def Info: figures_output/frac_unemp.pdf  used on input line 86.
  [6
 
  <./figures_output/frac_unemp.pdf>]
-<figures_output/unemp_br_gen_raca.pdf, id=620, 1011.78pt x 614.295pt>
+<figures_output/unemp_br_gen_raca.pdf, id=710, 1011.78pt x 614.295pt>
 File: figures_output/unemp_br_gen_raca.pdf Graphic file (type pdf)
 <use figures_output/unemp_br_gen_raca.pdf>
 Package pdftex.def Info: figures_output/unemp_br_gen_raca.pdf  used on input li
@@ -1063,7 +1063,7 @@ ne 93.
  [7
 
  <./figures_output/unemp_br_gen_raca.pdf>]
-<figures_output/frac_pea.pdf, id=703, 1011.78pt x 614.295pt>
+<figures_output/frac_pea.pdf, id=805, 1011.78pt x 614.295pt>
 File: figures_output/frac_pea.pdf Graphic file (type pdf)
 <use figures_output/frac_pea.pdf>
 Package pdftex.def Info: figures_output/frac_pea.pdf  used on input line 100.
@@ -1071,7 +1071,7 @@ Package pdftex.def Info: figures_output/frac_pea.pdf  used on input line 100.
  [8
 
  <./figures_output/frac_pea.pdf>]
-<figures_output/pea.pdf, id=785, 1011.78pt x 614.295pt>
+<figures_output/pea.pdf, id=899, 1011.78pt x 614.295pt>
 File: figures_output/pea.pdf Graphic file (type pdf)
 <use figures_output/pea.pdf>
 Package pdftex.def Info: figures_output/pea.pdf  used on input line 107.
@@ -1079,7 +1079,7 @@ Package pdftex.def Info: figures_output/pea.pdf  used on input line 107.
  [9
 
  <./figures_output/pea.pdf>]
-<figures_output/pea_adult.pdf, id=867, 1011.78pt x 614.295pt>
+<figures_output/pea_adult.pdf, id=993, 1011.78pt x 614.295pt>
 File: figures_output/pea_adult.pdf Graphic file (type pdf)
 <use figures_output/pea_adult.pdf>
 Package pdftex.def Info: figures_output/pea_adult.pdf  used on input line 114.
@@ -1087,7 +1087,7 @@ Package pdftex.def Info: figures_output/pea_adult.pdf  used on input line 114.
  [10
 
  <./figures_output/pea_adult.pdf>]
-<figures_output/pea_br_gen_raca.pdf, id=949, 1011.78pt x 614.295pt>
+<figures_output/pea_br_gen_raca.pdf, id=1087, 1011.78pt x 614.295pt>
 File: figures_output/pea_br_gen_raca.pdf Graphic file (type pdf)
 <use figures_output/pea_br_gen_raca.pdf>
 Package pdftex.def Info: figures_output/pea_br_gen_raca.pdf  used on input line
@@ -1096,7 +1096,7 @@ Package pdftex.def Info: figures_output/pea_br_gen_raca.pdf  used on input line
  [11
 
  <./figures_output/pea_br_gen_raca.pdf>]
-<figures_output/gini_br_gen_raca.pdf, id=1031, 1011.78pt x 614.295pt>
+<figures_output/gini_br_gen_raca.pdf, id=1181, 1011.78pt x 614.295pt>
 File: figures_output/gini_br_gen_raca.pdf Graphic file (type pdf)
 <use figures_output/gini_br_gen_raca.pdf>
 Package pdftex.def Info: figures_output/gini_br_gen_raca.pdf  used on input lin
@@ -1105,7 +1105,7 @@ e 129.
  [12
 
  <./figures_output/gini_br_gen_raca.pdf>]
-<figures_output/base_topo_1.pdf, id=1113, 1011.78pt x 614.295pt>
+<figures_output/base_topo_1.pdf, id=1275, 1011.78pt x 614.295pt>
 File: figures_output/base_topo_1.pdf Graphic file (type pdf)
 <use figures_output/base_topo_1.pdf>
 Package pdftex.def Info: figures_output/base_topo_1.pdf  used on input line 136
@@ -1114,162 +1114,215 @@ Package pdftex.def Info: figures_output/base_topo_1.pdf  used on input line 136
  [13
 
  <./figures_output/base_topo_1.pdf>]
-<figures_output/base_topo_5.pdf, id=1196, 1011.78pt x 614.295pt>
-File: figures_output/base_topo_5.pdf Graphic file (type pdf)
-<use figures_output/base_topo_5.pdf>
-Package pdftex.def Info: figures_output/base_topo_5.pdf  used on input line 143
-.
+<figures_output/base_topo_1_linha.pdf, id=1370, 1011.78pt x 614.295pt>
+File: figures_output/base_topo_1_linha.pdf Graphic file (type pdf)
+<use figures_output/base_topo_1_linha.pdf>
+Package pdftex.def Info: figures_output/base_topo_1_linha.pdf  used on input li
+ne 143.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [14
 
- <./figures_output/base_topo_5.pdf>]
-<figures_output/base_topo_10.pdf, id=1278, 1011.78pt x 614.295pt>
-File: figures_output/base_topo_10.pdf Graphic file (type pdf)
-<use figures_output/base_topo_10.pdf>
-Package pdftex.def Info: figures_output/base_topo_10.pdf  used on input line 15
-0.
+ <./figures_output/base_topo_1_linha.pdf>]
+<figures_output/base_topo_5.pdf, id=1464, 1011.78pt x 614.295pt>
+File: figures_output/base_topo_5.pdf Graphic file (type pdf)
+<use figures_output/base_topo_5.pdf>
+Package pdftex.def Info: figures_output/base_topo_5.pdf  used on input line 150
+.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [15
 
- <./figures_output/base_topo_10.pdf>]
-<figures_output/base_topo_1_ppb.pdf, id=1360, 1011.78pt x 614.295pt>
-File: figures_output/base_topo_1_ppb.pdf Graphic file (type pdf)
-<use figures_output/base_topo_1_ppb.pdf>
-Package pdftex.def Info: figures_output/base_topo_1_ppb.pdf  used on input line
- 157.
+ <./figures_output/base_topo_5.pdf>]
+<figures_output/base_topo_5_linha.pdf, id=1558, 1011.78pt x 614.295pt>
+File: figures_output/base_topo_5_linha.pdf Graphic file (type pdf)
+<use figures_output/base_topo_5_linha.pdf>
+Package pdftex.def Info: figures_output/base_topo_5_linha.pdf  used on input li
+ne 157.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
- [16
 
- <./figures_output/base_topo_1_ppb.pdf>]
-<figures_output/base_topo_5_ppb.pdf, id=1442, 1011.78pt x 614.295pt>
-File: figures_output/base_topo_5_ppb.pdf Graphic file (type pdf)
-<use figures_output/base_topo_5_ppb.pdf>
-Package pdftex.def Info: figures_output/base_topo_5_ppb.pdf  used on input line
- 164.
+[16
+
+ <./figures_output/base_topo_5_linha.pdf>]
+<figures_output/base_topo_10.pdf, id=1652, 1011.78pt x 614.295pt>
+File: figures_output/base_topo_10.pdf Graphic file (type pdf)
+<use figures_output/base_topo_10.pdf>
+Package pdftex.def Info: figures_output/base_topo_10.pdf  used on input line 16
+4.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [17
 
- <./figures_output/base_topo_5_ppb.pdf>]
-<figures_output/base_topo_10_ppb.pdf, id=1524, 1011.78pt x 614.295pt>
-File: figures_output/base_topo_10_ppb.pdf Graphic file (type pdf)
-<use figures_output/base_topo_10_ppb.pdf>
-Package pdftex.def Info: figures_output/base_topo_10_ppb.pdf  used on input lin
-e 171.
+ <./figures_output/base_topo_10.pdf>]
+<figures_output/base_topo_10_linha.pdf, id=1746, 1011.78pt x 614.295pt>
+File: figures_output/base_topo_10_linha.pdf Graphic file (type pdf)
+<use figures_output/base_topo_10_linha.pdf>
+Package pdftex.def Info: figures_output/base_topo_10_linha.pdf  used on input l
+ine 171.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+ [18
 
-[18
-
- <./figures_output/base_topo_10_ppb.pdf>]
-<figures_output/massa_habitual.pdf, id=1606, 1011.78pt x 614.295pt>
-File: figures_output/massa_habitual.pdf Graphic file (type pdf)
-<use figures_output/massa_habitual.pdf>
-Package pdftex.def Info: figures_output/massa_habitual.pdf  used on input line 
-178.
+ <./figures_output/base_topo_10_linha.pdf>]
+<figures_output/base_topo_1_ppb.pdf, id=1840, 1011.78pt x 614.295pt>
+File: figures_output/base_topo_1_ppb.pdf Graphic file (type pdf)
+<use figures_output/base_topo_1_ppb.pdf>
+Package pdftex.def Info: figures_output/base_topo_1_ppb.pdf  used on input line
+ 179.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [19
 
- <./figures_output/massa_habitual.pdf>]
-<figures_output/massa_habitual_gen_raca.pdf, id=1689, 1011.78pt x 614.295pt>
-File: figures_output/massa_habitual_gen_raca.pdf Graphic file (type pdf)
-<use figures_output/massa_habitual_gen_raca.pdf>
-Package pdftex.def Info: figures_output/massa_habitual_gen_raca.pdf  used on in
-put line 185.
+ <./figures_output/base_topo_1_ppb.pdf>]
+<figures_output/base_topo_1_ppb_linha.pdf, id=1935, 1011.78pt x 614.295pt>
+File: figures_output/base_topo_1_ppb_linha.pdf Graphic file (type pdf)
+<use figures_output/base_topo_1_ppb_linha.pdf>
+Package pdftex.def Info: figures_output/base_topo_1_ppb_linha.pdf  used on inpu
+t line 186.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [20
 
- <./figures_output/massa_habitual_gen_raca.pdf>]
-<figures_output/frac_massa_habitual.pdf, id=1771, 1011.78pt x 614.295pt>
-File: figures_output/frac_massa_habitual.pdf Graphic file (type pdf)
-<use figures_output/frac_massa_habitual.pdf>
-Package pdftex.def Info: figures_output/frac_massa_habitual.pdf  used on input 
-line 192.
+ <./figures_output/base_topo_1_ppb_linha.pdf>]
+<figures_output/base_topo_5_ppb.pdf, id=2029, 1011.78pt x 614.295pt>
+File: figures_output/base_topo_5_ppb.pdf Graphic file (type pdf)
+<use figures_output/base_topo_5_ppb.pdf>
+Package pdftex.def Info: figures_output/base_topo_5_ppb.pdf  used on input line
+ 193.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
  [21
 
- <./figures_output/frac_massa_habitual.pdf>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 207
-.
+ <./figures_output/base_topo_5_ppb.pdf>]
+<figures_output/base_topo_5_ppb_linha.pdf, id=2123, 1011.78pt x 614.295pt>
+File: figures_output/base_topo_5_ppb_linha.pdf Graphic file (type pdf)
+<use figures_output/base_topo_5_ppb_linha.pdf>
+Package pdftex.def Info: figures_output/base_topo_5_ppb_linha.pdf  used on inpu
+t line 200.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+ [22
 
-(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+ <./figures_output/base_topo_5_ppb_linha.pdf>]
+<figures_output/base_topo_10_ppb.pdf, id=2217, 1011.78pt x 614.295pt>
+File: figures_output/base_topo_10_ppb.pdf Graphic file (type pdf)
+<use figures_output/base_topo_10_ppb.pdf>
+Package pdftex.def Info: figures_output/base_topo_10_ppb.pdf  used on input lin
+e 207.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+ [23
+
+ <./figures_output/base_topo_10_ppb.pdf>]
+<figures_output/base_topo_10_ppb_linha.pdf, id=2311, 1011.78pt x 614.295pt>
+File: figures_output/base_topo_10_ppb_linha.pdf Graphic file (type pdf)
+<use figures_output/base_topo_10_ppb_linha.pdf>
+Package pdftex.def Info: figures_output/base_topo_10_ppb_linha.pdf  used on inp
+ut line 214.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+ [24
+
+ <./figures_output/base_topo_10_ppb_linha.pdf>]
+<figures_output/massa_habitual.pdf, id=2405, 1011.78pt x 614.295pt>
+File: figures_output/massa_habitual.pdf Graphic file (type pdf)
+<use figures_output/massa_habitual.pdf>
+Package pdftex.def Info: figures_output/massa_habitual.pdf  used on input line 
+221.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+ [25
+
+ <./figures_output/massa_habitual.pdf>]
+<figures_output/massa_habitual_gen_raca.pdf, id=2500, 1011.78pt x 614.295pt>
+File: figures_output/massa_habitual_gen_raca.pdf Graphic file (type pdf)
+<use figures_output/massa_habitual_gen_raca.pdf>
+Package pdftex.def Info: figures_output/massa_habitual_gen_raca.pdf  used on in
+put line 228.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+ [26
+
+ <./figures_output/massa_habitual_gen_raca.pdf>]
+<figures_output/frac_massa_habitual.pdf, id=2594, 1011.78pt x 614.295pt>
+File: figures_output/frac_massa_habitual.pdf Graphic file (type pdf)
+<use figures_output/frac_massa_habitual.pdf>
+Package pdftex.def Info: figures_output/frac_massa_habitual.pdf  used on input 
+line 235.
+(pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
+ [27
+
+ <./figures_output/frac_massa_habitual.pdf>]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 250
+.
+ (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 207
+LaTeX Font Info:    Trying to load font information for U+msb on input line 250
 .
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [22
-
-] [23
-
-] [24
-
-] [25
-
-]
-[26
-
-] [27
-
-] [28
+) [28
 
 ] [29
 
+] [30
+
+] [31
+
 ]
-<tables_output/table_massa.pdf, id=2469, 614.295pt x 794.97pt>
+[32
+
+] [33
+
+] [34
+
+] [35
+
+]
+<tables_output/table_massa.pdf, id=3400, 614.295pt x 794.97pt>
 File: tables_output/table_massa.pdf Graphic file (type pdf)
 <use tables_output/table_massa.pdf>
-Package pdftex.def Info: tables_output/table_massa.pdf  used on input line 330.
+Package pdftex.def Info: tables_output/table_massa.pdf  used on input line 373.
 
 (pdftex.def)             Requested size: 258.14648pt x 334.06708pt.
 
-Overfull \vbox (118.90036pt too high) detected at line 330
+Overfull \vbox (118.90036pt too high) detected at line 373
  []
 
-[30
+[36
 
  <./tables_output/table_massa.pdf>]
-<tables_output/table_individual.pdf, id=2558, 614.295pt x 794.97pt>
+<tables_output/table_individual.pdf, id=3501, 614.295pt x 794.97pt>
 File: tables_output/table_individual.pdf Graphic file (type pdf)
 <use tables_output/table_individual.pdf>
 Package pdftex.def Info: tables_output/table_individual.pdf  used on input line
- 337.
+ 380.
 (pdftex.def)             Requested size: 258.14648pt x 334.06708pt.
 
-Overfull \vbox (118.90036pt too high) detected at line 337
+Overfull \vbox (118.90036pt too high) detected at line 380
  []
 
-[31
+[37
 
  <./tables_output/table_individual.pdf>]
-<figures_output/homem_negro_massa_perdida_gph.pdf, id=2648, 1011.78pt x 614.295
+<figures_output/homem_negro_massa_perdida_gph.pdf, id=3603, 1011.78pt x 614.295
 pt>
 File: figures_output/homem_negro_massa_perdida_gph.pdf Graphic file (type pdf)
 <use figures_output/homem_negro_massa_perdida_gph.pdf>
 Package pdftex.def Info: figures_output/homem_negro_massa_perdida_gph.pdf  used
- on input line 344.
+ on input line 387.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
- [32
+ [38
 
  <./figures_output/homem_negro_massa_perdida_gph.pdf>]
-<figures_output/mulher_negra_massa_perdida_gph.pdf, id=2730, 1011.78pt x 614.29
+<figures_output/mulher_negra_massa_perdida_gph.pdf, id=3697, 1011.78pt x 614.29
 5pt>
 File: figures_output/mulher_negra_massa_perdida_gph.pdf Graphic file (type pdf)
 
 <use figures_output/mulher_negra_massa_perdida_gph.pdf>
 Package pdftex.def Info: figures_output/mulher_negra_massa_perdida_gph.pdf  use
-d on input line 351.
+d on input line 394.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
- [33
+ [39
 
  <./figures_output/mulher_negra_massa_perdida_gph.pdf>]
-<figures_output/massa_perdida_gph.pdf, id=2812, 1011.78pt x 614.295pt>
+<figures_output/massa_perdida_gph.pdf, id=3791, 1011.78pt x 614.295pt>
 File: figures_output/massa_perdida_gph.pdf Graphic file (type pdf)
 <use figures_output/massa_perdida_gph.pdf>
 Package pdftex.def Info: figures_output/massa_perdida_gph.pdf  used on input li
-ne 358.
+ne 401.
 (pdftex.def)             Requested size: 258.14648pt x 156.7322pt.
- [34
+ [40
 
  <./figures_output/massa_perdida_gph.pdf>]
 \tf@nav=\write6
@@ -1290,10 +1343,10 @@ Package rerunfilecheck Info: File `apresentacao.out' has not changed.
 (rerunfilecheck)             Checksum: 350C436E8EF76BA576EF31D364ED08C2;497.
  ) 
 Here is how much of TeX's memory you used:
- 26921 strings out of 474485
- 566858 string characters out of 5753544
- 1955542 words of memory out of 5000000
- 48638 multiletter control sequences out of 15000+600000
+ 26987 strings out of 474485
+ 569110 string characters out of 5753544
+ 1958542 words of memory out of 5000000
+ 48692 multiletter control sequences out of 15000+600000
  561280 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,123p,410b,903s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1306,9 +1359,9 @@ onts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10
 gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/t
 ype1/public/amsfonts/symbols/msam10.pfb>
-Output written on apresentacao.pdf (34 pages, 646122 bytes).
+Output written on apresentacao.pdf (40 pages, 794562 bytes).
 PDF statistics:
- 2917 PDF objects out of 2984 (max. 8388607)
- 72 named destinations out of 1000 (max. 500000)
- 192 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3907 PDF objects out of 4296 (max. 8388607)
+ 84 named destinations out of 1000 (max. 500000)
+ 222 words of extra memory for PDF output out of 10000 (max. 10000000)
 
