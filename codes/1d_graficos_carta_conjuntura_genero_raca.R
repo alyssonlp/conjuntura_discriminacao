@@ -27,8 +27,8 @@ br_gen_raca_r_hab_all <- br_gen_raca %>%
                                    "Homem Negro" = "solid", 
                                    "Mulher Negra" ="solid",
                                    "Brasil" = "solid")) +
-  scale_x_discrete(breaks = c("2012T1", "2014T1", "2016T1", "2018T1", 
-                              "2020T1",  "2022T1", "2024T1")) +
+  scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1","2024T1"), 
+                   label = c("2012", "2016", "2020", "2024")) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
@@ -60,8 +60,8 @@ gen_raca_massa_hab <- gen_raca %>%
                                              "Mulher Branca" =  "solid", 
                                              "Homem Negro" = "solid", 
                                              "Mulher Negra" ="solid")) +
-  scale_x_discrete(breaks = c("2012T1", "2014T1", "2016T1", "2018T1", 
-                              "2020T1",  "2022T1", "2024T1")) +
+  scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1","2024T1"), 
+                   label = c("2012", "2016", "2020", "2024")) +
   scale_y_continuous(limits = c(0, 125), breaks = seq(0, 125, by = 25)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
@@ -92,8 +92,8 @@ gini_br_gen_raca <- br_gen_raca %>%
                                              "Homem Negro" = "solid", 
                                              "Mulher Negra" ="solid",
                                              "Brasil" = "solid")) +
-  scale_x_discrete(breaks = c("2012T1", "2014T1", "2016T1", "2018T1", 
-                              "2020T1",  "2022T1", "2024T1")) +
+  scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1","2024T1"), 
+                   label = c("2012", "2016", "2020", "2024")) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
@@ -122,8 +122,8 @@ unemp_br_gen_raca <- br_gen_raca %>%
                                              "Homem Negro" = "solid", 
                                              "Mulher Negra" ="solid",
                                              "Brasil" = "solid")) +
-  scale_x_discrete(breaks = c("2012T1", "2014T1", "2016T1", "2018T1", 
-                              "2020T1",  "2022T1", "2024T1")) +
+  scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1",  "2024T1"), 
+                   label = c("2012","2016", "2020", "2024")) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
@@ -153,8 +153,8 @@ pea_br_gen_raca <- br_gen_raca %>%
                                              "Homem Negro" = "solid", 
                                              "Mulher Negra" ="solid",
                                              "Brasil" = "solid")) +
-  scale_x_discrete(breaks = c("2012T1", "2014T1", "2016T1", "2018T1", 
-                              "2020T1",  "2022T1", "2024T1")) +
+  scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1","2024T1"), 
+                   label = c("2012", "2016", "2020", "2024")) +
   scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, by = 20)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),

@@ -36,12 +36,12 @@ frac_r_efe_all <- dt1 %>%
                     values = c("Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
                                "Mulher Negra" = "brown4")) +
-  scale_x_discrete(labels = c("2023T1.Mulher Branca" = "2023T1",
-                              "2024T1.Mulher Branca" = "2024T1",
-                              "2023T1.Homem Negro" = "2023T1",
-                              "2024T1.Homem Negro" = "2024T1",
-                              "2023T1.Mulher Negra" = "2023T1",
-                              "2024T1.Mulher Negra" = "2024T1")) +
+  scale_x_discrete(labels = c("2023T1.Mulher Branca" = "2023",
+                              "2024T1.Mulher Branca" = "2024",
+                              "2023T1.Homem Negro" = "2023",
+                              "2024T1.Homem Negro" = "2024",
+                              "2023T1.Mulher Negra" = "2023",
+                              "2024T1.Mulher Negra" = "2024")) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
@@ -66,12 +66,12 @@ frac_r_hab_all <- dt1 %>%
                     values = c("Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
                                "Mulher Negra" = "brown4")) +
-  scale_x_discrete(labels = c("2023T1.Mulher Branca" = "2023T1",
-                              "2024T1.Mulher Branca" = "2024T1",
-                              "2023T1.Homem Negro" = "2023T1",
-                              "2024T1.Homem Negro" = "2024T1",
-                              "2023T1.Mulher Negra" = "2023T1",
-                              "2024T1.Mulher Negra" = "2024T1")) +
+  scale_x_discrete(labels = c("2023T1.Mulher Branca" = "2023",
+                              "2024T1.Mulher Branca" = "2024",
+                              "2023T1.Homem Negro" = "2023",
+                              "2024T1.Homem Negro" = "2024",
+                              "2023T1.Mulher Negra" = "2023",
+                              "2024T1.Mulher Negra" = "2024")) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
@@ -96,12 +96,12 @@ frac_unemp <- dt1 %>%
                     values = c("Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
                                "Mulher Negra" = "brown4")) +
-  scale_x_discrete(labels = c("2023T1.Mulher Branca" = "2023T1",
-                              "2024T1.Mulher Branca" = "2024T1",
-                              "2023T1.Homem Negro" = "2023T1",
-                              "2024T1.Homem Negro" = "2024T1",
-                              "2023T1.Mulher Negra" = "2023T1",
-                              "2024T1.Mulher Negra" = "2024T1")) +
+  scale_x_discrete(labels = c("2023T1.Mulher Branca" = "2023",
+                              "2024T1.Mulher Branca" = "2024",
+                              "2023T1.Homem Negro" = "2023",
+                              "2024T1.Homem Negro" = "2024",
+                              "2023T1.Mulher Negra" = "2023",
+                              "2024T1.Mulher Negra" = "2024")) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
@@ -126,12 +126,12 @@ frac_pea <- dt1 %>%
                     values = c( "Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
                                "Mulher Negra" = "brown4")) +
-  scale_x_discrete(labels = c( "2023T1.Mulher Branca" = "2023T1",
-                              "2024T1.Mulher Branca" = "2024T1",
-                              "2023T1.Homem Negro" = "2023T1",
-                              "2024T1.Homem Negro" = "2024T1",
-                              "2023T1.Mulher Negra" = "2023T1",
-                              "2024T1.Mulher Negra" = "2024T1")) +
+  scale_x_discrete(labels = c( "2023T1.Mulher Branca" = "2023",
+                              "2024T1.Mulher Branca" = "2024",
+                              "2023T1.Homem Negro" = "2023",
+                              "2024T1.Homem Negro" = "2024",
+                              "2023T1.Mulher Negra" = "2023",
+                              "2024T1.Mulher Negra" = "2024")) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
@@ -156,12 +156,12 @@ frac_massa_hab <- dt1 %>%
                     values = c("Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
                                "Mulher Negra" = "brown4")) +
-  scale_x_discrete(labels = c("2023T1.Mulher Branca" = "2023T1",
-                              "2024T1.Mulher Branca" = "2024T1",
-                              "2023T1.Homem Negro" = "2023T1",
-                              "2024T1.Homem Negro" = "2024T1",
-                              "2023T1.Mulher Negra" = "2023T1",
-                              "2024T1.Mulher Negra" = "2024T1")) +
+  scale_x_discrete(labels = c("2023T1.Mulher Branca" = "2023",
+                              "2024T1.Mulher Branca" = "2024",
+                              "2023T1.Homem Negro" = "2023",
+                              "2024T1.Homem Negro" = "2024",
+                              "2023T1.Mulher Negra" = "2023",
+                              "2024T1.Mulher Negra" = "2024")) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
@@ -186,12 +186,12 @@ frac_massa_efe <- dt1 %>%
                     values = c("Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
                                "Mulher Negra" = "brown4")) +
-  scale_x_discrete(labels = c("2023T1.Mulher Branca" = "2023T1",
-                              "2024T1.Mulher Branca" = "2024T1",
-                              "2023T1.Homem Negro" = "2023T1",
-                              "2024T1.Homem Negro" = "2024T1",
-                              "2023T1.Mulher Negra" = "2023T1",
-                              "2024T1.Mulher Negra" = "2024T1")) +
+  scale_x_discrete(labels = c("2023T1.Mulher Branca" = "2023",
+                              "2024T1.Mulher Branca" = "2024",
+                              "2023T1.Homem Negro" = "2023",
+                              "2024T1.Homem Negro" = "2024",
+                              "2023T1.Mulher Negra" = "2023",
+                              "2024T1.Mulher Negra" = "2024")) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
@@ -217,12 +217,12 @@ frac_gini_hab <- dt1 %>%
                     values = c("Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
                                "Mulher Negra" = "brown4")) +
-  scale_x_discrete(labels = c("2023T1.Mulher Branca" = "2023T1",
-                              "2024T1.Mulher Branca" = "2024T1",
-                              "2023T1.Homem Negro" = "2023T1",
-                              "2024T1.Homem Negro" = "2024T1",
-                              "2023T1.Mulher Negra" = "2023T1",
-                              "2024T1.Mulher Negra" = "2024T1")) +
+  scale_x_discrete(labels = c("2023T1.Mulher Branca" = "2023",
+                              "2024T1.Mulher Branca" = "2024",
+                              "2023T1.Homem Negro" = "2023",
+                              "2024T1.Homem Negro" = "2024",
+                              "2023T1.Mulher Negra" = "2023",
+                              "2024T1.Mulher Negra" = "2024")) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),

@@ -1,5 +1,8 @@
 dt <- fread( file.path(csv_output, "top_bottom.csv"))
 
+dt$gender_race <- factor(dt$gender_race, levels = c("Homem Branco", "Mulher Branca", 
+                                      "Homem Negro", "Mulher Negra"))
+
 # Para o 1%
 # Base 1%
 base1 <- dt[, .(gender_race, Ano_trimestre, b1)]
@@ -22,8 +25,9 @@ um_porcento <- one %>%
                                 "Homem Negro" = "darkgoldenrod1",
                                 "Mulher Negra" = "brown4"),
                      aesthetics = c("color", "fill"))+
-  scale_x_discrete(breaks = c("2012",  "2016",
-                              "2020", "2024")) +
+  scale_x_discrete(breaks = c("2012T1",  "2016T1",
+                              "2020T1", "2024T1"),
+                   labels = c("2012", "2016", "2020", "2024")) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
@@ -62,8 +66,9 @@ cinco <- five %>%
                                 "Homem Negro" = "darkgoldenrod1",
                                 "Mulher Negra" = "brown4"),
                      aesthetics = c("color", "fill"))+
-  scale_x_discrete(breaks = c("2012",  "2016",
-                              "2020", "2024")) +
+  scale_x_discrete(breaks = c("2012T1",  "2016T1",
+                              "2020T1", "2024T1"),
+                   labels = c("2012", "2016", "2020", "2024")) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
@@ -102,8 +107,9 @@ dez <- ten %>%
                                 "Homem Negro" = "darkgoldenrod1",
                                 "Mulher Negra" = "brown4"),
                      aesthetics = c("color", "fill"))+
-  scale_x_discrete(breaks = c("2012",  "2016",
-                              "2020", "2024")) +
+  scale_x_discrete(breaks = c("2012T1",  "2016T1",
+                              "2020T1", "2024T1"),
+                   labels = c("2012", "2016", "2020", "2024")) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
