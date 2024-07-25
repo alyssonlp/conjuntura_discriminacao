@@ -7,6 +7,11 @@ trimestre <- c(1:4)
 
 for(aa in ano) {
   for (tri in trimestre) {
+      
+      if(aa == 2024 & tri >=2){
+        next  
+      }
+      
     pnad_txt <- sprintf("PNADC_0%d%d.txt", tri, aa)
     dt <- read_pnadc(pnad_txt, "input_PNADC_trimestral.txt", 
                  vars = c( "UF", "RM_RIDE", "UPA", "Estrato", "V1008", "V1014",
@@ -35,6 +40,17 @@ dt[, gender_race :=
        male == 1 & nonwhite == 1 ~ "homem_negro",
        male == 0 & nonwhite == 0 ~ "mulher_branca",
        male == 0 & nonwhite == 1 ~ "mulher_negra"
+     )]
+
+# interseccao genero e raca - ppb
+dt[, raca := 
+     case_when(
+       male == 1 & V2010 == 1 ~ "Homem Branco",
+       male == 1 & V2010 == 4 ~ "Homem Pardo",
+       male == 1 & V2010 == 2 ~ "Homem Preto",
+       male == 0 & V2010 == 1 ~ "Mulher Branca",
+       male == 0 & V2010 == 2 ~ "Mulher Parda",
+       male == 0 & V2010 == 4 ~ "Mulher Preta"
      )]
 
 # Chefe de familia
