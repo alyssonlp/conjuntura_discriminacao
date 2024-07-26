@@ -28,7 +28,7 @@ um_porcento <- one %>%
                                 "Mulher Preta" = "goldenrod1")) +
   scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1", "2024T1"),
                    labels = c("2012", "2016", "2020", "2024")) +
-  scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, by = 20)) +
+  scale_y_continuous(limits = c(0, 50), breaks = seq(0, 50, by = 10)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
@@ -70,7 +70,7 @@ cinco <- five %>%
                                 "Mulher Preta" = "goldenrod1")) +
   scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1", "2024T1"),
                    labels = c("2012", "2016", "2020", "2024")) +
-  scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, by = 20)) +
+  scale_y_continuous(limits = c(0, 50), breaks = seq(0, 50, by = 10)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
@@ -112,7 +112,7 @@ dez <- ten %>%
                                 "Mulher Preta" = "goldenrod1")) +
   scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1", "2024T1"),
                    labels = c("2012", "2016", "2020", "2024")) +
-  scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, by = 20)) +
+  scale_y_continuous(limits = c(0, 50), breaks = seq(0, 50, by = 10)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
