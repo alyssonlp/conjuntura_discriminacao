@@ -1,3 +1,18 @@
+---
+title: "Tabela Massa Salarial Perdida"
+output:
+  html_document:
+    df_print: paged
+date: "2024-07-29"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown
+
+```{r data.table,  echo=FALSE}
 dt <- fread(file.path(csv_output, "resultados_massa_salarial.csv"))
 
 
@@ -72,19 +87,26 @@ massa_recente <- setnames(massa_recente, c("variaveis", "Homem_2023T1", "Mulher_
                                            "Total_2023T1", "Homem_2024T1", "Mulher_2024T1", "Total_2024T1"),
                           c("Resultados", "Homem 2023T1", "Mulher 2023T1",
                             "Total 2023T1", "Homem 2024T1", "Mulher 2024T1", "Total 2024T1"))
+```
 
-
+```{r kableExtra, echo=FALSE}
  table_massa <-
    kable(head(massa_recente, 7), align = 'l', booktabs = TRUE, col.names = rep("", ncol(massa_recente))) %>% 
-  column_spec(1, width = "400px") %>%  
+  column_spec(1, width = "450px") %>%  
   column_spec(c(2:7), width = "100px") %>% 
   row_spec(1, bold = FALSE, background = "lightgray") %>% 
   add_header_above(c("", "Homem" = 1, "Mulher" = 1, "Total" = 1, "Homem" = 1, "Mulher" = 1, "Total" = 1)) %>% 
   add_header_above(c("", "2023" = 3, "2024" = 3)) %>% 
-  add_indent(c(3, 4, 6, 7), level_of_indent = 2) %>% 
+  add_indent(c(3, 4, 6, 7), level_of_indent = 1) %>% 
   row_spec(c(3, 4, 6, 7), italic = TRUE)
- 
- 
- caminho <- file.path(tables_output, "table_massa.tex")
- writeLines(table_massa, caminho)
-  
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r kableExtra, echo=FALSE}
+table_massa
+```
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
