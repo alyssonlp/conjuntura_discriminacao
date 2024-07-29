@@ -42,15 +42,14 @@ for(aa in ano) {
     
     position_mn <- which(dt[male == 0 & is.na(ln_r_hab_all) == F,nonwhite == 1])
     position_mb <-  which(dt[male == 0 & is.na(ln_r_hab_all) == F,nonwhite == 0])
-    position_mulher <- which(dt[male == 0 & is.na(ln_r_hab_all) == F])
     
     # mulheres brancas - Contrafactual: mulheres 
     
     media_wg_mb <- mean(exp(eq_wg_h$fitted.values[position_mb] + 
                               eq_wg_h$residual[position_mb]))
     
-    media_wg_mulheres <- mean(exp(eq_wg_h$fitted.values[position_mulher] + 
-                                  eq_wg_h$residual[position_mulher]))
+    media_wg_mulheres <- mean(exp(eq_wg_h$fitted.values + 
+                                  eq_wg_h$residual))
     
     # Obs. mulheres brancas nao tem efeito discriminacao
     
@@ -65,8 +64,9 @@ for(aa in ano) {
     
     # Massa salarial perdida devido ao efeito composicao
     composicao_massa_wg_mb <- P0_mb*composicao_wg_mb*e0_mb
+    
     # Massa salarial total perdida(premiada) mulheres brancas
-    wg_massa_perdida_mb <- composicao_massa_wg_mb
+    wg_massa_perdida_mb <- composicao_massa_wg_mb + 0
     
     # mulheres negras - Contrafactual: mulheres
     # mulheres negras na economia (P_1)
@@ -87,7 +87,7 @@ for(aa in ano) {
     discriminacao_wg_mn <-  media_wg_mn - media_wg_mn_sem_discr 
     
     # Diferença na composicao
-    composicao_wg_mn <- media_wg_negras_sem_discr - media_wg_mulheres
+    composicao_wg_mn <- media_wg_mn_sem_discr - media_wg_mulheres
     
     # Penalidade salarial devido a composicao e a discriminacao
     penalidade_wg_mn <- discriminacao_wg_mn + composicao_wg_mn
@@ -112,25 +112,25 @@ for(aa in ano) {
     
     pos_mn_emp <- which(dt[male == 0, nonwhite == 1])
     pos_mb_emp <- which(dt[male == 0, nonwhite == 0])
-    pos_homem_emp <- which(dt[male == 0])
+
     
     # mulheres Brancos - Contrafactual: mulheres 
     
     media_emp_mb <- mean(eq_emp_h$fitted.values[pos_mb_emp] + 
                            eq_emp_h$residual[pos_mb_emp])
     
-    media_emp_mulheres <- mean(eq_emp_h$fitted.values[pos_homem_emp] + 
-                               eq_emp_h$residual[pos_homem_emp])
+    media_emp_mulheres <- mean(eq_emp_h$fitted.values + 
+                               eq_emp_h$residual)
     
     # Efeito discriminacao == 0
     # Diferença na composicao
     composicao_emp_mb <- media_emp_mb - media_emp_mulheres
     
     # Perda salarial do homem branco dada a empregabilidade
-    emp_massa_perdida_mb <- P0_mb*composicao_wg_mb*media_wg_mulheres
+    emp_massa_perdida_mb <- P0_mb*composicao_emp_mb*media_wg_mulheres
     
     # Perda salarial do homem branco dada a empregabilidade - efeito composicao
-    composicao_massa_emp_mb <- emp_massa_perdida_mb
+    composicao_massa_emp_mb <- emp_massa_perdida_mb + 0
     
     # Massa Salarial Total Perdida (ou premiada) dos mulheres brancos
     total_mb <- composicao_massa_wg_mb + composicao_massa_emp_mb
@@ -142,9 +142,7 @@ for(aa in ano) {
     
     media_emp_mn_sem_discr <- mean(eq_emp_h$fitted.values[pos_mn_emp] + 
                                      (-1)*eq_emp_h$coefficients[2] + eq_emp_h$residual[pos_mn_emp])
-    
-    media_emp_mulheres <- mean(eq_emp_h$fitted.values[pos_homem_emp] + 
-                               eq_emp_h$residual[pos_homem_emp])
+  
     
     # Componente discriminatorio
     discriminacao_emp_mn <- media_emp_mn - media_emp_mn_sem_discr
@@ -162,10 +160,29 @@ for(aa in ano) {
     discriminacao_massa_emp_mn <- P1_mn*discriminacao_emp_mn*media_wg_mulheres
     
     # Perda salarial do homem negro dada a empregabilidade - efeito composicao
-    composicao_massa_emp_mn <- P1_mn*discriminacao_massa_emp_mn*media_wg_mulheres
+    composicao_massa_emp_mn <- P1_mn*composicao_emp_mn*media_wg_mulheres
     
     # Massa Salarial Total Perdida (ou premiada) dos mulheres negras
     total_mn <-  discriminacao_massa_wg_mn + composicao_massa_wg_mn + 
       discriminacao_massa_emp_mn + composicao_massa_emp_mn
+    
+    anotri <- sprintf("%dT%d", aa, tri)
+    bi <- 1000000000
+    dt2 <- data.table(Ano_trimestre = anotri, 
+                      total_mn = round(total_mn/bi, 2),
+                      discriminacao_massa_wg_mn = round(discriminacao_massa_wg_mn/bi, 2),
+                      composicao_massa_wg_mn = round(composicao_massa_wg_mn/bi, 2),
+                      discriminacao_massa_emp_mn = round(discriminacao_massa_emp_mn/bi, 2),
+                      composicao_massa_emp_mn = round(composicao_massa_emp_mn/bi, 2),
+                      total_mb = round(total_mb/bi, 2),
+                      composicao_massa_wg_mb = round(composicao_massa_wg_mb/bi, 2),
+                      composicao_massa_emp_mb = round(composicao_massa_emp_mb/bi, 2))
+    
+    
+    
+    dt1 <- rbind(dt1, dt2, fill = TRUE)
+    
   }
 }
+
+fwrite(dt1, file.path(csv_output, "resultados_massa_salarial_mulheres.csv"))
