@@ -89,7 +89,7 @@ results$gender_race <- factor(results$gender_race, levels = c("Homem Branco", "M
 
 
 dt1_long <- results %>%
-  filter(Ano_trimestre %in% c("2023T1", "2024T1")) %>%
+  filter(Ano_trimestre %in% c( "2024T1")) %>%
   tidyr::pivot_longer(cols = starts_with("b") | starts_with("t"), 
                       names_to = "category", 
                       values_to = "value")
@@ -105,24 +105,16 @@ dt1_long <- mutate(dt1_long, category_labels = case_when(
 
 
 
-dt1_long <- dt1_long %>%
-  mutate(Ano_trimestre_category = 
-           paste(Ano_trimestre, category_labels, sep = "-"))
+dt1_long$category_labels <- as.factor(dt1_long$category_labels)
 
-dt1_long$Ano_trimestre_category <- as.factor(dt1_long$Ano_trimestre_category)
-
-dt1_long$Ano_trimestre_category <- 
-  forcats::fct_relevel(dt1_long$Ano_trimestre_category,
-                       c("2023T1-base 1%", "2024T1-base 1%",
-                         "2023T1-base 5%", "2024T1-base 5%",
-                         "2023T1-base 10%", "2024T1-base 10%",
-                         "2023T1-topo 10%", "2024T1-topo 10%",
-                         "2023T1-topo 5%", "2024T1-topo 5%",
-                         "2023T1-topo 1%", "2024T1-topo 1%"))
+dt1_long$category_labels <- 
+  forcats::fct_relevel(dt1_long$category_labels,
+                       c("base 1%", "base 5%", "base 10%",
+                         "topo 10%", "topo 5%", "topo 1%"))
 
 
 dt1_long <- dt1_long %>%
-  mutate(base_topo = ifelse(grepl("b", Ano_trimestre_category), "Base", "Topo"))
+  mutate(base_topo = ifelse(grepl("b", category_labels), "Base", "Topo"))
 
 dt1_long <- as.data.table(dt1_long)
 
@@ -134,16 +126,15 @@ dt1_long[, order := fcase(category %in% c("b1", "t10"), 1L,
 
 table(dt1_long$category, dt1_long$order)
 
-dt1_long[Ano_trimestre == "2023T1", teste := order]
-dt1_long[Ano_trimestre == "2024T1", teste := order + 1]
-
+dt1_long[base_topo == "Base", teste := order]
+dt1_long[base_topo == "Topo", teste := order + 3]
 
 
 pdf(file.path(figures_output, "top_bottom.pdf"),  width = 14, height = 8.5)
 
 #rever
-tb <- dt1_long %>% filter(Ano_trimestre == "2024T1") %>% 
-  ggplot( aes(x = teste, y = value, fill = gender_race)) +
+tb <- dt1_long %>% 
+  ggplot( aes(x = perc, y = value, fill = gender_race)) +
   geom_bar(stat = 'identity', 
            position = position_dodge(width = 0.8), width = 0.7,) +
   geom_col(position = position_stack(reverse = FALSE)) +
@@ -155,8 +146,6 @@ tb <- dt1_long %>% filter(Ano_trimestre == "2024T1") %>%
                                "Mulher Branca" = "darkorange1",
                                "Homem Negro" = "darkgoldenrod1",
                                "Mulher Negra" = "brown4")) +
-scale_x_continuous(breaks = c(2, 4, 6, 2, 4, 6 ),
-    labels = c ("1%", "5%", "10%", "10%", "5%", "1%")) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
