@@ -138,21 +138,19 @@ dt1_long <- dt1_long %>%
 
 
 dt_base <- dt1_long[base_topo == "Base",]
-dt_base$custom_labels <- factor(dt_base$custom_labels,
-                                 levels = c("1%", "5%", "10%"))
+dt_base$category <- factor(dt_base$category,
+                                 levels = c("b1", "b5", "b10"))
 
 dt_topo <- dt1_long[base_topo == "Topo",]
-dt_topo$custom_labels <- factor(dt_topo$custom_labels,
-                                levels = c("10%", "5%", "1%"))
-
-pdf(file.path(figures_output, "top_bottom.pdf"),  width = 14, height = 8.5)
-
+dt_topo$category <- factor(dt_topo$category,
+                                levels = c("t10", "t5", "t1"))
 
 dt_join <- rbind(dt_base, dt_topo)
 
 #rever
+pdf(file.path(figures_output, "top_bottom.pdf"),  width = 14, height = 8.5)
 tb <- dt_join %>% 
-  ggplot( aes(x = custom_labels, y = value, fill = gender_race)) +
+  ggplot( aes(x = category, y = value, fill = gender_race)) +
   geom_bar(stat = 'identity', 
            position = position_dodge(width = 0.8), width = 0.7,) +
   geom_col(position = position_stack(reverse = FALSE)) +
@@ -173,7 +171,10 @@ tb <- dt_join %>%
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
   labs(x = "", y = "%", title = "") +
-  facet_wrap(~ base_topo)
+  facet_wrap(~ base_topo, scales = "free_x", 
+             labeller = as_labeller(c(Base = "Base", Topo = "Topo"))) +
+  scale_x_discrete(breaks = c("b1", "b5", "b10", "t10", "t5", "t1"),
+                   labels = c("1%", "5%", "10%", "10%", "5%", "1%")) 
 
 
 print(tb)
