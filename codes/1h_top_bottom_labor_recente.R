@@ -126,30 +126,13 @@ dt1_long[, order := fcase(category %in% c("b1", "t10"), 1L,
 
 table(dt1_long$category, dt1_long$order)
 
-dt1_long <- dt1_long %>%
-  mutate(custom_labels = case_when(
-    base_topo == "Base" & order == 1 ~ "1%",
-    base_topo == "Base" & order == 2 ~ "5%",
-    base_topo == "Base" & order == 3 ~ "10%",
-    base_topo == "Topo" & order == 1 ~ "10%",
-    base_topo == "Topo" & order == 2 ~ "5%",
-    base_topo == "Topo" & order == 3 ~ "1%"
-  ))
+dt1_long$category <- factor(dt1_long$category,
+                           levels = c("b1", "b5", "b10", "t10", "t5", "t1"))
 
 
-dt_base <- dt1_long[base_topo == "Base",]
-dt_base$category <- factor(dt_base$category,
-                                 levels = c("b1", "b5", "b10"))
 
-dt_topo <- dt1_long[base_topo == "Topo",]
-dt_topo$category <- factor(dt_topo$category,
-                                levels = c("t10", "t5", "t1"))
-
-dt_join <- rbind(dt_base, dt_topo)
-
-#rever
 pdf(file.path(figures_output, "top_bottom.pdf"),  width = 14, height = 8.5)
-tb <- dt_join %>% 
+tb <- dt1_long %>% 
   ggplot( aes(x = category, y = value, fill = gender_race)) +
   geom_bar(stat = 'identity', 
            position = position_dodge(width = 0.8), width = 0.7,) +
