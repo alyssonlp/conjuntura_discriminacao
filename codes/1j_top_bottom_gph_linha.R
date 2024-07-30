@@ -1,12 +1,5 @@
-dt <- fread( file.path(csv_output, "top_bottom_backup.csv"))
+dt <- fread( file.path(csv_output, "top_bottom.csv"))
 
-dt[, gender_race := gsub("_", " ", gender_race)]
-dt[, gender_race := gsub("homem", "Homem", gender_race)]
-dt[, gender_race := gsub("mulher", "Mulher", gender_race)]
-dt[, gender_race := gsub("negro", "Negro", gender_race)]
-dt[, gender_race := gsub("negra", "Negra", gender_race)]
-dt[, gender_race := gsub("branco", "Branco", gender_race)]
-dt[, gender_race := gsub("branca", "Branca", gender_race)]
 
 # Para o 1%
 # Base 1%

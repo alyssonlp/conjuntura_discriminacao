@@ -1,7 +1,7 @@
 rm(list = ls()[which(!ls() %in% list_objects_to_keep)])
 gc()
 
-compute_stats = FALSE
+compute_stats = TRUE
 
 if (compute_stats) {
   
@@ -37,7 +37,17 @@ if (compute_stats) {
     dt[, bottom1 := as.numeric(r_hab_all <= bottom1)]
     
     
-    tb <- as.data.table(dist_fun(aa, tri))
+    # Calculando as médias ponderadas
+    distribuicao <- dt[, .(
+      top10 = wtd.mean(100*top10, weights = V1028, na.rm = TRUE),
+      top5 = wtd.mean(100*top5, weights = V1028, na.rm = TRUE),
+      top1 = wtd.mean(100*top1, weights = V1028, na.rm = TRUE),
+      bottom10 = wtd.mean(100*bottom10, weights = V1028, na.rm = TRUE),
+      bottom5 = wtd.mean(100*bottom5, weights = V1028, na.rm = TRUE),
+      bottom1 = wtd.mean(100*bottom1, weights = V1028, na.rm = TRUE)
+    ), by = gender_race]
+    
+    tb <- as.data.table(distribuicao)
     
     tb[,t10 := (top10/sum(top10))*100 ]
     tb[,t5 := (top5/sum(top5))*100 ]
@@ -47,34 +57,32 @@ if (compute_stats) {
     tb[,b1 := (bottom1/sum(bottom1))*100 ]
     
     anotri <- sprintf("%dT%d", aa, tri)
-    
     tb[, Ano_trimestre := anotri]
     
     tb <- tb[, .(gender_race, Ano_trimestre, t10, t5, t1, b10, b5, b1)]
     
-    tb
-    #dt1 <- rbind(dt1, tb, fill = TRUE)
+    return(tb)
     
   }
   
-  resultado_2023 <- compute_percents(aa = 2023, tri = 1)
-  resultado_2024 <- compute_percents(aa = 2024, tri = 1)
+  # Iterando por todos os anos e trimestres desde 2012
+  anos <- 2012:2024
+  trimestres <- 1:4
   
-  resultado <- 
-    lapply(c(2023, 2024), 
-                      function(k) compute_percents(aa = k, tri = 1)) %>% 
-    rbindlist()
+  resultado <- rbindlist(
+    lapply(anos, function(ano) {
+      if (ano == 2024) {
+        return(compute_percents(aa = ano, tri = 1))
+      } else {
+        return(rbindlist(
+          lapply(trimestres, function(tri) {
+            compute_percents(aa = ano, tri = tri)
+          })
+        ))
+      }
+    })
+  )
   
-  # 
-  # dt1 <- dt1[, gender_race := gsub("_", " ", gender_race)]
-  # dt1 <- dt1[, gender_race := gsub("homem", "Homem", gender_race)]
-  # dt1 <- dt1[, gender_race := gsub("mulher", "Mulher", gender_race)]
-  # dt1 <- dt1[, gender_race := gsub("negro", "Negro", gender_race)]
-  # dt1 <- dt1[, gender_race := gsub("negra", "Negra", gender_race)]
-  # dt1 <- dt1[, gender_race := gsub("branco", "Branco", gender_race)]
-  # dt1 <- dt1[, gender_race := gsub("branca", "Branca", gender_race)]
-  # 
-  # fwrite(dt1, file.path(csv_files, "top_bottom.csv"))
   
   fwrite(resultado, file.path(csv_output, "top_bottom.csv"))
   
