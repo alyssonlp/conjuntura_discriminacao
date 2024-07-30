@@ -1,0 +1,265 @@
+---
+title: ""
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+date: ""
+header-includes:
+  - \pagestyle{empty}
+geometry: margin=1in,landscape
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(PNADcIBGE)
+library(survey)
+library(dplyr)
+library(data.table)
+library(questionr)
+library(ggplot2)
+library(fixest)
+library(dineq)
+library(tidyr)
+library(knitr)
+library(gt)
+library(webshot2)
+library(kableExtra)
+
+part_01 <- FALSE
+part_02 <- FALSE
+
+# Definindo usuário
+user <- "Rodrigo"
+#user <- "Alysson"
+#user <- "Alysson_cpp"
+
+
+if (user == "Rodrigo") {
+  # working folders
+  github_folder <- file.path("C:/Users/Rodrigo/Documents/GitHub/conjuntura_discriminacao")
+  one_drive_folder <- file.path("C:/Users/Rodrigo/Insper/Alysson Lorenzon Portella - conjuntura_pnadc/conjuntura_discriminacao")
+  
+}
+
+if (user == "Alysson") {
+  # working folders
+  github_folder <- file.path("C:/Users/Alysson/Documents/@github/conjuntura_discriminacao")
+  one_drive_folder <- file.path("C:/Users/Alysson/Documents/onedrive_alyssonlp1/@support_papers/@NERI/conjuntura_pnadc/conjuntura_discriminacao")
+  
+}
+
+if (user == "Alysson_cpp") {
+  # working folders
+  github_folder <- file.path("C:/Users/alyssonlp1/Documents/@github/conjuntura_discriminacao")
+  one_drive_folder <- file.path("C:/Users/alyssonlp1/OneDrive - Insper/@support_papers/@NERI/conjuntura_pnadc/conjuntura_discriminacao")
+  
+}
+
+codes <- file.path(github_folder, "codes")
+original_data <- file.path(one_drive_folder, "original_data")
+intermediary_data <- file.path(one_drive_folder, "intermediary_data")
+outputs <- file.path(github_folder, "outputs")
+tables_output <- file.path(outputs, "tables_output")
+figures_output <- file.path(outputs, "figures_output")
+csv_output <- file.path(outputs, "csv_output")
+final_data <- file.path(one_drive_folder, "final_data")
+temp_file <- file.path(one_drive_folder, "temp_file")
+
+
+#dir.create(intermediary_data)
+#dir.create(final_data)
+#dir.create(temp_file)
+
+
+list_objects_to_keep <- c("datawork_folder", "github_folder", "one_drive_folder",
+                          "codes", "outputs" ,"tables_output", "figures_output",
+                          "csv_output", "intermediary_data", "final_data", 
+                          "ano_tri_fun", "part_01", "part_02", "dist_fun",
+                          "list_objects_to_keep")
+
+```
+
+
+```{r,  echo=FALSE}
+dt <- fread(file.path(csv_output, "resultados_massa_salarial.csv"))
+
+
+dt1 <- dt[Ano_trimestre %in% c("2023T1", "2024T1"),]
+dt1[, total_perdido_hn := massa_wg_perdida_hn + massa_emp_perdida_hn]
+dt1[, total_perdido_mn := massa_wg_perdida_mn + massa_emp_perdida_mn ]
+
+mult <- c("total_perdido_hn","massa_wg_perdida_hn" ,
+          "massa_wg_composicao_hn", "massa_wg_discriminacao_hn", 
+          "massa_emp_perdida_hn",
+          "massa_emp_composicao_hn", "massa_emp_discriminacao_hn",
+          "total_perdido_mn","massa_wg_perdida_mn" ,
+          "massa_wg_composicao_mn", "massa_wg_discriminacao_mn", 
+          "massa_emp_perdida_mn",
+          "massa_emp_composicao_mn", "massa_emp_discriminacao_mn")
+dt1 <- dt1[, (mult) := lapply(.SD, function(x) x * -1), .SDcols = mult]
+
+# Tabela 1 - resultados perda da massa salarial
+dt_homem_m <- dt1[, .(Ano_trimestre, total_perdido_hn, massa_wg_perdida_hn, 
+                      massa_wg_composicao_hn, massa_wg_discriminacao_hn,
+                      massa_emp_perdida_hn,
+                      massa_emp_composicao_hn, massa_emp_discriminacao_hn)]
+
+
+dt_mulher_m <- dt1[, .(Ano_trimestre, total_perdido_mn, massa_wg_perdida_mn, 
+                       massa_wg_composicao_mn, massa_wg_discriminacao_mn,
+                       massa_emp_perdida_mn,
+                       massa_emp_composicao_mn, massa_emp_discriminacao_mn)]
+
+dt_homem_m <- setnames(dt_homem_m, 
+                       c("total_perdido_hn","massa_wg_perdida_hn" ,
+                         "massa_wg_composicao_hn", "massa_wg_discriminacao_hn", 
+                         "massa_emp_perdida_hn",
+                         "massa_emp_composicao_hn", "massa_emp_discriminacao_hn"), 
+                       c("Massa Salarial Total Perdida HN","Penalidade Salarial",
+                         "Efeito Composição Salário HN","Efeito Discriminação Salário HN", 
+                         " Penalidade Empregabilidade",
+                         "Efeito Composição da Empregabilidade HN",
+                         "Efeito Discriminação da Empregabilidade HN"))
+
+dt_mulher_m <- setnames(dt_mulher_m,
+                        c("total_perdido_mn","massa_wg_perdida_mn" ,
+                        "massa_wg_composicao_mn", "massa_wg_discriminacao_mn", 
+                        "massa_emp_perdida_mn",
+                        "massa_emp_composicao_mn", "massa_emp_discriminacao_mn"), 
+                        c("Massa Salarial Total Perdida MN","Penalidade Salarial",
+                          "Efeito Composição Salário MN","Efeito Discriminação Salário MN", 
+                          "Penalidade Empregabilidade",
+                          "Efeito Composição da Empregabilidade MN",
+                          "Efeito Discriminação da Empregabilidade MN"))
+
+# Transpor cada data.table
+# Para homens
+
+homens_t <- setnames(dt_homem_m[, data.table(t(.SD), keep.rownames=TRUE), .SDcols=-"Ano_trimestre"], 
+                     dt_homem_m[, c('variaveis', Ano_trimestre)])[]
+setnames(homens_t, c("2023T1", "2024T1"), c("Homem_2023T1", "Homem_2024T1"))
+homens_t$variaveis <- gsub("HN", "", homens_t$variaveis)
+
+# Para mulheres
+mulheres_t <- setnames(dt_mulher_m[, data.table(t(.SD), keep.rownames=TRUE), .SDcols=-"Ano_trimestre"], 
+                       dt_mulher_m[, c('m', Ano_trimestre)])[]
+setnames(mulheres_t, c("2023T1", "2024T1"), c("Mulher_2023T1", "Mulher_2024T1"))
+
+massa_recente <- cbind(homens_t, mulheres_t)
+massa_recente <- massa_recente[, m := NULL]
+massa_recente <- massa_recente[, Total_2023T1 := Homem_2023T1 + Mulher_2023T1]
+massa_recente <- massa_recente[, Total_2024T1 := Homem_2024T1 + Mulher_2024T1]
+massa_recente <- setcolorder(massa_recente, c("variaveis", "Homem_2023T1", "Mulher_2023T1",
+                                              "Total_2023T1", "Homem_2024T1", "Mulher_2024T1", "Total_2024T1"))
+massa_recente <- setnames(massa_recente, c("variaveis", "Homem_2023T1", "Mulher_2023T1",
+                                           "Total_2023T1", "Homem_2024T1", "Mulher_2024T1", "Total_2024T1"),
+                          c("Resultados", "Homem 2023T1", "Mulher 2023T1",
+                            "Total 2023T1", "Homem 2024T1", "Mulher 2024T1", "Total 2024T1"))
+```
+
+```{r, echo=FALSE}
+ table_massa <-
+   kable(head(massa_recente, 7), align = 'l', booktabs = TRUE, col.names = rep("", ncol(massa_recente))) %>% 
+  column_spec(1, width = "200px") %>%  
+  column_spec(c(2:7), width = "70px") %>% 
+  row_spec(1, bold = TRUE) %>% 
+  row_spec(c(1:7), color = "black") %>% 
+  add_header_above(c("", "Homem" = 1, "Mulher" = 1, "Total" = 1, "Homem" = 1, "Mulher" = 1, "Total" = 1)) %>% 
+  add_header_above(c("", "2023" = 3, "2024" = 3)) %>% 
+  add_indent(c(3, 4, 6, 7), level_of_indent = 2) %>% 
+  row_spec(c(2, 5), italic = TRUE)
+```
+
+
+
+```{r,  echo=FALSE}
+dt2 <- dt[Ano_trimestre %in% c("2023T1", "2024T1"),]
+mult <- c("composicao_hn_wg", "discriminacao_hn_wg",
+          "composicao_hn_emp", "discriminacao_hn_emp", 
+          "penalidade_salarial_hn", "penalidade_emp_hn",
+          "composicao_mn_wg", "discriminacao_mn_wg",
+          "composicao_mn_emp", "discriminacao_mn_emp" , 
+          "penalidade_salarial_mn", "penalidade_emp_mn")
+
+dt2 <- dt2[, (mult) := lapply(.SD, function(x) x * -1), .SDcols = mult]
+
+# Tabela 1 - resultados perda da massa salarial
+dt_homem_e <- dt2[, .(Ano_trimestre, composicao_hn_wg, discriminacao_hn_wg,
+                      composicao_hn_emp, discriminacao_hn_emp,
+                      penalidade_salarial_hn, penalidade_emp_hn)]
+
+dt_mulher_e <- dt2[, .(Ano_trimestre, composicao_mn_wg, discriminacao_mn_wg,
+                       composicao_mn_emp, discriminacao_mn_emp, 
+                       penalidade_salarial_mn, penalidade_emp_mn)]
+
+setnames(dt_homem_e, 
+         c("composicao_hn_wg", "discriminacao_hn_wg","composicao_hn_emp", 
+           "discriminacao_hn_emp", "penalidade_salarial_hn","penalidade_emp_hn" ), 
+         c( "Efeito Composição Salário HN","Efeito Discriminação Salário HN",
+            "Efeito Composição da Empregabilidade HN",
+            "Efeito Discriminação da Empregabilidade HN",
+            "Penalidade Salarial HN", "Penalidade na Empregabilidade HN" ))
+
+setnames(dt_mulher_e, 
+         c("composicao_mn_wg", "discriminacao_mn_wg","composicao_mn_emp", 
+           "discriminacao_mn_emp", "penalidade_salarial_mn", "penalidade_emp_mn"), 
+         c("Efeito Composição Salário MN","Efeito Discriminação Salário MN", 
+           "Efeito Composição da Empregabilidade MN",
+           "Efeito Discriminação da Empregabilidade MN",
+           "Penalidade Salarial MN", "Penalidade na Empregabilidade MN" ))
+
+
+# Transpor cada data.table
+# Para homens
+
+homens_e <- setnames(dt_homem_e[, data.table(t(.SD), keep.rownames=TRUE), .SDcols=-"Ano_trimestre"], 
+                     dt_homem_e[, c('variaveis', Ano_trimestre)])[]
+setnames(homens_e, c("2023T1", "2024T1"), c("Homem_2023T1", "Homem_2024T1"))
+homens_e$variaveis <- gsub("HN", " ", homens_e$variaveis)
+
+
+mulheres_e <- setnames(dt_mulher_e[, data.table(t(.SD), keep.rownames=TRUE), .SDcols=-"Ano_trimestre"], 
+                       dt_mulher_e[, c('variaveis_m', Ano_trimestre)])[]
+setnames(mulheres_e, c("2023T1", "2024T1"), c("Mulher_2023T1", "Mulher_2024T1"))
+
+
+individual_recente <- cbind(homens_e, mulheres_e)
+individual_recente <- individual_recente[, variaveis_m := NULL]
+
+individual_recente <- setcolorder(individual_recente,c("variaveis", "Homem_2023T1", "Mulher_2023T1",
+                                                       "Homem_2024T1", "Mulher_2024T1"))
+individual_recente <- setnames(individual_recente, c("variaveis", "Homem_2023T1", "Mulher_2023T1",
+                                                     "Homem_2024T1", "Mulher_2024T1"),
+                               c("Resultados", "Homem 2023T1", "Mulher 2023T1",
+                                 "Homem 2024T1", "Mulher 2024T1"))
+
+individual_recente <- individual_recente[c(5, 1, 2, 6, 3, 4), ]
+```
+
+```{r, echo=FALSE}
+# Criando a tabela 
+table_individual <-
+  kable(head(individual_recente, 6), align = 'l', booktabs = TRUE, 
+        col.names = rep("", ncol(individual_recente))) %>% 
+  column_spec(1, width = "200px") %>%  
+  column_spec(c(2:5), width = "80px") %>% 
+  row_spec(c(1,4), bold = TRUE) %>% 
+  row_spec(c(1:6), color = "black") %>% 
+  add_header_above(c("", "Homem" = 1, "Mulher" = 1,  "Homem" = 1, "Mulher" = 1)) %>% 
+  add_header_above(c("", "2023" = 2, "2024" = 2)) %>% 
+  add_indent(c(2,3,5,6), level_of_indent = 2) 
+```
+
+
+### Resultado Individual
+```{r , echo=FALSE}
+table_individual
+```
+
+### Resultado para a população
+```{r , echo=FALSE}
+table_massa
+```
+
