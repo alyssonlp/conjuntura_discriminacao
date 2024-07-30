@@ -17,6 +17,7 @@ library(kableExtra)
 
 part_01 <- FALSE
 part_02 <- FALSE
+part_03 <- FALSE
 
 # Definindo usuário
 user <- "Rodrigo"
@@ -64,8 +65,8 @@ temp_file <- file.path(one_drive_folder, "temp_file")
 list_objects_to_keep <- c("datawork_folder", "github_folder", "one_drive_folder",
                           "codes", "outputs" ,"tables_output", "figures_output",
                           "csv_output", "intermediary_data", "final_data", 
-                          "ano_tri_fun", "part_01", "part_02", "dist_fun",
-                          "list_objects_to_keep")
+                          "ano_tri_fun", "part_01", "part_02", "part_03",
+                          "dist_fun", "list_objects_to_keep")
 
 # Codes --------------------
 # Funções utilizadas em outros scripts:
@@ -81,15 +82,27 @@ if (part_01) {
   source(file.path(codes, "1f_pea_adult.R"))
   source(file.path(codes, "1g_frac_graficos_labor_recente.R"))
   source(file.path(codes, "1h_top_bottom_labor_recente.R"))
+  source(file.path(codes, "1i_top_bottom.R"))
+  source(file.path(codes, "1j_top_bottom_gph_linha.R"))
+  source(file.path(codes, "1k_top_bottom_ppb.R"))
+  source(file.path(codes, "1l_top_botoom_ppb_gph.R"))
+  source(file.path(codes, "1m_topo_bottom_ppb_linha_gph.R"))
 }
 
 # modelo econometrico
 if (part_02) {
   source(file.path(codes, "2a_mensuracao_massa_salarial.R"))
   source(file.path(codes, "2b_massa_perdida_gph.R"))
-  source(file.path(codes, "2c_penalidade_gph.R"))
+  source(file.path(codes, "2c_massa_perdida_negros_gph.R"))
+  source(file.path(codes, "2d_tabelas_resultados_massa_e_individual.Rmd"))
 }
 
+# contrafactual Brasil
+if (part_03) {
+  source(file.path(codes, "3a_mensuracao_massa_homens.R"))
+  source(file.path(codes, "3b_mensuracao_massa_mulheres.R"))
+  source(file.path(codes, "3c_massa_contrafacutal_br_gph.R"))
+}
 
 
 
