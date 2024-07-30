@@ -126,15 +126,33 @@ dt1_long[, order := fcase(category %in% c("b1", "t10"), 1L,
 
 table(dt1_long$category, dt1_long$order)
 
-dt1_long[base_topo == "Base", teste := order]
-dt1_long[base_topo == "Topo", teste := order + 3]
+dt1_long <- dt1_long %>%
+  mutate(custom_labels = case_when(
+    base_topo == "Base" & order == 1 ~ "1%",
+    base_topo == "Base" & order == 2 ~ "5%",
+    base_topo == "Base" & order == 3 ~ "10%",
+    base_topo == "Topo" & order == 1 ~ "10%",
+    base_topo == "Topo" & order == 2 ~ "5%",
+    base_topo == "Topo" & order == 3 ~ "1%"
+  ))
 
+
+dt_base <- dt1_long[base_topo == "Base",]
+dt_base$custom_labels <- factor(dt_base$custom_labels,
+                                 levels = c("1%", "5%", "10%"))
+
+dt_topo <- dt1_long[base_topo == "Topo",]
+dt_topo$custom_labels <- factor(dt_topo$custom_labels,
+                                levels = c("10%", "5%", "1%"))
 
 pdf(file.path(figures_output, "top_bottom.pdf"),  width = 14, height = 8.5)
 
+
+dt_join <- rbind(dt_base, dt_topo)
+
 #rever
-tb <- dt1_long %>% 
-  ggplot( aes(x = perc, y = value, fill = gender_race)) +
+tb <- dt_join %>% 
+  ggplot( aes(x = custom_labels, y = value, fill = gender_race)) +
   geom_bar(stat = 'identity', 
            position = position_dodge(width = 0.8), width = 0.7,) +
   geom_col(position = position_stack(reverse = FALSE)) +
