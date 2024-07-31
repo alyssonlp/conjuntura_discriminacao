@@ -5,13 +5,12 @@ mass <- fread(file.path(csv_output, "resultados_massa_salarial.csv"))
 # Gph para homens negros
 # total, composicao wg, discriminacao wg, composicao emp, discriminacao emp
 # Transformar os dados para o formato longo
-homem <- mass[, .(Ano_trimestre, massa_wg_composicao_hn, massa_wg_discriminacao_hn,
-                  massa_emp_composicao_hn, massa_emp_discriminacao_hn)]
-homem[, massa_perdida := massa_wg_composicao_hn + massa_wg_discriminacao_hn +
-        massa_emp_composicao_hn + massa_emp_discriminacao_hn]
+homem <- mass[, .(Ano_trimestre, composicao_massa_wg_hn, discriminacao_massa_wg_hn,
+                  composicao_massa_emp_hn, discriminacao_massa_emp_hn, total_hn)]
 
-setnames(homem, c( "massa_wg_composicao_hn", "massa_wg_discriminacao_hn",
-                           "massa_emp_composicao_hn", "massa_emp_discriminacao_hn", "massa_perdida"),
+
+setnames(homem, c( "composicao_massa_wg_hn", "discriminacao_massa_wg_hn",
+                           "composicao_massa_emp_hn", "discriminacao_massa_emp_hn", "total_hn"),
                   c("Efeito Composição - Salários",
                     "Efeito Discriminação - Salários", "Efeito Composição - Empregabilidade",
                     "Efeito Discriminação - Empregabilidade", "Massa Salarial Perdida"))
@@ -54,13 +53,12 @@ dev.off()
 
 
 # Para mulheres negras
-mulher <- mass[, .(Ano_trimestre, massa_wg_composicao_mn, massa_wg_discriminacao_mn,
-                  massa_emp_composicao_mn, massa_emp_discriminacao_mn)]
-mulher[, massa_perdida := massa_wg_composicao_mn + massa_wg_discriminacao_mn +
-        massa_emp_composicao_mn + massa_emp_discriminacao_mn]
+mulher <- mass[, .(Ano_trimestre, composicao_massa_wg_mn, discriminacao_massa_wg_mn,
+                   composicao_massa_emp_mn, discriminacao_massa_emp_mn, total_mn )]
 
-setnames(mulher, c( "massa_wg_composicao_mn", "massa_wg_discriminacao_mn",
-                           "massa_emp_composicao_mn", "massa_emp_discriminacao_mn", "massa_perdida"),
+
+setnames(mulher, c( "composicao_massa_wg_mn", "discriminacao_massa_wg_mn",
+                           "composicao_massa_emp_mn", "discriminacao_massa_emp_mn", "total_mn"),
                   c( "Efeito Composição - Salários",
                     "Efeito Discriminação - Salários", "Efeito Composição - Empregabilidade",
                     "Efeito Discriminação - Empregabilidade", "Massa Salarial Perdida" ))

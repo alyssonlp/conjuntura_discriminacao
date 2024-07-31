@@ -76,17 +76,12 @@ source(file.path(codes, "0a_function_carta_conjuntura.R"))
 if (part_01) {
   source(file.path(codes, "1a_clean_data_carta_replicacao.R"))
   source(file.path(codes, "1b_resultados_carta_conjuntura.R"))
-  source(file.path(codes, "1c_graficos_carta_conjuntura_raca.R"))
-  source(file.path(codes, "1d_graficos_carta_conjuntura_genero_raca.R"))
-  source(file.path(codes, "1e_graficos_labor_recente_gph.R"))
-  source(file.path(codes, "1f_pea_adult.R"))
-  source(file.path(codes, "1g_frac_graficos_labor_recente.R"))
+  source(file.path(codes, "1c_genero_raca_br_gph.R"))
+  source(file.path(codes, "1d_labor_recente_gph.R"))
+  source(file.path(codes, "1e_frac_labor_recente_gph.R"))
+  source(file.path(codes, "1f_top_bottom.R"))
   source(file.path(codes, "1h_top_bottom_labor_recente.R"))
-  source(file.path(codes, "1i_top_bottom.R"))
-  source(file.path(codes, "1j_top_bottom_gph_linha.R"))
-  source(file.path(codes, "1k_top_bottom_ppb.R"))
-  source(file.path(codes, "1l_top_botoom_ppb_gph.R"))
-  source(file.path(codes, "1m_topo_bottom_ppb_linha_gph.R"))
+  source(file.path(codes, "1g_top_bottom_gph.R"))
 }
 
 # modelo econometrico

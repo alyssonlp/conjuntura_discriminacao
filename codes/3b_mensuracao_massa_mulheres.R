@@ -154,7 +154,7 @@ for(aa in ano) {
     penalidade_emp_mn <- discriminacao_emp_mn + composicao_emp_mn
     
     # Perda salarial do homem negro dada a empregabilidade
-    emp_massa_perdida_mb <- P1_mn*penalidade_emp_mn*media_wg_mulheres
+    emp_massa_perdida_mn <- P1_mn*penalidade_emp_mn*media_wg_mulheres
     
     # Perda salarial do homem negro dada a empregabilidade - efeito discriminacao
     discriminacao_massa_emp_mn <- P1_mn*discriminacao_emp_mn*media_wg_mulheres

@@ -48,39 +48,39 @@ for(aa in ano) {
     max_pos_hn <- max(position_hn)
     
 # Media salarial - homens negros, contrafactual e homens brancos
-    media_wg_negros <- mean(exp(eq_wg_h$fitted.values[position_hn] + 
+    media_wg_hn <- mean(exp(eq_wg_h$fitted.values[position_hn] + 
                                   eq_wg_h$residual[position_hn]))
     
-    media_wg_negros_sem_discr <- mean(exp(eq_wg_h$fitted.values[position_hn] + 
+    media_wg_hn_sem_discr <- mean(exp(eq_wg_h$fitted.values[position_hn] + 
                                 (-1)*eq_wg_h$coefficients[2] +
                                 eq_wg_h$residual[position_hn]))
     
-    media_wg_brancos <- mean(exp(eq_wg_h$fitted.values[position_hb] + 
+    media_wg_hb <- mean(exp(eq_wg_h$fitted.values[position_hb] + 
                                    eq_wg_h$residual[position_hb]))
     
-# Componente discriminatório (gama)
-    gama_homem <-  media_wg_negros - media_wg_negros_sem_discr
+# Componente discriminatório 
+    discriminacao_wg_hn <-  media_wg_hn - media_wg_hn_sem_discr
     
-# Diferença na composicao (Delta_X_Beta)
-    delta_x_beta_h <- media_wg_negros_sem_discr - media_wg_brancos
+# Diferença na composicao 
+    composicao_wg_hn <- media_wg_hn_sem_discr - media_wg_hb
     
 # Penalidade salarial devido a composicao e a discriminacao
-    penalidade_salarial_homem <- gama_homem + delta_x_beta_h
+    penalidade_wg_hn <- discriminacao_wg_hn + composicao_wg_hn
     
 # Homens negros na economia (P1)
-    P1_negro <- dt[gender_race == "Homem Negro", sum(V1028)]
+    P1_hn <- dt[gender_race == "Homem Negro", sum(V1028)]
     
 # Homens negros empregados
-    p1_negro <- dt[gender_race == "Homem Negro",wtd.mean(pea_emp, weights = V1028)]
+    e1_hn <- dt[gender_race == "Homem Negro",wtd.mean(pea_emp, weights = V1028)]
     
 # Massa Salarial  perdida dos Homens Negros
-    massa_salarial_perdida_hn <- P1_negro*penalidade_salarial_homem*p1_negro
+    wg_massa_perdida_hn <-  P1_hn*penalidade_wg_hn*e1_hn
     
 # Massa salarial perdida devido ao efeito composicao
-    massa_perda_composicao_hn <- P1_negro*delta_x_beta_h*p1_negro
+    composicao_massa_wg_hn <- P1_hn*composicao_wg_hn*e1_hn
     
 # Massa salarial perdida devido ao efeito discriminacao
-    massa_perda_discr_hn <- P1_negro*gama_homem*p1_negro
+    discriminacao_massa_wg_hn <- P1_hn*discriminacao_wg_hn*e1_hn
     
 # EMPREGABILIDADE 
 # Equação Probabilidade de estar empregado - homens
@@ -96,42 +96,37 @@ for(aa in ano) {
     
 # Probalidade empregabilidade - homens negros, contrafactual e homens brancos
     
-    p_negros_emp <- mean(eq_emp_h$fitted.values[pos_hn_emp] + 
+    media_emp_hn <- mean(eq_emp_h$fitted.values[pos_hn_emp] + 
                                eq_emp_h$residual[pos_hn_emp])
     
-    p_negros_sem_discr_emp <- mean(eq_emp_h$fitted.values[pos_hn_emp] + 
+    media_emp_hn_sem_discr <- mean(eq_emp_h$fitted.values[pos_hn_emp] + 
              (-1)*eq_emp_h$coefficients[2] + eq_emp_h$residual[pos_hn_emp])
     
-    p_brancos_emp <- mean(eq_emp_h$fitted.values[pos_hb_emp] + 
+    media_emp_hb <- mean(eq_emp_h$fitted.values[pos_hb_emp] + 
                                 eq_emp_h$residual[pos_hb_emp])
     
-# Componente Discriminatorio (lower_delta)
-    lower_delta_hn <-  p_negros_emp - p_negros_sem_discr_emp
+# Componente Discriminatorio 
+    discriminacao_emp_hn <- media_emp_hn - media_emp_hn_sem_discr
     
-# Diferença na composicao (delta_z_phi_h)
-    delta_z_phi_h <- p_negros_sem_discr_emp - p_brancos_emp
+# Diferença na composicao 
+    composicao_emp_hn <- media_emp_hn_sem_discr - media_emp_hb
     
 # Penalidade na empregabilidade devido a composicao e a discriminacao
-    penalidade_emp_hn <- lower_delta_hn + delta_z_phi_h
+    penalidade_emp_hn <- discriminacao_emp_hn + composicao_emp_hn
     
 # Perda salarial do homem negro dada a empregabilidade
-    emp_perdida_hn <- P1_negro*penalidade_emp_hn*media_wg_brancos
+    emp_massa_perdida_hn <- P1_hn*penalidade_emp_hn*media_wg_hb
     
-# Perda salarial do homem negro dada a empregabilidade e composicao
-    emp_perdida_hn_composicao <- delta_z_phi_h*P1_negro*media_wg_brancos
+# Perda salarial do homem negro dada a empregabilidade - efeito composicao
+    composicao_massa_emp_hn <- P1_hn*composicao_emp_hn*media_wg_hb
     
 # Perda salarial do homem negro dada a empregabilidade e discriminacao
-    emp_perdida_hn_discr <- lower_delta_hn*P1_negro*media_wg_brancos
-    
-# Tamnho de homens brancos na economia
-    P0_branco <- dt[gender_race == "Homem Branco", sum(V1028)]
-    
-# Massa contrafactual
-    M_c_homem <- (P0_branco + P1_negro)*p_brancos_emp*media_wg_brancos
+    discriminacao_massa_emp_hn <- P1_hn*discriminacao_emp_hn*media_wg_hb
+
     
 # Massa Salarial Total Perdida dos homens negros levando em conta a empregabilidade
-    massa_total_perdida_hn <- M_c_homem + P1_negro*penalidade_salarial_homem + 
-      P1_negro*penalidade_emp_hn
+    total_hn <-  discriminacao_massa_wg_hn + composicao_massa_wg_hn + 
+      discriminacao_massa_emp_hn + composicao_massa_emp_hn
     
     
 # ----------
@@ -160,39 +155,39 @@ for(aa in ano) {
     max_pos_mn <- max(position_mn)
     
     # Media salarial - mulheres negras, contrafactual e mulheres brancas
-    media_wg_negras <- mean(exp(eq_wg_m$fitted.values[position_mn] + 
+    media_wg_mn <- mean(exp(eq_wg_m$fitted.values[position_mn] + 
                                   eq_wg_m$residual[position_mn]))
     
-    media_wg_negras_sem_discr <- mean(exp(eq_wg_m$fitted.values[position_mn] + 
+    media_wg_mn_sem_discr <- mean(exp(eq_wg_m$fitted.values[position_mn] + 
                                             (-1)*eq_wg_m$coefficients[2] +
                                             eq_wg_m$residual[position_mn]))
     
-    media_wg_brancas <- mean(exp(eq_wg_m$fitted.values[position_mb] + 
+    media_wg_mb <- mean(exp(eq_wg_m$fitted.values[position_mb] + 
                                    eq_wg_m$residual[position_mb]))
     
-    # Componente discriminatório (gama)
-    gama_mulher <-  media_wg_negras - media_wg_negras_sem_discr
+    # Componente discriminatório 
+    discriminacao_wg_mn <-  media_wg_mn - media_wg_mn_sem_discr 
     
-    # Diferença na composicao (Delta_X_Beta)
-    delta_x_beta_m <- media_wg_negras_sem_discr - media_wg_brancas
+    # Diferença na composicao 
+    composicao_wg_mn <- media_wg_mn_sem_discr - media_wg_mb
     
     # Penalidade salarial devido a composicao e a discriminacao
-    penalidade_salarial_mulher <- gama_mulher + delta_x_beta_m
+    penalidade_wg_mn <- discriminacao_wg_mn + composicao_wg_mn
     
     # mulheres negras na economia (P1)
-    P1_negra <- dt[gender_race == "Mulher Negra", sum(V1028)]
+    P1_mn <- dt[gender_race == "Mulher Negra", sum(V1028)]
     
     # mulheres negras empregados
-    p1_negra <- dt[gender_race == "Mulher Negra", wtd.mean(pea_emp, weights = V1028)]
+    e1_mn <- dt[gender_race == "Mulher Negra", wtd.mean(pea_emp, weights = V1028)]
     
     # Massa Salarial perdida das mulheres negras
-    massa_salarial_perdida_mn <- P1_negra*penalidade_salarial_mulher*p1_negra
+    wg_massa_perdida_mn <- P1_mn*penalidade_wg_mn*e1_mn
     
     # Massa salarial perdida devido ao efeito composicao
-    massa_perda_composicao_mn <- P1_negra*delta_x_beta_m*p1_negra
+    composicao_massa_wg_mn <- P1_mn*composicao_wg_mn*e1_mn
     
     # Massa salarial perdida devido ao efeito discriminacao
-    massa_perda_discr_mn <- P1_negra*gama_mulher*p1_negra
+    discriminacao_massa_wg_mn <- P1_mn*discriminacao_wg_mn*e1_mn
     
     # EMPREGABILIDADE 
     # Equação Probabilidade de estar empregado - mulheres
@@ -208,70 +203,60 @@ for(aa in ano) {
     
     # Probalidade empregabilidade - mulheres negras, contrafactual e mulheres brancas
     
-    p_negras_emp <- mean(eq_emp_m$fitted.values[pos_mn_emp] + 
+    media_emp_mn <- mean(eq_emp_m$fitted.values[pos_mn_emp] + 
                            eq_emp_m$residual[pos_mn_emp])
     
-    p_negras_sem_discr_emp <- mean(eq_emp_m$fitted.values[pos_mn_emp] + 
+    media_emp_mn_sem_discr <- mean(eq_emp_m$fitted.values[pos_mn_emp] + 
                                      (-1)*eq_emp_m$coefficients[2] + eq_emp_m$residual[pos_mn_emp])
     
-    p_brancas_emp <- mean(eq_emp_m$fitted.values[pos_mb_emp] + 
+    media_emp_mb <- mean(eq_emp_m$fitted.values[pos_mb_emp] + 
                             eq_emp_m$residual[pos_mb_emp])
     
-    # Componente Discriminatorio (lower_delta)
-    lower_delta_mn <-  p_negras_emp - p_negras_sem_discr_emp
+    # Componente Discriminatorio 
+    discriminacao_emp_mn <-  media_emp_mn - media_emp_mn_sem_discr
     
-    # Diferença na composicao (delta_z_phi_m)
-    delta_z_phi_m <- p_negras_sem_discr_emp - p_brancas_emp
+    # Diferença na composicao 
+    composicao_emp_mn <- media_emp_mn_sem_discr - media_emp_mb
     
     # Penalidade na empregabilidade devido a composicao e a discriminacao
-    penalidade_emp_mn <- lower_delta_mn + delta_z_phi_m
+    penalidade_emp_mn <- discriminacao_emp_mn + composicao_emp_mn
     
-    # Perda salarial do Mulher Negra dada a empregabilidade
-    emp_perdida_mn <- P1_negra*penalidade_emp_mn*media_wg_brancas
+    # Perda salarial da Mulher Negra dada a empregabilidade
+    emp_massa_perdida_mn <- P1_mn*penalidade_emp_mn*media_wg_mb
     
-    # Perda salarial do Mulher Negra dada a empregabilidade e composicao
-    emp_perdida_mn_composicao <- delta_z_phi_m*P1_negra*media_wg_brancas
+    # Perda salarial da Mulher Negra dada a empregabilidade - efeito composicao
+    composicao_massa_emp_mn <- P1_mn*composicao_emp_mn*media_wg_mb
     
-    # Perda salarial do Mulher Negra dada a empregabilidade e discriminacao
-    emp_perdida_mn_discr <- lower_delta_mn*P1_negra*media_wg_brancas
+    # Perda salarial do Mulher Negra dada a empregabilidade - efeito discriminacao
+    discriminacao_massa_emp_mn <- P1_mn*discriminacao_emp_mn*media_wg_mb
     
-    # Tamnho de mulheres brancas na economia
-    P0_branca <- dt[gender_race == "Mulher Branca", sum(V1028)]
     
-    # Massa contrafactual
-    M_c_mulher <- (P0_branca + P1_negra)*p_brancas_emp*media_wg_brancas
-    
-    # Massa Salarial Total Perdida dos mulheres negras levando em conta a empregabilidade
-    massa_total_perdida_mn <- M_c_mulher + P1_negra*penalidade_salarial_mulher + 
-      P1_negra*penalidade_emp_mn
+    # Massa Salarial Total Perdida dos mulheres negras 
+    total_mn <-  discriminacao_massa_wg_mn + composicao_massa_wg_mn + 
+      discriminacao_massa_emp_mn + composicao_massa_emp_mn
     
     anotri <- sprintf("%dT%d", aa, tri)
     bi <- 1000000000
     dt2 <- data.table(Ano_trimestre = anotri, 
-                      massa_wg_perdida_hn = round(massa_salarial_perdida_hn/bi, 2),
-                      massa_wg_composicao_hn = round(massa_perda_composicao_hn/bi, 2),
-                      massa_wg_discriminacao_hn = round(massa_perda_discr_hn/bi, 2),
-                      massa_emp_perdida_hn = round(emp_perdida_hn/bi, 2),
-                      massa_emp_composicao_hn = round(emp_perdida_hn_composicao/bi, 2),
-                      massa_emp_discriminacao_hn = round(emp_perdida_hn_discr/bi, 2),
-                      massa_wg_perdida_mn = round(massa_salarial_perdida_mn/bi, 2),
-                      massa_wg_composicao_mn = round(massa_perda_composicao_mn/bi, 2),
-                      massa_wg_discriminacao_mn = round(massa_perda_discr_mn/bi, 2),
-                      massa_emp_perdida_mn = round(emp_perdida_mn/bi, 2),
-                      massa_emp_composicao_mn = round(emp_perdida_mn_composicao/bi, 2),
-                      massa_emp_discriminacao_mn = round(emp_perdida_mn_discr/bi, 2),
-                      composicao_hn_wg = round(delta_x_beta_h, 2),
-                      discriminacao_hn_wg = round(gama_homem, 2) ,
-                      penalidade_salarial_hn = round(penalidade_salarial_homem, 2),
-                      composicao_hn_emp = round(100*delta_z_phi_h, 2),
-                      discriminacao_hn_emp = round(100*lower_delta_hn, 2),
-                      penalidade_emp_hn = round(100*penalidade_emp_hn, 2),
-                      composicao_mn_wg = round(delta_x_beta_m, 2),
-                      discriminacao_mn_wg = round(gama_mulher, 2) ,
-                      penalidade_salarial_mn = round(penalidade_salarial_mulher, 2),
-                      composicao_mn_emp = round(100*delta_z_phi_m, 2),
-                      discriminacao_mn_emp = round(100*lower_delta_mn, 2),
-                      penalidade_emp_mn = round(100*penalidade_emp_mn, 2))
+                      total_hn = round(total_hn/bi, 2),
+                      discriminacao_massa_wg_hn = round(discriminacao_massa_wg_hn/bi, 2),
+                      composicao_massa_wg_hn = round(composicao_massa_wg_hn/bi, 2),
+                      discriminacao_massa_emp_hn = round(discriminacao_massa_emp_hn/bi, 2),
+                      composicao_massa_emp_hn = round(composicao_massa_emp_hn/bi, 2),
+                      total_mn = round(total_mn/bi, 2),
+                      discriminacao_massa_wg_mn = round(discriminacao_massa_wg_mn/bi, 2),
+                      composicao_massa_wg_mn = round(composicao_massa_wg_mn/bi, 2),
+                      discriminacao_massa_emp_mn = round(discriminacao_massa_emp_mn/bi, 2),
+                      composicao_massa_emp_mn = round(composicao_massa_emp_mn/bi, 2),
+                      composicao_wg_hn = round(composicao_wg_hn, 2),
+                      discriminacao_wg_hn = round(discriminacao_wg_hn, 2) ,
+                      composicao_emp_hn = round(composicao_emp_hn, 2),
+                      discriminacao_emp_hn = round(discriminacao_emp_hn, 2),
+                      penalidade_emp_hn = round(penalidade_emp_hn, 2),
+                      composicao_wg_mn = round(composicao_wg_mn, 2),
+                      discriminacao_wg_mn = round(discriminacao_wg_mn, 2) ,
+                      composicao_emp_mn = round(composicao_emp_mn, 2),
+                      discriminacao_emp_mn = round(discriminacao_emp_mn, 2))
                       
     dt1 <- rbind(dt1, dt2, fill = TRUE)
     

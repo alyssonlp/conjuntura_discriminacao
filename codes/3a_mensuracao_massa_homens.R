@@ -151,11 +151,11 @@ pos_hb_emp <- which(dt[male == 1, nonwhite == 0])
   # Diferença na composicao
   composicao_emp_hn <- media_emp_hn_sem_discr - media_emp_homens
   
-  # penalidade na empregaabilidade - homem negro
+  # penalidade na empregabilidade - homem negro
   penalidade_emp_hn <- discriminacao_emp_hn + composicao_emp_hn
   
   # Perda salarial do homem negro dada a empregabilidade
-  emp_massa_perdida_hb <- P1_hn*penalidade_emp_hn*media_wg_homens
+  emp_massa_perdida_hn <- P1_hn*penalidade_emp_hn*media_wg_homens
   
   # Perda salarial do homem negro dada a empregabilidade - efeito discriminacao
   discriminacao_massa_emp_hn <- P1_hn*discriminacao_emp_hn*media_wg_homens

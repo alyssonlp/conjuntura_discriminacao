@@ -1,12 +1,11 @@
 massa <- fread(file.path(csv_output, "resultados_massa_salarial.csv"))
 
 # Criando totais: homem + mulher
-massa[, wg_composicao := massa_wg_composicao_hn + massa_wg_composicao_mn]
-massa[, wg_discriminacao := massa_wg_discriminacao_hn + massa_wg_discriminacao_mn]
-massa[, emp_composicao := massa_emp_composicao_hn + massa_emp_composicao_mn]
-massa[, emp_discriminacao := massa_emp_discriminacao_hn + massa_emp_discriminacao_mn]
-massa[, massa_perdida := wg_composicao + wg_discriminacao +
-        emp_composicao + emp_discriminacao]
+massa[, wg_composicao := composicao_massa_wg_hn + composicao_massa_wg_mn]
+massa[, wg_discriminacao := discriminacao_massa_wg_hn + discriminacao_massa_wg_mn]
+massa[, emp_composicao := composicao_massa_emp_hn + composicao_massa_emp_mn]
+massa[, emp_discriminacao := discriminacao_massa_emp_hn + discriminacao_massa_emp_mn]
+massa[, massa_perdida := total_hn + total_mn]
 
 massa <- massa[, .(Ano_trimestre, wg_composicao, wg_discriminacao,
                    emp_composicao, emp_discriminacao, massa_perdida)]

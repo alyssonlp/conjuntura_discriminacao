@@ -1,30 +1,9 @@
 
-# gph 1 - rendimento habitual médio
-# gph 2 - rendimento habitual e efetivo medio mensal (dessazonalizado)
-# gph 4 - massa salarial real habitual e efetiva
-# gph 5 - taxa de variacao interanual da massa salarial real habitual e efetiva
-# gph 6 - índice de gini - rendimento habitual de todos os trabalhos - renda individual e domicilIar
-
-# calcular para todos, depois por recorte 1: raca, recorte 2: raca e genero
-
-
-dist_fun <- function(ano, trimestre) {
-  
-  distribuicao <- 
-    dt[, list(top10 = wtd.mean(100*top10, weights = V1028, na.rm = TRUE),
-              top5 = wtd.mean(100*top5, weights = V1028, na.rm = TRUE),
-              top1 = wtd.mean(100*top1, weights = V1028, na.rm = TRUE),
-              bottom10 = wtd.mean(100*bottom10, weights = V1028, na.rm = TRUE),
-              bottom5 = wtd.mean(100*bottom5, weights = V1028, na.rm = TRUE),
-              bottom1 = wtd.mean(100*bottom1, weights = V1028, na.rm = TRUE)),
-       by = c("gender_race")]
-  
-}
 
 ano_tri_fun <- function(ano, trimestre) {
   
   rds_name <- paste0("pnadc", ano, "_", trimestre, "_carta.rds")
-  rds_file <- readRDS(file.path(original_data, rds_name))
+  rds_file <- readRDS(file.path(intermediary_data, rds_name))
   
   resultados_br <-
     rds_file[, list(renda_media_hab = wtd.mean(r_hab_all,weights =  V1028),
@@ -61,8 +40,7 @@ ano_tri_fun <- function(ano, trimestre) {
   
   return(list(resultados_br = resultados_br,
               resultados_raca = resultados_raca,
-              resultados_gen_raca = resultados_gen_raca,
-              distribuicao = distribuicao))
+              resultados_gen_raca = resultados_gen_raca))
   
   
 }

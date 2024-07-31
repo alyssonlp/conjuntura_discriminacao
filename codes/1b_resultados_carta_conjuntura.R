@@ -16,13 +16,13 @@ for(aa in ano) {
     # A função criada em 0a é utilizada nesse momento
     carta <- ano_tri_fun(aa, tri) 
     
-    resultados_brasil <- sprintf("resultados_brasil_%d_%d.csv", ano, tri)
+    resultados_brasil <- sprintf("resultados_brasil_%d_%d.csv", aa, tri)
     carta_brasil <- write.csv(carta$resultados_br, file.path(temp_file, resultados_brasil))
     
-    resultados_raca <- sprintf("resultados_raca_%d_%d.csv", ano, tri)
+    resultados_raca <- sprintf("resultados_raca_%d_%d.csv", aa, tri)
     carta_raca <- write.csv(carta$resultados_raca, file.path(temp_file, resultados_raca))
     
-    resultados_gen_raca <- sprintf("resultados_genero_raca_%d_%d.csv", ano, tri)
+    resultados_gen_raca <- sprintf("resultados_genero_raca_%d_%d.csv", aa, tri)
     carta_gen_raca <- write.csv(carta$resultados_gen_raca, file.path(temp_file, resultados_gen_raca))
   }
 }

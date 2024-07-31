@@ -115,7 +115,8 @@ dev.off()
 
 # gph 4 - massa salarial habitual
 dt2 <- dt1 %>%  
-  filter(gender_race != "Brasil")
+  filter(gender_race != "Brasil") 
+dt2[, massa_hab := massa_hab/1000000000]
 
 pdf(file.path(figures_output, "massa_habitual.pdf"),  width =14, height = 8.5)
 massa_hab <- dt2 %>%
@@ -134,8 +135,7 @@ massa_hab <- dt2 %>%
                               "2023T1.Homem Negro" = "2023",
                               "2024T1.Homem Negro" = "2024",
                               "2023T1.Mulher Negra" = "2023",
-                              "2024T1.Mulher Negra" = "2024",
-                              "2023T1.Brasil" = "2023")) +
+                              "2024T1.Mulher Negra" = "2024")) +
   scale_y_continuous(limits = c(0, 120), breaks = seq(0, 120, by = 20)) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
