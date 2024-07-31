@@ -36,8 +36,8 @@ t_results <-   ggplot() +
   geom_hline(yintercept = 0, color = "black", linetype = "solid") +
   scale_fill_brewer(palette = "PuOr") + 
   scale_color_manual(values = c("Massa Salarial Perdida" = "black")) +
-  scale_x_discrete(breaks = c("2012T1", "2014T1", "2016T1", "2018T1", 
-                              "2020T1", "2022T1", "2024T1")) +
+  scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1", "2024T1"),
+                   labels = c("2012", "2016", "2020", "2024")) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 22),
