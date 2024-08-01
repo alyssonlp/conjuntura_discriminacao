@@ -89,7 +89,8 @@ if (part_02) {
   source(file.path(codes, "2a_mensuracao_massa_salarial.R"))
   source(file.path(codes, "2b_massa_perdida_gph.R"))
   source(file.path(codes, "2c_massa_perdida_negros_gph.R"))
-  source(file.path(codes, "2d_tabelas_resultados_massa_e_individual.Rmd"))
+  source(file.path(codes, "2d_tabela_massa.R"))
+  source(file.path(codes, "2E_tabela_individual.R"))
 }
 
 # contrafactual Brasil
