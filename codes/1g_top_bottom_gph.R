@@ -1,10 +1,10 @@
 rm(list = ls()[which(!ls() %in% list_objects_to_keep)])
 gc()
 
+dt <- fread(file.path(csv_output, "top_bottom.csv"))
+
 # topo e base serie historica - gph
- dt <- fread( file.path(csv_output, "top_bottom.csv"))
- 
- dt$gender_race <- factor(dt$gender_race, levels = c("Homem Branco", "Mulher Branca", 
+dt$gender_race <- factor(dt$gender_race, levels = c("Homem Branco", "Mulher Branca", 
                                                      "Homem Negro", "Mulher Negra"))
  
  # Para o 1%
@@ -130,7 +130,8 @@ gc()
  print(dez)
  dev.off() 
 
-# criando o grafico ultimo trimestre
+ # criando o grafico ultimo trimestre
+ #------------------------
 dt$gender_race <- factor(dt$gender_race, levels = c("Homem Branco", "Mulher Branca", 
                                                     "Homem Negro", "Mulher Negra"))
 
@@ -186,7 +187,7 @@ tb <- dt1_long %>%
   geom_col(position = position_stack(reverse = FALSE)) +
   geom_text(aes(label = round(value)), 
             position = position_stack(vjust = 0.5), 
-            size = 4.5) +
+            size = 7) +
   scale_fill_manual(name = "",
                     values = c("Homem Branco" = "aquamarine4",
                                "Mulher Branca" = "darkorange1",
@@ -194,17 +195,19 @@ tb <- dt1_long %>%
                                "Mulher Negra" = "brown4")) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 22),
+        text = element_text(size = 34),
         legend.position = "bottom",
-        legend.title = element_text(size = 20),
+        legend.title = element_text(size = 34),
         axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 1, lineheight = 0.9),
-        plot.title = element_text(hjust = 0.5), legend.text = element_text(size=22),
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 34 ),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
   labs(x = "", y = "%", title = "") +
   facet_wrap(~ base_topo, scales = "free_x", 
              labeller = as_labeller(c(Base = "Base", Topo = "Topo"))) +
   scale_x_discrete(breaks = c("b1", "b5", "b10", "t10", "t5", "t1"),
-                   labels = c("1%", "5%", "10%", "10%", "5%", "1%")) 
+                   labels = c("1%", "5%", "10%", "10%", "5%", "1%")) +  
+  guides(fill = guide_legend(nrow = 2), 
+  color = guide_legend(nrow = 2)) 
 
 
 print(tb)
