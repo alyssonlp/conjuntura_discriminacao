@@ -6,9 +6,11 @@ dt1 <- dt %>%
 # gph 1 - renda habitual media
 pdf(file.path(figures_output, "rendimento_habitual.pdf"),  width =14, height = 8.5)
 r_hab_all <- dt1 %>%
-  ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = renda_media_hab, fill = gender_race)) +
+  ggplot(aes(x = interaction(Ano_trimestre, gender_race), 
+             y = renda_media_hab, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(renda_media_hab)), vjust = -0.5, position = position_dodge(width = 0.8), size = 8) +
+  geom_text(aes(label = round(renda_media_hab)), vjust = -0.5,
+            position = position_dodge(width = 0.8), size = 8) +
   scale_fill_manual(name = "",
                     values = c("Homem Branco" = "aquamarine4",
                                "Mulher Branca" = "darkorange1",
@@ -30,10 +32,13 @@ r_hab_all <- dt1 %>%
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 28),
         legend.position = "bottom",
-        legend.title = element_text(size = 20),
+        legend.justification.bottom = "right",
+        legend.box.just = "right",
+        legend.title = element_text(size = 28),
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 28),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
+  guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + 
   labs(x = "", y = "R$", title = "")
 
 print(r_hab_all)
@@ -43,7 +48,8 @@ dev.off()
 # gph 2 - taxa de desemprego
 pdf(file.path(figures_output, "unemp.pdf"),  width = 14, height = 8.5)
 unemp <- dt1 %>%
-  ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = 100*tx_desocup, fill = gender_race)) +
+  ggplot(aes(x = interaction(Ano_trimestre, gender_race),
+             y = 100*tx_desocup, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
   geom_text(aes(label = round(100*tx_desocup,2)), vjust = -0.5, 
             position = position_dodge(width = 0.8), size = 8) +
@@ -67,8 +73,10 @@ unemp <- dt1 %>%
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 28),
-        legend.title = element_text(size = 20),
+        legend.title = element_text(size = 28),
         legend.position = "bottom",
+        legend.justification.bottom = "right",
+        legend.box.just = "right",
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 28),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5),
@@ -81,9 +89,11 @@ dev.off()
 # gph 3 - pea
 pdf(file.path(figures_output, "pea.pdf"),  width =14, height = 8.5)
 pea <- dt1 %>%
-  ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = 100*pea_fac, fill = gender_race)) +
+  ggplot(aes(x = interaction(Ano_trimestre, gender_race), 
+             y = 100*pea_fac, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(100*pea_fac)), vjust = -0.5, position = position_dodge(width = 0.8), size = 8) +
+  geom_text(aes(label = round(100*pea_fac)), vjust = -0.5, 
+            position = position_dodge(width = 0.8), size = 8) +
   scale_fill_manual(name = "",
                     values = c("Homem Branco" = "aquamarine4",
                                "Mulher Branca" = "darkorange1",
@@ -105,10 +115,13 @@ pea <- dt1 %>%
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 28),
         legend.position = "bottom",
-        legend.title = element_text(size = 30),
+        legend.justification.bottom = "right",
+        legend.box.just = "right",
+        legend.title = element_text(size = 28),
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 28),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
+  guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + 
   labs(x = "", y = "%", title = "")
 
 print(pea)
@@ -121,9 +134,11 @@ dt2[, massa_hab := massa_hab/1000000000]
 
 pdf(file.path(figures_output, "massa_habitual.pdf"),  width =14, height = 8.5)
 massa_hab <- dt2 %>%
-  ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = massa_hab, fill = gender_race)) +
+  ggplot(aes(x = interaction(Ano_trimestre, gender_race), 
+             y = massa_hab, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(massa_hab)), vjust = -0.5, position = position_dodge(width = 0.8), size = 8) +
+  geom_text(aes(label = round(massa_hab)), vjust = -0.5, 
+            position = position_dodge(width = 0.8), size = 8) +
   scale_fill_manual(name = "",
                     values = c("Homem Branco" = "aquamarine4",
                                "Mulher Branca" = "darkorange1",
@@ -142,10 +157,13 @@ massa_hab <- dt2 %>%
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 28),
         legend.position = "bottom",
-        legend.title = element_text(size = 20),
+        legend.justification.bottom = "right",
+        legend.box.just = "right",
+        legend.title = element_text(size = 28),
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 28),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
+  guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + 
   labs(x = "", y = "R$ em bilhões", title = "")
 
 print(massa_hab)
@@ -154,9 +172,11 @@ dev.off()
 # gph 5 - gini
 pdf(file.path(figures_output, "gini.pdf"),  width =14, height = 8.5)
 gini_hab <- dt1 %>%
-  ggplot(aes(x = interaction(Ano_trimestre, gender_race), y = gini_hab, fill = gender_race)) +
+  ggplot(aes(x = interaction(Ano_trimestre, gender_race), 
+             y = gini_hab, fill = gender_race)) +
   geom_bar(stat = 'identity', position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(aes(label = round(gini_hab,2)), vjust = -0.5, position = position_dodge(width = 0.8), size = 8) +
+  geom_text(aes(label = round(gini_hab,2)), vjust = -0.5, 
+            position = position_dodge(width = 0.8), size = 8) +
   scale_fill_manual(name = "",
                     values = c("Homem Branco" = "aquamarine4",
                                "Mulher Branca" = "darkorange1",
@@ -178,10 +198,13 @@ gini_hab <- dt1 %>%
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 28),
         legend.position = "bottom",
+        legend.justification.bottom = "right",
+        legend.box.just = "right",
         legend.title = element_text(size = 28),
         axis.text.x = element_text( vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size=28),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
+  guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + 
   labs(x = "", y = "Índice de Gini", title = "")
 
 print(gini_hab)

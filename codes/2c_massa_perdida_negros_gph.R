@@ -12,9 +12,9 @@ massa <- massa[, .(Ano_trimestre, wg_composicao, wg_discriminacao,
 
 setnames(massa, c( "wg_composicao", "wg_discriminacao",
                            "emp_composicao", "emp_discriminacao", "massa_perdida"),
-                  c( "Efeito Composição - Salários",
-                    "Efeito Discriminação - Salários", "Efeito Composição - Empregabilidade",
-                    "Efeito Discriminação - Empregabilidade", "Massa Salarial Perdida"))
+                  c( "Salários - Efeito Composição ",
+                    "Salários - Efeito Discriminação", "Empregabilidade - Efeito Composição",
+                    "Empregabilidade - Efeito Discriminação ", "Massa Salarial Perdida"))
 
 
 t_long <- melt(massa, id.vars = "Ano_trimestre", 
@@ -39,6 +39,7 @@ t_results <-   ggplot() +
   scale_color_manual(values = c("Massa Salarial Perdida" = "black")) +
   scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1", "2024T1"),
                    labels = c("2012", "2016", "2020", "2024")) +
+  scale_y_continuous(limits = c(-20, 120), breaks = seq(-20, 120, by = 20)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 34),

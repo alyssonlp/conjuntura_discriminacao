@@ -187,7 +187,7 @@ tb <- dt1_long %>%
   geom_col(position = position_stack(reverse = FALSE)) +
   geom_text(aes(label = round(value)), 
             position = position_stack(vjust = 0.5), 
-            size = 7) +
+            size = 8, fontface = "bold") +
   scale_fill_manual(name = "",
                     values = c("Homem Branco" = "aquamarine4",
                                "Mulher Branca" = "darkorange1",

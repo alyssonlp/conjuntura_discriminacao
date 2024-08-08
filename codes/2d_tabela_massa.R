@@ -34,9 +34,9 @@ dt_homem_m <- setnames(dt_homem_m,
                          "composicao_massa_wg_hn", "discriminacao_massa_wg_hn", 
                          "massa_emp_perdida_hn",
                          "composicao_massa_emp_hn", "discriminacao_massa_emp_hn"), 
-                       c("Massa Salarial Total Perdida HN","Penalidade Salarial",
+                       c("Massa Salarial Total Perdida HN (A + B)","Penalidade Salarial (A)",
                          "Efeito Composição Salário HN","Efeito Discriminação Salário HN", 
-                         " Penalidade Empregabilidade",
+                         " Penalidade Empregabilidade (B)",
                          "Efeito Composição da Empregabilidade HN",
                          "Efeito Discriminação da Empregabilidade HN"))
 
@@ -45,9 +45,9 @@ dt_mulher_m <- setnames(dt_mulher_m,
                           "composicao_massa_wg_mn", "discriminacao_massa_wg_mn", 
                           "massa_emp_perdida_mn",
                           "composicao_massa_emp_mn", "discriminacao_massa_emp_mn"), 
-                        c("Massa Salarial Total Perdida MN","Penalidade Salarial",
+                        c("Massa Salarial Total Perdida MN (A + B)","Penalidade Salarial (A)",
                           "Efeito Composição Salário MN","Efeito Discriminação Salário MN", 
-                          "Penalidade Empregabilidade",
+                          "Penalidade Empregabilidade (B)",
                           "Efeito Composição da Empregabilidade MN",
                           "Efeito Discriminação da Empregabilidade MN"))
 
@@ -81,12 +81,11 @@ table_massa <-
         col.names = rep("", ncol(massa_recente)), format = 'latex') %>% 
   column_spec(1, width = "250px") %>%  
   column_spec(c(2:7), width = "60px") %>% 
-  row_spec(1, bold = TRUE) %>% 
+  row_spec(c(1,2,5), bold = TRUE) %>% 
   row_spec(c(1:7), color = "black") %>% 
   add_header_above(c("", "Homem" = 1, "Mulher" = 1, "Total" = 1, "Homem" = 1, "Mulher" = 1, "Total" = 1)) %>% 
   add_header_above(c("", "2023" = 3, "2024" = 3)) %>% 
-  add_indent(c(3, 4, 6, 7), level_of_indent = 2) %>% 
-  row_spec(c(2, 5), italic = TRUE)
+  add_indent(c(3, 4, 6, 7), level_of_indent = 2) 
 
 writeLines(table_massa, file.path(outputs, "table_massa.tex"))
 
