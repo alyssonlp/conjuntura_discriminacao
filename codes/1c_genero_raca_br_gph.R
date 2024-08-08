@@ -113,7 +113,7 @@ dev.off()
 pdf(file.path(figures_output, "unemp_br_gen_raca.pdf"),  width = 14, height = 8.5)
 unemp_br_gen_raca <- br_gen_raca %>% 
   ggplot(aes(x = Ano_trimestre, y = tx_desocup*100, color = gender_race, group = gender_race)) + 
-  geom_line(size = 2.4, aes(linetype = gender_race)) +
+  geom_line(size = 3.0, aes(linetype = gender_race)) +
   scale_color_manual(name = "", 
                      values = c("Homem Branco" = "aquamarine4",
                                 "Mulher Branca" = "darkorange1",
@@ -127,7 +127,7 @@ unemp_br_gen_raca <- br_gen_raca %>%
                                              "Brasil" = "solid")) +
   scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1",  "2024T1"), 
                    label = c("2012","2016", "2020", "2024")) +
-  scale_y_continuous(limits = c(0, 125), breaks = seq(0, 125, by = 25)) +
+  scale_y_continuous(limits = c(0, 25), breaks = seq(0, 25, by = 5)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 34),

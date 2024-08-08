@@ -30,15 +30,15 @@ r_hab_all <- dt1 %>%
   scale_y_continuous(limits = c(0, 5000), breaks = seq(0, 5000, by = 1000)) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 28),
+        text = element_text(size = 34),
         legend.position = "bottom",
         legend.justification.bottom = "right",
         legend.box.just = "right",
-        legend.title = element_text(size = 28),
+        legend.title = element_text(size = 34),
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 28),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
-  guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + 
+  guides(fill = guide_legend(nrow = 2, byrow = FALSE)) + 
   labs(x = "", y = "R$", title = "")
 
 print(r_hab_all)
@@ -72,16 +72,16 @@ unemp <- dt1 %>%
   scale_y_continuous(limits = c(0, 15), breaks = seq(0, 15, by = 5)) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 28),
-        legend.title = element_text(size = 28),
+        text = element_text(size = 34),
+        legend.title = element_text(size = 34),
         legend.position = "bottom",
         legend.justification.bottom = "right",
         legend.box.just = "right",
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 28),
-        plot.margin = margin(t = 5, r = 22, b = 5, l = 5),
-        geom_label = element_text(size = 16)) +
-  labs(x = "", y = "%",title = "")
+        plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
+  guides(fill = guide_legend(nrow = 2, byrow = FALSE)) + 
+  labs(x = "", y = "%", title = "")
 
 print(unemp)
 dev.off()
@@ -113,15 +113,15 @@ pea <- dt1 %>%
   scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, by = 20)) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 28),
+        text = element_text(size = 34),
         legend.position = "bottom",
         legend.justification.bottom = "right",
         legend.box.just = "right",
-        legend.title = element_text(size = 28),
+        legend.title = element_text(size = 34),
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 28),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
-  guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + 
+  guides(fill = guide_legend(nrow = 2, byrow = FALSE)) + 
   labs(x = "", y = "%", title = "")
 
 print(pea)
@@ -155,11 +155,11 @@ massa_hab <- dt2 %>%
   scale_y_continuous(limits = c(0, 120), breaks = seq(0, 120, by = 20)) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 28),
+        text = element_text(size = 34),
         legend.position = "bottom",
         legend.justification.bottom = "right",
         legend.box.just = "right",
-        legend.title = element_text(size = 28),
+        legend.title = element_text(size = 34),
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 28),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
@@ -196,15 +196,15 @@ gini_hab <- dt1 %>%
   scale_y_continuous(limits = c(0, 1), breaks = seq(0, 1, by = 0.20)) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 28),
+        text = element_text(size = 34),
         legend.position = "bottom",
         legend.justification.bottom = "right",
         legend.box.just = "right",
-        legend.title = element_text(size = 28),
+        legend.title = element_text(size = 34),
         axis.text.x = element_text( vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size=28),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
-  guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + 
+  guides(fill = guide_legend(nrow = 2, byrow = FALSE)) + 
   labs(x = "", y = "Índice de Gini", title = "")
 
 print(gini_hab)

@@ -38,6 +38,7 @@ b_results <-   ggplot() +
   scale_color_manual(values = c("Massa Salarial Premiada" = "black")) +
   scale_x_discrete(breaks = c("2012T1", "2016T1","2020T1", "2024T1"),
                    labels = c("2012", "2016", "2020", "2024")) +
+  scale_y_continuous(limits = c(0, 50), breaks = seq(0, 50, by = 10)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 34),
@@ -107,6 +108,7 @@ n_results <-   ggplot() +
                      breaks = levels_ordenados) +
   scale_x_discrete(breaks = c("2012T1", "2016T1","2020T1", "2024T1"),
                    labels = c("2012", "2016", "2020", "2024")) +
+  scale_y_continuous(limits = c(-10, 50), breaks = seq(-10, 50, by = 10)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 34),
