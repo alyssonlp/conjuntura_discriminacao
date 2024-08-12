@@ -29,7 +29,8 @@ br_gen_raca_r_hab_all <- br_gen_raca %>%
         legend.position = "bottom",
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 34),
-        plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
+        plot.margin = margin(t = 5, r = 22, b = 5, l = 5),
+        key.width = unit (1.5,"cm")) +
   guides(fill = guide_legend(nrow = 2), 
          color = guide_legend(nrow = 2)) + 
   labs(x = "", y = "R$",title = "")
@@ -171,7 +172,8 @@ pea_br_gen_raca <- br_gen_raca %>%
         legend.box.just = "right",
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 34),
-        plot.margin = margin(t = 5, r = 22, b = 5, l = 5))  +
+        plot.margin = margin(t = 5, r = 22, b = 5, l = 5),
+        key.width = unit (1.5,"cm"))  +
   guides(fill = guide_legend(nrow = 2), 
          color = guide_legend(nrow = 2)) + 
   labs(x = "", y =  "%", title = "")
