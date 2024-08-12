@@ -14,8 +14,8 @@ for(aa in ano) {
       next  
     }
     
-    #aa = 2024
-    #tri = 1
+    aa = 2024
+    tri = 1
     
     # Incluir avisos:
     print(paste0("Computing statistics for year ", aa, 
@@ -48,15 +48,18 @@ for(aa in ano) {
     max_pos_hn <- max(position_hn)
     
 # Media salarial - homens negros, contrafactual e homens brancos
-    media_wg_hn <- mean(exp(eq_wg_h$fitted.values[position_hn] + 
-                                  eq_wg_h$residual[position_hn]))
+    media_wg_hn <- wtd.mean(exp(eq_wg_h$fitted.values[position_hn] + 
+                                  eq_wg_h$residual[position_hn]),
+                                 weights = dt$V1028[position_hn])
     
-    media_wg_hn_sem_discr <- mean(exp(eq_wg_h$fitted.values[position_hn] + 
+    media_wg_hn_sem_discr <- wtd.mean(exp(eq_wg_h$fitted.values[position_hn] + 
                                 (-1)*eq_wg_h$coefficients[2] +
-                                eq_wg_h$residual[position_hn]))
+                                eq_wg_h$residual[position_hn]),
+                                weights = dt$V1028[position_hn])
     
-    media_wg_hb <- mean(exp(eq_wg_h$fitted.values[position_hb] + 
-                                   eq_wg_h$residual[position_hb]))
+    media_wg_hb <- wtd.mean(exp(eq_wg_h$fitted.values[position_hb] + 
+                                   eq_wg_h$residual[position_hb]),
+                            weights = dt$V1028[position_hb])
     
 # Componente discriminatório 
     discriminacao_wg_hn <-  media_wg_hn - media_wg_hn_sem_discr
@@ -71,7 +74,7 @@ for(aa in ano) {
     P1_hn <- dt[gender_race == "Homem Negro", sum(V1028)]
     
 # Homens negros empregados
-    e1_hn <- dt[gender_race == "Homem Negro",wtd.mean(pea_emp, weights = V1028)]
+    e1_hn <- dt[gender_race == "Homem Negro",wtd.mean(pea_emp, weights = dt$V1028)]
     
 # Massa Salarial  perdida dos Homens Negros
     wg_massa_perdida_hn <-  P1_hn*penalidade_wg_hn*e1_hn
@@ -96,14 +99,17 @@ for(aa in ano) {
     
 # Probalidade empregabilidade - homens negros, contrafactual e homens brancos
     
-    media_emp_hn <- mean(eq_emp_h$fitted.values[pos_hn_emp] + 
-                               eq_emp_h$residual[pos_hn_emp])
+    media_emp_hn <- wtd.mean(eq_emp_h$fitted.values[pos_hn_emp] + 
+                               eq_emp_h$residual[pos_hn_emp],
+                             weights = dt$V1028[pos_hn_emp])
     
-    media_emp_hn_sem_discr <- mean(eq_emp_h$fitted.values[pos_hn_emp] + 
-             (-1)*eq_emp_h$coefficients[2] + eq_emp_h$residual[pos_hn_emp])
+    media_emp_hn_sem_discr <- wtd.mean(eq_emp_h$fitted.values[pos_hn_emp] + 
+             (-1)*eq_emp_h$coefficients[2] + eq_emp_h$residual[pos_hn_emp],
+             weights = dt$V1028[pos_hn_emp])
     
-    media_emp_hb <- mean(eq_emp_h$fitted.values[pos_hb_emp] + 
-                                eq_emp_h$residual[pos_hb_emp])
+    media_emp_hb <- wtd.mean(eq_emp_h$fitted.values[pos_hb_emp] + 
+                                eq_emp_h$residual[pos_hb_emp],
+                             weights = dt$V1028[pos_hb_emp])
     
 # Componente Discriminatorio 
     discriminacao_emp_hn <- media_emp_hn - media_emp_hn_sem_discr
@@ -155,15 +161,18 @@ for(aa in ano) {
     max_pos_mn <- max(position_mn)
     
     # Media salarial - mulheres negras, contrafactual e mulheres brancas
-    media_wg_mn <- mean(exp(eq_wg_m$fitted.values[position_mn] + 
-                                  eq_wg_m$residual[position_mn]))
+    media_wg_mn <- wtd.mean(exp(eq_wg_m$fitted.values[position_mn] + 
+                                  eq_wg_m$residual[position_mn]),
+                            weights = dt$V1028[position_mn])
     
-    media_wg_mn_sem_discr <- mean(exp(eq_wg_m$fitted.values[position_mn] + 
+    media_wg_mn_sem_discr <- wtd.mean(exp(eq_wg_m$fitted.values[position_mn] + 
                                             (-1)*eq_wg_m$coefficients[2] +
-                                            eq_wg_m$residual[position_mn]))
+                                            eq_wg_m$residual[position_mn]),
+                                      weights = dt$V1028[position_mn])
     
-    media_wg_mb <- mean(exp(eq_wg_m$fitted.values[position_mb] + 
-                                   eq_wg_m$residual[position_mb]))
+    media_wg_mb <- wtd.mean(exp(eq_wg_m$fitted.values[position_mb] + 
+                                   eq_wg_m$residual[position_mb]),
+                            weights = dt$V1028[position_mb])
     
     # Componente discriminatório 
     discriminacao_wg_mn <-  media_wg_mn - media_wg_mn_sem_discr 
@@ -203,14 +212,18 @@ for(aa in ano) {
     
     # Probalidade empregabilidade - mulheres negras, contrafactual e mulheres brancas
     
-    media_emp_mn <- mean(eq_emp_m$fitted.values[pos_mn_emp] + 
-                           eq_emp_m$residual[pos_mn_emp])
+    media_emp_mn <- wtd.mean(eq_emp_m$fitted.values[pos_mn_emp] + 
+                           eq_emp_m$residual[pos_mn_emp],
+                           weights = dt$V1028[pos_mn_emp])
     
-    media_emp_mn_sem_discr <- mean(eq_emp_m$fitted.values[pos_mn_emp] + 
-                                     (-1)*eq_emp_m$coefficients[2] + eq_emp_m$residual[pos_mn_emp])
+    media_emp_mn_sem_discr <- wtd.mean(eq_emp_m$fitted.values[pos_mn_emp] + 
+                                     (-1)*eq_emp_m$coefficients[2] + 
+                                     eq_emp_m$residual[pos_mn_emp],
+                                     weights = dt$V1028[pos_mn_emp])
     
-    media_emp_mb <- mean(eq_emp_m$fitted.values[pos_mb_emp] + 
-                            eq_emp_m$residual[pos_mb_emp])
+    media_emp_mb <- wtd.mean(eq_emp_m$fitted.values[pos_mb_emp] + 
+                            eq_emp_m$residual[pos_mb_emp],
+                            weights = dt$V1028[pos_mb_emp])
     
     # Componente Discriminatorio 
     discriminacao_emp_mn <-  media_emp_mn - media_emp_mn_sem_discr
