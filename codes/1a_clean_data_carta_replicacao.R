@@ -11,16 +11,22 @@ for(aa in ano) {
       if(aa == 2024 & tri >=2){
         next  
       }
-      
+    
+    # aa = 2024
+    # tri = 1
+
     pnad_txt <- sprintf("PNADC_0%d%d.txt", tri, aa)
-    dt <- read_pnadc(pnad_txt, "input_PNADC_trimestral.txt", 
+    dt <- read_pnadc(input_txt = file.path(original_data, "input_PNADC_trimestral.txt"),
+                     microdata = file.path(original_data, aa, pnad_txt),
                  vars = c( "UF", "RM_RIDE", "UPA", "Estrato", "V1008", "V1014",
                            "V1016","V1022", "V1023", "V1027","V1028", "V2005", 
                            "V2007",  "V2009", "V2010", "V4032","VD3004", 
                            "VD3005",  "VD4001", "VD4002", "VD4009", "VD4010",
-                           "VD4016", "VD4017", "VD4019", "VD4020"))
+                           "VD4016", "VD4017", "VD4019", "VD4020", "V3002"))
     
-    dt <- pnadc_deflator(dt, "deflator_PNADC_2024_trimestral_010203.xls")
+    dt <- pnadc_deflator(dt,
+                         file.path(original_data, 
+                                   "deflator_PNADC_2024_trimestral_010203.xls"))
 
 dt <-as.data.table(dt)
 
@@ -201,13 +207,16 @@ dt <- dt[V2009 >= 14]
 # Faixa etaria
 dt[, age_group := 
      case_when(
-       V2009 >= 14 & V2009 <= 24 ~ "14-24 anos",
+       V2009 >= 14 & V2009 <= 17 ~ "14-17 anos",
+       V2009 >= 18 & V2009 <= 24 ~ "18-24 anos",
        V2009 >= 25 & V2009 <= 39 ~ "25-39 anos",
        V2009 >= 40 & V2009 <= 59 ~ "40-59 anos",
        V2009 >= 60 ~ "60 anos ou mais"
      )
 ]
 
+# Está estudando:
+dt[, estudando := as.numeric(V3002 == 1)]
 
 rds_file <- sprintf("pnadc%d_%d_carta.rds", aa, tri)
 saveRDS(dt, file.path(intermediary_data, rds_file))

@@ -20,8 +20,8 @@ part_02 <- FALSE
 part_03 <- FALSE
 
 # Definindo usuário
-user <- "Rodrigo"
-#user <- "Alysson"
+#user <- "Rodrigo"
+user <- "Alysson"
 #user <- "Alysson_cpp"
 
 
@@ -66,7 +66,7 @@ list_objects_to_keep <- c("datawork_folder", "github_folder", "one_drive_folder"
                           "codes", "outputs" ,"tables_output", "figures_output",
                           "csv_output", "intermediary_data", "final_data", 
                           "ano_tri_fun", "part_01", "part_02", "part_03",
-                          "dist_fun", "list_objects_to_keep")
+                          "dist_fun", "list_objects_to_keep", "original_data")
 
 # Codes --------------------
 # Funções utilizadas em outros scripts:
