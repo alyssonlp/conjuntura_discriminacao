@@ -22,7 +22,8 @@ for(aa in ano) {
                            "V1016","V1022", "V1023", "V1027","V1028", "V2005", 
                            "V2007",  "V2009", "V2010", "V4032","VD3004", 
                            "VD3005",  "VD4001", "VD4002", "VD4009", "VD4010",
-                           "VD4016", "VD4017", "VD4019", "VD4020", "V3002"))
+                           "VD4016", "VD4017", "VD4019", "VD4020", "V3002",
+                            "VD4011", "VD4016"))
     
     dt <- pnadc_deflator(dt,
                          file.path(original_data, 
@@ -170,6 +171,20 @@ dt[, servicos_pessoais_coletivos := as.numeric(VD4010 == 10 | VD4010 == 11)]
 dt[, adm_publica := as.numeric(VD4010 == 8)]   
 dt[, educ_saude := as.numeric(VD4010 == 9)]
 dt[, alojamento_alimentacao := as.numeric (VD4010 == 6)]
+
+# Ocupacoes - VD4011
+dt[, VD4011 := as.numeric(VD4011)]
+dt[, diretores_gerentes := as.numeric(VD4011 == 1)]
+dt[, ciencias_intelectuais := as.numeric(VD4011 == 2)]
+dt[, tec_nivel_medio := as.numeric(VD4011 == 3)]
+dt[, apoio_adm := as.numeric(VD4011 == 4)]
+dt[, servicos_comercio := as.numeric(VD4011 == 5)]
+dt[, agropecuaria_pesca := as.numeric(VD4011 == 6)]
+dt[, operarios_construcao := as.numeric(VD4011 == 7)]
+dt[, maquinas_montadores := as.numeric(VD4011 == 8)]   
+dt[, ocup_elementares := as.numeric(VD4011 == 9)]
+dt[, ffaa := as.numeric (VD4011 == 10)]
+dt[, ocup_maldefinidas := as.numeric (VD4011 == 11)]
 
 # renda habitual real - trabalho principal
 dt[, r_hab := VD4016 * Habitual]
