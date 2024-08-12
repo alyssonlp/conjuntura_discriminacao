@@ -48,9 +48,9 @@ for(aa in ano) {
     max_pos_hn <- max(position_hn)
     
 # Media salarial - homens negros, contrafactual e homens brancos
-    media_wg_hn <- wtd.mean(exp(eq_wg_h$fitted.values[max_pos_hn] + 
-                                  eq_wg_h$residual[max_pos_hn]),
-                                 weights = dt$V1028[max_pos_hn])
+    media_wg_hn <- wtd.mean(exp(eq_wg_h$fitted.values[position_hn] + 
+                                  eq_wg_h$residual[position_hn]),
+                                 weights = dt$V1028[position_hn])
     
     media_wg_hn_sem_discr <- wtd.mean(exp(eq_wg_h$fitted.values[position_hn] + 
                                 (-1)*eq_wg_h$coefficients[2] +
