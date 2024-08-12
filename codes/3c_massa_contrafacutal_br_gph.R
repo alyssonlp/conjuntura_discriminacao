@@ -20,6 +20,8 @@ b_long <- melt(brancos, id.vars = "Ano_trimestre",
                variable.name = "Decomposição", 
                value.name = "Perda")
 
+fwrite(b_long, file.path(csv_output, "premio_brancos.csv"))
+
 # Filtrando as variaveis que serão usadas para o estilo de area
 b_long_area <- b_long %>% filter(Decomposição != "Massa Salarial Premiada")
 
@@ -78,6 +80,8 @@ setnames(negros, c( "total_n", "composicao_wg_n", "discriminacao_wg_n",
 n_long <- melt(negros, id.vars = "Ano_trimestre", 
                variable.name = "Decomposição", 
                value.name = "Perda")
+
+fwrite(n_long, file.path(csv_output, "penal_negros.csv"))
 
 # Filtrando as variaveis que serão usadas para o estilo de area
 n_long_area <- n_long %>% filter(Decomposição != "Massa Salarial Perdida")
