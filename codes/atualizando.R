@@ -44,7 +44,7 @@ for(aa in ano) {
                     servicos_pessoais_coletivos +  adm_publica + educ_saude + RO + AC +
                     AM + RR + PA + AP + TO + MA + PI + CE + RN + PB + PE + AL + 
                     SE + BA + MG + ES + RJ + SP + PR + SC + RS + MS + MT + GO,
-                  weights = weights = dt[male == 1 & is.na(ln_r_hab_all) == F, V1028],
+                  weights = dt[male == 1 & is.na(ln_r_hab_all) == F, V1028],
                   data = dt[male == 1 & is.na(ln_r_hab_all) == F])
     
     
@@ -58,45 +58,62 @@ for(aa in ano) {
                             weights = dt[position_hn, V1028], na.rm = T)
     
     ## atenção aqui!!!! Estuda essa parte e refazer os calculos.
+    # criando a base de dados somente com as observacoes usadas na regressao = subset so com homens
     checking <- as.data.table(eq_wg_h[["model"]])
     
-    check <- checking[, ln_r_hab_all] - eq_wg_h$fitted.values + eq_wg_h$residual
+    # a diferença da renda factual com a aquela do modelo
+    check <- checking[, ln_r_hab_all] - (eq_wg_h$fitted.values + eq_wg_h$residual)
     
-    mean(exp(checking[, ln_r_hab_all]))
-    mean(exp(eq_wg_h$fitted.values + eq_wg_h$residual))
+    # homens sem peso amostral - os 3 jeitos dão o mesmo resultado
+    #mean(exp(checking[, ln_r_hab_all]))
+    #mean(exp(eq_wg_h$fitted.values + eq_wg_h$residual))
     mean(exp(dt[male == 1, ln_r_hab_all]), na.rm = TRUE)
     
-    mean(exp(checking[nonwhite == 1, ln_r_hab_all]))
-    mean(exp(eq_wg_h$fitted.values[position_hn] + eq_wg_h$residual[position_hn]))
+    #negros sem peso amostral
+    #mean(exp(checking[nonwhite == 1, ln_r_hab_all]))
+    #mean(exp(eq_wg_h$fitted.values[position_hn] + eq_wg_h$residual[position_hn]))
     mean(exp(dt[male == 1 & nonwhite == 1, ln_r_hab_all]), na.rm = TRUE)
     
+    #wtd.mean(exp(checking[, ln_r_hab_all]),
+             #weights = dt[male == 1 & is.na(r_hab_all) == F, V1028])
+    #wtd.mean(exp(eq_wg_h$fitted.values + eq_wg_h$residual),
+             #weights = dt[male == 1 & is.na(r_hab_all) == F, V1028])
+    #wtd.mean(exp(dt[male == 1, ln_r_hab_all]),
+             #weights = dt[male == 1, V1028], na.rm = TRUE)
+    
+    #homens - media salarial com peso amostral - os resultados a seguir sao igual
     wtd.mean(exp(checking[, ln_r_hab_all]),
              weights = dt[male == 1 & is.na(r_hab_all) == F, V1028])
-    wtd.mean(exp(eq_wg_h$fitted.values + eq_wg_h$residual),
-             weights = dt[male == 1 & is.na(r_hab_all) == F, V1028])
-    wtd.mean(exp(dt[male == 1, ln_r_hab_all]),
-             weights = dt[male == 1, V1028], na.rm = TRUE)
-    
-    
-    wtd.mean(exp(checking[, ln_r_hab_all]),
-             weights = dt[male == 1 & is.na(r_hab_all) == F, V1028])
-    wtd.mean(exp(eq_wg_h$fitted.values + eq_wg_h$residual),
-             weights = dt[male == 1 & is.na(r_hab_all) == F, V1028])
-    wtd.mean(exp(dt[male == 1, ln_r_hab_all]),
-             weights = dt[male == 1, V1028], na.rm = TRUE)
+    # com base na regressao
+    #wtd.mean(exp(eq_wg_h$fitted.values + eq_wg_h$residual),
+             #weights = dt[male == 1 & is.na(r_hab_all) == F, V1028])
+    # ln da renda
+    #wtd.mean(exp(dt[male == 1, ln_r_hab_all]),
+             #weights = dt[male == 1, V1028], na.rm = TRUE)
+    # renda
     wtd.mean(dt[male == 1, r_hab_all],
              weights = dt[male == 1, V1028], na.rm = TRUE)
     
     # Aqui o jeito correto de fazer. Vejo como dão todos iguais. 
+    # Posicoes de homens brancos na base checking
     pos_hb <- which(checking[, nonwhite] == 0)
-    wtd.mean(exp(checking[nonwhite == 0, ln_r_hab_all]),
-             weights = dt[male == 1 & is.na(r_hab_all) == F & nonwhite == 0, V1028])
-    wtd.mean(exp(eq_wg_h$fitted.values[pos_hb] + eq_wg_h$residual[pos_hb]),
-             weights = dt[male == 1 & is.na(r_hab_all) == F& nonwhite == 0, V1028])
-    wtd.mean(exp(dt[male == 1 & nonwhite == 0, ln_r_hab_all]),
-             weights = dt[male == 1 & nonwhite == 0, V1028], na.rm = TRUE)
+    #wtd.mean(exp(checking[nonwhite == 0, ln_r_hab_all]),
+             #weights = dt[male == 1 & is.na(r_hab_all) == F & nonwhite == 0, V1028])
+    #wtd.mean(exp(eq_wg_h$fitted.values[pos_hb] + eq_wg_h$residual[pos_hb]),
+            # weights = dt[male == 1 & is.na(r_hab_all) == F & nonwhite == 0, V1028])
+    #wtd.mean(exp(dt[male == 1 & nonwhite == 0, ln_r_hab_all]),
+             #weights = dt[male == 1 & nonwhite == 0, V1028], na.rm = TRUE)
     wtd.mean(dt[male == 1  & nonwhite == 0, r_hab_all],
              weights = dt[male == 1 & nonwhite == 0, V1028], na.rm = TRUE)
+    
+    # Posicoes de homens negros na base
+    pos_hn <- which(checking[, nonwhite] == 1)
+    # media salarial de homens negros
+    wtd.mean(dt[male == 1 & nonwhite == 1, r_hab_all],
+             weights = dt[male == 1 & nonwhite == 1, V1028], na.rm = TRUE)
+    # media salarial dos homens negros usando o modelo
+    wtd.mean(exp(eq_wg_h$fitted.values[pos_hn] + eq_wg_h$residual[pos_hn]),
+             weights = dt[male == 1 & is.na(r_hab_all) == F & nonwhite == 1, V1028])
     
     ## atenção pode parar aqui!!!!
     
