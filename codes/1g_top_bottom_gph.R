@@ -2,7 +2,13 @@ rm(list = ls()[which(!ls() %in% list_objects_to_keep)])
 gc()
 
 dt <- fread(file.path(csv_output, "top_bottom.csv"))
-
+dt <- dt[, gender_race := gsub("_", " ", gender_race)]
+dt <- dt[, gender_race := gsub("homem", "Homem", gender_race)]
+dt <- dt[, gender_race := gsub("mulher", "Mulher", gender_race)]
+dt <- dt[, gender_race := gsub("negro", "Negro", gender_race)]
+dt <- dt[, gender_race := gsub("negra", "Negra", gender_race)]
+dt <- dt[, gender_race := gsub("branco", "Branco", gender_race)]
+dt <- dt[, gender_race := gsub("branca", "Branca", gender_race)]
 # topo e base serie historica - gph
 dt$gender_race <- factor(dt$gender_race, levels = c("Homem Branco", "Mulher Branca", 
                                                      "Homem Negro", "Mulher Negra"))
@@ -130,7 +136,7 @@ dt$gender_race <- factor(dt$gender_race, levels = c("Homem Branco", "Mulher Bran
  print(dez)
  dev.off() 
 
- # criando o grafico ultimo trimestre
+ #### criando o grafico ultimo trimestre -----
  #------------------------
 dt$gender_race <- factor(dt$gender_race, levels = c("Homem Branco", "Mulher Branca", 
                                                     "Homem Negro", "Mulher Negra"))

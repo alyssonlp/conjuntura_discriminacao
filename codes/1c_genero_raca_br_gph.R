@@ -1,8 +1,15 @@
 gen_raca <- fread(file.path(csv_output, "resultados_genero_raca_carta.csv"))
 brasil <- fread(file.path(csv_output, "resultados_brasil_carta.csv"))
 brasil[, gender_race := "Brasil"]
-
+gen_raca <- gen_raca[, gender_race := gsub("_", " ", gender_race)]
+gen_raca <- gen_raca[, gender_race := gsub("homem", "Homem", gender_race)]
+gen_raca <- gen_raca[, gender_race := gsub("mulher", "Mulher", gender_race)]
+gen_raca <- gen_raca[, gender_race := gsub("negro", "Negro", gender_race)]
+gen_raca <- gen_raca[, gender_race := gsub("negra", "Negra", gender_race)]
+gen_raca <- gen_raca[, gender_race := gsub("branco", "Branco", gender_race)]
+gen_raca <- gen_raca[, gender_race := gsub("branca", "Branca", gender_race)]
 br_gen_raca <- rbind(gen_raca, brasil)
+
 
 # gph 1 - rendimento habitual médio
 pdf(file.path(figures_output, "rendimento_habitual_br_gen_raca.pdf"),  width = 14, height = 8.5)

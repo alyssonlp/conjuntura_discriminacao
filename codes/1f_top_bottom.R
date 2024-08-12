@@ -1,12 +1,12 @@
 
 compute_percents <- function(aa, tri) {
-  # aa = 2024
-  # tri = 1
+   #aa = 2024
+   #tri = 1
   print(paste0("Computing shares for year ", aa, ", quarter ", tri)) 
   
   rds_file <- sprintf("pnadc%d_%d_carta.rds", aa, tri)
   dt <- readRDS((file.path(intermediary_data, rds_file)))
-  
+  dt <- setDT(dt)[V2009 >= 25 & V2009 <= 65]
   
   # Calculando o top 10%
   top10 <- quantile(dt$r_hab_all, 0.90, na.rm = TRUE)

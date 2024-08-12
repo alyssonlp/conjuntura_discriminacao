@@ -4,6 +4,7 @@ ano_tri_fun <- function(ano, trimestre) {
   
   rds_name <- paste0("pnadc", ano, "_", trimestre, "_carta.rds")
   rds_file <- readRDS(file.path(intermediary_data, rds_name))
+  rds_file <- rds_file[V2009 >= 25 & V2009 <= 65]
   
   resultados_br <-
     rds_file[, list(renda_media_hab = wtd.mean(r_hab_all,weights =  V1028),
