@@ -20,8 +20,8 @@ part_02 <- FALSE
 part_03 <- FALSE
 
 # Definindo usuário
-user <- "Rodrigo"
-#user <- "Alysson"
+# user <- "Rodrigo"
+user <- "Alysson"
 #user <- "Alysson_cpp"
 
 
