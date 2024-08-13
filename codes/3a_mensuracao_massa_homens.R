@@ -23,6 +23,7 @@ for(aa in ano) {
     
     rds_file <- sprintf("pnadc%d_%d_carta.rds", aa, tri)
     dt <- readRDS((file.path(intermediary_data, rds_file)))
+    dt <- setDT(dt)[V2009 >= 25 & V2009 <= 65]
     
 # HOMENS - SALARIOS
     
@@ -34,31 +35,35 @@ for(aa in ano) {
                     private_informal + domestic_formal + domestic_informal + public_service + 
                     self_employed + employer + agricultura + industria + 
                     construcao + comercio + servios_profissionais + transporte + 
-                    servicos_pessoais_coletivos +  adm_publica + educ_saude + RO + AC +
-                    AM + RR + PA + AP + TO + MA + PI + CE + RN + PB + PE + AL + 
-                    SE + BA + MG + ES + RJ + SP + PR + SC + RS + MS + MT + GO, weights = V1028,
+                    servicos_pessoais_coletivos +  adm_publica + educ_saude + 
+                    factor(UF), 
+                  weights = V1028,
                   data = dt[male == 1 & is.na(ln_r_hab_all) == F])
     
+    pos_hn <- which(as.data.table(eq_wg_h[["model"]])[, nonwhite] == 1)
+    pos_hb <- which(as.data.table(eq_wg_h[["model"]])[, nonwhite] == 0)
+    pos_h <-  which(as.data.table(eq_wg_h[["model"]])[, nonwhite] == 0 |
+                      as.data.table(eq_wg_h[["model"]])[, nonwhite] == 1)
     
-    position_hn <- which(dt[male == 1 & is.na(ln_r_hab_all) == F,nonwhite == 1])
-    position_hb <-  which(dt[male == 1 & is.na(ln_r_hab_all) == F,nonwhite == 0])
+    pos_dt_hn <- which(dt[, male == 1 & is.na(r_hab_all) == F & nonwhite == 1])
+    pos_dt_hb <- which(dt[, male == 1 & is.na(r_hab_all) == F & nonwhite == 0])
+    pos_dt_h <- which(dt[, male == 1 & is.na(r_hab_all) == F])
 
+  #### Homens Brancos SALARIOS - Contrafactual: Homens ----
     
-  # Homens Brancos - Contrafactual: Homens 
-    
-      media_wg_hb <- mean(exp(eq_wg_h$fitted.values[position_hb] + 
-                                     eq_wg_h$residual[position_hb]))
+      media_wg_hb <- mean(exp(eq_wg_h$fitted.values[pos_hb] +  eq_wg_h$residual[pos_hb]),
+                          weights = dt[pos_dt_hb, V1028])
       
-      media_wg_homens <- mean(exp(eq_wg_h$fitted.values + 
-                                     eq_wg_h$residual))
+      media_wg_homens <- mean(exp(eq_wg_h$fitted.values[pos_h] + eq_wg_h$residual[pos_h]),
+                              weights = dt[pos_dt_h, V1028])
       
        # Obs. homens brancos nao tem efeito discriminacao
     
     # Homens brancos na economia (P_0)
-      P0_hb <- dt[gender_race == "Homem Branco", sum(V1028)]
+      P0_hb <- dt[male == 1 & nonwhite == 0, sum(V1028)]
     
     # Homens brancos empregados (e_0)
-      e0_hb <- dt[gender_race == "Homem Branco", wtd.mean(pea_emp, weights = V1028)]
+      e0_hb <- dt[male == 1 & nonwhite == 0, wtd.mean(pea_emp, weights = V1028)]
       
     # Diferença na composicao
       composicao_wg_hb <- media_wg_hb - media_wg_homens
@@ -69,22 +74,23 @@ for(aa in ano) {
     # Massa salarial total perdida(premiada) homens brancos
         wg_massa_perdida_hb <- composicao_massa_wg_hb + 0
         
-  # Homens Negros - Contrafactual: Homens
+    #### Homens Negros SALARIOS - Contrafactual: Homens ----
         # Homens negros na economia (P_1)
-        P1_hn <- dt[gender_race == "Homem Negro", sum(V1028)]
+        P1_hn <- dt[male == 1 & nonwhite == 1, sum(V1028)]
         
         # Homens negros empregados (e_1)
-        e1_hn <- dt[gender_race == "Homem Negro",wtd.mean(pea_emp, weights = V1028)]
+        e1_hn <- dt[male == 1 & nonwhite == 1, wtd.mean(pea_emp, weights = V1028)]
         
         
-      media_wg_hn <- mean(exp(eq_wg_h$fitted.values[position_hn] + 
-                                      eq_wg_h$residual[position_hn]))
+      media_wg_hn <- mean(exp(eq_wg_h$fitted.values[pos_hn] + eq_wg_h$residual[pos_hn]),
+                          weights = dt[pos_dt_hn, V1028])
         
-      media_wg_hn_sem_discr <- mean(exp(eq_wg_h$fitted.values[position_hn] + 
+      media_wg_hn_sem_discr <- mean(exp(eq_wg_h$fitted.values[pos_hn] + 
                                     (-1)*eq_wg_h$coefficients[2] +
-                                    eq_wg_h$residual[position_hn]))
+                                    eq_wg_h$residual[pos_hn]),
+                                    weights = dt[pos_dt_hn, V1028])
     
-  # Componente discriminatório (gama)
+  # Componente discriminatório 
   discriminacao_wg_hn <-  media_wg_hn - media_wg_hn_sem_discr 
   
   # Diferença na composicao
@@ -103,26 +109,34 @@ for(aa in ano) {
     discriminacao_massa_wg_hn <- P1_hn*discriminacao_wg_hn*e1_hn
     
     
-# EMPREGABILIDADE 
-# Equação Probabilidade de estar empregado - homens
+    #### EMPREGABILIDADE -----
+  # Equação Probabilidade de estar empregado - homens
     
 eq_emp_h <- lm(pea_emp ~ nonwhite + parents + educ + educ_sq + potential_xp + 
-                     potential_xp_sq + married + rural + metropolitan + RO + 
-                     AC + AM + RR + PA + AP + TO + MA + PI + CE + RN + PB + PE + AL + 
-                     SE + BA + MG + ES + RJ + SP + PR + SC + RS + MS + MT + GO, 
-                   weights = V1028, data = dt[male == 1,])
+               potential_xp_sq + married + rural + metropolitan + 
+               estudando + factor(UF), 
+               weights = V1028, 
+               data = dt[male == 1,])
     
-pos_hn_emp <- which(dt[male == 1, nonwhite == 1])
-pos_hb_emp <- which(dt[male == 1, nonwhite == 0])
+    pos_hn_emp <- which(as.data.table(eq_emp_h[["model"]])[, nonwhite] == 1)
+    pos_hb_emp <- which(as.data.table(eq_emp_h[["model"]])[, nonwhite] == 0)
+    pos_h_emp  <- which(as.data.table(eq_emp_h[["model"]])[, nonwhite] == 0 |
+                          as.data.table(eq_emp_h[["model"]])[, nonwhite] == 1)
+    
+    pos_dt_hn_emp <- which(dt[, male == 1 & nonwhite == 1])
+    pos_dt_hb_emp <- which(dt[, male == 1 & nonwhite == 0])
+    pos_dt_h_emp  <- which(dt[, male == 1])
 
 
-  # Homens Brancos - Contrafactual: Homens 
+  #### Homens Brancos EMPREGO - Contrafactual: Homens ----
 
   media_emp_hb <- mean(eq_emp_h$fitted.values[pos_hb_emp] + 
-                        eq_emp_h$residual[pos_hb_emp])
+                        eq_emp_h$residual[pos_hb_emp],
+                       weights = dt[pos_dt_hb_emp, V1028])
   
-  media_emp_homens <- mean(eq_emp_h$fitted.values + 
-                         eq_emp_h$residual)
+  media_emp_homens <- mean(eq_emp_h$fitted.values[pos_h_emp] + 
+                         eq_emp_h$residual[pos_h_emp],
+                         weights = dt[pos_dt_h_emp, V1028])
   
   # Efeito discriminacao == 0
   # Diferença na composicao
@@ -137,13 +151,16 @@ pos_hb_emp <- which(dt[male == 1, nonwhite == 0])
   # Massa Salarial Total Perdida (ou premiada) dos homens brancos
   total_hb <- composicao_massa_wg_hb + composicao_massa_emp_hb
   
-  # Homens Negros - Contrafactual: Homens 
+  #### Homens Negros EMPREGO - Contrafactual: Homens ----
   
   media_emp_hn <- mean(eq_emp_h$fitted.values[pos_hn_emp] + 
-                         eq_emp_h$residual[pos_hn_emp])
+                         eq_emp_h$residual[pos_hn_emp],
+                       weights = dt[pos_dt_hn_emp, V1028])
   
   media_emp_hn_sem_discr <- mean(eq_emp_h$fitted.values[pos_hn_emp] + 
-                                   (-1)*eq_emp_h$coefficients[2] + eq_emp_h$residual[pos_hn_emp])
+                                   (-1)*eq_emp_h$coefficients[2] + 
+                                   eq_emp_h$residual[pos_hn_emp],
+                                 weights = dt[pos_dt_hn_emp, V1028])
   
   # Componente discriminatorio
   discriminacao_emp_hn <- media_emp_hn - media_emp_hn_sem_discr
