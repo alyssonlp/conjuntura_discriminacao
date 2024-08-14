@@ -1,6 +1,6 @@
 dt <- fread(file.path(csv_output, "resultados_massa_salarial.csv"))
 
-dt1 <- dt[Ano_trimestre %in% c("2023T1", "2024T1"),]
+dt1 <- dt[Ano_trimestre %in% c("2023T2", "2024T2"),]
 dt1[, massa_wg_perdida_hn := composicao_massa_wg_hn + discriminacao_massa_wg_hn]
 dt1[, massa_emp_perdida_hn := composicao_massa_emp_hn + discriminacao_massa_emp_hn]
 dt1[, massa_wg_perdida_mn := composicao_massa_wg_mn + discriminacao_massa_wg_mn]
@@ -56,24 +56,24 @@ dt_mulher_m <- setnames(dt_mulher_m,
 
 homens_t <- setnames(dt_homem_m[, data.table(t(.SD), keep.rownames=TRUE), .SDcols=-"Ano_trimestre"], 
                      dt_homem_m[, c('variaveis', Ano_trimestre)])[]
-setnames(homens_t, c("2023T1", "2024T1"), c("Homem_2023T1", "Homem_2024T1"))
+setnames(homens_t, c("2023T2", "2024T2"), c("Homem_2023T2", "Homem_2024T2"))
 homens_t$variaveis <- gsub("HN", "", homens_t$variaveis)
 
 # Para mulheres
 mulheres_t <- setnames(dt_mulher_m[, data.table(t(.SD), keep.rownames=TRUE), .SDcols=-"Ano_trimestre"], 
                        dt_mulher_m[, c('m', Ano_trimestre)])[]
-setnames(mulheres_t, c("2023T1", "2024T1"), c("Mulher_2023T1", "Mulher_2024T1"))
+setnames(mulheres_t, c("2023T2", "2024T2"), c("Mulher_2023T2", "Mulher_2024T2"))
 
 massa_recente <- cbind(homens_t, mulheres_t)
 massa_recente <- massa_recente[, m := NULL]
-massa_recente <- massa_recente[, Total_2023T1 := Homem_2023T1 + Mulher_2023T1]
-massa_recente <- massa_recente[, Total_2024T1 := Homem_2024T1 + Mulher_2024T1]
-massa_recente <- setcolorder(massa_recente, c("variaveis", "Homem_2023T1", "Mulher_2023T1",
-                                              "Total_2023T1", "Homem_2024T1", "Mulher_2024T1", "Total_2024T1"))
-massa_recente <- setnames(massa_recente, c("variaveis", "Homem_2023T1", "Mulher_2023T1",
-                                           "Total_2023T1", "Homem_2024T1", "Mulher_2024T1", "Total_2024T1"),
-                          c("Resultados", "Homem 2023T1", "Mulher 2023T1",
-                            "Total 2023T1", "Homem 2024T1", "Mulher 2024T1", "Total 2024T1"))
+massa_recente <- massa_recente[, Total_2023T2 := Homem_2023T2 + Mulher_2023T2]
+massa_recente <- massa_recente[, Total_2024T2 := Homem_2024T2 + Mulher_2024T2]
+massa_recente <- setcolorder(massa_recente, c("variaveis", "Homem_2023T2", "Mulher_2023T2",
+                                              "Total_2023T2", "Homem_2024T2", "Mulher_2024T2", "Total_2024T2"))
+massa_recente <- setnames(massa_recente, c("variaveis", "Homem_2023T2", "Mulher_2023T2",
+                                           "Total_2023T2", "Homem_2024T2", "Mulher_2024T2", "Total_2024T2"),
+                          c("Resultados", "Homem 2023T2", "Mulher 2023T2",
+                            "Total 2023T2", "Homem 2024T2", "Mulher 2024T2", "Total 2024T2"))
 
 
 table_massa <-

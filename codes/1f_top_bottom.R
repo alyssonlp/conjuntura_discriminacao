@@ -66,7 +66,7 @@ trimestres <- 1:4
 resultado <- rbindlist(
   lapply(anos, function(ano) {
     if (ano == 2024) {
-      return(compute_percents(aa = ano, tri = 1))
+      return(compute_percents(aa = ano, tri  <= 2))
     } else {
       return(rbindlist(
         lapply(trimestres, function(tri) {

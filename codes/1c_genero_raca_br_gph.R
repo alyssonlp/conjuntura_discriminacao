@@ -57,7 +57,7 @@ br_gen_raca_r_hab_all <- br_gen_raca %>%
                         values = linetype_squeme,
                         breaks = breaks_seq,
                         labels = labels_seq) +
-  scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1","2024T1"), 
+  scale_x_discrete(breaks = c("2012T2", "2016T2", "2020T2","2024T2"), 
                    label = c("2012", "2016", "2020", "2024")) +
   scale_y_continuous(limits = c(0, 5000), breaks = seq(0, 5000, by = 1000)) +
   theme_classic() + 
@@ -98,7 +98,7 @@ gen_raca_massa_hab <- gen_raca %>%
                                              "Mulher Branca" =  "solid", 
                                              "Homem Negro" = "solid", 
                                              "Mulher Negra" ="solid")) +
-  scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1","2024T1"), 
+  scale_x_discrete(breaks = c("2012T2", "2016T2", "2020T2","2024T2"), 
                    label = c("2012", "2016", "2020", "2024")) +
   scale_y_continuous(limits = c(0, 125), breaks = seq(0, 125, by = 25)) +
   theme_classic() + 
@@ -130,7 +130,7 @@ gini_br_gen_raca <- br_gen_raca %>%
                         values = linetype_squeme,
                         breaks = breaks_seq,
                         labels = labels_seq) +
-  scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1","2024T1"), 
+  scale_x_discrete(breaks = c("2012T2", "2016T2", "2020T2","2024T2"), 
                    label = c("2012", "2016", "2020", "2024")) +
   scale_y_continuous(limits = c(0.40, 0.55), breaks = seq(0.40, 0.55, by = 0.05)) +
   theme_classic() + 
@@ -161,7 +161,7 @@ unemp_br_gen_raca <- br_gen_raca %>%
                         values = linetype_squeme,
                         breaks = breaks_seq,
                         labels = labels_seq) +
-  scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1",  "2024T1"), 
+  scale_x_discrete(breaks = c("2012T2", "2016T2", "2020T2",  "2024T2"), 
                    label = c("2012","2016", "2020", "2024")) +
   scale_y_continuous(limits = c(0, 20), breaks = seq(0, 20, by = 5)) +
   theme_classic() + 
@@ -193,7 +193,7 @@ pea_br_gen_raca <- br_gen_raca %>%
                         values = linetype_squeme,
                         breaks = breaks_seq,
                         labels = labels_seq) +
-  scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1","2024T1"), 
+  scale_x_discrete(breaks = c("2012T2", "2016T2", "2020T2","2024T2"), 
                    label = c("2012", "2016", "2020", "2024")) +
   scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, by = 20)) +
   theme_classic() + 

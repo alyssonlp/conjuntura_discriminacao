@@ -1,6 +1,6 @@
 dt <- fread(file.path(csv_output, "resultados_massa_salarial.csv"))
 
-dt2 <- dt[Ano_trimestre %in% c("2023T1", "2024T1"),]
+dt2 <- dt[Ano_trimestre %in% c("2023T2", "2024T2"),]
 
 dt2[, penalidade_salarial_hn := composicao_wg_hn + discriminacao_wg_hn]
 dt2[, penalidade_emp_hn := composicao_emp_hn + discriminacao_emp_hn ]
@@ -47,24 +47,24 @@ setnames(dt_mulher_e,
 
 homens_e <- setnames(dt_homem_e[, data.table(t(.SD), keep.rownames=TRUE), .SDcols=-"Ano_trimestre"], 
                      dt_homem_e[, c('variaveis', Ano_trimestre)])[]
-setnames(homens_e, c("2023T1", "2024T1"), c("Homem_2023T1", "Homem_2024T1"))
+setnames(homens_e, c("2023T2", "2024T2"), c("Homem_2023T2", "Homem_2024T2"))
 homens_e$variaveis <- gsub("HN", " ", homens_e$variaveis)
 
 
 mulheres_e <- setnames(dt_mulher_e[, data.table(t(.SD), keep.rownames=TRUE), .SDcols=-"Ano_trimestre"], 
                        dt_mulher_e[, c('variaveis_m', Ano_trimestre)])[]
-setnames(mulheres_e, c("2023T1", "2024T1"), c("Mulher_2023T1", "Mulher_2024T1"))
+setnames(mulheres_e, c("2023T2", "2024T2"), c("Mulher_2023T2", "Mulher_2024T2"))
 
 
 individual_recente <- cbind(homens_e, mulheres_e)
 individual_recente <- individual_recente[, variaveis_m := NULL]
 
-individual_recente <- setcolorder(individual_recente,c("variaveis", "Homem_2023T1", "Mulher_2023T1",
-                                                       "Homem_2024T1", "Mulher_2024T1"))
-individual_recente <- setnames(individual_recente, c("variaveis", "Homem_2023T1", "Mulher_2023T1",
-                                                     "Homem_2024T1", "Mulher_2024T1"),
-                               c("Resultados", "Homem 2023T1", "Mulher 2023T1",
-                                 "Homem 2024T1", "Mulher 2024T1"))
+individual_recente <- setcolorder(individual_recente,c("variaveis", "Homem_2023T2", "Mulher_2023T2",
+                                                       "Homem_2024T2", "Mulher_2024T2"))
+individual_recente <- setnames(individual_recente, c("variaveis", "Homem_2023T2", "Mulher_2023T2",
+                                                     "Homem_2024T2", "Mulher_2024T2"),
+                               c("Resultados", "Homem 2023T2", "Mulher 2023T2",
+                                 "Homem 2024T2", "Mulher 2024T2"))
 individual_recente <- individual_recente[c(5, 1, 2, 6, 3, 4), ]
 
 # Criando a tabela 

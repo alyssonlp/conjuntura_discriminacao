@@ -82,6 +82,7 @@ if (part_01) {
   source(file.path(codes, "1f_top_bottom.R"))
   source(file.path(codes, "1h_top_bottom_labor_recente.R"))
   source(file.path(codes, "1g_top_bottom_gph.R"))
+  source(file.path(codes,"1h_pea_emp_n_emp_gph.R"))
 }
 
 # modelo econometrico

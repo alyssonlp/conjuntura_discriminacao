@@ -9,7 +9,7 @@ trimestre <- c(1:4)
 for(aa in ano) {
   for (tri in trimestre) {
     
-    if(aa == 2024 & tri >=2){
+    if(aa == 2024 & tri >=3){
       next  
     }
     

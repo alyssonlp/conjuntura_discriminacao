@@ -35,8 +35,8 @@ dt$gender_race <- factor(dt$gender_race, levels = c("Homem Branco", "Mulher Bran
                                  "Homem Negro" = "darkgoldenrod1",
                                  "Mulher Negra" = "brown4"),
                       aesthetics = c("color", "fill"))+
-   scale_x_discrete(breaks = c("2012T1",  "2016T1",
-                               "2020T1", "2024T1"),
+   scale_x_discrete(breaks = c("2012T2",  "2016T2",
+                               "2020T2", "2024T2"),
                     labels = c("2012", "2016", "2020", "2024")) +
    theme_classic() + 
    theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
@@ -76,8 +76,8 @@ dt$gender_race <- factor(dt$gender_race, levels = c("Homem Branco", "Mulher Bran
                                  "Homem Negro" = "darkgoldenrod1",
                                  "Mulher Negra" = "brown4"),
                       aesthetics = c("color", "fill"))+
-   scale_x_discrete(breaks = c("2012T1",  "2016T1",
-                               "2020T1", "2024T1"),
+   scale_x_discrete(breaks = c("2012T2",  "2016T2",
+                               "2020T2", "2024T2"),
                     labels = c("2012", "2016", "2020", "2024")) +
    theme_classic() + 
    theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
@@ -117,8 +117,8 @@ dt$gender_race <- factor(dt$gender_race, levels = c("Homem Branco", "Mulher Bran
                                  "Homem Negro" = "darkgoldenrod1",
                                  "Mulher Negra" = "brown4"),
                       aesthetics = c("color", "fill"))+
-   scale_x_discrete(breaks = c("2012T1",  "2016T1",
-                               "2020T1", "2024T1"),
+   scale_x_discrete(breaks = c("2012T2",  "2016T2",
+                               "2020T2", "2024T2"),
                     labels = c("2012", "2016", "2020", "2024")) +
    theme_classic() + 
    theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
@@ -143,7 +143,7 @@ dt$gender_race <- factor(dt$gender_race, levels = c("Homem Branco", "Mulher Bran
 
 
 dt1_long <- dt %>%
-  filter(Ano_trimestre %in% c( "2024T1")) %>%
+  filter(Ano_trimestre %in% c( "2024T2")) %>%
   tidyr::pivot_longer(cols = starts_with("b") | starts_with("t"), 
                       names_to = "category", 
                       values_to = "value")

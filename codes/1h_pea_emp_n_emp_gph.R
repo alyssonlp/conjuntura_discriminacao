@@ -14,12 +14,12 @@ trimestre <- c(1:4)
 for(aa in ano) {
   for (tri in trimestre) {
     
-    if(aa == 2024 & tri >=2){
+    if(aa == 2024 & tri >=3){
       next  
     }
     
     aa = 2024
-    tri = 1
+    tri = 2
     
     # Incluir avisos:
     print(paste0("Computing statistics for year ", aa, 
