@@ -56,7 +56,8 @@ premio_brancos <-
         col.names = rep("", ncol(premio)), format = 'latex') %>% 
   column_spec(1, width = "250px") %>%  
   column_spec(c(2:3), width = "60px") %>% 
-  row_spec(c(1:3), color = "black") %>% 
+  row_spec(c(1), color = "black", bold=  TRUE) %>% 
+  row_spec(c(2:3), color = "black") %>% 
   add_header_above(c("", "Homem" = 1, "Mulher" = 1, "Total" = 1, "Homem" = 1, "Mulher" = 1, "Total" = 1)) %>% 
   add_header_above(c("", "2023" = 3, "2024" = 3)) %>% 
   add_indent(c(2, 3), level_of_indent = 2) 
