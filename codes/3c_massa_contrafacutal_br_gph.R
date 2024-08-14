@@ -8,12 +8,18 @@ massa[, total_b := total_hb + total_mb]
 massa[, composicao_wg_b := composicao_massa_wg_hb + composicao_massa_wg_mb]
 massa[, composicao_emp_b := composicao_massa_emp_hb + composicao_massa_emp_mb ]
 
+# brancos ----
 brancos <- massa[, .(Ano_trimestre, total_b, composicao_wg_b, composicao_emp_b)]
+brancos[, discriminacao_wg_b := 0]
+brancos[, discriminacao_emp_b := 0]
 
-setnames(brancos, c("total_b", "composicao_wg_b", "composicao_emp_b" ),
+setnames(brancos, c("total_b", "composicao_wg_b", "discriminacao_wg_b", 
+                    "composicao_emp_b","discriminacao_emp_b" ),
          c("Massa Salarial Premiada",
            "Salários - Efeito Composição",
-            "Empregabilidade - Efeito Composição"))
+           "Salários - Efeito Discriminação",
+            "Empregabilidade - Efeito Composição",
+           "Empregabilidade - Efeito Discriminação"))
 
 
 b_long <- melt(brancos, id.vars = "Ano_trimestre", 
@@ -28,19 +34,35 @@ b_long_area <- b_long %>% filter(Decomposição != "Massa Salarial Premiada")
 # Filtrando a variavel uqe será usada para o estilo de linha
 b_long_linha <-  b_long %>% filter(Decomposição == "Massa Salarial Premiada")
 
+breaks_seq <- c("Salários - Efeito Composição",
+                "Empregabilidade - Efeito Composição",
+                "Salários - Efeito Discriminação",
+                "Empregabilidade - Efeito Discriminação",
+                "Massa Salarial Premiada")
+
+labels_seq <-c("Salários - Efeito Composição",
+               "Empregabilidade - Efeito Composição",
+               "",
+               "",
+               "Massa Salarial Premiada")
+
+color_squeme <- c("Salários - Efeito Composição" = "coral",
+                  "Empregabilidade - Efeito Composição" = "coral4", 
+                  "Salários - Efeito Discriminação" = "transparent",
+                  "Empregabilidade - Efeito Discriminação" = "transparent")
 
 pdf(file.path(figures_output, "massa_premiada_brancos_gph.pdf"),  width = 14, height = 8.5)
 b_results <-   ggplot() + 
   geom_area(data = b_long_area, aes(x = Ano_trimestre, y = Perda,
                                     group = Decomposição, fill = Decomposição)) +
-  geom_line(data = b_long_linha, aes(x = Ano_trimestre, y = Perda,
-                                     group = 1, color = Decomposição), size = 2.0) +
   geom_hline(yintercept = 0, color = "black", linetype = "solid") +
-  scale_fill_brewer(palette = "Dark2") + 
+  geom_line(data = b_long_linha, aes(x = Ano_trimestre, y = Perda,
+                                     group = 1, color = Decomposição), size = 3.0) +
+  scale_fill_manual(name = "", values = color_squeme, breaks = breaks_seq, labels = labels_seq) + 
   scale_color_manual(values = c("Massa Salarial Premiada" = "black")) +
   scale_x_discrete(breaks = c("2012T1", "2016T1","2020T1", "2024T1"),
                    labels = c("2012", "2016", "2020", "2024")) +
-  scale_y_continuous(limits = c(0, 50), breaks = seq(0, 50, by = 10)) +
+  scale_y_continuous(limits = c(-10, 50), breaks = seq(-10, 50, by = 10)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 34),
@@ -50,15 +72,15 @@ b_results <-   ggplot() +
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
-  guides(fill = guide_legend(nrow = 2), 
-         color = guide_legend(nrow = 2)) + 
+  guides(fill = guide_legend(nrow = 4, order = 1), 
+         color = guide_legend(nrow = 4, order = 2)) + 
   labs(x = "", y = "R$ bilhões", title = "")
 
 print(b_results)
 dev.off()
 
 
-# Para os negros
+# negros ----
 # Criando totais: homem negro + mulher negra
 massa[, total_n := total_hn + total_mn]
 massa[, composicao_wg_n := composicao_massa_wg_hn + composicao_massa_wg_mn]
@@ -73,7 +95,7 @@ negros <- massa[, .(Ano_trimestre, total_n, composicao_wg_n, discriminacao_wg_n,
 setnames(negros, c( "total_n", "composicao_wg_n", "discriminacao_wg_n",
                     "composicao_emp_n", "discriminacao_emp_n"),
          c("Massa Salarial Perdida", "Salários - Efeito Composição",
-           "Salários - Efeito Discriminação ", "Empregabilidade - Efeito Composição", 
+           "Salários - Efeito Discriminação", "Empregabilidade - Efeito Composição", 
            "Empregabilidade - Efeito Discriminação"))
 
 
@@ -89,27 +111,33 @@ n_long_area <- n_long %>% filter(Decomposição != "Massa Salarial Perdida")
 # Filtrando a variavel uqe será usada para o estilo de linha
 n_long_linha <-  n_long %>% filter(Decomposição == "Massa Salarial Perdida")
 
-levels_ordenados <- c("Salários - Efeito Composição", 
-                      "Salários - Efeito Discriminação ", 
-                      "Empregabilidade - Efeito Composição", 
-                      "Empregabilidade - Efeito Discriminação", 
-                      "Massa Salarial Perdida")
 
-# Reordenando os níveis da variável Decomposição
-n_long$Decomposição <- factor(n_long$Decomposição, levels = levels_ordenados)
+breaks_seq_n <- c("Salários - Efeito Composição",
+                "Salários - Efeito Discriminação",
+                "Empregabilidade - Efeito Composição",
+                "Empregabilidade - Efeito Discriminação",
+                "Massa Salarial Perdida")
 
+labels_seq_n <- c("Salários - Efeito Composição",
+                  "Salários - Efeito Discriminação",
+                  "Empregabilidade - Efeito Composição",
+                  "Empregabilidade - Efeito Discriminação",
+                  "Massa Salarial Perdida")
+
+color_squeme_n <- c("Salários - Efeito Composição" = "coral",
+                  "Salários - Efeito Discriminação" = "darkolivegreen4",
+                  "Empregabilidade - Efeito Composição" = "coral4", 
+                  "Empregabilidade - Efeito Discriminação" = "cadetblue")
 
 pdf(file.path(figures_output, "massa_perdida_negros_gph.pdf"),  width = 14, height = 8.5)
 n_results <-   ggplot() + 
-  geom_line(data = n_long_linha, aes(x = Ano_trimestre, y = Perda*(-1), 
-                                     group = 1, color = Decomposição), size = 2.0) +
-  geom_hline(yintercept = 0, color = "black", linetype = "solid") +
   geom_area(data = n_long_area, aes(x = Ano_trimestre, y = Perda*(-1), 
                                     group = Decomposição, fill = Decomposição)) +
-  scale_fill_manual(values = scales::brewer_pal(palette = "PuOr")(4),
-                    breaks = levels_ordenados) + 
-  scale_color_manual(values = c("Massa Salarial Perdida" = "black"),
-                     breaks = levels_ordenados) +
+  geom_hline(yintercept = 0, color = "black", linetype = "solid") +
+  geom_line(data = n_long_linha, aes(x = Ano_trimestre, y = Perda*(-1), 
+                                     group = 1, color = Decomposição), size = 3.0) +
+  scale_fill_manual(name = "", values = color_squeme_n, breaks = breaks_seq_n, labels = labels_seq_n) + 
+  scale_color_manual(values = c("Massa Salarial Perdida" = "black")) +
   scale_x_discrete(breaks = c("2012T1", "2016T1","2020T1", "2024T1"),
                    labels = c("2012", "2016", "2020", "2024")) +
   scale_y_continuous(limits = c(-10, 50), breaks = seq(-10, 50, by = 10)) +
@@ -122,8 +150,8 @@ n_results <-   ggplot() +
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
-  guides(fill = guide_legend(nrow = 4), 
-         color = guide_legend(nrow = 4)) + 
+  guides(fill = guide_legend(nrow = 4, order = 1), 
+         color = guide_legend(nrow = 4, order = 2)) + 
   labs(x = "", y = "R$ bilhões", title = "")
 
 print(n_results)
