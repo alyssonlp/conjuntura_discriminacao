@@ -132,7 +132,7 @@ gini_br_gen_raca <- br_gen_raca %>%
                         labels = labels_seq) +
   scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1","2024T1"), 
                    label = c("2012", "2016", "2020", "2024")) +
-  scale_y_continuous(limits = c(0.40, 0.60), breaks = seq(0.40, 0.60, by = 0.10)) +
+  scale_y_continuous(limits = c(0.40, 0.55), breaks = seq(0.40, 0.55, by = 0.05)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 34),
@@ -163,7 +163,7 @@ unemp_br_gen_raca <- br_gen_raca %>%
                         labels = labels_seq) +
   scale_x_discrete(breaks = c("2012T1", "2016T1", "2020T1",  "2024T1"), 
                    label = c("2012","2016", "2020", "2024")) +
-  scale_y_continuous(limits = c(0, 25), breaks = seq(0, 25, by = 5)) +
+  scale_y_continuous(limits = c(0, 20), breaks = seq(0, 20, by = 5)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 34),
