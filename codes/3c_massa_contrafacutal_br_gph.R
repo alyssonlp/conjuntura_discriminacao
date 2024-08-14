@@ -46,8 +46,8 @@ labels_seq <-c("Salários - Efeito Composição",
                "",
                "Massa Salarial Premiada")
 
-color_squeme <- c("Salários - Efeito Composição" = "coral",
-                  "Empregabilidade - Efeito Composição" = "coral4", 
+color_squeme <- c("Salários - Efeito Composição" = "#e66101",
+                  "Empregabilidade - Efeito Composição" = "#b2abd2", 
                   "Salários - Efeito Discriminação" = "transparent",
                   "Empregabilidade - Efeito Discriminação" = "transparent")
 
@@ -57,7 +57,7 @@ b_results <-   ggplot() +
                                     group = Decomposição, fill = Decomposição)) +
   geom_hline(yintercept = 0, color = "black", linetype = "solid") +
   geom_line(data = b_long_linha, aes(x = Ano_trimestre, y = Perda,
-                                     group = 1, color = Decomposição), size = 3.0) +
+                                     group = 1, color = Decomposição), linewidth = 3.0) +
   scale_fill_manual(name = "", values = color_squeme, breaks = breaks_seq, labels = labels_seq) + 
   scale_color_manual(values = c("Massa Salarial Premiada" = "black")) +
   scale_x_discrete(breaks = c("2012T1", "2016T1","2020T1", "2024T1"),
@@ -124,10 +124,10 @@ labels_seq_n <- c("Salários - Efeito Composição",
                   "Empregabilidade - Efeito Discriminação",
                   "Massa Salarial Perdida")
 
-color_squeme_n <- c("Salários - Efeito Composição" = "coral",
-                  "Salários - Efeito Discriminação" = "darkolivegreen4",
-                  "Empregabilidade - Efeito Composição" = "coral4", 
-                  "Empregabilidade - Efeito Discriminação" = "cadetblue")
+color_squeme_n <- c("Salários - Efeito Composição" = "#e66101",
+                  "Salários - Efeito Discriminação" = "#fdb863",
+                  "Empregabilidade - Efeito Composição" = "#b2abd2", 
+                  "Empregabilidade - Efeito Discriminação" = "#5e3c99")
 
 pdf(file.path(figures_output, "massa_perdida_negros_gph.pdf"),  width = 14, height = 8.5)
 n_results <-   ggplot() + 
@@ -135,7 +135,7 @@ n_results <-   ggplot() +
                                     group = Decomposição, fill = Decomposição)) +
   geom_hline(yintercept = 0, color = "black", linetype = "solid") +
   geom_line(data = n_long_linha, aes(x = Ano_trimestre, y = Perda*(-1), 
-                                     group = 1, color = Decomposição), size = 3.0) +
+                                     group = 1, color = Decomposição), linewidth = 3.0) +
   scale_fill_manual(name = "", values = color_squeme_n, breaks = breaks_seq_n, labels = labels_seq_n) + 
   scale_color_manual(values = c("Massa Salarial Perdida" = "black")) +
   scale_x_discrete(breaks = c("2012T1", "2016T1","2020T1", "2024T1"),

@@ -50,16 +50,12 @@ for(aa in ano) {
     
     pdf(file.path(figures_output, "pea_emp_n_emp.pdf"),  width = 14, height = 8.5)    
     frac_pea_emp <- result_long[variable %in% c("diff_pea_emp_plot", "diff_pea_emp"), ] %>% 
-      ggplot(aes(x = gender_race, y = value*100, fill = variable)) +
-      geom_bar(stat = 'identity', position = "stack",
-               width = 0.6, alpha = 0.8) +  # Ajustando a opacidade aqui
-      geom_text(aes(label = round(value*100)), 
-                position = position_stack(vjust = 0.5), 
-                size = 10, fontface = "bold") +
-      scale_fill_manual(name = "",
-                        values = c("diff_pea_emp_plot" = "coral3",
-                                   "diff_pea_emp" = "chocolate1"),
-                        labels = c("Empregados", "Desempregados")) +
+      ggplot(aes(x = gender_race, y = value*100, fill = variable)) + 
+      geom_bar(stat = 'identity', position = position_stack(reverse = TRUE), width = 0.6, alpha = 0.8) +
+      geom_text(aes(label = round(value*100)), position = position_stack(vjust = 0.5, reverse = TRUE), size = 10, fontface = "bold") +
+      scale_fill_manual(name = "", 
+                        values = c("diff_pea_emp" = "chocolate1", "diff_pea_emp_plot" = "coral3"), 
+                        labels = c("Desempregados","Empregados")) +
       scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, by = 20)) +
       theme_classic() +
       theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
@@ -67,10 +63,12 @@ for(aa in ano) {
             legend.position = "bottom",
             legend.title = element_text(size = 34),
             axis.text.x = element_text(vjust = 0.5, hjust = 0.5, color = "black"),
-            plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 28),
+            plot.title = element_text(hjust = 0.5),
+            legend.text = element_text(size = 28),
             plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
-      guides(fill = guide_legend(nrow = 1)) + 
+      guides(fill = guide_legend(nrow = 1)) +
       labs(x = "", y = "%", title = "")
+    
 
     print(frac_pea_emp)
     dev.off()
