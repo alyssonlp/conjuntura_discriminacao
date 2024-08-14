@@ -19,7 +19,7 @@ for(aa in ano) {
     }
     
     aa = 2024
-    tri = 2
+    tri = 1
     
     # Incluir avisos:
     print(paste0("Computing statistics for year ", aa, 
@@ -55,7 +55,8 @@ for(aa in ano) {
       geom_text(aes(label = round(value*100)), position = position_stack(vjust = 0.5, reverse = TRUE), size = 10, fontface = "bold") +
       scale_fill_manual(name = "", 
                         values = c("diff_pea_emp" = "chocolate1", "diff_pea_emp_plot" = "coral3"), 
-                        labels = c("Desempregados","Empregados")) +
+                        labels = c( diff_pea_emp_plot = "Desempregados",
+                                    diff_pea_emp = "Empregados")) +
       scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, by = 20)) +
       theme_classic() +
       theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
