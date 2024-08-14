@@ -55,7 +55,7 @@ for(aa in ano) {
                width = 0.6, alpha = 0.8) +  # Ajustando a opacidade aqui
       geom_text(aes(label = round(value*100)), 
                 position = position_stack(vjust = 0.5), 
-                size = 8, fontface = "bold") +
+                size = 10, fontface = "bold") +
       scale_fill_manual(name = "",
                         values = c("diff_pea_emp_plot" = "coral3",
                                    "diff_pea_emp" = "chocolate1"),
