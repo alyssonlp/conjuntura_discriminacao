@@ -27,7 +27,7 @@ for(aa in ano) {
     
     dt <- pnadc_deflator(dt,
                          file.path(original_data, 
-                                   "deflator_PNADC_2024_trimestral_010203.xls"))
+                                   "deflator_PNADC_2024_trimestral_040506.xls"))
 
 dt <-as.data.table(dt)
 

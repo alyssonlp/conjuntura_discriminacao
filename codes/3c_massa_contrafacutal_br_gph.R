@@ -60,7 +60,7 @@ b_results <-   ggplot() +
                                      group = 1, color = Decomposição), linewidth = 3.0) +
   scale_fill_manual(name = "", values = color_squeme, breaks = breaks_seq, labels = labels_seq) + 
   scale_color_manual(values = c("Massa Salarial Premiada" = "black")) +
-  scale_x_discrete(breaks = c("2012T1", "2016T1","2020T1", "2024T1"),
+  scale_x_discrete(breaks = c("2012T2", "2016T2","2020T2", "2024T2"),
                    labels = c("2012", "2016", "2020", "2024")) +
   scale_y_continuous(limits = c(-10, 50), breaks = seq(-10, 50, by = 10)) +
   theme_classic() + 
@@ -138,7 +138,7 @@ n_results <-   ggplot() +
                                      group = 1, color = Decomposição), linewidth = 3.0) +
   scale_fill_manual(name = "", values = color_squeme_n, breaks = breaks_seq_n, labels = labels_seq_n) + 
   scale_color_manual(values = c("Massa Salarial Perdida" = "black")) +
-  scale_x_discrete(breaks = c("2012T1", "2016T1","2020T1", "2024T1"),
+  scale_x_discrete(breaks = c("2012T2", "2016T2","2020T2", "2024T2"),
                    labels = c("2012", "2016", "2020", "2024")) +
   scale_y_continuous(limits = c(-10, 50), breaks = seq(-10, 50, by = 10)) +
   theme_classic() + 

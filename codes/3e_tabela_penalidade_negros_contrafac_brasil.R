@@ -37,12 +37,12 @@ homens <- massa[, .(`Ano_trimestre`, `Massa Total Perdida Homens (A+B)`,
                     `Efeito Discriminação Empregabilidade Homens`,
                     `Penalidade na Empregabilidade Homens (B)`)]
 
-homens <- homens[Ano_trimestre %in% c("2023T1", "2024T1"),]
+homens <- homens[Ano_trimestre %in% c("2023T2", "2024T2"),]
 
 homens_t <- setnames(homens[, data.table(t(.SD), keep.rownames=TRUE), .SDcols=-"Ano_trimestre"], 
                      homens[, c('variaveis', Ano_trimestre)])[]
 
-setnames(homens_t, c("2023T1", "2024T1"), c("Homem_2023T1", "Homem_2024T1"))
+setnames(homens_t, c("2023T2", "2024T2"), c("Homem_2023T2", "Homem_2024T2"))
 homens_t$variaveis <- gsub("Homens", "", homens_t$variaveis)
 
 mulheres <- massa[, .(`Ano_trimestre`, `Massa Total Perdida Mulheres (A+B)`,
@@ -53,22 +53,22 @@ mulheres <- massa[, .(`Ano_trimestre`, `Massa Total Perdida Mulheres (A+B)`,
                      `Efeito Discriminação Empregabilidade Mulheres`,
                      `Penalidade na Empregabilidade Mulheres (B)`)]
 
-mulheres <- mulheres[Ano_trimestre %in% c("2023T1", "2024T1"),]
+mulheres <- mulheres[Ano_trimestre %in% c("2023T2", "2024T2"),]
 mulheres_t <- setnames(mulheres[, data.table(t(.SD), keep.rownames=TRUE), .SDcols=-"Ano_trimestre"], 
                        mulheres[, c('m', Ano_trimestre)])[]
 
-setnames(mulheres_t, c("2023T1", "2024T1"), c("Mulher_2023T1", "Mulher_2024T1"))
+setnames(mulheres_t, c("2023T2", "2024T2"), c("Mulher_2023T2", "Mulher_2024T2"))
 #mulheres_t$variaveis <- gsub("Mulheres", "", mulheres_t$variaveis)
 
 penalidade <- cbind(homens_t, mulheres_t)
 penalidade[,m := NULL]
-penalidade <- penalidade[, Total_2023T1 := Homem_2023T1 + Mulher_2023T1]
-penalidade <- penalidade[, Total_2024T1 := Homem_2024T1 + Mulher_2024T1]
+penalidade <- penalidade[, Total_2023T2 := Homem_2023T2 + Mulher_2023T2]
+penalidade <- penalidade[, Total_2024T2 := Homem_2024T2 + Mulher_2024T2]
 
 penalidade <- setcolorder(penalidade, 
-                      c("variaveis", "Homem_2023T1", "Mulher_2023T1",
-                        "Total_2023T1", "Homem_2024T1", "Mulher_2024T1",
-                        "Total_2024T1"))
+                      c("variaveis", "Homem_2023T2", "Mulher_2023T2",
+                        "Total_2023T2", "Homem_2024T2", "Mulher_2024T2",
+                        "Total_2024T2"))
 penalidade <- penalidade[c(1, 4, 2, 3, 7, 5, 6), ]
 
 table_penalidade <-

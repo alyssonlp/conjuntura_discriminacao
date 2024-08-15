@@ -19,7 +19,7 @@ for(aa in ano) {
     }
     
     aa = 2024
-    tri = 1
+    tri = 2
     
     # Incluir avisos:
     print(paste0("Computing statistics for year ", aa, 
