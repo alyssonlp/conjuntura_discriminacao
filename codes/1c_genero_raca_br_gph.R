@@ -59,7 +59,7 @@ br_gen_raca_r_hab_all <- br_gen_raca %>%
                         labels = labels_seq) +
   scale_x_discrete(breaks = c("2012T2", "2016T2", "2020T2","2024T2"), 
                    label = c("2012", "2016", "2020", "2024")) +
-  scale_y_continuous(limits = c(0, 5000), breaks = seq(0, 5000, by = 1000)) +
+  scale_y_continuous(limits = c(0, 6000), breaks = seq(0, 6000, by = 1000)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 34),
