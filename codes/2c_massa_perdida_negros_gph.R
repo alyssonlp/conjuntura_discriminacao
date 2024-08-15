@@ -55,3 +55,30 @@ t_results <-   ggplot() +
 
 print(t_results)
 dev.off()
+
+massa_perdida <-   ggplot() + 
+  geom_area(data = t_long_area, aes(x = Ano_trimestre, y = Perda*(-1),
+                                    group = Decomposição, fill = Decomposição)) +
+  geom_line(data = t_long_linha, aes(x = Ano_trimestre, y = Perda*(-1), 
+                                     group = 1, color = Decomposição), size = 2.0) +
+  geom_hline(yintercept = 0, color = "black", linetype = "solid") +
+  scale_fill_brewer(palette = "PuOr") + 
+  scale_color_manual(values = c("Massa Salarial Perdida" = "black")) +
+  scale_x_discrete(breaks = c("2012T2", "2016T2", "2020T2", "2024T2"),
+                   labels = c("2012", "2016", "2020", "2024")) +
+  scale_y_continuous(limits = c(-20, 120), breaks = seq(-20, 120, by = 20)) +
+  theme_classic() + 
+  theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
+        text = element_text(size = 26),
+        legend.position = "bottom",
+        legend.text = element_text(size = 26),
+        legend.title = element_blank(),
+        axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
+        plot.title = element_text(hjust = 0.5),
+        plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
+  guides(fill = guide_legend(nrow = 4), 
+         color = guide_legend(nrow = 4)) + 
+  labs(x = "", y = "R$ bilhões", title = "Massa Salarial Perdida - 25-65 anos",
+       caption = "Fonte: PNAD Contínua, IBGE")
+ggsave(file.path(figures_output, "massa_perdida.png"), plot = massa_perdida, 
+       width = 12, height = 8, dpi = 500)

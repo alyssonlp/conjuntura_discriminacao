@@ -218,3 +218,36 @@ tb <- dt1_long %>%
 
 print(tb)
 dev.off()
+
+tb_png <- dt1_long %>% 
+  ggplot( aes(x = category, y = value, fill = gender_race)) +
+  geom_bar(stat = 'identity', 
+           position = position_dodge(width = 0.8), width = 0.7,) +
+  geom_col(position = position_stack(reverse = FALSE)) +
+  geom_text(aes(label = round(value)), 
+            position = position_stack(vjust = 0.5), 
+            size = 8, fontface = "bold") +
+  scale_fill_manual(name = "",
+                    values = c("Homem Branco" = "aquamarine4",
+                               "Mulher Branca" = "darkorange1",
+                               "Homem Negro" = "darkgoldenrod1",
+                               "Mulher Negra" = "brown4")) +
+  theme_classic() +
+  theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
+        text = element_text(size = 24),
+        legend.position = "bottom",
+        legend.title = element_text(size = 34),
+        axis.text.x = element_text(angle = 0, vjust = 0.5, hjust = 1, lineheight = 0.9),
+        plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 34 ),
+        plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
+  labs(x = "", y = "%", title = "Base e Topo da Distribuição de Salários - 2º trimestre 2024",
+       caption = "Fonte: PNAD Contínua, IBGE") +
+  facet_wrap(~ base_topo, scales = "free_x", 
+             labeller = as_labeller(c(Base = "Base", Topo = "Topo"))) +
+  scale_x_discrete(breaks = c("b1", "b5", "b10", "t10", "t5", "t1"),
+                   labels = c("1%", "5%", "10%", "10%", "5%", "1%")) +  
+  guides(fill = guide_legend(nrow = 2), 
+         color = guide_legend(nrow = 2)) 
+ggsave(file.path(figures_output, "base_topo_atual.png"), plot = tb_png, 
+       width = 12, height = 8, dpi = 500)
+
