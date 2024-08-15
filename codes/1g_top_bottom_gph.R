@@ -241,7 +241,7 @@ tb_png <- dt1_long %>%
         plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 34 ),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
   labs(x = "", y = "%", title = "Composição da Base e do Topo da Distribuição de Salários",
-  subtitle = " 2ºTtrimestre 2024, 25-65 anos",
+  subtitle = " 2ºTrimestre 2024, 25-65 anos",
        caption = "Fonte: PNAD Contínua, IBGE") +
   facet_wrap(~ base_topo, scales = "free_x", 
              labeller = as_labeller(c(Base = "Base", Topo = "Topo"))) +
