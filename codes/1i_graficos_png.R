@@ -229,11 +229,13 @@ r_hab_all <- dt1 %>%
         legend.position = "bottom",
         legend.title = element_text(size = 34),
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5), 
+        plot.title = element_text(hjust = 0.5, size = 34, margin = margin(b = 20)), 
+        plot.subtitle = element_text(hjust = 0.5, size = 28, margin = margin(t = 10, b = 10)), 
         legend.text = element_text(size = 28),
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
   guides(fill = guide_legend(nrow = 2, byrow = FALSE)) + 
-  labs(x = "", y = "R$", title = "Salário - 2º trimestre 2023 e 2024",
+  labs(x = "", y = "R$", title = "Salário Médio, 25-65 anos",
+       subtitle = "2º trimestre 2023 e 2024",
        caption = "Fonte: PNAD Contínua, IBGE")
   ggsave(file.path(figures_output, "rendimento_habitual_medio_atual.png"), plot = r_hab_all, 
          width = 12, height = 8, dpi = 500)
@@ -275,10 +277,12 @@ unemp <- dt1 %>%
         legend.title = element_text(size = 34),
         legend.position = "bottom",
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 28),
+        plot.title = element_text(hjust = 0.5, size = 34, margin = margin(b = 20)), 
+        plot.subtitle = element_text(hjust = 0.5, size = 28, margin = margin(t = 10, b = 10)), 
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
   guides(fill = guide_legend(nrow = 2, byrow = FALSE)) + 
-  labs(x = "", y = "%", title = "Taxa de Desemprego - 2º Trimestre 2023 e 2024",
+  labs(x = "", y = "%", title = "Taxa de Desemprego , 25-65 anos",
+       subtitle = "2º trimestre 2023 e 2024",
        caption = "Fonte: PNAD Contínua, IBGE")
 ggsave(file.path(figures_output, "desemprego_atual.png"), plot = unemp, 
        width = 12, height = 8, dpi = 500)
@@ -319,10 +323,12 @@ pea <- dt1 %>%
         legend.position = "bottom",
         legend.title = element_text(size = 34),
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 28),
+        plot.title = element_text(hjust = 0.5, size = 34, margin = margin(b = 20)), 
+        plot.subtitle = element_text(hjust = 0.5, size = 28, margin = margin(t = 10, b = 10)), 
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
   guides(fill = guide_legend(nrow = 2, byrow = FALSE)) + 
-  labs(x = "", y = "%", title = "População Economicamente Ativa - 2º trimestre 2023 e 2024",
+  labs(x = "", y = "%", title = "População Economicamente Ativa, 25-65 anos",
+       subtitle = "2º trimestre 2023 e 2024",
        caption = "Fonte: PNAD Contínua, IBGE")
 ggsave(file.path(figures_output, "pea_atual.png"), plot = pea, 
        width = 12, height = 8, dpi = 500)
@@ -358,10 +364,12 @@ massa_hab <- dt2 %>%
         legend.position = "bottom",
         legend.title = element_text(size = 34),
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5), legend.text = element_text(size = 28),
+        plot.title = element_text(hjust = 0.5, size = 34, margin = margin(b = 20)), 
+        plot.subtitle = element_text(hjust = 0.5, size = 28, margin = margin(t = 10, b = 10)),  
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
   guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + 
-  labs(x = "", y = "R$ em bilhões", title = "Massa Salarial - 2º trimestre 2023 e 2024",
+  labs(x = "", y = "R$ em bilhões", title = "Massa Salarial, 25-65 anos",
+       subtitle = "2º trimestre 2023 e 2024",
        caption = "Fonte: PNAD Contínua, IBGE")
 ggsave(file.path(figures_output, "massa_atual.png"), plot = massa_hab, 
        width = 12, height = 8, dpi = 500)

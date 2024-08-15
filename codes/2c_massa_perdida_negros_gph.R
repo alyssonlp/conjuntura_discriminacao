@@ -78,7 +78,7 @@ massa_perdida <-   ggplot() +
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
   guides(fill = guide_legend(nrow = 4), 
          color = guide_legend(nrow = 4)) + 
-  labs(x = "", y = "R$ bilhões", title = "Massa Salarial Perdida - 25-65 anos",
+  labs(x = "", y = "R$ bilhões", title = "Massa Salarial Perdida, 25-65 anos",
        caption = "Fonte: PNAD Contínua, IBGE")
 ggsave(file.path(figures_output, "massa_perdida.png"), plot = massa_perdida, 
        width = 12, height = 8, dpi = 500)
