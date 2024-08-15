@@ -54,7 +54,7 @@ r_hab_all <- dt1 %>%
                               "2024T2.Brasil" = "2024",
                               "2023T2.Invisivel" = "",
                               "2024T2.Invisivel" = "")) +
-  scale_y_continuous(limits = c(0, 5000), breaks = seq(0, 5000, by = 1000)) +
+  scale_y_continuous(limits = c(0, 6000), breaks = seq(0, 6000, by = 1000)) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 34),
@@ -101,7 +101,7 @@ unemp <- dt1 %>%
                               "2024T2.Brasil" = "2024",
                               "2023T2.Invisivel" = "",
                               "2024T2.Invisivel" = "")) +
-  scale_y_continuous(limits = c(0, 15), breaks = seq(0, 15, by = 5)) +
+  scale_y_continuous(limits = c(0, 12), breaks = seq(0, 12, by = 4)) +
   theme_classic() +
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
         text = element_text(size = 34),
