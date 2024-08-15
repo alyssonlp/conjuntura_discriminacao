@@ -99,6 +99,8 @@ if (part_03) {
   source(file.path(codes, "3a_mensuracao_massa_homens.R"))
   source(file.path(codes, "3b_mensuracao_massa_mulheres.R"))
   source(file.path(codes, "3c_massa_contrafacutal_br_gph.R"))
+  source(file.path(codes, "3d_tabela_premio_brancos.R"))
+  source(file.path(codes, "3e_tabela_penalidade_negros_contrafac_brasil.R"))
 }
 
 
