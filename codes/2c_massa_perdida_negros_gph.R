@@ -56,7 +56,8 @@ t_results <-   ggplot() +
 print(t_results)
 dev.off()
 
-massa_perdida <-   ggplot() + 
+massa_perdida <-   
+  ggplot() + 
   geom_area(data = t_long_area, aes(x = Ano_trimestre, y = Perda*(-1),
                                     group = Decomposição, fill = Decomposição)) +
   geom_line(data = t_long_linha, aes(x = Ano_trimestre, y = Perda*(-1), 
@@ -69,9 +70,9 @@ massa_perdida <-   ggplot() +
   scale_y_continuous(limits = c(-20, 120), breaks = seq(-20, 120, by = 20)) +
   theme_classic() + 
   theme(panel.grid.major.y = element_line(color = "gray", linetype = "dashed"),
-        text = element_text(size = 26),
+        text = element_text(size = 20),
         legend.position = "bottom",
-        legend.text = element_text(size = 26),
+        legend.text = element_text(size = 20),
         legend.title = element_blank(),
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
         plot.title = element_text(hjust = 0.5, size = 34, margin = margin(b = 20)), 
@@ -79,8 +80,11 @@ massa_perdida <-   ggplot() +
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
   guides(fill = guide_legend(nrow = 4), 
          color = guide_legend(nrow = 4)) + 
-  labs(x = "", y = "R$ bilhões", title = "Massa Salarial Perdida, 25-65 anos",
-       subtitle = "Massa salarial adicional se negros tivessem \n salários e empregos iguais aos dos brancos",
+  labs(x = "", y = "R$ bilhões",
+       subtitle = "Massa adicional se salários e emprego dos negros fossem \n iguais aos dos brancos, 25-65 anos",
        caption = "Fonte: PNAD Contínua, IBGE")
+
+massa_perdida
+
 ggsave(file.path(figures_output, "massa_perdida.png"), plot = massa_perdida, 
        width = 12, height = 8, dpi = 500)
