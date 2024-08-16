@@ -74,11 +74,13 @@ massa_perdida <-   ggplot() +
         legend.text = element_text(size = 26),
         legend.title = element_blank(),
         axis.text.x = element_text(vjust = 0.5, hjust = 0.5),
-        plot.title = element_text(hjust = 0.5),
+        plot.title = element_text(hjust = 0.5, size = 34, margin = margin(b = 20)), 
+        plot.subtitle = element_text(hjust = 0.5, size = 28, margin = margin(t = 10, b = 10)),  
         plot.margin = margin(t = 5, r = 22, b = 5, l = 5)) +
   guides(fill = guide_legend(nrow = 4), 
          color = guide_legend(nrow = 4)) + 
   labs(x = "", y = "R$ bilhões", title = "Massa Salarial Perdida, 25-65 anos",
+       subtitle = "Massa salarial adicional se negros tivessem \n salários e empregos iguais a  brancos",
        caption = "Fonte: PNAD Contínua, IBGE")
 ggsave(file.path(figures_output, "massa_perdida.png"), plot = massa_perdida, 
        width = 12, height = 8, dpi = 500)
